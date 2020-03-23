@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://mahoo12138.cn/android-splash.html</loc>
+    <lastmod>2020-03-23</lastmod>
+  </url>  <url>
+    <loc>http://mahoo12138.cn/jupyter.html</loc>
+    <lastmod>2020-03-23</lastmod>
+  </url>  <url>
     <loc>http://mahoo12138.cn/win10-ubuntu.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
@@ -61,9 +67,6 @@
     <loc>http://mahoo12138.cn/kotlin.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/jupyter.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
     <loc>http://mahoo12138.cn/java-jdk.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
@@ -98,9 +101,6 @@
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/asm.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
-    <loc>http://mahoo12138.cn/android-splash.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/android-md.html</loc>
