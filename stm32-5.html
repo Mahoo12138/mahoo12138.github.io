@@ -1,0 +1,1773 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+	<meta name="baidu-site-verification" content="4duikEwdKV">
+	<meta name="google-site-verification" content="ITtW-qXOslWyS9zHoz5wrnatPs5ylPbgA4RDG4Hak4k">
+    <meta name="keywords" content="利用FSMC模拟8080时序控制LCD, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="description" content="注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！
+ILI9341 液晶控制器
+
+ILI9341 控制器内部电路连接完">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>利用FSMC模拟8080时序控制LCD | 黄同学的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+	
+	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	
+	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">黄同学的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">黄同学的博客</div>
+        <div class="logo-desc">
+            
+            一切的恐惧都来源于无知！
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/mahoo12138" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/mahoo12138" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img.mahoo12138.cn/hexo_images/cover/stm32.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">利用FSMC模拟8080时序控制LCD</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/STM32/">
+                                <span class="chip bg-color">STM32</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/学习笔记/" class="post-category">
+                                学习笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-02-25
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-03-23
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.9k
+                </div>
+                
+
+                
+
+                
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！</p>
+<h2 id="ILI9341-液晶控制器">ILI9341 液晶控制器</h2>
+<p><img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/ili9341.png" alt="ILI9341控制器内部框图"></p>
+<p>ILI9341 控制器内部电路连接完后，其余信号线引出到排针</p>
+<img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/lcd.png" alt="液晶屏引出的信号线" style="zoom:67%;">
+<h3 id="液晶屏引出的信号线说明">液晶屏引出的信号线说明</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">信号线</th>
+<th style="text-align:center">ILI9341 对 应 的信号线</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">LCD_DB[15:0]</td>
+<td style="text-align:center">D[15:0]</td>
+<td style="text-align:left">数据信号</td>
+</tr>
+<tr>
+<td style="text-align:center">LCD_RD</td>
+<td style="text-align:center">RDX</td>
+<td style="text-align:left">读数据信号，低电平有效 ，</td>
+</tr>
+<tr>
+<td style="text-align:center">LCD_RS</td>
+<td style="text-align:center">D/CX</td>
+<td style="text-align:left">数据/命令信号，高电平时， D[15:0]表示的是数据(RGB 像素数据或命令数据)；低电平时，D[15:0]表示控制命令</td>
+</tr>
+<tr>
+<td style="text-align:center">LCD_RESET</td>
+<td style="text-align:center">RESX</td>
+<td style="text-align:left">复位信号，低电平有效</td>
+</tr>
+<tr>
+<td style="text-align:center">LCD_WR</td>
+<td style="text-align:center">WRX</td>
+<td style="text-align:left">写数据信号，低电平有效</td>
+</tr>
+<tr>
+<td style="text-align:center">LCD_CS</td>
+<td style="text-align:center">CSX</td>
+<td style="text-align:left">片选信号，低电平有效</td>
+</tr>
+<tr>
+<td style="text-align:center">LCD_BK</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">背光信号，低电平点亮</td>
+</tr>
+<tr>
+<td style="text-align:center">GPIO[5:1]</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">触摸屏的控制信号线，下一章再介绍</td>
+</tr>
+</tbody>
+</table>
+<h2 id="FSMC简介">FSMC简介</h2>
+<p>STM32F1 系列芯片使用 FSMC 外设来管理扩展的存储器， FSMC 是 Flexible Static<br>
+Memory Controller 的缩写，译为灵活的静态存储控制器。它可以用于驱动包括 SRAM、<br>
+NOR FLASH 以及 NAND FLSAH 类型的存储器，不能驱动如 SDRAM 这种动态的存储器而<br>
+在 STM32F429 系列的控制器中，它具有 FMC 外设，支持控制 SDRAM 存储器。</p>
+<img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/fsmc.png" style="zoom:80%;">
+<p>MCU 对液晶屏的操作实际上就是把显示数据写入到显存中，与控制存储器非常类似，且8080 接口的通讯时序完全可以使用 FSMC 外设产生。</p>
+<h3 id="模拟-8080-接口时序">模拟 8080 接口时序</h3>
+<p>在模拟控制 LCD 时，是使用 FSMC 的 NOR\PSRAM 模式的， 而且使用的是类似异步、 地址与数据线独立的  NOR FLASH 类型的模式 B，实际上 CLK、 NWAIT、 NADV 引脚并没有使用到。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">FSMC 信 号 名</th>
+<th style="text-align:center">信号方向</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">CLK</td>
+<td style="text-align:center">输出</td>
+<td>时钟（同步突发模式使用）</td>
+</tr>
+<tr>
+<td style="text-align:center">A[25:0]</td>
+<td style="text-align:center">输出</td>
+<td>地址总线</td>
+</tr>
+<tr>
+<td style="text-align:center">D[15:0]</td>
+<td style="text-align:center">输入/输出</td>
+<td>双向数据总线</td>
+</tr>
+<tr>
+<td style="text-align:center">NE[x]</td>
+<td style="text-align:center">输出</td>
+<td>片选， x = 1…4</td>
+</tr>
+<tr>
+<td style="text-align:center">NOE</td>
+<td style="text-align:center">输出</td>
+<td>输出使能</td>
+</tr>
+<tr>
+<td style="text-align:center">NWE</td>
+<td style="text-align:center">输出</td>
+<td>写使能</td>
+</tr>
+<tr>
+<td style="text-align:center">NWAIT</td>
+<td style="text-align:center">输入</td>
+<td>NOR 闪存要求 FSMC 等待的信号</td>
+</tr>
+<tr>
+<td style="text-align:center">NADV</td>
+<td style="text-align:center">输出</td>
+<td>地址、数据线复用时作锁存信号</td>
+</tr>
+</tbody>
+</table>
+<p>对比 FSMC NOR/PSRAM 中的模式 B 时序与 ILI9341 液晶控制器芯片使用的 8080 时序可发现，这两个时序是十分相似的(除了 FSMC 的地址线 A 和 8080 的 D/CX 线，可以说是完全一样)</p>
+<img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/8080vsnorflash.png" alt="FSMC模式B时序与8080时序对比（写过程）" style="zoom:80%;">
+<table>
+<thead>
+<tr>
+<th>FSMC-NOR信号线</th>
+<th>功能</th>
+<th>8080 信号线</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NEx</td>
+<td>片选信号</td>
+<td>CSX</td>
+<td>片选信号</td>
+</tr>
+<tr>
+<td>NWR</td>
+<td>写使能</td>
+<td>WRX</td>
+<td>写使能</td>
+</tr>
+<tr>
+<td>NOE  D[15:0]</td>
+<td>读使能  数据信号</td>
+<td>RDX  D[15:0]</td>
+<td>读使能 数据信号</td>
+</tr>
+<tr>
+<td>A[25:0]</td>
+<td>地址信号</td>
+<td>D/CX</td>
+<td>数据/命令选择</td>
+</tr>
+</tbody>
+</table>
+<p>为了模拟出 8080 时序，我们可以把 FSMC 的 A0 地址线(也可以使用其它 A1/A2 等地<br>
+址线)与 ILI9341 芯片 8080 接口的 D/CX 信号线连接，那么当 A0 为高电平时(即 D/CX 为高<br>
+电平)，数据线 D[15:0]的信号会被 ILI9341 理解为数值，若 A0 为低电平时(即 D/CX 为低电<br>
+平)，传输的信号则会被理解为命令。</p>
+<h3 id="FSMC的地址映射">FSMC的地址映射</h3>
+<p>使用 FSMC 外接存储器时，其存储单元是映射到 STM32 的内部寻址空间的，这里也涉及到使用地址线某个引脚时，需要计算对应的地址，以达到控制输出高低电平。</p>
+<p><img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/fsmc_addr.png" alt="FSMC 的地址映射"></p>
+<h2 id="代码分析">代码分析</h2>
+<h3 id="液晶LCD硬件相关宏定义">液晶LCD硬件相关宏定义</h3>
+<p>根据液晶屏的原理图，将FSMC 控制液晶屏硬件相关的配置都以宏的形式定义：</p>
+<img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/lcd_pin.png" alt="开发板与屏幕的连接" style="zoom:67%;">
+<pre class=" language-language-c"><code class="language-language-c">/*****************	LCD控制信号	******************/
+//片选引脚
+#define		ILI9341_CS_CLK		RCC_APB2Periph_GPIOD
+#define 	ILI9341_CS_PORT 	GPIOD
+#define 	ILI9341_CS_PIN 		GPIO_Pin_7
+
+//数据命令引脚
+#define		ILI9341_DC_CLK		RCC_APB2Periph_GPIOD
+#define		ILI9341_DC_PORT		GPIOD
+#define		ILI9341_DC_PIN		GPIO_Pin_11
+
+/****************	数据信号线	*****************/
+#define 	ILI9341_D0_CLK 		RCC_APB2Periph_GPIOD
+#define 	ILI9341_D0_PORT 	GPIOD
+#define 	ILI9341_D0_PIN 		GPIO_Pin_14
+
+//其他引脚省略
+</code></pre>
+<h3 id="初始化-FSMC-的-GPIO">初始化 FSMC 的 GPIO</h3>
+<p>利用上面的宏，编写 FSMC 的 GPIO 引脚初始化函数，对于 FSMC 引脚，全部直接初始化为复用推挽输出模式即可，而背光 BK 引脚及液晶复信 RST 信号则被初始化成普通的推挽输出模式，这两个液晶控制信号直接输出普通的电平控制即可。</p>
+<pre class=" language-language-c"><code class="language-language-c">static void ILI9341_GPIO_Config (void)
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+
+    /* 使能 FSMC 对应相应管脚时钟*/
+    RCC_APB2PeriphClockCmd (
+    /* 控制信号 */
+    ILI9341_CS_CLK|ILI9341_DC_CLK|ILI9341_WR_CLK|
+    ILI9341_RD_CLK |ILI9341_BK_CLK|ILI9341_RST_CLK|
+    /* 数据信号 */
+    ILI9341_D0_CLK|ILI9341_D1_CLK, ENABLE);
+    /* 省略部分信号线 */
+
+    /* 配置 FSMC 相对应的数据线,FSMC-D0~D15 */
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+    GPIO_InitStructure.GPIO_Pin = ILI9341_D0_PIN;
+    
+    GPIO_Init(ILI9341_D0_PORT, &GPIO_InitStructure);
+	/* 省略部分信号线 */
+	
+    //设置复用推挽输出
+ 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    
+ 	GPIO_InitStructure.GPIO_Pin = ILI9341_RD_PIN;
+ 	GPIO_Init (ILI9341_RD_PORT, &GPIO_InitStructure);
+	/* 省略WR, CS, DC 控制引脚 */
+    
+    //设置普通推挽输出
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;	
+ 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    /* 配置 LCD 复位 RST 控制管脚 */
+ 	GPIO_InitStructure.GPIO_Pin = ILI9341_RST_PIN;
+ 	GPIO_Init (ILI9341_RST_PORT, &GPIO_InitStructure);
+    /* 配置 LCD 背光控制管脚 BK */
+    GPIO_InitStructure.GPIO_Pin = ILI9341_BK_PIN;
+ 	GPIO_Init (ILI9341_BK_PORT, &GPIO_InitStructure);
+}
+</code></pre>
+<h3 id="配置-FSMC-的模式">配置 FSMC 的模式</h3>
+<pre class=" language-language-c"><code class="language-language-c">static void ILI9341_FSMC_Config (void)
+{	
+    /* FSMC模式初始化结构体 */
+	FSMC_NORSRAMInitTypeDef 		FSMC_NORSRAMInitStructure;
+    /* 读写时序结构体 */
+ 	FSMC_NORSRAMTimingInitTypeDef 	readWriteTiming;
+ 
+ 	/* 使能 FSMC 时钟*/
+ 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_FSMC, ENABLE);
+ 	
+ 	//地址建立时间（ADDSET）为 1 个 HCLK 2/72M=28ns
+ 	readWriteTiming.FSMC_AddressSetupTime = 0x01; //地址建立时间
+ 	//数据保持时间（DATAST） + 1 个 HCLK = 5/72M=70ns
+    readWriteTiming.FSMC_DataSetupTime = 0x04; //数据建立时间
+ 	//选择控制的模式
+ 	//模式 B, 异步 NOR FLASH 模式，与 ILI9341 的 8080 时序匹配
+ 	readWriteTiming.FSMC_AccessMode = FSMC_AccessMode_B;
+ 
+ 	/* 以下配置与模式 B 无关 */
+ 	readWriteTiming.FSMC_AddressHoldTime = 0x00; //地址保持时间，模式 B未用到
+ 	//设置总线转换周期，仅用于复用模式的 NOR 操作
+ 	readWriteTiming.FSMC_BusTurnAroundDuration = 0x00;
+  	//设置时钟分频，仅用于同步类型的存储器
+ 	readWriteTiming.FSMC_CLKDivision = 0x00;
+ 	//数据保持时间，仅用于同步型的 NOR
+ 	readWriteTiming.FSMC_DataLatency = 0x00;
+    
+    //选择使用的bank, 本次实例中使用的是FSMC_NE1
+    //需要在宏定义中定义：#define FSMC_Bank1_NORSRAMx FSMC_Bank1_NORSRAM1
+    FSMC_NORSRAMInitStructure.FSMC_Bank = FSMC_Bank1_NORSRAMx;
+    //设置地址总线是否与数据总线是否复用，仅用于NOR
+ 	FSMC_NORSRAMInitStructure.FSMC_DataAddressMux = FSMC_DataAddressMux_Disable;
+    //设置要控制的存储器类型：本实例使用的是异步NOR
+ 	FSMC_NORSRAMInitStructure.FSMC_MemoryType = FSMC_MemoryType_NOR;
+    /* 设置存储器的数据宽度 */
+ 	FSMC_NORSRAMInitStructure.FSMC_MemoryDataWidth = FSMC_MemoryDataWidth_16b;
+    /* 设置是否支持突发访问模式，只支持同步类型的存储器 */
+ 	FSMC_NORSRAMInitStructure.FSMC_BurstAccessMode = FSMC_BurstAccessMode_Disable;
+    /* 设置等待信号的极性，仅用于同步类型存储器 */
+ 	FSMC_NORSRAMInitStructure.FSMC_WaitSignalPolarity = FSMC_WaitSignalPolarity_Low;
+    /* 设置是否支持对齐的突发模式，仅用于同步 */
+ 	FSMC_NORSRAMInitStructure.FSMC_WrapMode = FSMC_WrapMode_Disable;
+    /* 配置等待信号（插入时间）在等待前有效还是等待期间有效，仅用于同步 */
+ 	FSMC_NORSRAMInitStructure.FSMC_WaitSignalActive = FSMC_WaitSignalActive_BeforeWaitState;
+    /* 设置是否写使能 */
+ 	FSMC_NORSRAMInitStructure.FSMC_WriteOperation = FSMC_WriteOperation_Enable;
+    
+    /* 设置是否使能等待状态插入，用于设置当存储器处于突发传输模式时，
+     * 是否允许通过 NWAIT 信号插入等待状态，不使用 
+     */
+ 	FSMC_NORSRAMInitStructure.FSMC_WaitSignal = FSMC_WaitSignal_Disable;
+    /* 设置是否使能扩展模式，不使用，读写同一时序*/
+ 	FSMC_NORSRAMInitStructure.FSMC_ExtendedMode = FSMC_ExtendedMode_Disable;
+    /* 设置是否使能写突发操作 */
+ 	FSMC_NORSRAMInitStructure.FSMC_WriteBurst = FSMC_WriteBurst_Disable;
+    /* 当不使用扩展模式时，本参数用于配置读写时序，否则用于配置读时序 */
+ 	FSMC_NORSRAMInitStructure.FSMC_ReadWriteTimingStruct = &readWriteTiming;
+    /* 当使用扩展模式时，本参数用于配置写时序 */
+	FSMC_NORSRAMInitStructure.FSMC_WriteTimingStruct = &readWriteTiming;
+ 	//初始化FSMC的配置
+ 	FSMC_NORSRAMInit (&FSMC_NORSRAMInitStructure);
+ 	/* 使能 FSMC_Bank1_NORSRAMx */
+ 	FSMC_NORSRAMCmd (FSMC_Bank1_NORSRAMx, ENABLE);
+}
+</code></pre>
+<h3 id="计算控制液晶屏时使用的地址">计算控制液晶屏时使用的地址</h3>
+<p><img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/lie.png" alt=""></p>
+<ul>
+<li>
+<p>首先确定板子NEx引脚的连接，本次实例使用的是<code>FSMC_NE1</code></p>
+</li>
+<li>
+<p>在 数据手册 --&gt; 存储器映像 中查询<code>FSMC_bnak1 NOR/PSRAM 1</code>的地址：</p>
+<p><img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/fsmc_bank1_nor_addr.png" alt=""></p>
+</li>
+<li>
+<p>使用的是<code>FSMS_NE1</code>也就是当访问到<code>0x6000000-0x63FFFFFF</code>这个地址范围内时，FSMC都会产生有效的访问时序；本实例中使用的是<code>FSMC_A16</code>地址线作为命令/数据选择线，即：</p>
+<ul>
+<li>
+<p>使<code>FSMC_A16</code>为高电平，即第十六位为 1 ，可用地址范围内任意地址做一下运算：</p>
+<pre class=" language-language-c"><code class="language-language-c">0X6000 0000 |= (1<<16) = 0x6001 0000;
+</code></pre>
+</li>
+<li>
+<p>同样的，使<code>FSMC_A16</code>为低电平，即：</p>
+<pre class=" language-language-c"><code class="language-language-c">0X6000 0000 &= ~ (1<<16) = 0x6000 0000;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>由于地址线转换的问题，这里不细说，需要知道的是，STM32 内部的 HADDR 与 FSMC 的连接关系会左移一位，计算关系也会改变：</p>
+<ul>
+<li>
+<p>使<code>FSMC_A16</code>地址线为高电平：</p>
+<pre class=" language-language-c"><code class="language-language-c">0X6000 0000 |= (1<<(16+1)) = 0x6002 0000;
+</code></pre>
+</li>
+<li>
+<p>使<code>FSMC_A16</code>地址线为低电平：</p>
+<pre class=" language-language-c"><code class="language-language-c">0X6000 0000 &= ~(1<<(16+1)) = 0x6000 0000;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="封装函数">封装函数</h5>
+<p>因为在实例后面会频繁对LCD进行操作，所以把发送命令及发送数据的操作封装成了内联函数，会更方便调用：</p>
+<pre class=" language-language-c"><code class="language-language-c">/*********** 定义 FSMC 参数宏 **********/
+//FSMC_Bank1_NORSRAM 用于 LCD 命令操作的地址
+#define FSMC_Addr_ILI9341_CMD ( ( uint32_t ) 0x60020000 )
+
+//FSMC_Bank1_NORSRAM 用于 LCD 数据操作的地址
+#define FSMC_Addr_ILI9341_DATA ( ( uint32_t ) 0x60000000 )
+</code></pre>
+<pre class=" language-language-c"><code class="language-language-c">//发送数据
+__inline void ILI9341_Write_Cmd (uint16_t usCmd)
+{
+    (__IO uint16_t *)(FSMC_Addr_ILI9341_CMD) = usCmd;
+}
+//写入数据
+__inline void ILI9341_Write_Data (uint16_t usData)
+{
+	(__IO uint16_t *)(FSMC_Addr_ILI9341_DATA) = usData;
+}
+</code></pre>
+<p>需要写操作时，只要把要发送的命令代码或数据作为参数输入到函数然后调用即可，对于液晶屏的读操作，把向指针赋值的过程改为读取指针内容即可。</p>
+<pre class=" language-language-c"><code class="language-language-c">//读取数据
+__inline uint16_t ILI9341_Read_Data (void)
+{
+	return (*FSMC_Addr_ILI9341_DATA);
+}
+</code></pre>
+<h4 id="检验封装">检验封装</h4>
+<p>在上述函数封装好之后，进行一些测试检验使很有必要，我们可以查询<code>ILI9341</code>的数据文档，选择合适的命令进行测试：</p>
+<p><img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/ili9341_0ch.png" alt=""></p>
+<p>当发送命令<code>0x0C</code>，第二个参数会返回 LCD 的像素信息，可以封装一个检验函数如下：</p>
+<pre class=" language-language-c"><code class="language-language-c">uint16_t Read_Pixel_Format(void)
+{
+    ILI9341_Write_Cmd(0x0C);	//发送命令参数
+    ILI9341_Read_Data();		//读取第一个返回参数
+    return ILI9341_Read_Data();	//返回第二个读取参数
+}
+</code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/STM32/">
+                                    <span class="chip bg-color">STM32</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'lwPUniWDWfHqPnwBSI0074mc-gzGzoHsz',
+        appKey: 'NLdnoMy829RTwf5CsXQ6y6N8',
+        notify: 'true' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'retro',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/c-c-5.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img.mahoo12138.cn/hexo_images/cover/c.jpg" class="responsive-img" alt="C语言再学习之基础语法">
+                        
+                        <span class="card-title">C语言再学习之基础语法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            内联函数 —— C 中关键字 inline
+调用函数时，一般会由于建立调用、传递参数、跳转到函数代码并返回等花费掉一些时间，而且一些函数被频繁调用，不断地有函数入栈，即函数栈，会造成栈空间或栈内存的大量消耗。
+为了解决这个问题，在C99中特
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C-C/">
+                        <span class="chip bg-color">C/C++</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/vuejs.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img.mahoo12138.cn/hexo_images/cover/vuejs.png" class="responsive-img" alt="我的网页梦 —— 前端基础 & Vuejs">
+                        
+                        <span class="card-title">我的网页梦 —— 前端基础 & Vuejs</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            前言
+自从上学期期末考试以后，就没有更新博客了，那时候是因为，你懂的嘛；
+回到家后，肯定是玩啦，这么长的假期，同学聚会也少不了，过年期间更是忙的没话说，况且，今年的春节被这个新型冠状病毒整的是你死我活的，国家都进入一种战时状态，天佑中华吧，
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vuejs/">
+                        <span class="chip bg-color">Vuejs</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">49.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "09";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/mahoo12138" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:mahoo12138@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://twitter.com/mahoo12138" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/mahoo12138" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+
+
+    <a href="https://weibo.com/mahoo12138" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/mahoo12138" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+    <a href="https://zhihu.com/people/mahoo12138" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://zhihu.com/people/mahoo12138" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "a7fc98ad"
+        });
+        daovoice('update');
+    </script>
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+</body>
+
+</html>

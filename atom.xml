@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>黄同学的博客</title>
+  
+  <subtitle>记录技术成长的每一瞬间</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://mahoo12138.cn/"/>
+  <updated>2020-03-23T03:40:20.873Z</updated>
+  <id>http://mahoo12138.cn/</id>
+  
+  <author>
+    <name>Mahoo Huang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>超乎你想象的Stm32中的TIM定时器</title>
+    <link href="http://mahoo12138.cn/stm32-6.html"/>
+    <id>http://mahoo12138.cn/stm32-6.html</id>
+    <published>2020-03-13T13:12:43.000Z</published>
+    <updated>2020-03-23T03:40:20.873Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
+&lt;h2 id=&quot;定时器分类&quot;&gt;定时器分类&lt;/h2&gt;
+&lt;p&gt;STM32F1
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简单入门CSS预处理器Less和Sass</title>
+    <link href="http://mahoo12138.cn/pre-css.html"/>
+    <id>http://mahoo12138.cn/pre-css.html</id>
+    <published>2020-03-08T08:00:21.000Z</published>
+    <updated>2020-03-23T03:40:20.817Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Sass和Less都属于CSS预处理器，CSS预处理器定义了一种新的语言，其基本的思想是，用一种特殊的语言，为CSS增加一些编程的特性，如变量、语句，函数、继承等概念。将CSS作为目标生成文件，然后开发者就只要使用这种语言进行CSS的编码开发工作。目前比较流行的有&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Less" scheme="http://mahoo12138.cn/tags/Less/"/>
+    
+      <category term="Sass" scheme="http://mahoo12138.cn/tags/Sass/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C语言再学习之基础语法</title>
+    <link href="http://mahoo12138.cn/c-c-5.html"/>
+    <id>http://mahoo12138.cn/c-c-5.html</id>
+    <published>2020-02-26T13:48:43.000Z</published>
+    <updated>2020-03-23T03:40:20.692Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;内联函数-——-C-中关键字-inline&quot;&gt;内联函数 —— C 中关键字
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="C/C++" scheme="http://mahoo12138.cn/tags/C-C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>利用FSMC模拟8080时序控制LCD</title>
+    <link href="http://mahoo12138.cn/stm32-5.html"/>
+    <id>http://mahoo12138.cn/stm32-5.html</id>
+    <published>2020-02-25T02:12:43.000Z</published>
+    <updated>2020-03-23T03:40:20.866Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
+&lt;h2 id=&quot;ILI9341-液晶控制器&quot;&gt;ILI9341
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我的网页梦 —— 前端基础 &amp; Vuejs</title>
+    <link href="http://mahoo12138.cn/vuejs.html"/>
+    <id>http://mahoo12138.cn/vuejs.html</id>
+    <published>2020-02-18T08:00:21.000Z</published>
+    <updated>2020-03-23T03:40:20.884Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Vuejs" scheme="http://mahoo12138.cn/tags/Vuejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Markdown进阶功能：用代码画流程图</title>
+    <link href="http://mahoo12138.cn/mk-2.html"/>
+    <id>http://mahoo12138.cn/mk-2.html</id>
+    <published>2020-02-14T07:02:43.000Z</published>
+    <updated>2020-03-23T03:40:20.777Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;流程图基础&quot;&gt;流程图基础&lt;/h2&gt;
+&lt;p&gt;首先我们先来了解下流程图的基础，这样才能更好的使用该工具。&lt;/p&gt;
+&lt;p&gt;流程图，是对某一个问题的定义、分析或解法的图形表示，图中用各种符号来表示操作、数据、流向以及装置等。&lt;/p&gt;
+&lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Markdown" scheme="http://mahoo12138.cn/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于office的一点点使用经验</title>
+    <link href="http://mahoo12138.cn/office.html"/>
+    <id>http://mahoo12138.cn/office.html</id>
+    <published>2019-12-05T14:12:00.000Z</published>
+    <updated>2020-03-23T03:40:20.799Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近在期末复习，会经常性做一些电子笔记。难免会用到微软的office全家桶，对于一个没有系统性学过这些软件的我来说，遇到很多问题全靠百度过活，百度最有用的功能就是百度经验了，其次就是百度文库，PPT白嫖就是爽！&lt;/p&gt;
+&lt;p&gt;然后嘛，我特开此贴记录一下我遇到的问题，很弱智&lt;
+        
+      
+    
+    </summary>
+    
+      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="office" scheme="http://mahoo12138.cn/tags/office/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>码字语法三千，我只取一瓢</title>
+    <link href="http://mahoo12138.cn/mk-1.html"/>
+    <id>http://mahoo12138.cn/mk-1.html</id>
+    <published>2019-12-04T13:02:43.000Z</published>
+    <updated>2020-03-23T03:40:20.770Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;脚注&quot;&gt;脚注&lt;/h2&gt;
+&lt;pre class=&quot; language-language-markdown&quot;&gt;&lt;code class=&quot;language-language-markdown&quot;&gt;这是一个链接到老黄博客的脚注[^1]。
+[^1]:
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Markdown" scheme="http://mahoo12138.cn/tags/Markdown/"/>
+    
+      <category term="LaTeX" scheme="http://mahoo12138.cn/tags/LaTeX/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python对文件进行批量重命名</title>
+    <link href="http://mahoo12138.cn/python-1.html"/>
+    <id>http://mahoo12138.cn/python-1.html</id>
+    <published>2019-12-03T13:48:43.000Z</published>
+    <updated>2020-03-23T03:40:20.837Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Python" scheme="http://mahoo12138.cn/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python学习Demo</title>
+    <link href="http://mahoo12138.cn/python-demo.html"/>
+    <id>http://mahoo12138.cn/python-demo.html</id>
+    <published>2019-12-02T13:45:43.000Z</published>
+    <updated>2020-03-23T03:40:20.844Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1&gt;Python学习Demo&lt;/h1&gt;
+&lt;h2 id=&quot;1-1-输入输出&quot;&gt;1.1 输入输出&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用input()函数获取键盘输入&lt;/p&gt;
+&lt;pre class=&quot; language-language-python&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Python" scheme="http://mahoo12138.cn/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>那个深秋的夜晚——与ADC的浪漫邂逅</title>
+    <link href="http://mahoo12138.cn/stm32-4.html"/>
+    <id>http://mahoo12138.cn/stm32-4.html</id>
+    <published>2019-11-17T15:12:43.000Z</published>
+    <updated>2020-03-23T03:40:20.859Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
+&lt;h2 id=&quot;ADC简介&quot;&gt;ADC简介&lt;/h2&gt;
+&lt;p&gt;STM32f103 系列有 3
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Win10子系统Ubuntu使用经验</title>
+    <link href="http://mahoo12138.cn/win10-ubuntu.html"/>
+    <id>http://mahoo12138.cn/win10-ubuntu.html</id>
+    <published>2019-11-13T12:54:20.617Z</published>
+    <updated>2020-03-23T03:40:20.887Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Win10-子系统-Ubuntu-安装-Apache2-错误&quot;&gt;Win10 子系统 Ubuntu 安装 Apache2 错误&lt;/h2&gt;
+&lt;p&gt;安装好 Apache2 后，通过命令&lt;code&gt;service apache2 start
+        
+      
+    
+    </summary>
+    
+      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Ubuntu" scheme="http://mahoo12138.cn/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Win10子系统Ubuntu下配置Jupyter Notebook并实现内网穿透</title>
+    <link href="http://mahoo12138.cn/jupyter.html"/>
+    <id>http://mahoo12138.cn/jupyter.html</id>
+    <published>2019-11-13T12:54:20.597Z</published>
+    <updated>2020-03-23T03:40:20.731Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前看到有朋友在服务器上，搭建了&lt;a href=&quot;https://jupyter.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Jupyter Notebook&lt;/a&gt;（一个笔记本，支持多种编程语言），觉得挺好的，自己也想弄个用用，无奈没有服务器，只好另寻他径。&lt;/p&gt;
+&lt;h2 id=&quot;启用Win10子系统&quot;&gt;启用Win10子系统&lt;/h2&gt;
+&lt;p&gt;网络上有很多教程，就不赘述了:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%90%AF%E7%94%A8Win10%E7%9A%84Linux%E5%AD%90%E7%B3%BB%E7%BB%9F&quot;&gt;手把手教你启用Win10的Linux子系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/c3025989c28c&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Win10上体验Linux子系统–Linux虚拟机的完美替代方案&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;安装Jupyter-Notebook&quot;&gt;安装Jupyter Notebook&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Jupyter Notebook" scheme="http://mahoo12138.cn/tags/Jupyter-Notebook/"/>
+    
+      <category term="内网穿透" scheme="http://mahoo12138.cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>盘点C语言中你不知道的小细节</title>
+    <link href="http://mahoo12138.cn/c-c-2.html"/>
+    <id>http://mahoo12138.cn/c-c-2.html</id>
+    <published>2019-11-12T12:48:43.000Z</published>
+    <updated>2020-03-23T03:40:20.679Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;0UL-1UL&quot;&gt;0UL/1UL&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;0UL 表示 无符号长整型 	0&lt;br&gt;
+1UL 表示 无符号长整型 	1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一般的 &lt;strong&gt;1&lt;/strong&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="C/C++" scheme="http://mahoo12138.cn/tags/C-C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STM32的SysTick定时器初体验</title>
+    <link href="http://mahoo12138.cn/stm32-3.html"/>
+    <id>http://mahoo12138.cn/stm32-3.html</id>
+    <published>2019-11-11T14:12:43.000Z</published>
+    <updated>2020-03-23T03:40:20.855Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
+&lt;h2 id=&quot;SysTick介绍&quot;&gt;SysTick介绍&lt;/h2&gt;
+&lt;p&gt;SysTick
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo个人博客SEO优化指南</title>
+    <link href="http://mahoo12138.cn/hexo-seo.html"/>
+    <id>http://mahoo12138.cn/hexo-seo.html</id>
+    <published>2019-11-06T14:48:43.000Z</published>
+    <updated>2020-03-23T03:40:20.707Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;安装sitemap&quot;&gt;安装sitemap&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Windows环境下直接在博客根目录打开&lt;code&gt;Git Bash&lt;/code&gt;，运行命令：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Hexo" scheme="http://mahoo12138.cn/tags/Hexo/"/>
+    
+      <category term="SEO" scheme="http://mahoo12138.cn/tags/SEO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>小记C语言中的宏定义及条件编译</title>
+    <link href="http://mahoo12138.cn/c-c-4.html"/>
+    <id>http://mahoo12138.cn/c-c-4.html</id>
+    <published>2019-11-02T08:48:43.000Z</published>
+    <updated>2020-03-23T03:40:20.690Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;普通宏定义&quot;&gt;普通宏定义&lt;/h2&gt;
+&lt;pre class=&quot; language-language-c&quot;&gt;&lt;code class=&quot;language-language-c&quot;&gt;#define PI 3.14
+#define a
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="C/C++" scheme="http://mahoo12138.cn/tags/C-C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>理解STM32的八种输入输出模式</title>
+    <link href="http://mahoo12138.cn/stm32-1.html"/>
+    <id>http://mahoo12138.cn/stm32-1.html</id>
+    <published>2019-10-31T02:12:43.000Z</published>
+    <updated>2020-03-23T03:40:20.847Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>STM32的中断优先级及中断编程</title>
+    <link href="http://mahoo12138.cn/stm32-2.html"/>
+    <id>http://mahoo12138.cn/stm32-2.html</id>
+    <published>2019-10-31T02:12:43.000Z</published>
+    <updated>2020-03-23T03:40:20.852Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于汇编语言的一点点学习笔记</title>
+    <link href="http://mahoo12138.cn/asm.html"/>
+    <id>http://mahoo12138.cn/asm.html</id>
+    <published>2019-10-30T02:12:43.000Z</published>
+    <updated>2020-03-23T03:40:20.668Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;汇编语言的主体是汇编指令。&lt;/p&gt;
+&lt;p&gt;汇编指令和机器指令的差别在于指令的表示方法上，汇编指令是机器指令便于记忆的书写格式。&lt;/p&gt;
+&lt;p&gt;汇编指令是机器指令的助记符，便于程序员更好的操作。&lt;/p&gt;
+&lt;h3
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="汇编" scheme="http://mahoo12138.cn/tags/%E6%B1%87%E7%BC%96/"/>
+    
+  </entry>
+  
+</feed>

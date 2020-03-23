@@ -1,0 +1,2405 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+	<meta name="baidu-site-verification" content="4duikEwdKV">
+	<meta name="google-site-verification" content="ITtW-qXOslWyS9zHoz5wrnatPs5ylPbgA4RDG4Hak4k">
+    <meta name="keywords" content="Flutter框架学习笔记, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="description" content="安装与配置
+
+
+在flutter官网下载其最新可用的安装包，点击跳转；
+
+
+将安装包zip解压到你想安装Flutter SDK的路径；
+
+
+添加环境变量，重启；
+
+
+PUB_HOSTED_URL=https://pub.flutter-io">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Flutter框架学习笔记 | 黄同学的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+	
+	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	
+	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">黄同学的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">黄同学的博客</div>
+        <div class="logo-desc">
+            
+            一切的恐惧都来源于无知！
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/mahoo12138" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/mahoo12138" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Flutter框架学习笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Flutter/">
+                                <span class="chip bg-color">Flutter</span>
+                            </a>
+                        
+                            <a href="/tags/Dart/">
+                                <span class="chip bg-color">Dart</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/学习笔记/" class="post-category">
+                                学习笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-08-05
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-03-23
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    8.5k
+                </div>
+                
+
+                
+
+                
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="安装与配置">安装与配置</h2>
+<ol>
+<li>
+<p>在flutter官网下载其最新可用的安装包，<a href="https://flutter.io/sdk-archive/#windows" target="_blank" rel="noopener">点击跳转</a>；</p>
+</li>
+<li>
+<p>将安装包zip解压到你想安装Flutter SDK的路径；</p>
+</li>
+<li>
+<p>添加环境变量，<strong>重启</strong>；</p>
+<ul>
+<li>
+<p><code>PUB_HOSTED_URL=https://pub.flutter-io.cn</code></p>
+</li>
+<li>
+<p><code>FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn</code></p>
+</li>
+<li>
+<p>在<code>Path</code>一栏，新建一个用户变量，填入flutter的路径地址</p>
+<p>如：<em>C:\Users\Mahoo\Lib\<strong>flutter\bin</strong></em></p>
+</li>
+</ul>
+<p><img src="https://img.mahoo12138.cn/hexo_images/Study/Flutter/1.png" alt=""></p>
+</li>
+<li>
+<p>打开Android Studio，选择Flie -&gt; Setting -&gt; Plugins，安装<strong>Flutter</strong>和<strong>Dart</strong>，如果插件列表加载失败，可尝试在File-&gt;setting-&gt;Appearance&amp;Behavior-&gt; System Settings-&gt;updates 中<strong>取消勾选 Use secure connection</strong>；</p>
+<p>如果还是无法显示通过下载zip安装包进行安装：</p>
+<ul>
+<li>
+<p>查看Android Studio版本；</p>
+<p><img src="https://img.mahoo12138.cn/hexo_images/Study/Flutter/2.png" alt=""></p>
+</li>
+<li>
+<p>在<a href="https://plugins.jetbrains.com/plugin/9212-flutter/versions" target="_blank" rel="noopener">jetbrains</a>下载对应版本的插件；</p>
+<p><img src="https://img.mahoo12138.cn/hexo_images/Study/Flutter/3.png" alt=""></p>
+</li>
+<li>
+<p>在Android Studio内安装即可；</p>
+<p><img src="https://img.mahoo12138.cn/hexo_images/Study/Flutter/4.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li>
+<p>在控制台（或者PowerShell）输入<code>flutter doctor</code>命令，验证是否已正确配置所有内容：</p>
+<p><img src="https://img.mahoo12138.cn/hexo_images/Study/Flutter/5.png" alt=""></p>
+<p>由于博主使用Android Studio进行开发，所以忽略IntelliJ IDEA的配置；</p>
+</li>
+<li>
+<p>选择Flie -&gt; New -&gt; New Flutter Project，开始你的第一个Flutter Application！</p>
+</li>
+</ol>
+<h2 id="学习基础篇">学习基础篇</h2>
+<h3 id="语言特性">语言特性</h3>
+<ul>
+<li><strong>Dart所有的东西都是对象</strong>， 即使是数字numbers、函数function、null也都是对象，所有的对象都继承自Object类。</li>
+<li><strong>Dart动态类型语言</strong>, 尽量给变量定义一个类型，会更安全，没有显示定义类型的变量在 debug 模式下会类型会是 dynamic(动态的)。</li>
+<li>Dart 在 running 之前解析你的所有代码，指定数据类型和编译时的常量，可以提高运行速度。</li>
+<li>Dart中的类和接口是统一的，类即接口，你可以继承一个类，也可以实现一个类（接口），自然也包含了良好的面向对象和并发编程的支持。</li>
+<li>Dart 提供了顶级函数(如：main())，同时还支持定义属于类或对象的函数（即 <em>静态</em> 和 <em>实例方法</em>）。你还可以在函数中定义函数（<em>嵌套</em> 或 <em>局部函数</em>）。</li>
+<li>Dart 没有 public、private、protected 这些关键字，变量名以"_"开头意味着对它的 lib 是私有的。</li>
+<li><strong>没有初始化的变量都会被赋予默认值 null。</strong></li>
+<li>final的值只能被设定一次。const 是一个编译时的常量，可以通过 const 来创建常量值，var c=const[];，这里 c 还是一个变量，只是被赋值了一个常量值，它还是可以赋其它值。实例变量可以是 final，但不能是  const。</li>
+<li>编程语言并不是孤立存在的，Dart也是这样，他由语言规范、虚拟机、类库和工具等组成：
+<ul>
+<li>SDK：SDK 包含 Dart VM、dart2js、Pub、库和工具。</li>
+<li>Dartium：内嵌 Dart VM 的 Chromium ，可以在浏览器中直接执行 dart 代码。</li>
+<li>Dart2js：将 Dart 代码编译为 JavaScript 的工具。</li>
+<li>Dart Editor：基于 Eclipse 的全功能 IDE，并包含以上所有工具。支持代码补全、代码导航、快速修正、重构、调试等功能。</li>
+</ul>
+</li>
+<li>Dart 中 <em>表达式</em> 和 <em>语句</em> 是有区别的，表达式有值而语句没有。比如条件表达式<code>expression condition ? expr1 : expr2</code> 中含有值 <code>expr1</code> 或 <code>expr2</code>。与 if-else 分支语句相比，<code>if-else</code> 分支语句则没有值。一个语句通常包含一个或多个表达式，但是一个表达式不能只包含一个语句。</li>
+</ul>
+<h3 id="注释">注释</h3>
+<ul>
+<li>
+<p>单行注释</p>
+<blockquote>
+<p>以<code>//</code>开头，Dart会忽略//与行尾之间的所有内容</p>
+</blockquote>
+<pre class=" language-language-dart"><code class="language-language-dart">//	这是一个单行注释
+</code></pre>
+</li>
+<li>
+<p>多行注释</p>
+<blockquote>
+<p>以<code>/*</code>开头，以<code>*/</code>结尾，介于其中的内容都会被忽略，且可以嵌套注释</p>
+</blockquote>
+<pre class=" language-language-dart"><code class="language-language-dart">/*
+/*	这是一个多行注释	*/
+*/
+</code></pre>
+</li>
+<li>
+<p>文档注释</p>
+<blockquote>
+<p>文档注释以<code>///</code>或<code>/**</code>开头，并可以通过<code>dartdoc</code>命令导出文档</p>
+</blockquote>
+<pre class=" language-language-dart"><code class="language-language-dart">///	这是一个文档注释
+</code></pre>
+</li>
+</ul>
+<h3 id="关键字">关键字</h3>
+<h4 id="33个保留字">33个保留字</h4>
+<p>不能使用保留字作为标识符</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">if</th>
+<th style="text-align:center">superdo</th>
+<th style="text-align:center">switch</th>
+<th style="text-align:center">assert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">else</td>
+<td style="text-align:center">in</td>
+<td style="text-align:center">this</td>
+<td style="text-align:center">enum</td>
+</tr>
+<tr>
+<td style="text-align:center">is</td>
+<td style="text-align:center">throw</td>
+<td style="text-align:center">true</td>
+<td style="text-align:center">break</td>
+</tr>
+<tr>
+<td style="text-align:center">new</td>
+<td style="text-align:center">try</td>
+<td style="text-align:center">case</td>
+<td style="text-align:center">extrends</td>
+</tr>
+<tr>
+<td style="text-align:center">null</td>
+<td style="text-align:center">typedef</td>
+<td style="text-align:center">catch</td>
+<td style="text-align:center">var</td>
+</tr>
+<tr>
+<td style="text-align:center">class</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">void</td>
+<td style="text-align:center">const</td>
+</tr>
+<tr>
+<td style="text-align:center">final</td>
+<td style="text-align:center">rethrow</td>
+<td style="text-align:center">while</td>
+<td style="text-align:center">continue</td>
+</tr>
+<tr>
+<td style="text-align:center">finally</td>
+<td style="text-align:center">return</td>
+<td style="text-align:center">with</td>
+<td style="text-align:center">for</td>
+</tr>
+<tr>
+<td style="text-align:center">default</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="内置标志符">内置标志符</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">abstract</th>
+<th style="text-align:center">deferred</th>
+<th style="text-align:center">as</th>
+<th style="text-align:center">dynamic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">covariant</td>
+<td style="text-align:center">export</td>
+<td style="text-align:center">external</td>
+<td style="text-align:center">factory</td>
+</tr>
+<tr>
+<td style="text-align:center">get</td>
+<td style="text-align:center">implements</td>
+<td style="text-align:center">import</td>
+<td style="text-align:center">library</td>
+</tr>
+<tr>
+<td style="text-align:center">operator</td>
+<td style="text-align:center">part</td>
+<td style="text-align:center">set</td>
+<td style="text-align:center">static</td>
+</tr>
+<tr>
+<td style="text-align:center">typedef</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="常量和变量">常量和变量</h3>
+<h4 id="Final-和-Const">Final 和 Const</h4>
+<p>如果你不想更改一个变量，可以使用关键字 <code>final</code> 或者 <code>const</code> 修饰变量，这两个关键字可以替代 <code>var</code> 关键字或者加在一个具体的类型前。一个 final 变量只可以被赋值一次；一个 const 变量是一个编译时常量（const 变量同时也是 final 的）。<strong>顶层的 final 变量或者类的 final 变量在其第一次使用的时候被初始化</strong>。</p>
+<ul>
+<li>flnal 或者 const 不能和 var 同时使用</li>
+</ul>
+<pre class=" language-language-dart"><code class="language-language-dart">// Members can't be declared to be both 'const' and 'var'
+ const var String Name = 'mahoo';
+ 
+ // Members can't be declared to be both 'final' and 'var'
+ final var String name = 'Mahoo';
+
+</code></pre>
+<ul>
+<li>
+<p>变量存储引用</p>
+<pre class=" language-language-dart"><code class="language-language-dart">dynamic name = '张三';
+</code></pre>
+</li>
+<li>
+<p>如果对象不限于单一类型（没有明确的类型），请使用Object或dynamic关键字</p>
+<pre class=" language-language-dart"><code class="language-language-dart">Object name = '张三';
+dynamic name = '李四';
+</code></pre>
+</li>
+</ul>
+<p>使用关键字 <code>const</code> 修饰变量表示该变量为 <strong>编译时常量</strong>。如果使用 const 修饰类中的变量，则必须加上 static 关键字，即 <code>static const</code>（注意：顺序不能颠倒（译者注））。在声明 const 变量时可以直接为其赋值，也可以使用其它的 const 变量为其赋值：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">const bar = 1000000; // 直接赋值
+const double atm = 1.01325 * bar; // 利用其它 const 变量赋值
+</code></pre>
+<p><code>const</code> 关键字不仅仅可以用来定义常量，还可以用来创建 <em>常量值</em>，该常量值可以赋予给任何变量。你也可以<strong>将构造函数声明为 const 的，这种类型的构造函数创建的对象是不可改变的</strong>。</p>
+<pre class=" language-language-dart"><code class="language-language-dart">var foo = const [];
+final bar = const [];
+const baz = []; // 相当于 const []
+</code></pre>
+<p>如果使用初始化表达式为常量赋值可以省略掉关键字 <code>const</code>，比如上面的常量 <code>baz</code> 的赋值就省略掉了 <code>const</code>。</p>
+<h3 id="数据类型">数据类型</h3>
+<h4 id="Map集合"><strong>Map集合</strong></h4>
+<p>一般来说，map是将键和值相关联的对象。键和值都可以是任何类型的对象。<br>
+<u>每个键只出现一次，但可以多次使用相同的值</u>。Dart支持map由map文字和map类型提供。</p>
+<ul>
+<li>直接声明</li>
+</ul>
+<p>用{}表示，里面写key和value，每组键值对中间用逗号隔开。</p>
+<pre class=" language-language-dart"><code class="language-language-dart">Map companys = {'Alibaba': '阿里巴巴', 'Tencent': '腾讯', 'baidu': '百度'};
+</code></pre>
+<ul>
+<li>
+<p>先声明，后赋值</p>
+<pre class=" language-language-dart"><code class="language-language-dart"> Map schoolsMap = new Map();
+ schoolsMap['first'] = '清华';
+ schoolsMap['second'] = '北大';
+ schoolsMap['third'] = '复旦';
+</code></pre>
+</li>
+<li>
+<p>Map API</p>
+<pre class=" language-language-dart"><code class="language-language-dart">// 指定键值对的参数类型
+var aMap = new Map<int, String>();
+
+// Map的赋值，中括号中是Key，这里可不是数组
+aMap[1] = '老黄';
+
+//Map中的键值对是唯一的
+//同Set不同，第二次输入的Key如果存在，Value会覆盖之前的数据
+aMap[1] = 'mahoo';
+
+// map里面的value可以相同
+aMap[2] = 'mahoo';
+
+// map里面value可以为空字符串
+aMap[3] = '';
+
+// map里面的value可以为null
+aMap[4] = null;
+
+print(aMap);
+
+// 检索Map是否含有某Key
+assert(aMap.containsKey(1));
+
+//删除某个键值对
+aMap.remove(1); 
+</code></pre>
+</li>
+</ul>
+<h4 id="字符串">字符串</h4>
+<ul>
+<li>
+<p>以 <code>${</code><em>表达式</em><code>}</code> 的形式使用表达式，如果表达式是一个标识符，可以省略掉 {}，如果表达式的结果为一个对象，则 Dart 会调用该对象的 <code>toString</code> 方法来获取一个字符串。</p>
+<pre class=" language-language-dart"><code class="language-language-dart">var height = 170.0;
+print('我的身高是$height'); //我的身高是170.0
+</code></pre>
+</li>
+</ul>
+<p>可以使用 <code>+</code> 运算符将两个字符串连接为一个，也可以将多个字符串挨着放一起变为一个：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">var s1 = '可以拼接'
+    '字符串'
+    "即便它们不在同一行。";
+assert(s1 == '可以拼接字符串即便它们不在同一行。');
+
+var s2 = '使用加号 + 运算符' + '也可以达到相同的效果。';
+assert(s2 == '使用加号 + 运算符也可以达到相同的效果。');
+</code></pre>
+<p>可以使用三个单引号或者三个双引号创建多行字符串：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">var s1 = '''
+你可以像这样创建多行字符串。
+''';
+
+var s2 = """这也是一个多行字符串。""";
+</code></pre>
+<p>在字符串前加上 <code>r</code> 作为前缀创建 “raw” 字符串（即不会被做任何处理（比如转义）的字符串）：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">var s = r'在 raw 字符串中，转义字符串 \n 会直接输出 “\n” 而不是转义为换行。';
+</code></pre>
+<h4 id="List数组">List数组</h4>
+<p>在Dart中，数组是List对象，所以称之为List</p>
+<pre class=" language-language-dart"><code class="language-language-dart">List list = [1, 2, 23];
+print(list);// 输出结果  [1, 2, 23]
+</code></pre>
+<p>创建一个编译时常量const的 list :</p>
+<pre class=" language-language-dart"><code class="language-language-dart">List constantList = const[10,3,15];
+print(constantList);// 输出结果  [10, 3, 15]
+</code></pre>
+<p>可以使用扩展操作符（<code>...</code>）将一个 List 中的所有元素插入到另一个 List 中：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">var list = [1, 2, 3];
+var list2 = [0, ...list];
+assert(list2.length == 4);
+</code></pre>
+<p>如果扩展操作符右边可能为 null ，你可以使用 null-aware 扩展操作符（<code>...?</code>）来避免产生异常：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">var list;
+var list2 = [0, ...?list];
+assert(list2.length == 1);
+</code></pre>
+<p>下面示例是使用 <strong>Collection If</strong> 来创建一个 List 的示例，它可能包含 3 个或 4 个元素：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">var nav = [
+  'Home',
+  'Furniture',
+  'Plants',
+  if (promoActive) 'Outlet'	//条件判断（if）
+];
+</code></pre>
+<p>下面示例是使用 <strong>Collection For</strong> 将列表中的元素修改后添加到另一个列表中的示例：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">var listOfInts = [1, 2, 3];
+var listOfStrings = [
+  '#0',
+  for (var i in listOfInts) '#$i'	//循环（for）
+];
+assert(listOfStrings[1] == '#1');
+</code></pre>
+<h4 id="Sets">Sets</h4>
+<p>Dart 中使用 Set 来表示无序且元素唯一的集合，Dart 支持 Set 字面量以及 Set 类型两种形式的 Set。</p>
+<pre class=" language-language-dart"><code class="language-language-dart">var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
+</code></pre>
+<p>可以使用在 <code>{}</code> 前加上类型参数的方式创建一个空的 Set，或者将 <code>{}</code> 赋值给一个 Set 类型的变量：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">var names = <String>{};// 类型+{}的形式创建Set。
+// Set<String> names = {}; // 声明类型变量的形式创建 Set。
+// var names = {}; // 这样的形式将创建一个 Map 而不是 Set。
+</code></pre>
+<h3 id="运算符">运算符</h3>
+<table>
+<thead>
+<tr>
+<th>描述</th>
+<th>操作符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>级联</td>
+<td>…</td>
+</tr>
+<tr>
+<td>如果为空</td>
+<td>??</td>
+</tr>
+</tbody>
+</table>
+<h4 id="as、is与is">as、is与is!</h4>
+<p><code>as</code> 判断属于某种类型<br>
+<code>is</code> 如果对象具有指定的类型，则为true<br>
+<code>is!</code> 如果对象具有指定的类型，则为false</p>
+<h4 id="assert">assert</h4>
+<p>如果布尔条件为false，则使用assert语句来中断正常执行。</p>
+<pre class=" language-language-dart"><code class="language-language-dart">assert(number < 100);
+// 确保这是一个 https 网址
+assert(urlString.startsWith('https'));
+// 要将消息附加到断言，请添加一个字符串作为第二个参数。
+assert(urlString.startsWith('https'),'URL ($urlString) should start with "https".');
+</code></pre>
+<h4 id="条件表达式">条件表达式</h4>
+<p><code>条件 ? 表达式 1 : 表达式 2</code>：如果条件为 true，执行表达式 1并返回执行结果，否则执行表达式 2 并返回执行结果。</p>
+<p><code>表达式 1 ?? 表达式 2</code>：如果<code>表达式 1 </code>为非 null 则返回其值，否则执行<code>表达式 2 </code>并返回其值。</p>
+<h3 id="函数">函数</h3>
+<p>Dart 是一种真正面向对象的语言，所以即便函数也是对象并且类型为 Function，这意味着函数可以被赋值给变量或者作为其它函数的参数。你也可以像调用函数一样调用 Dart 类的实例。</p>
+<p>下面是定义一个函数的例子：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">bool isNoble(int atomicNumber) {
+  return _nobleGases[atomicNumber] != null;
+}
+</code></pre>
+<p>虽然高效 Dart 指南建议在<a href="http://www.dartdoc.cn/guides/language/effective-dart/design#prefer-type-annotating-public-fields-and-top-level-variables-if-the-type-isnt-obvious" target="_blank" rel="noopener">公开的 API 上定义返回类型</a>，不过即便不定义，该函数也依然有效：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">isNoble(atomicNumber) {
+  return _nobleGases[atomicNumber] != null;
+}
+</code></pre>
+<p>如果函数体内只包含一个表达式，你可以使用简写语法：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">bool isNoble(int atomicNumber) => _nobleGases[atomicNumber] != null;
+</code></pre>
+<p><strong>语法 <code>=&gt; 表达式</code> 是 <code>{ return 表达式; }</code> 的简写，<code>=&gt;</code> 有时也称之为胖箭头语法。</strong></p>
+<h4 id="匿名函数"><strong>匿名函数</strong></h4>
+<ul>
+<li>下面的示例定义了一个<strong>具有一个未定义类型参数item的匿名函数</strong>，该函数被list中的每个item调用，输出一个字符串，该字符串包含指定索引处的值。</li>
+</ul>
+<pre class=" language-language-dart"><code class="language-language-dart">var list = ['apples', 'bananas', 'oranges'];
+ list.forEach((item) {
+     print('${list.indexOf(item)}: $item');
+ });
+</code></pre>
+<ul>
+<li>如果函数只包含一条语句，可以使用箭头符号=&gt;来缩短它, 比如上面的例子可以简写成：</li>
+</ul>
+<pre class=" language-language-dart"><code class="language-language-dart">list.forEach((item) => print('${list.indexOf(item)}: $item'));
+</code></pre>
+<h4 id="可选参数"><strong>可选参数</strong></h4>
+<p>可选的位置参数，用[]它们标记为可选的位置参数：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">String say(String from, String msg, [String device]) {
+    var result = '$from says $msg';
+    if (device != null) {
+       result = '$result with $device';
+    }
+    return result;
+}
+</code></pre>
+<ul>
+<li>下面是一个不带可选参数调用这个函数的例子：</li>
+</ul>
+<pre class=" language-language-dart"><code class="language-language-dart">say('Mahoo', 'Hello'); //结果是： Mahoo says Hello
+</code></pre>
+<ul>
+<li>下面是用第三个参数调用这个函数的例子：</li>
+</ul>
+<pre class=" language-language-dart"><code class="language-language-dart">say('Mahoo', 'Hello', 'Xiaomi'); //结果是：Mahoo says Hello with Xiaomi
+</code></pre>
+<h4 id="命名参数">命名参数</h4>
+<p>当你调用函数时，可以使用 <code>参数名: 参数值</code> 的形式来指定命名参数。例如：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">enableFlags(bold: true, hidden: false);
+</code></pre>
+<p><strong>定义函数时，使用 <code>{param1, param2, …}</code> 来指定命名参数</strong>：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">/// 设置 [bold] 和 [hidden] 标识……
+void enableFlags({bool bold, bool hidden}) {...}
+</code></pre>
+<p>虽然命名参数是可选参数的一种类型，但是你仍然可以使用 <a href="https://pub.flutter-io.cn/documentation/meta/latest/meta/required-constant.html" target="_blank" rel="noopener">@required</a> 注解来标识一个命名参数是必须的参数，此时调用者则必须为该参数提供一个值。例如：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">const Scrollbar({Key key, @required Widget child})
+</code></pre>
+<p>如果调用者想要通过 <code>Scrollbar</code> 的构造函数构造一个 Scrollbar 对象而不提供 <code>child</code> 参数，则会导致编译错误。</p>
+<h4 id="函数作为变量">函数作为变量</h4>
+<pre class=" language-language-dart"><code class="language-language-dart">// 声明变量
+var say = (str){
+  print(str);
+};
+// 变量赋值
+say("hi world");
+</code></pre>
+<h4 id="函数作为参数传递">函数作为参数传递</h4>
+<pre class=" language-language-dart"><code class="language-language-dart">// 这是一个函数，参数是一个函数
+void execute(var callback) {
+    callback();
+}
+// 执行该函数，传递一个函数
+execute(() => print("xxx"))
+</code></pre>
+<h4 id="词法作用域">词法作用域</h4>
+<p>Dart 是词法有作用域语言，变量的作用域在写代码的时候就确定了，大括号内定义的变量只能在大括号内访问，与 Java 类似。</p>
+<h4 id="词法闭包">词法闭包</h4>
+<p><em>闭包</em> 即一个函数对象，即使函数对象的调用在它原始作用域之外，依然能够访问在它词法作用域内的变量。</p>
+<p>函数可以封闭定义到它作用域内的变量。接下来的示例中，函数 <code>makeAdder()</code> 捕获了变量 <code>addBy</code>。无论函数在什么时候返回，它都可以使用捕获的 <code>addBy</code> 变量。</p>
+<pre class=" language-language-dart"><code class="language-language-dart">/// 返回一个将 [addBy] 添加到该函数参数的函数。
+Function makeAdder(num addBy) {
+  return (num i) => addBy + i;
+}
+
+void main() {
+  // 生成加 2 的函数。
+  var add2 = makeAdder(2);
+
+  // 生成加 4 的函数。
+  var add4 = makeAdder(4);
+
+  assert(add2(3) == 5);
+  assert(add4(3) == 7);
+}
+</code></pre>
+<h4 id="返回值">返回值</h4>
+<p>所有的函数都有返回值。没有显示返回语句的函数最后一行默认为执行 <code>return null;</code>。</p>
+<h3 id="类">类</h3>
+<ul>
+<li>
+<p>使用<code>?.</code>来确认前操作数不为空, 常用来替代<code>.</code> , 避免左边操作数为null引发异常。</p>
+<pre class=" language-language-dart"><code class="language-language-dart">var p = new Point(2,2)
+//	If p is non-null,set its y value to 4.
+p?.y = 4
+</code></pre>
+</li>
+<li>
+<p>使用runtimeType方法，在运行中获取对象的类型。该方法将返回Type 类型的变量。</p>
+<pre class=" language-language-dart"><code class="language-language-dart"> print('The type of p is ${p.runtimeType}');
+</code></pre>
+</li>
+</ul>
+<h4 id="Getter-和-Setter">Getter 和 Setter</h4>
+<p>Getter 和 Setter 是一对用来读写对象属性的特殊方法，上面说过实例对象的每一个属性都有一个隐式的 Getter 方法，如果为非 final 属性的话还会有一个 Setter 方法，你可以使用 <code>get</code> 和 <code>set</code> 关键字为额外的属性添加 Getter 和 Setter 方法：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">class Rectangle {
+  num left, top, width, height;
+
+  Rectangle(this.left, this.top, this.width, this.height);
+
+  // 定义两个计算产生的属性：right 和 bottom。
+  num get right => left + width;
+  set right(num value) => left = value - width;
+  num get bottom => top + height;
+  set bottom(num value) => top = value - height;
+}
+
+void main() {
+  var rect = Rectangle(3, 4, 20, 15);
+  assert(rect.left == 3);
+  rect.right = 12;
+  assert(rect.left == -8);
+}
+</code></pre>
+<p>使用 Getter 和 Setter 的好处是，你可以先使用你的实例变量，过一段时间过再将它们包裹成方法且不需要改动任何代码，即先定义后更改且不影响原有逻辑。</p>
+<h4 id="构造函数">构造函数</h4>
+<ul>
+<li>声明一个和类名相同的函数，来作为类的构造函数。</li>
+</ul>
+<pre class=" language-language-dart"><code class="language-language-dart">class Point {
+   num x;
+   num y;
+
+   Point(num x, num y) {
+      this.x = x;
+      this.y = y;
+   }
+}
+</code></pre>
+<ul>
+<li>this关键字指向了当前类的实例, 上面的代码可以简化为：</li>
+</ul>
+<pre class=" language-language-dart"><code class="language-language-dart">class Point {
+   num x;
+   num y;
+   
+   Point(this.x, this.y);
+ }
+</code></pre>
+<p>Dart 语言中，子类不会继承父类的命名构造函数。如果不显式提供子类的构造函数，系统就提供默认的构造函数。</p>
+<ul>
+<li><strong>命名的构造函数</strong></li>
+</ul>
+<p>使用命名构造函数从另一类或现有的数据中快速实现构造函数。</p>
+<pre class=" language-language-dart"><code class="language-language-dart">class Point {
+   num x;
+   num y;
+
+   Point(this.x, this.y);
+
+   // 命名构造函数Named constructor
+   Point.fromJson(Map json) {
+     x = json['x'];
+     y = json['y'];
+   }
+}
+</code></pre>
+<h4 id="noSuchMethod">noSuchMethod()</h4>
+<p>要在代码尝试使用不存在的方法或实例变量时检测或做出反应，您可以重写<code>noSuchMethod()</code></p>
+<pre class=" language-language-dart"><code class="language-language-dart">class TestMethod {
+// 除非你重写noSuchMethod，否则使用不存在的成员会导致NoSuchMethodError
+  @override
+  void noSuchMethod(Invocation invocation) {
+    print('You tried to use a non-existent member: ' +
+        '${invocation.memberName}');
+  }
+dynamic foo();
+}
+</code></pre>
+<h4 id="抽象类">抽象类</h4>
+<p>使用abstract修饰符定义抽象类（无法实例化的类）。抽象类对于定义接口非常有用，通常还有一些实现。如果希望抽象类看起来是可实例化的，请定义工厂构造函数。</p>
+<h4 id="静态方法">静态方法</h4>
+<p>静态方法（即类方法）不能被一个类的实例访问，同样地，静态方法内也不可以使用 <code>this</code>：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">import 'dart:math';
+
+class Point {
+  num x, y;
+  Point(this.x, this.y);
+
+  static num distanceBetween(Point a, Point b) {
+    var dx = a.x - b.x;
+    var dy = a.y - b.y;
+    return sqrt(dx * dx + dy * dy);
+  }
+}
+
+void main() {
+  var a = Point(2, 2);
+  var b = Point(4, 4);
+  var distance = Point.distanceBetween(a, b);
+  assert(2.8 < distance && distance < 2.9);
+  print(distance);
+}
+</code></pre>
+<h3 id="异常">异常</h3>
+<h4 id="throw">throw</h4>
+<pre class=" language-language-dart"><code class="language-language-dart">throw FormatException('Expected at least 1 section');
+</code></pre>
+<h4 id="try-catch">try catch</h4>
+<p>可以<code>使用on或catch</code>或<code>两者兼而有之</code>。使用<code>on时需要指定异常类型</code>。使用catch时，你的异常处理程序需要异常对象。</p>
+<pre class=" language-language-dart"><code class="language-language-dart">try {
+  breedMoreLlamas();
+} on OutOfLlamasException {
+  // A specific exception
+  buyMoreLlamas();
+} on Exception catch (e) {
+  // Anything else that is an exception
+  print('Unknown exception: $e');
+} catch (e) {
+  // No specified type, handles all
+  print('Something really unknown: $e');
+}
+</code></pre>
+<p>可以指定一个或两个参数catch()。第一个是抛出的异常，第二个是堆栈跟踪（StackTrace对象）。</p>
+<pre class=" language-language-dart"><code class="language-language-dart">try {
+  // ···
+} on Exception catch (e) {
+  print('Exception details:\n $e');
+} catch (e, s) {
+  print('Exception details:\n $e');
+  print('Stack trace:\n $s');
+}
+</code></pre>
+<h2 id="实战开发篇">实战开发篇</h2>
+<h3 id="注意">注意</h3>
+<ul>
+<li>使用了Material 风格的widget 就需要Scaffold作为根布局</li>
+</ul>
+<h3 id="导入包">导入包</h3>
+<pre class=" language-language-dart"><code class="language-language-dart">import 'package:flutter/material.dart';
+</code></pre>
+<p>导入了Material UI组件库，<a href="https://material.io/guidelines/" target="_blank" rel="noopener">Material</a>是一种标准的移动端和web端的视觉设计语言， Flutter默认提供了一套丰富的Material风格的UI组件。</p>
+<h3 id="应用入口">应用入口</h3>
+<pre class=" language-language-dart"><code class="language-language-dart">void main() => runApp(MyApp());
+</code></pre>
+<ul>
+<li>与C/C++、Java类似，Flutter 应用中<code>main</code>函数为应用程序的入口。<code>main</code>函数中调用了<code>runApp</code> 方法，它的功能是启动Flutter应用。<code>runApp</code>它接受一个<code>Widget</code>参数，在本示例中它是一个<code>MyApp</code>对象，<code>MyApp()</code>是Flutter应用的根组件。</li>
+<li><code>main</code>函数使用了(<code>=&gt;</code>)符号，这是Dart中单行函数或方法的简写。</li>
+</ul>
+<h3 id="应用结构">应用结构</h3>
+<pre class=" language-language-dart"><code class="language-language-dart">class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      //应用名称  
+      title: 'Flutter Demo', 
+      theme: new ThemeData(
+        //蓝色主题  
+        primarySwatch: Colors.blue,
+      ),
+      //应用首页路由  
+      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+</code></pre>
+<ul>
+<li><code>MyApp</code>类代表Flutter应用，它继承了 <code>StatelessWidget</code>类，这也就意味着应用本身也是一个widget。</li>
+<li>在Flutter中，大多数东西都是widget（后同“组件”或“部件”），包括对齐(alignment)、填充(padding)和布局(layout)等，它们都是以widget的形式提供。</li>
+<li>Flutter在构建页面时，会调用组件的<code>build</code>方法，widget的主要工作是提供一个build()方法来描述如何构建UI界面（通常是通过组合、拼装其它基础widget）。</li>
+<li><code>MaterialApp</code> 是Material库中提供的Flutter APP框架，通过它可以设置应用的名称、主题、语言、首页及路由列表等。<code>MaterialApp</code>也是一个widget。</li>
+<li><code>Scaffold</code> 是Material库中提供的页面脚手架，它包含导航栏和Body以及<code>FloatingActionButton</code>（如果需要的话）。 本书后面示例中，路由默认都是通过<code>Scaffold</code>创建。</li>
+<li><code>home</code> 为Flutter应用的首页，它也是一个widget。</li>
+</ul>
+<h4 id="首页">首页</h4>
+<pre class=" language-language-dart"><code class="language-language-dart">class MyHomePage extends StatefulWidget {
+     MyHomePage({Key key, this.title}) : super(key: key);
+     final String title;
+     @override
+     _MyHomePageState createState() => new _MyHomePageState();
+   }
+
+   class _MyHomePageState extends State<MyHomePage> {
+    ...
+   }
+</code></pre>
+<p><code>MyHomePage</code> 是Flutter应用的首页，它继承自<code>StatefulWidget</code>类，表示它是一个有状态的组件（Stateful widget）。其区别为：</p>
+<ol>
+<li>
+<p>Stateful widget可以拥有状态，这些状态在widget生命周期中是可以变的，而Stateless widget是不可变的。</p>
+</li>
+<li>
+<p>Stateful widget至少由两个类组成：</p>
+<ul>
+<li>一个<code>StatefulWidget</code>类。</li>
+<li>一个 <code>State</code>类； <code>StatefulWidget</code>类本身是不变的，但是<code>State</code>类中持有的状态在widget生命周期中可能会发生变化。</li>
+</ul>
+</li>
+</ol>
+<p><code>_MyHomePageState</code>类是<code>MyHomePage</code>类对应的状态类。看到这里，读者可能已经发现：和<code>MyApp</code> 类不同， <code>MyHomePage</code>类中并没有<code>build</code>方法，取而代之的是，<code>build</code>方法被挪到了<code>_MyHomePageState</code>方法中，至于为什么这么做，先留个疑问，在分析完完整代码后再来解答。</p>
+<h5 id="State类">State类</h5>
+<p>接下来，我们看看<code>_MyHomePageState</code>中都包含哪些东西：</p>
+<ol>
+<li>
+<p>该组件的状态。由于我们只需要维护一个点击次数计数器，所以定义一个<code>_counter</code>状态：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">int _counter = 0; //用于记录按钮点击的总次数
+</code></pre>
+<p><code>_counter</code> 为保存屏幕右下角带“+”号按钮点击次数的状态。</p>
+</li>
+<li>
+<p>设置状态的自增函数。</p>
+<pre class=" language-language-dart"><code class="language-language-dart">void _incrementCounter() {
+  setState(() {
+     _counter++;
+  });
+}
+</code></pre>
+<p>当按钮点击时，会调用此函数，该函数的作用是先自增<code>_counter</code>，然后调用<code>setState</code> 方法。<code>setState</code>方法的作用是通知Flutter框架，有状态发生了改变，Flutter框架收到通知后，会执行<code>build</code>方法来根据新的状态重新构建界面， Flutter 对此方法做了优化，使重新执行变的很快，所以你可以重新构建任何需要更新的东西，而无需分别去修改各个widget。</p>
+</li>
+<li>
+<p>构建UI界面</p>
+<p>构建UI界面的逻辑在<code>build</code>方法中，当<code>MyHomePage</code>第一次创建时，<code>_MyHomePageState</code>类会被创建，当初始化完成后，Flutter框架会调用Widget的<code>build</code>方法来构建widget树，最终将widget树渲染到设备屏幕上。所以，我们看看<code>_MyHomePageState</code>的<code>build</code>方法中都干了什么事：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text(widget.title),
+      ),
+      body: new Center(
+        child: new Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            new Text(
+              'You have pushed the button this many times:',
+            ),
+            new Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.display1,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: new FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: new Icon(Icons.add),
+      ),
+    );
+  }
+</code></pre>
+<ul>
+<li><code>Scaffold</code> 是 Material组件库中提供的一个组件，它提供了默认的导航栏、标题和包含主屏幕widget树（后同“组件树”或“部件树”）的<code>body</code>属性。组件树可以很复杂。</li>
+<li><code>body</code>的组件树中包含了一个<code>Center</code> 组件，<code>Center</code> 可以将其子组件树对齐到屏幕中心。此例中， <code>Center</code> 子组件是一个<code>Column</code> 组件，<code>Column</code>的作用是将其所有子组件沿屏幕垂直方向依次排列； 此例中<code>Column</code>子组件是两个 <code>Text</code>，第一个<code>Text</code> 显示固定文本 “You have pushed the button this many times:”，第二个<code>Text</code> 显示<code>_counter</code>状态的数值。</li>
+<li><code>floatingActionButton</code>是页面右下角的带“+”的悬浮按钮，它的<code>onPressed</code>属性接受一个回调函数，代表它被点击后的处理器，本例中直接将<code>_incrementCounter</code>方法作为其处理函数。</li>
+</ul>
+</li>
+</ol>
+<p>现在，我们将整个计数器执行流程串起来：当右下角的<code>floatingActionButton</code>按钮被点击之后，会调用<code>_incrementCounter</code>方法。在<code>_incrementCounter</code>方法中，首先会自增<code>_counter</code>计数器（状态），然后<code>setState</code>会通知Flutter框架状态发生变化，接着，Flutter框架会调用<code>build</code>方法以新的状态重新构建UI，最终显示在设备屏幕上。</p>
+<h4 id="路由管理">路由管理</h4>
+<p>路由(Route)在移动开发中通常指页面（Page），这跟web开发中单页应用的Route概念意义是相同的，Route在Android中通常指一个Activity，在iOS中指一个ViewController。所谓路由管理，就是管理页面之间如何跳转，通常也可被称为导航管理。Flutter中的路由管理和原生开发类似，无论是Android还是iOS，导航管理都会维护一个路由栈，路由入栈(push)操作对应打开一个新页面，路由出栈(pop)操作对应页面关闭操作，而路由管理主要是指如何来管理路由栈。</p>
+<h5 id="MaterialPageRoute">MaterialPageRoute</h5>
+<p><code>MaterialPageRoute</code>继承自<code>PageRoute</code>类，<code>PageRoute</code>类是一个抽象类，表示占有整个屏幕空间的一个模态路由页面，它还<strong>定义了路由构建及切换时过渡动画的相关接口及属性</strong>。<code>MaterialPageRoute</code> 是Material组件库提供的组件，它可以针对不同平台，实现与平台页面切换动画风格一致的路由切换动画：</p>
+<ul>
+<li>对于Android，当打开新页面时，新的页面会从屏幕底部滑动到屏幕顶部；当关闭页面时，当前页面会从屏幕顶部滑动到屏幕底部后消失，同时上一个页面会显示到屏幕上。</li>
+<li>对于iOS，当打开页面时，新的页面会从屏幕右侧边缘一致滑动到屏幕左边，直到新页面全部显示到屏幕上，而上一个页面则会从当前屏幕滑动到屏幕左侧而消失；当关闭页面时，正好相反，当前页面会从屏幕右侧滑出，同时上一个页面会从屏幕左侧滑入。</li>
+</ul>
+<p>下面我们介绍一下<code>MaterialPageRoute</code> 构造函数的各个参数的意义：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">  MaterialPageRoute({
+    WidgetBuilder builder,
+    RouteSettings settings,
+    bool maintainState = true,
+    bool fullscreenDialog = false,
+  })
+</code></pre>
+<ul>
+<li><code>builder</code> 是一个WidgetBuilder类型的回调函数，它的作用是构建路由页面的具体内容，返回值是一个widget。我们通常要实现此回调，返回新路由的实例。</li>
+<li><code>settings</code> 包含路由的配置信息，如路由名称、是否初始路由（首页）。</li>
+<li><code>maintainState</code>：默认情况下，当入栈一个新路由时，原来的路由仍然会被保存在内存中，如果想在路由没用的时候释放其所占用的所有资源，可以设置<code>maintainState</code>为false。</li>
+<li><code>fullscreenDialog</code>表示新的路由页面是否是一个全屏的模态对话框，在iOS中，如果<code>fullscreenDialog</code>为<code>true</code>，新页面将会从屏幕底部滑入（而不是水平方向）。</li>
+</ul>
+<blockquote>
+<p>如果想自定义路由切换动画，可以自己继承PageRoute来实现，我们将在后面介绍动画时，实现一个自定义的路由组件。</p>
+</blockquote>
+<h5 id="Navigator">Navigator</h5>
+<p><code>Navigator</code>是一个路由管理的组件，它提供了打开和退出路由页方法。<code>Navigator</code>通过一个栈来管理活动路由集合。通常<strong>当前屏幕显示的页面就是栈顶的路由</strong>。<code>Navigator</code>提供了一系列方法来管理路由栈，在此我们只介绍其最常用的两个方法：</p>
+<ul>
+<li>
+<h3 id="Future-push-BuildContext-context-Route-route">Future push(BuildContext context, Route route)</h3>
+<p>将给定的路由入栈（即打开新的页面），返回值是一个<code>Future</code>对象，用以接收新路由出栈（即关闭）时的返回数据。</p>
+</li>
+<li>
+<h3 id="bool-pop-BuildContext-context-result">bool pop(BuildContext context, [ result ])</h3>
+<p>将栈顶路由出栈，<code>result</code>为页面关闭时返回给上一个页面的数据。</p>
+</li>
+</ul>
+<p><code>Navigator</code> 还有很多其它方法，如<code>Navigator.replace</code>、<code>Navigator.popUntil</code>等，详情请参考API文档或SDK源码注释，在此不再赘述。</p>
+<h5 id="命名路由">命名路由</h5>
+<p>所谓“命名路由”（Named Route）即有名字的路由，我们可以先给路由起一个名字，然后就可以通过路由名字直接打开新的路由了，这为路由管理带来了一种直观、简单的方式。</p>
+<h6 id="路由表">路由表</h6>
+<p>要想使用命名路由，我们必须先提供并注册一个路由表（routing table），这样应用程序才知道哪个名字与哪个路由组件相对应。其实注册路由表就是给路由起名字，路由表的定义如下：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">Map<String, WidgetBuilder> routes;
+</code></pre>
+<p>它是一个<code>Map</code>，key为路由的名字，是个字符串；value是个<code>builder</code>回调函数，用于生成相应的路由widget。我们在通过路由名字打开新路由时，应用会根据路由名字在路由表中查找到对应的<code>WidgetBuilder</code>回调函数，然后调用该回调函数生成路由widget并返回。</p>
+<h6 id="注册路由表">注册路由表</h6>
+<p>路由表的注册方式很简单，我们回到之前“计数器”的示例，然后在<code>MyApp</code>类的<code>build</code>方法中找到<code>MaterialApp</code>，添加<code>routes</code>属性，代码如下：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">MaterialApp(
+  title: 'Flutter Demo',
+  theme: ThemeData(
+    primarySwatch: Colors.blue,
+  ),
+  //注册路由表
+  routes:{
+   "new_page":(context)=>NewRoute(),
+    ... // 省略其它路由注册信息
+  } ,
+  home: MyHomePage(title: 'Flutter Demo Home Page'),
+);
+</code></pre>
+<p>现在我们就完成了路由表的注册。上面的代码中<code>home</code>路由并没有使用命名路由，如果我们也想将<code>home</code>注册为命名路由应该怎么做呢？其实很简单，直接看代码：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">MaterialApp(
+  title: 'Flutter Demo',
+  initialRoute:"/", //名为"/"的路由作为应用的home(首页)
+  theme: ThemeData(
+    primarySwatch: Colors.blue,
+  ),
+  //注册路由表
+  routes:{
+   "new_page":(context)=>NewRoute(),
+   "/":(context)=> MyHomePage(title: 'Flutter Demo Home Page'), //注册首页路由
+  } 
+);
+</code></pre>
+<p>可以看到，我们只需在路由表中注册一下<code>MyHomePage</code>路由，然后将其名字作为<code>MaterialApp</code>的<code>initialRoute</code>属性值即可，该属性决定应用的初始路由页是哪一个命名路由。</p>
+<h6 id="通过路由名打开新路由页">通过路由名打开新路由页</h6>
+<p>要通过路由名称来打开新路由，可以使用<code>Navigator</code> 的<code>pushNamed</code>方法：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">Future pushNamed(BuildContext context, String routeName,{Object arguments})
+</code></pre>
+<p><code>Navigator</code> 除了<code>pushNamed</code>方法，还有<code>pushReplacementNamed</code>等其他管理命名路由的方法，读者可以自行查看API文档。接下来我们通过路由名来打开新的路由页，修改<code>FlatButton</code>的<code>onPressed</code>回调代码，改为：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">onPressed: () {
+  Navigator.pushNamed(context, "new_page");
+  //Navigator.push(context,
+  //  new MaterialPageRoute(builder: (context) {
+  //  return new NewRoute();
+  //}));  
+},
+</code></pre>
+<p>热重载应用，再次点击“open new route”按钮，依然可以打开新的路由页。</p>
+<h6 id="命名路由参数传递">命名路由参数传递</h6>
+<p>在Flutter最初的版本中，命名路由是不能传递参数的，后来才支持了参数；下面展示命名路由如何传递并获取路由参数：</p>
+<p>我们先注册一个路由：</p>
+<pre class=" language-language-dart"><code class="language-language-dart"> routes:{
+   "new_page":(context)=>EchoRoute(),
+  } ,
+</code></pre>
+<p>在路由页通过<code>RouteSetting</code>对象获取路由参数：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">class EchoRoute extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    //获取路由参数  
+    var args=ModalRoute.of(context).settings.arguments
+    //...省略无关代码
+  }
+}
+</code></pre>
+<p>在打开路由时传递参数</p>
+<pre class=" language-language-dart"><code class="language-language-dart">Navigator.of(context).pushNamed("new_page", arguments: "hi");
+</code></pre>
+<h6 id="适配">适配</h6>
+<p>假设我们也想将上面路由传参示例中的<code>TipRoute</code>路由页注册到路由表中，以便也可以通过路由名来打开它。但是，由于<code>TipRoute</code>接受一个<code>text</code> 参数，我们如何在不改变<code>TipRoute</code>源码的前提下适配这种情况？其实很简单：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">MaterialApp(
+  ... //省略无关代码
+  routes: {
+   "tip2": (context){
+     return TipRoute(text: ModalRoute.of(context).settings.arguments);
+   },
+ }, 
+);
+</code></pre>
+<h4 id="更新启动页">更新启动页</h4>
+<p>在Flutter框架加载时，Flutter会使用本地平台机制绘制启动页。此启动页将持续到Flutter渲染应用程序的第一帧时。</p>
+<blockquote>
+<p><strong>注意:</strong> 这意味着如果您不在应用程序的<code>main()</code>方法中调用<a href="https://docs.flutter.io/flutter/widgets/runApp.html" target="_blank" rel="noopener">runApp</a> 函数 （或者更具体地说，如果您不调用<a href="https://docs.flutter.io/flutter/dart-ui/Window/render.html" target="_blank" rel="noopener"><code>window.render</code></a>去响应<a href="https://docs.flutter.io/flutter/dart-ui/Window/onDrawFrame.html" target="_blank" rel="noopener"><code>window.onDrawFrame</code></a>）的话， 启动屏幕将永远持续显示。</p>
+</blockquote>
+<h5 id="Android">Android</h5>
+<p>要将启动屏幕（splash screen）添加到您的Flutter应用程序， 请导航至<code>.../android/app/src/main</code>。在<code>res/drawable/launch_background.xml</code>，通过自定义drawable来实现自定义启动界面（你也可以直接换一张图片）。</p>
+<h5 id="iOS">iOS</h5>
+<p>要将图片添加到启动屏幕（splash screen）的中心，请导航至<code>.../ios/Runner</code>。在<code>Assets.xcassets/LaunchImage.imageset</code>， 拖入图片，并命名为<code>LaunchImage.png</code>、<code>LaunchImage@2x.png</code>、<code>LaunchImage@3x.png</code>。 如果你使用不同的文件名，那您还必须更新同一目录中的<code>Contents.json</code>文件，图片的具体尺寸可以查看苹果官方的标准。</p>
+<h3 id="基础组件">基础组件</h3>
+<h4 id="Widget和Element">Widget和Element</h4>
+<p><strong>Widget只是UI元素的一个配置数据，并且一个Widget可以对应多个Element</strong>。这是因为同一个Widget对象可以被添加到UI树的不同部分，而真正渲染时，UI树的每一个<code>Element</code>节点都会对应一个Widget对象：</p>
+<ul>
+<li>Widget实际上就是<code>Element</code>的配置数据，Widget树实际上是一个配置树，而真正的UI渲染树是由<code>Element</code>构成；不过，由于<code>Element</code>是通过Widget生成的，所以它们之间有对应关系，在大多数场景，我们可以宽泛地认为Widget树就是指UI控件树或UI渲染树。</li>
+<li>一个Widget对象可以对应多个<code>Element</code>对象。这很好理解，根据同一份配置（Widget），可以创建多个实例（Element）。</li>
+</ul>
+<h4 id="mainAxisAlignment">mainAxisAlignment</h4>
+<p>MainAxisAlignment（主轴）和CrossAxisAlignment（交叉轴）常用于 Row 和 Column 控件中，主要是用来控制子控件排列的位置，并可以配合 textDirection 和 verticalDirection 属性来控制子控件排列的方向及改变 MainAxisAlignment 和CrossAxisAlignment的起始位置。</p>
+<p>在水平方向控件中，例如Row：<br>
+MainAxisAlignment是水平的，默认起始位置在左边，排列方向为从左至右，此时可以通过textDirection来改变MainAxisAlignment的起始位置和排列方向；<br>
+CrossAxisAlignment是垂直的，默认起始位置在中间，排列方向为从上至下，此时可以通过verticalDirection来改变CrossAxisAlignment的起始位置及排列方向；</p>
+<p>在垂直方向的控件中，例如Column：<br>
+MainAxisAlignment是垂直的，默认起始位置在上边，排列方向为从上至下，此时可以通过verticalDirection来改变MainAxisAlignment的起始位置及排列方向；<br>
+CrossAxisAlignment是水平的，默认起始位置在中间，此时可以通过textDirection来改变CrossAxisAlignment的起始位置；</p>
+<ul>
+<li>MainAxisAlignment.spaceBetween：使中间的各个子控件间距相等</li>
+<li>MainAxisAlignment.spaceAround：将主轴空白区域均分，使中间各个子控件间距相等，首尾子控件间距为中间子控件间距的一半</li>
+<li>MainAxisAlignment.start：子控件放在主轴开始位置（类似于android默认Linerlayout排列规则）</li>
+<li>MainAxisAlignment.end：将子控件放在主轴的结束位置</li>
+<li>MainAxisAlignment.center：将子控件放在主轴的中间位置</li>
+<li>MainAxisAlignment.spaceEvenly：将主轴空白区域均分，使各个子控件间距相等</li>
+</ul>
+<p>我们更改一下 <strong>textDirection</strong> 的值设置为文字方向从右至左：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">textDirection: TextDirection.rtl,
+</code></pre>
+<p>当然，<strong>verticalDirection</strong> 就是用来控制垂直方向的起始位置和排列方向。</p>
+<h4 id="抽屉菜单Drawer">抽屉菜单Drawer</h4>
+<p><code>Scaffold</code>的<code>drawer</code>和<code>endDrawer</code>属性可以分别接受一个Widget来作为页面的左、右抽屉菜单。如果开发者提供了抽屉菜单，那么当用户手指从屏幕左（或右）侧向里滑动时便可打开抽屉菜单。本节开始部分的示例中实现了一个左抽屉菜单<code>MyDrawer</code>，它的源码如下：</p>
+<pre class=" language-language-dart"><code class="language-language-dart">class MyDrawer extends StatelessWidget {
+  const MyDrawer({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: MediaQuery.removePadding(
+        context: context,
+        //移除抽屉菜单顶部默认留白
+        removeTop: true,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.only(top: 38.0),
+              child: Row(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: ClipOval(
+                      child: Image.asset(
+                        "imgs/avatar.png",
+                        width: 80,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    "Wendux",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            Expanded(
+              child: ListView(
+                children: <Widget>[
+                  ListTile(
+                    leading: const Icon(Icons.add),
+                    title: const Text('Add account'),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.settings),
+                    title: const Text('Manage accounts'),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Flutter/">
+                                    <span class="chip bg-color">Flutter</span>
+                                </a>
+                            
+                                <a href="/tags/Dart/">
+                                    <span class="chip bg-color">Dart</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'lwPUniWDWfHqPnwBSI0074mc-gzGzoHsz',
+        appKey: 'NLdnoMy829RTwf5CsXQ6y6N8',
+        notify: 'true' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'retro',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/android-splash.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Android学习之实现启动页面">
+                        
+                        <span class="card-title">Android学习之实现启动页面</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            实现一个启动页面
+在res/drawable下，创建一个xml文件，即为启动页面的效果：
+
+
+    
+
+    
+        
+    
+
+
+这里关于layer-list的使用可以移步：
+
+ layer-list的基本使用介绍
+
+例子
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-08-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Android/">
+                        <span class="chip bg-color">Android</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/android.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Android学习之掉坑记录">
+                        
+                        <span class="card-title">Android学习之掉坑记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Android8.0及以上版本自定义广播无法接收问题
+今天在学习广播过程中发现，自定义广播无效，由于使用的学习参考书是基于Android7.0的，所以，很自然的想到了可能由于版本问题，网上一查，果然。
+原因：Android8在静态广播的使用
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-07-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Android/">
+                        <span class="chip bg-color">Android</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">49.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "09";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/mahoo12138" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:mahoo12138@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://twitter.com/mahoo12138" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/mahoo12138" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+
+
+    <a href="https://weibo.com/mahoo12138" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/mahoo12138" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+    <a href="https://zhihu.com/people/mahoo12138" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://zhihu.com/people/mahoo12138" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "a7fc98ad"
+        });
+        daovoice('update');
+    </script>
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+</body>
+
+</html>

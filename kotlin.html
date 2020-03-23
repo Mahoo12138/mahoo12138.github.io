@@ -1,0 +1,2146 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+	<meta name="baidu-site-verification" content="4duikEwdKV">
+	<meta name="google-site-verification" content="ITtW-qXOslWyS9zHoz5wrnatPs5ylPbgA4RDG4Hak4k">
+    <meta name="keywords" content="Kotlin语言基础学习, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="description" content="简单介绍
+定义包
+包的声明应处于源文件顶部：
+package my.demo
+import java.util.*
+//...
+
+目录与包的结构无需匹配：源代码可以放在文件系统的任意位置。
+定义函数
+带有两个Int参数，返回Int函数：
+f">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Kotlin语言基础学习 | 黄同学的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+	
+	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	
+	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">黄同学的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">黄同学的博客</div>
+        <div class="logo-desc">
+            
+            一切的恐惧都来源于无知！
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			Contact
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/mahoo12138" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/mahoo12138" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Kotlin语言基础学习</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Kotlin/">
+                                <span class="chip bg-color">Kotlin</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/学习笔记/" class="post-category">
+                                学习笔记
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-07-14
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-03-23
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.2k
+                </div>
+                
+
+                
+
+                
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1>简单介绍</h1>
+<h2 id="定义包">定义包</h2>
+<p>包的声明应处于源文件顶部：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">package my.demo
+import java.util.*
+//...
+</code></pre>
+<p>目录与包的结构无需匹配：源代码可以放在文件系统的任意位置。</p>
+<h2 id="定义函数">定义函数</h2>
+<p>带有两个<code>Int</code>参数，返回<code>Int</code>函数：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">fun sum (a:Int,b:Int):Int{
+    return a+b
+}
+</code></pre>
+<a id="more"></a>
+<p>将表达式作为函数体，返回值类型自动推送的函数：</p>
+<pre class=" language-language-Kotlin"><code class="language-language-Kotlin">fun sum (a:Int,b:Int) = a + b
+</code></pre>
+<p>函数返回无意义的值：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">fun printSum(a:Int,b:Int){
+	println("sum $a and $b is ${a+b}")
+}
+</code></pre>
+<p><code>Unit</code>返回类型可以省略：</p>
+<pre class=" language-language-Kotlin"><code class="language-language-Kotlin">fun printSum(a:Int,b:Int){
+    println("sum of $a and $b is ${a+b}")
+}
+</code></pre>
+<h2 id="定义变量">定义变量</h2>
+<p>定义<strong>只读局部变量</strong>使用关键字<code>val</code>定义。只能为其赋值一次。</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">val a:Int = 1	//立即赋值
+val b = 2		//自动推出‘Int’类型
+val c:Int		//如果没有赋初值，则不能省略
+c = 2			//明确赋值
+</code></pre>
+<p>可重新赋值的变量使用<code>var</code>关键字：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var x = 5
+x += 1
+</code></pre>
+<p>顶层变量：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">val PI = 3.14
+var x = 0
+</code></pre>
+<h2 id="注释">注释</h2>
+<p>正如Java，Kotlin支持行注释及块注释。</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">// 这是一个行注释
+/* 这是一个多行的
+   块注释。*/
+</code></pre>
+<p>与Java不同的是，Kotlin的块注释可以嵌套。</p>
+<h2 id="使用字符串模板">使用字符串模板</h2>
+<p>使用字符串模板的符号为（<code>$</code>）。在<code>$</code>符号后面加上变量名或大括号中的表达式</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var a = 1
+
+val s1 = "a is $a"
+// 模板中的简单名称
+
+a = 2
+val s2 = "${s1.replace("is","was")},but now is $a"
+//模板中的任意表达式
+
+println(s2)
+</code></pre>
+<p>执行结果：</p>
+<pre><code>a was 1, but now is 2
+</code></pre>
+<h2 id="声明可空变量">声明可空变量</h2>
+<p>在Kotlin中当我们不确定某个属性或变量一定不为空时，我们就把它声明为<strong>可空变量</strong>.</p>
+<p>可空变量的特点：</p>
+<ul>
+<li>在声明的时候一定要用标准的声明格式定义。不能用可推断类型的简写；</li>
+<li>变量类型后面的<code>?</code>符号不能省略。不然就和普通的变量没区别了；</li>
+<li>其初始化的值可以为<code>null</code>或确定的变量值。</li>
+</ul>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">class Test{
+    //声明可空变量
+    var a:Int? = 0;
+    val b:Int? = null;
+}
+</code></pre>
+<h2 id="常量的用法">常量的用法</h2>
+<p>在Kotlin中<code>val</code>修饰的还不是常量，他只是个不能修改的变量。常量的定义还需要再<code>val</code>关键字前加上<code>const</code>关键字。即：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">const val NUM_A = 6
+</code></pre>
+<p>其特点：<strong><code>const</code>只能修饰<code>val</code>，不能修饰<code>var</code></strong>。</p>
+<p>声明常量的三种方式：</p>
+<ol>
+<li>在顶层声明；</li>
+<li>在<code>object</code>修饰的类中声明，在<code>kotlin</code>中称为<strong>对象声明</strong>；</li>
+<li>在伴生对象中声明。</li>
+</ol>
+<p>例如：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">// 1.顶层声明
+const val Str_A :String = "顶层声明"
+
+// 2.在object修饰的类中
+object TestConst{
+    const val Str_B = "object修饰的类中"
+}
+// 3.在伴生对象中
+class TestClass{
+    companion object{
+        const val Str_C = "在伴生对象中"
+    }
+}
+</code></pre>
+<h1>数据类型</h1>
+<h2 id="数值类型">数值类型</h2>
+<h3 id="1-数字的内置类型">1. 数字的内置类型</h3>
+<ul>
+<li><code>Byte </code> =&gt; 字节 =&gt; 8位</li>
+<li><code>Short</code> =&gt; 短整型 =&gt; 16位</li>
+<li><code>Int</code> =&gt; 整型 =&gt; 32位</li>
+<li><code>Long</code> =&gt; 长整型 =&gt; 64位</li>
+<li><code>Float</code> =&gt; 浮点型 =&gt; 32位</li>
+<li><code>Double</code> =&gt; 双精度浮点型 =&gt; 64位</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>长整型在数值末用大写字母L标记</li>
+<li>单精度浮点型由字母F（大写小写无妨）标记</li>
+</ul>
+<h3 id="2-进制数">2. 进制数</h3>
+<p>Kotlin不支持八进制数</p>
+<h3 id="3-数字类型字面常量的下划线">3. 数字类型字面常量的下划线</h3>
+<p>作用：<strong>分割数字进行分组，使数字常量更易读</strong></p>
+<p>例如：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">val oneMillion = 1_000_000
+val phoneNum = 155_0746_2014
+</code></pre>
+<h3 id="4-装箱与拆箱">4. 装箱与拆箱</h3>
+<p>装箱就是值类型转换为object类型，拆箱相反：object转化为值类型。在<code>kotlin</code>中，存在数字的装箱，但是没有拆箱。因为<code>kotlin</code>是没有基本数据类型的，<code>Kotlin</code>是万物皆对象的原则。</p>
+<p>在<code>kotlin</code>中要实现装箱操作，首先要了解可空引用。即类似<code>Int?</code>(只限数值类型)此类的：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">val numValue:Int = 1
+// 装箱的过程，装箱后其值是没有变化的
+val numValueBox:Int = numValue
+</code></pre>
+<h4 id="两个数值的比较">两个数值的比较</h4>
+<ul>
+<li>判断两个数值是否相等<code>==</code></li>
+<li>判断两个数值在内存中的地址是否相等<code>===</code></li>
+</ul>
+<h3 id="5-转换">5. 转换</h3>
+<ul>
+<li>
+<p>显式转换</p>
+<p>较小的类型不会被隐式转换位更大的类型，故而系统提供了显式转换：</p>
+<ul>
+<li><code>toByte()</code> =&gt; 转换为字节型</li>
+<li><code>toShort()</code> =&gt; 转换为短整型</li>
+<li><code>toInt()</code> =&gt; 转换为整型</li>
+<li><code>toLong()</code> =&gt; 转换为长整型</li>
+<li><code>toFloat()</code> =&gt; 转换为浮点型</li>
+<li><code>toDouble()</code> =&gt; 转换为双精度浮点型</li>
+<li><code>toChar()</code> =&gt; 转换为字符型</li>
+<li><code>toString()</code> =&gt; 转换为字符串型</li>
+</ul>
+</li>
+<li>
+<p>隐式转换</p>
+<p>类型是从上下文推断出来的，即算术运算则被重载为适当的转换：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">val num = 30L + 12
+println(num)
+// 30L + 12 -> Long + Int => Long
+</code></pre>
+</li>
+</ul>
+<h3 id="6-位运算符">6. 位运算符</h3>
+<p>// 。。。。。</p>
+<h2 id="布尔类型">布尔类型</h2>
+<h3 id="1-关键字">1. 关键字</h3>
+<p><code>Boolean</code>关键字表示布尔类型，并且其值有<code>ture</code>和<code>false</code></p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var isNum:Boolean
+isNum = false
+</code></pre>
+<h3 id="2-逻辑操作符">2. 逻辑操作符</h3>
+<ul>
+<li>‘||’ =&gt; 逻辑或</li>
+<li>‘&amp;&amp;’ =&gt; 逻辑与</li>
+<li>‘ ! ’ =&gt; 逻辑非</li>
+</ul>
+<h2 id="字符型">字符型</h2>
+<h3 id="1-关键字-2">1. 关键字</h3>
+<p><code>Char</code>表示字符型，字符变量用单引号(’’)表示。并且不能直接视为数字，不过可以通过显式转换为数字：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var char_1:Char
+char = 'a'
+char = 1	//报错
+</code></pre>
+<h3 id="2-显示转换为其他类型">2. 显示转换为其他类型</h3>
+<p>字符型的变量不仅会可以转换为数字，同时也可转换为其他类型：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var var1 = char_1.toByte()
+var var2 = char_1.toInt()
+//...
+</code></pre>
+<p>除了类型转换，当变量为英文字母时还支持大小写转换：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var charA:Char = 'a'
+var charB:Char = 'B'
+var result:Char
+
+result = charA.toUpperCase()	//转换为大写
+result = charB.toLowerCase()	//转换为小写
+</code></pre>
+<h3 id="3-字符转义">3. 字符转义</h3>
+<ul>
+<li><code>\t</code> =&gt; 制表符</li>
+<li><code>\n</code> =&gt; 换行符</li>
+<li><code>\b</code>=&gt; 退格键</li>
+<li><code>\r</code>=&gt; 回车键</li>
+<li><code>\\</code>=&gt; 反斜杠</li>
+<li><code>\'</code>=&gt; 单引号</li>
+<li><code>\$</code> =&gt; 美元符号</li>
+<li>**其他的任何字符请使用Unicode转义序列语法，例如：’\uFF00’</li>
+</ul>
+<h2 id="字符串类型">字符串类型</h2>
+<h3 id="1-关键字-3">1. 关键字</h3>
+<p><code>String</code>表示字符串类型。其实不可变的。所以字符串的元素可以通过索引操作的字符：<code>str[index]</code>来访问。可以使用<code>for</code>循环迭代字符串：其中<code>str[index]</code>中的<code>str</code>要为目标字符串，<code>index</code>才能为索引：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">val str:Sting = "kotlin"
+//迭代
+for (s in str){
+    print(s)
+    print("\t")
+}
+</code></pre>
+<h3 id="2-字符串字面量">2. 字符串字面量</h3>
+<p>在<code>Kotlin</code>中，字符串字面量有两种类型：</p>
+<ul>
+<li>包含转义字符的字符串，转义包括（\t, \n等），不包括转义字符串的也同属此类型</li>
+<li>包含任意字符的字符串，有三重引号（<code>"""..."""</code>）表示</li>
+</ul>
+<h2 id="数组型">数组型</h2>
+<ul>
+<li><code>Kotlin中</code>数组由<code>Array&lt;T&gt;表示</code></li>
+<li>创建数组的三个函数：
+<ul>
+<li><code>arrayOf()</code></li>
+<li><code>arrayOfNulls()</code></li>
+<li>工厂函数（<code>Array()</code>）</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-arrayOf">1. arrayOf()</h3>
+<p>创建一个数组，参数是一个可变参数的泛型对象：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">val arr1 = arrayOf(1,2,3,4,5)
+for (v in arr1){
+    print(v)
+    print("\t")
+}
+</code></pre>
+<h3 id="2-arrayOfNulls">2. arrayOfNulls()</h3>
+<p>用于创建一个指定数据类型且可以为空元素的，给定元素个数的数组：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var arr2 = arrayOfNulls<Int>(3)
+// 若不予数组赋值则arr3内元素皆为null
+</code></pre>
+<h3 id="3-工厂函数">3. 工厂函数</h3>
+<ul>
+<li>使用工厂函数<code>Array()</code>，它使用数组大小和返回给定其索引的每个数组元素的初始值的函数。</li>
+<li><code>Array()</code>=&gt; 第一个参数表示的个数，第二个参数则为使用其下标组成的表达式</li>
+</ul>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var arr3 = Array(5,{index -> (index*2).toString()})
+for (v in arr4){
+    print(v)
+    print("\t")
+}
+</code></pre>
+<p>执行结果：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">0	2	4	6	8
+</code></pre>
+<h3 id="4-原始类型数组">4. 原始类型数组</h3>
+<p><code>kotlin</code>还有专门的类来表示原始类型的数组，没有装箱开销，它们分别是：</p>
+<ul>
+<li><code>ByteArray</code> =&gt; 表示字节型数组</li>
+<li><code>ShortArray</code> =&gt; 表示短整型数组</li>
+<li><code>IntArray</code> =&gt; 表示整型数组</li>
+<li><code>LongArray</code> =&gt; 表示长整型数组</li>
+<li><code>BooleanArray</code> =&gt; 表示布尔型数组</li>
+<li><code>CharArray</code> =&gt; 表示字符型数组</li>
+<li><code>FloatArray</code> =&gt; 表示浮点型数组</li>
+<li><code>DoubleArray</code> =&gt; 表示双精度浮点型数组</li>
+</ul>
+<p><strong><code>Kotlin</code>不支持字符串类型这种原始类型的数组</strong></p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var intArr:IntArray = intArrayOf(1,2,3,4,5)
+
+var charArr:CharArray = charArrayOf('a','b','c','1','2')
+</code></pre>
+<h1>控制语句</h1>
+<h2 id="if语句">if语句</h2>
+<p><code>kotlin</code>中的<code>if</code>语句很灵活，除了普通的判断，还可以实现表达式（实现三元运算符），及作为一个块的作用</p>
+<h3 id="1-传统写法">1. 传统写法</h3>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var numA = 2
+if (numA == 2){
+    println($numA)
+}else{
+    println($numA-1)
+}
+</code></pre>
+<h3 id="2-Kotlin中的三元运算符">2. <code>Kotlin</code>中的三元运算符</h3>
+<p>在<code>Kotlin</code>中其实不存在三元运算符（<em>condition ？ then ： else</em>）这种运算，那是因为if语句的特性：<code>if</code>表达式会返回一个值，所以不需要三元运算符。</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var numB:Int = if (numA > 2) 3 else 5
+println(numB)
+</code></pre>
+<h3 id="3-作为一个块结构，并且最后一句表达式为块的值">3. 作为一个块结构，并且最后一句表达式为块的值</h3>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var numA:Int = 2
+var numC:Int = if(numA > 2){
+    numA = 10
+	numA
+}else if (numA == 2){
+    numA = 20
+    numA
+}else{
+    numA = 30
+    numA
+}
+</code></pre>
+<h2 id="for语句">for语句</h2>
+<ul>
+<li><code>for</code>循环提供迭代器用来遍历任何东西</li>
+<li><code>for</code>循环数组被编译为一个基于索引的循环，它不会创建一个迭代器对象</li>
+</ul>
+<h3 id="规则">规则</h3>
+<ul>
+<li>
+<p>递增</p>
+<ul>
+<li>
+<p>关键字：<code>until</code></p>
+</li>
+<li>
+<p>范围：<code>until[n,m]</code> =&gt; 大于等于n，小于m</p>
+</li>
+<li>
+<p>例如：</p>
+</li>
+</ul>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">// 循环5次，且步长为1的递增
+for (i in 0 until 5){
+    print(i)
+}
+</code></pre>
+</li>
+<li>
+<p>递减</p>
+<ul>
+<li>关键字：<code>downTo</code></li>
+</ul>
+<ul>
+<li>
+<p>范围：<code>downTo[n,m]</code> =&gt; 大于等于n，小于等于m，n &gt; m</p>
+</li>
+<li>
+<p>例如：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">// 循环5次，且步长为1的递减
+for(i in 15 downTo 11){
+    print(i)
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>符号(<code>..</code>)</p>
+<p>表示递增循环的另外一种操作</p>
+<ul>
+<li>
+<p>使用符号<code>..</code></p>
+</li>
+<li>
+<p>范围：<code>..[n,m]</code> =&gt; 即<code>大于等于n,小于等于m</code></p>
+</li>
+<li>
+<p>和<code>until</code>有区别，但更为简便，且范围不同</p>
+</li>
+<li>
+<p>例如：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">for (i in 20..25){
+    print(i)
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>设置步长</p>
+<ul>
+<li>
+<p>关键字：<code>step</code></p>
+</li>
+<li>
+<p>例如：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">for (i in 10 until 16 step 2){
+    print(i)
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="遍历字符串">遍历字符串</h3>
+<p>例如：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">for (i in "asdfghjk"){
+    print(i)
+}
+</code></pre>
+<h3 id="遍历数组">遍历数组</h3>
+<p>例如：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var arrayList = arrayOf(1,3,5,7,9)
+for (i in arrayList){
+    print(i)
+}
+</code></pre>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var arrayList = arrayOf(1,3,5,7,9)
+for (i in arrayListTwo.indices){
+    println("arrayList[$i] => " + arrayList[i])
+}
+</code></pre>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var arrayList = arrayOf(1,3,5,7,9)
+for ((index,value) in arrayList.withIndex()){
+    println("index => $index \t value => $value")
+}
+</code></pre>
+<h4 id="使用列表或数组的扩展函数遍历">使用列表或数组的扩展函数遍历</h4>
+<ul>
+<li>数组或列表有一个成员或扩展函数<code>iterator()</code>实现了<code>Iterator&lt;T&gt;</code>接口，且该接口提供了<code>next()</code>与<code>hasNext()</code>两个成员或扩展函数</li>
+<li>其一般和<code>while</code>循环一起使用</li>
+</ul>
+<p>例如：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var arrayList = arrayOf(2,'a',3,false,9)
+var iterator: Iterator<Any> = arrayList.iterator()
+
+while (iterator.hasNext()){
+    println(iterator.next())
+}
+</code></pre>
+<h2 id="when语句">when语句</h2>
+<p><code>when</code>语句类似于C类语言中的<code>switch</code>语句，不过比它更强大。</p>
+<h3 id="实现switch语句功能">实现switch语句功能</h3>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">when(5){
+    1 -> {
+        print("1")
+    }
+    2 -> {
+        print("2")
+    }
+    esle -> {
+        print("5")
+    }
+}
+</code></pre>
+<h3 id="与逗号结合">与逗号结合</h3>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">when(1){
+    // 即值为1，2，3时都输出1
+    1,2,3 -> {
+        print("1")
+    }
+    else -> {
+        print("0")
+    }
+}
+</code></pre>
+<h3 id="条件可以使用任意表达式">条件可以使用任意表达式</h3>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var num:Int = 5
+when (num > 5){
+    true -> {
+        print("num > 5")
+    }
+    false -> {
+        print("num < 5")
+    }
+    else -> {
+        print("num = 5")
+    }
+}
+</code></pre>
+<h3 id="检查值是否存在于集合或数组中">检查值是否存在于集合或数组中</h3>
+<ol>
+<li>
+<p>操作符</p>
+<ul>
+<li><code>in</code>在</li>
+<li><code>!in</code>不在</li>
+</ul>
+</li>
+<li>
+<p>限定：只适用于数值类型</p>
+</li>
+</ol>
+<p>例如：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var arrayList = arayOf(1,2,3,4,5)
+when(1){
+    in arrayList.toIntArray() -> println("1 存在于arrayList数组中")
+    in 0 .. 10 -> println("1 属于0~10中")
+    !in 5 ..10 -> println("1 不属于5~10中")
+	else -> println("都错了！")
+}
+</code></pre>
+<h3 id="检查值是否为指定类型的值">检查值是否为指定类型的值</h3>
+<ol>
+<li>
+<p>操作符</p>
+<ul>
+<li>是<code>is</code></li>
+<li>不是<code>!is</code></li>
+</ul>
+</li>
+<li>
+<p>注意：<code>kotlin</code>的智能转换可以访问类型的方法和属性</p>
+</li>
+</ol>
+<p>例如：</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">when("abc"){
+    is String -> println("是字符串")
+    else -> println("不是字符串")
+}
+//智能转换
+var a:Int = 2
+when(a){
+    !is Int -> println("$a 不是一个整型的数")
+    else -> {
+        a = a.shl(2)
+        println("a => $a")
+    }
+}
+</code></pre>
+<h3 id="不使用表达式的when语句">不使用表达式的when语句</h3>
+<p>表示为最简单的布尔表达式</p>
+<pre class=" language-language-kotlin"><code class="language-language-kotlin">var array = arrayOfNulls<String>(3)
+when{
+    true -> {
+        for (i in array){
+            print(" $i \t")
+        }
+        println()
+    }
+    else -> {
+        
+    }
+}
+</code></pre>
+<h2 id="其它语句">其它语句</h2>
+<ul>
+<li>
+<p>while语句</p>
+</li>
+<li>
+<p>do while语句</p>
+</li>
+<li>
+<p>跳转语句：return，break，continue</p>
+</li>
+</ul>
+<p>与C类语言一致，不做赘述。</p>
+<h1>操作符</h1>
+<h2 id="一元操作符">一元操作符</h2>
+<h3 id="简单一元">简单一元</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">重载</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+a</td>
+<td style="text-align:center">a.unaryPlus()</td>
+</tr>
+<tr>
+<td style="text-align:center">-a</td>
+<td style="text-align:center">a.unaryMinus()</td>
+</tr>
+<tr>
+<td style="text-align:center">!a</td>
+<td style="text-align:center">a.not()</td>
+</tr>
+</tbody>
+</table>
+<h3 id="复杂一元">复杂一元</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">重载</th>
+<th style="text-align:center">表示</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a++</td>
+<td style="text-align:center">a.inc()</td>
+<td style="text-align:center">a = a.also{ a.inc() }</td>
+</tr>
+<tr>
+<td style="text-align:center">a–</td>
+<td style="text-align:center">a.dec()</td>
+<td style="text-align:center">a = a.also{ a.dec() }</td>
+</tr>
+<tr>
+<td style="text-align:center">++a</td>
+<td style="text-align:center">a.inc()</td>
+<td style="text-align:center">a = a.inc().also{ a = it }</td>
+</tr>
+<tr>
+<td style="text-align:center">–a</td>
+<td style="text-align:center">a.dec()</td>
+<td style="text-align:center">a = a.dec().also{ a = it }</td>
+</tr>
+</tbody>
+</table>
+<h2 id="二元操作符">二元操作符</h2>
+<h3 id="简单二元">简单二元</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">重载</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a + b</td>
+<td style="text-align:center">a.plus(b)</td>
+</tr>
+<tr>
+<td style="text-align:center">a - b</td>
+<td style="text-align:center">a.minus(b)</td>
+</tr>
+<tr>
+<td style="text-align:center">a * b</td>
+<td style="text-align:center">a.tiems(b)</td>
+</tr>
+<tr>
+<td style="text-align:center">a / b</td>
+<td style="text-align:center">a.div(b)</td>
+</tr>
+<tr>
+<td style="text-align:center">a % b</td>
+<td style="text-align:center">a.rem(b)</td>
+</tr>
+<tr>
+<td style="text-align:center">a … b</td>
+<td style="text-align:center">a.rangTo(b)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="复杂二元">复杂二元</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">表示</th>
+<th style="text-align:center">重载</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a += b</td>
+<td style="text-align:center">a = a + b</td>
+<td style="text-align:center">a = a.plus(b)</td>
+</tr>
+<tr>
+<td style="text-align:center">a -= b</td>
+<td style="text-align:center">a = a - b</td>
+<td style="text-align:center">a = a.minus(b)</td>
+</tr>
+<tr>
+<td style="text-align:center">a *= b</td>
+<td style="text-align:center">a = a * b</td>
+<td style="text-align:center">a = a.tiems(b)</td>
+</tr>
+<tr>
+<td style="text-align:center">a /= b</td>
+<td style="text-align:center">a = a / b</td>
+<td style="text-align:center">a = a.div(b)</td>
+</tr>
+<tr>
+<td style="text-align:center">a %= b</td>
+<td style="text-align:center">a = a % b</td>
+<td style="text-align:center">a = a.rem(b)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="区间操作">区间操作</h2>
+<p>区间操作符：<code>..</code>，注意两个操作数都是整型</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">操作符</th>
+<th style="text-align:center">表示</th>
+<th style="text-align:center">重载</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">a … b</td>
+<td style="text-align:center">a 到 b 中间的值</td>
+<td style="text-align:center">a.rangeTo(b)</td>
+</tr>
+</tbody>
+</table>
+<h1>进阶操作</h1>
+<h2 id="可空类型，空安全">可空类型，空安全</h2>
+<h3 id="定义一个可空类型的变量">定义一个可空类型的变量</h3>
+<blockquote>
+<p><strong>修饰符 变量名 : 类型? = 值</strong></p>
+</blockquote>
+<h3 id="判断可空类型的两种方式">判断可空类型的两种方式</h3>
+<ul>
+<li>
+<p>if…else… 判断</p>
+</li>
+<li>
+<p>使用符号<code>?.</code>判断</p>
+<p>该符号的用法为：<code>可空类型变量?.属性/方法</code>。如果可空类型变量为null是，返回null；</p>
+<p>这种方法大量用于<strong>链式操作</strong>的用法中，能有效避免<code>空引用异常</code>，因为只要链式中有一个<code>null</code>，则整个表达式都为<code>null</code>。</p>
+</li>
+</ul>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Kotlin/">
+                                    <span class="chip bg-color">Kotlin</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'lwPUniWDWfHqPnwBSI0074mc-gzGzoHsz',
+        appKey: 'NLdnoMy829RTwf5CsXQ6y6N8',
+        notify: 'true' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'retro',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/linux-1.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Ubuntu使用笔记">
+                        
+                        <span class="card-title">Ubuntu使用笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            基本操作
+基础命令
+
+ls：列举当前目录
+
+-a ：显示所有的文件，包括隐藏文件
+-b ：把文件名中不可输出的字符用反斜杠加字符编号形式输出
+-l ：显示文件详细信息（命令ll相当于ls -l）
+
+
+cd：回到当前用户工作目录
+
+.：当前目
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-07-17
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                    <a href="/tags/Ubuntu/">
+                        <span class="chip bg-color">Ubuntu</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/git.html">
+                    <div class="card-image">
+                        
+                        <img src="https://img.mahoo12138.cn/hexo_images/cover/git.png" class="responsive-img" alt="Git学习使用方法及错误记录">
+                        
+                        <span class="card-title">Git学习使用方法及错误记录</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            git使用
+
+
+初始化仓库
+git init
+
+
+
+添加文件/文件夹到本地仓库
+git add file.txt
+git add Directory
+git add .	//添加当前目录所有项
+
+
+
+提交更改到本地仓库
+git commit
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-06-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">49.9k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "6";
+                    var startDate = "09";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/mahoo12138" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:mahoo12138@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+    <a href="https://twitter.com/mahoo12138" class="tooltipped" target="_blank" data-tooltip="关注我的Twitter: https://twitter.com/mahoo12138" data-position="top" data-delay="50">
+        <i class="fab fa-twitter"></i>
+    </a>
+
+
+
+
+
+    <a href="https://weibo.com/mahoo12138" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/mahoo12138" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+    <a href="https://zhihu.com/people/mahoo12138" class="tooltipped" target="_blank" data-tooltip="关注我的知乎: https://zhihu.com/people/mahoo12138" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "a7fc98ad"
+        });
+        daovoice('update');
+    </script>
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+</body>
+
+</html>
