@@ -314,7 +314,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img.mahoo12138.cn/hexo_images/cover/stm32.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/cover/stm32.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -511,7 +511,7 @@
 </ul>
 <p>信号进入芯片内部后，既没有接上拉电阻也没有接下拉电阻，经由触发器输入。</p>
 <p>配置成这个模式后，用电压变量引脚电压为1点几伏，<strong>这是个不确定值</strong>，完全由外部的输入决定，一般接按键的时候用的是这个模式。由于其输入阻抗比较大，一般也可以把这种模式用于标准的通讯协议，比如IIC、USART等。  如果在该引脚悬空（在无信号输入）的情况下，读取该端口的电平是不确定的。</p>
-<p><img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/GPIO.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/Study/STM32/GPIO.png" alt=""></p>
 <h2 id="输出模式">输出模式</h2>
 <ul>
 <li>
@@ -551,7 +551,7 @@
 <li><strong>开漏输出：只可以输出强低电平，高电平得靠外部电阻拉高。输出端相当于三极管的集电极。适合于做电流型的驱动，其吸收电流的能力相对强(一般20ma以内)；</strong></li>
 <li><strong>推挽输出:可以输出强高、低电平，连接数字器件。</strong></li>
 </ul>
-<p><img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/Push-Pull.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/Study/STM32/Push-Pull.png" alt=""></p>
 <p>该图中左边的便是推挽输出模式，其中比较器输出高电平时下面的PNP三极管截止，而上面NPN三极管导通，输出电平VS+；当比较器输出低电平时则恰恰相反，PNP三极管导通，输出和地相连，为低电平。右边的则可以理解为开漏输出形式，需要接上拉。</p>
 <ul>
 <li>STM32中选用怎样选择I/O模式</li>
@@ -1039,63 +1039,10 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/c-c-4.html">
-                    <div class="card-image">
-                        
-                        <img src="https://img.mahoo12138.cn/hexo_images/cover/c.jpg" class="responsive-img" alt="小记C语言中的宏定义及条件编译">
-                        
-                        <span class="card-title">小记C语言中的宏定义及条件编译</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            普通宏定义
-#define PI 3.14
-#define a (1+2)				//添加括号使语义表达更清楚
-
-printf("%s:%d","PI",PI);	//引号中的宏定义不会被替换，输出：PI:3.14
-#undef PI			
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-02
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/C-C/">
-                        <span class="chip bg-color">C/C++</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/stm32-2.html">
                     <div class="card-image">
                         
-                        <img src="https://img.mahoo12138.cn/hexo_images/cover/stm32.jpg" class="responsive-img" alt="STM32的中断优先级及中断编程">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/cover/stm32.jpg" class="responsive-img" alt="STM32的中断优先级及中断编程">
                         
                         <span class="card-title">STM32的中断优先级及中断编程</span>
                     </div>
@@ -1109,9 +1056,9 @@ printf("%s:%d","PI",PI);	//引号中的宏定义不会被替换，输出：PI:3.
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-31
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-31
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1129,6 +1076,62 @@ printf("%s:%d","PI",PI);	//引号中的宏定义不会被替换，输出：PI:3.
                     
                     <a href="/tags/STM32/">
                         <span class="chip bg-color">STM32</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/asm.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="关于汇编语言的一点点学习笔记">
+                        
+                        <span class="card-title">关于汇编语言的一点点学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            汇编语言的主体是汇编指令。
+汇编指令和机器指令的差别在于指令的表示方法上，汇编指令是机器指令便于记忆的书写格式。
+汇编指令是机器指令的助记符，便于程序员更好的操作。
+汇编语言的组成
+
+汇编指令（机器码的助记符）
+伪指令（由编译器执行）
+其他
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/汇编/">
+                        <span class="chip bg-color">汇编</span>
                     </a>
                     
                 </div>

@@ -312,7 +312,7 @@ ILI9341 控制器内部电路连接完">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img.mahoo12138.cn/hexo_images/cover/stm32.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/cover/stm32.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -488,9 +488,9 @@ ILI9341 控制器内部电路连接完">
             <div id="articleContent">
                 <p>注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！</p>
 <h2 id="ILI9341-液晶控制器">ILI9341 液晶控制器</h2>
-<p><img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/ili9341.png" alt="ILI9341控制器内部框图"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/Study/STM32/ili9341.png" alt="ILI9341控制器内部框图"></p>
 <p>ILI9341 控制器内部电路连接完后，其余信号线引出到排针</p>
-<img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/lcd.png" alt="液晶屏引出的信号线" style="zoom:67%;">
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/Study/STM32/lcd.png" alt="液晶屏引出的信号线" style="zoom:67%;">
 <h3 id="液晶屏引出的信号线说明">液晶屏引出的信号线说明</h3>
 <table>
 <thead>
@@ -548,7 +548,7 @@ ILI9341 控制器内部电路连接完">
 Memory Controller 的缩写，译为灵活的静态存储控制器。它可以用于驱动包括 SRAM、<br>
 NOR FLASH 以及 NAND FLSAH 类型的存储器，不能驱动如 SDRAM 这种动态的存储器而<br>
 在 STM32F429 系列的控制器中，它具有 FMC 外设，支持控制 SDRAM 存储器。</p>
-<img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/fsmc.png" style="zoom:80%;">
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/Study/STM32/fsmc.png" style="zoom:80%;">
 <p>MCU 对液晶屏的操作实际上就是把显示数据写入到显存中，与控制存储器非常类似，且8080 接口的通讯时序完全可以使用 FSMC 外设产生。</p>
 <h3 id="模拟-8080-接口时序">模拟 8080 接口时序</h3>
 <p>在模拟控制 LCD 时，是使用 FSMC 的 NOR\PSRAM 模式的， 而且使用的是类似异步、 地址与数据线独立的  NOR FLASH 类型的模式 B，实际上 CLK、 NWAIT、 NADV 引脚并没有使用到。</p>
@@ -604,7 +604,7 @@ NOR FLASH 以及 NAND FLSAH 类型的存储器，不能驱动如 SDRAM 这种动
 </tbody>
 </table>
 <p>对比 FSMC NOR/PSRAM 中的模式 B 时序与 ILI9341 液晶控制器芯片使用的 8080 时序可发现，这两个时序是十分相似的(除了 FSMC 的地址线 A 和 8080 的 D/CX 线，可以说是完全一样)</p>
-<img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/8080vsnorflash.png" alt="FSMC模式B时序与8080时序对比（写过程）" style="zoom:80%;">
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/Study/STM32/8080vsnorflash.png" alt="FSMC模式B时序与8080时序对比（写过程）" style="zoom:80%;">
 <table>
 <thead>
 <tr>
@@ -647,11 +647,11 @@ NOR FLASH 以及 NAND FLSAH 类型的存储器，不能驱动如 SDRAM 这种动
 平)，传输的信号则会被理解为命令。</p>
 <h3 id="FSMC的地址映射">FSMC的地址映射</h3>
 <p>使用 FSMC 外接存储器时，其存储单元是映射到 STM32 的内部寻址空间的，这里也涉及到使用地址线某个引脚时，需要计算对应的地址，以达到控制输出高低电平。</p>
-<p><img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/fsmc_addr.png" alt="FSMC 的地址映射"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/Study/STM32/fsmc_addr.png" alt="FSMC 的地址映射"></p>
 <h2 id="代码分析">代码分析</h2>
 <h3 id="液晶LCD硬件相关宏定义">液晶LCD硬件相关宏定义</h3>
 <p>根据液晶屏的原理图，将FSMC 控制液晶屏硬件相关的配置都以宏的形式定义：</p>
-<img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/lcd_pin.png" alt="开发板与屏幕的连接" style="zoom:67%;">
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/Study/STM32/lcd_pin.png" alt="开发板与屏幕的连接" style="zoom:67%;">
 <pre class=" language-language-c"><code class="language-language-c">/*****************	LCD控制信号	******************/
 //片选引脚
 #define		ILI9341_CS_CLK		RCC_APB2Periph_GPIOD
@@ -779,14 +779,14 @@ NOR FLASH 以及 NAND FLSAH 类型的存储器，不能驱动如 SDRAM 这种动
 }
 </code></pre>
 <h3 id="计算控制液晶屏时使用的地址">计算控制液晶屏时使用的地址</h3>
-<p><img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/lie.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/Study/STM32/lie.png" alt=""></p>
 <ul>
 <li>
 <p>首先确定板子NEx引脚的连接，本次实例使用的是<code>FSMC_NE1</code></p>
 </li>
 <li>
 <p>在 数据手册 --&gt; 存储器映像 中查询<code>FSMC_bnak1 NOR/PSRAM 1</code>的地址：</p>
-<p><img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/fsmc_bank1_nor_addr.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/Study/STM32/fsmc_bank1_nor_addr.png" alt=""></p>
 </li>
 <li>
 <p>使用的是<code>FSMS_NE1</code>也就是当访问到<code>0x6000000-0x63FFFFFF</code>这个地址范围内时，FSMC都会产生有效的访问时序；本实例中使用的是<code>FSMC_A16</code>地址线作为命令/数据选择线，即：</p>
@@ -848,7 +848,7 @@ __inline uint16_t ILI9341_Read_Data (void)
 </code></pre>
 <h4 id="检验封装">检验封装</h4>
 <p>在上述函数封装好之后，进行一些测试检验使很有必要，我们可以查询<code>ILI9341</code>的数据文档，选择合适的命令进行测试：</p>
-<p><img src="https://img.mahoo12138.cn/hexo_images/Study/STM32/ili9341_0ch.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/Study/STM32/ili9341_0ch.png" alt=""></p>
 <p>当发送命令<code>0x0C</code>，第二个参数会返回 LCD 的像素信息，可以封装一个检验函数如下：</p>
 <pre class=" language-language-c"><code class="language-language-c">uint16_t Read_Pixel_Format(void)
 {
@@ -1335,7 +1335,7 @@ __inline uint16_t ILI9341_Read_Data (void)
                 <a href="/c-c-5.html">
                     <div class="card-image">
                         
-                        <img src="https://img.mahoo12138.cn/hexo_images/cover/c.jpg" class="responsive-img" alt="C语言再学习之基础语法">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/cover/c.jpg" class="responsive-img" alt="C语言再学习之基础语法">
                         
                         <span class="card-title">C语言再学习之基础语法</span>
                     </div>
@@ -1385,7 +1385,7 @@ __inline uint16_t ILI9341_Read_Data (void)
                 <a href="/vuejs.html">
                     <div class="card-image">
                         
-                        <img src="https://img.mahoo12138.cn/hexo_images/cover/vuejs.png" class="responsive-img" alt="我的网页梦 —— 前端基础 & Vuejs">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/hexo_images/cover/vuejs.png" class="responsive-img" alt="我的网页梦 —— 前端基础 & Vuejs">
                         
                         <span class="card-title">我的网页梦 —— 前端基础 & Vuejs</span>
                     </div>
