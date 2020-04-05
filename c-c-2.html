@@ -4,14 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-	<meta name="baidu-site-verification" content="4duikEwdKV">
-	<meta name="google-site-verification" content="ITtW-qXOslWyS9zHoz5wrnatPs5ylPbgA4RDG4Hak4k">
     <meta name="keywords" content="盘点C语言中你不知道的小细节, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
-    <meta name="description" content="0UL/1UL
-0UL 表示 无符号长整型 	0
-1UL 表示 无符号长整型 	1
-一般的 1 没有后缀，系统默认指定的类型为int，即有符号的整型数。
-除此之外还可以将l，u自由组合形成多种后缀（不区分大小写），单独添加也没问题，例如：2">
+    <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,22 +13,21 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>盘点C语言中你不知道的小细节 | 黄同学的博客</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-    
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/jquery.min.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <title>盘点C语言中你不知道的小细节 | 黄同学的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/jquery/jquery.min.js"></script>
     
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
@@ -42,11 +35,11 @@
 <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">黄同学的博客</span>
                 </a>
@@ -144,7 +137,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">黄同学的博客</div>
         <div class="logo-desc">
@@ -219,7 +212,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -331,7 +324,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -395,6 +388,14 @@
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
+        
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
     }
 
     #toc-content .is-active-link {
@@ -474,7 +475,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    707
+                    704
                 </div>
                 
 
@@ -487,31 +488,25 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="0UL-1UL">0UL/1UL</h2>
-<p><strong>0UL 表示 无符号长整型 	0<br>
-1UL 表示 无符号长整型 	1</strong></p>
+                <h2 id="0UL-1UL"><a href="#0UL-1UL" class="headerlink" title="0UL/1UL"></a>0UL/1UL</h2><p><strong>0UL 表示 无符号长整型     0<br>1UL 表示 无符号长整型     1</strong></p>
 <p>一般的 <strong>1</strong> 没有后缀，系统默认指定的类型为<code>int</code>，即有符号的整型数。</p>
-<p>除此之外还可以将<code>l</code>，<code>u</code>自由组合形成多种后缀（不区分大小写），单独添加也没问题，例如：<mark>2u，3lu，4Lu</mark>。</p>
+<p>除此之外还可以将<code>l</code>，<code>u</code>自由组合形成多种后缀（不区分大小写），单独添加也没问题，例如：==2u，3lu，4Lu==。</p>
 <p>主要的作用，我只在keil编译中遇到过，在宏定义中将<code>1 &lt;&lt; 16</code>这类操作，默认的是有符号的，需要将 1 改成 1ul 无符号长整型。</p>
 <p>参考自：<a href="https://blog.csdn.net/qq1987924/article/details/11369063" target="_blank" rel="noopener">c语言中的0UL或1UL是什么意思</a></p>
-<h2 id="volatile">volatile</h2>
-<p>首先我们来看volatile在维基百科中的一些简介，有个大概的了解：</p>
+<h2 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h2><p>首先我们来看volatile在维基百科中的一些简介，有个大概的了解：</p>
 <blockquote>
-<p>在程序设计中，尤其是在C语言、C++、C#和Java语言中，使用volatile关键字声明的变量或对象通常具有与优化、多线程相关的特殊属性。通常，<strong>volatile</strong>关键字用来阻止（伪）编译器认为的无法“被代码本身”改变的代码（变量/对象）进行优化。如在C语言中，<strong>volatile</strong>关键字可以用来提醒编译器它后面所定义的变量随时有可能改变，因此编译后的程序每次需要存储或读取这个变量的时候，都会直接从变量地址中读取数据。如果没有volatile关键字，则编译器可能优化读取和存储，可能暂时使用寄存器中的值，如果这个变量由别的程序更新了的话，将出现不一致的现象。</p>
+<p> 在程序设计中，尤其是在C语言、C++、C#和Java语言中，使用volatile关键字声明的变量或对象通常具有与优化、多线程相关的特殊属性。通常，<strong>volatile</strong>关键字用来阻止（伪）编译器认为的无法“被代码本身”改变的代码（变量/对象）进行优化。如在C语言中，<strong>volatile</strong>关键字可以用来提醒编译器它后面所定义的变量随时有可能改变，因此编译后的程序每次需要存储或读取这个变量的时候，都会直接从变量地址中读取数据。如果没有volatile关键字，则编译器可能优化读取和存储，可能暂时使用寄存器中的值，如果这个变量由别的程序更新了的话，将出现不一致的现象。 </p>
 </blockquote>
 <p>当用volatile声明变量时，则表示该变量随时可能发生变化，避免因为编译器对代码优化导致读脏数据，例如</p>
-<pre class=" language-language-c"><code class="language-language-c">static int a;
-void main(){
-    a = 0;
-	while (a != 255);
-}
-</code></pre>
-<p>一个执行优化的编译器会提示没有代码能修改<code>a</code>的值，并假设它永远都只会是<code>0</code>。因此编译器将用类似==while (true);==的无限循环替换函数体；但是<code>a</code>可能指向一个随时都能被计算机系统其他部分修改的地址，例如CPU的硬件寄存器， 上面的代码永远检测不到这样的修改。如果不使用volatile关键字，编译器将假设当前程序是系统中唯一能改变这个值部分。 为了阻止编译器像上面那样优化代码，需要使用volatile关键字：</p>
-<pre class=" language-language-c"><code class="language-language-c">static volatile int a;
-</code></pre>
-<p>这样修改以后循环条件就不会被优化掉，当值改变的时候系统将会检测到。</p>
-<h3 id="参考自：Volatile变量">参考自：<a href="https://zh.wikipedia.org/zh-hans/Volatile%E5%8F%98%E9%87%8F" target="_blank" rel="noopener">Volatile变量</a></h3>
-<script>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">int</span> a<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>a <span class="token operator">!=</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p> 一个执行优化的编译器会提示没有代码能修改<code>a</code>的值，并假设它永远都只会是<code>0</code>。因此编译器将用类似==while (true);==的无限循环替换函数体；但是<code>a</code>可能指向一个随时都能被计算机系统其他部分修改的地址，例如CPU的硬件寄存器， 上面的代码永远检测不到这样的修改。如果不使用volatile关键字，编译器将假设当前程序是系统中唯一能改变这个值部分。 为了阻止编译器像上面那样优化代码，需要使用volatile关键字： </p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">volatile</span> <span class="token keyword">int</span> a<span class="token punctuation">;</span></code></pre>
+<p> 这样修改以后循环条件就不会被优化掉，当值改变的时候系统将会检测到。</p>
+<h3 id="参考自：Volatile变量"><a href="#参考自：Volatile变量" class="headerlink" title="参考自：Volatile变量"></a>参考自：<a href="https://zh.wikipedia.org/zh-hans/Volatile变量" target="_blank" rel="noopener">Volatile变量</a></h3><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -531,19 +526,59 @@ void main(){
           });
       </script>
             </div>
-			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<ins class="adsbygoogle"
-				 style="display:block; text-align:center;"
-				 data-ad-layout="in-article"
-				 data-ad-format="fluid"
-				 data-ad-client="ca-pub-7748017869031823"
-				 data-ad-slot="6534294934"></ins>
-			<script>
-				 (adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
             <hr/>
 
             
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn" rel="external nofollow noreferrer">Mahoo Huang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn/c-c-2.html">http://mahoo12138.cn/c-c-2.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
 
 
 
@@ -560,13 +595,13 @@ void main(){
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/css/share.min.css">
 
 <div id="article-share">
     
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <div class="social-share" data-sites="twitter,facebook,qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -684,10 +719,10 @@ void main(){
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -950,7 +985,7 @@ void main(){
 </style>
 
 <div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
         <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
         <span>评论</span>
     </div>
@@ -958,8 +993,8 @@ void main(){
     </div>
 </div>
 
-<script src="/libs/valine/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -990,7 +1025,7 @@ void main(){
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Win10子系统Ubuntu下配置Jupyter Notebook并实现内网穿透">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/2.jpg" class="responsive-img" alt="Win10子系统Ubuntu下配置Jupyter Notebook并实现内网穿透">
                         
                         <span class="card-title">Win10子系统Ubuntu下配置Jupyter Notebook并实现内网穿透</span>
                     </div>
@@ -999,10 +1034,9 @@ void main(){
                     <div class="summary block-with-text">
                         
                             之前看到有朋友在服务器上，搭建了Jupyter Notebook（一个笔记本，支持多种编程语言），觉得挺好的，自己也想弄个用用，无奈没有服务器，只好另寻他径。
-启用Win10子系统
-网络上有很多教程，就不赘述了:
+启用Win10子系统网络上有很多教程，就不赘述了:
 
-手把手教你启用Win10
+手把手教你启用Win10的
                         
                     </div>
                     <div class="publish-info">
@@ -1055,8 +1089,7 @@ void main(){
                     <div class="summary block-with-text">
                         
                             注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！
-SysTick介绍
-SysTick 属于CM3内核的外设，它可以产
+SysTick介绍SysTick 属于CM3内核的外设，它可以产生
                         
                     </div>
                     <div class="publish-info">
@@ -1095,17 +1128,21 @@ SysTick 属于CM3内核的外设，它可以产
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -1133,7 +1170,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1216,7 +1253,55 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
@@ -1224,9 +1309,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
-            
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.6k</span>&nbsp;字
             
             
             
@@ -1245,50 +1327,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
-            
-            <span id="sitetime">载入运行时间...</span>
-            <script>
-                function siteTime() {
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = "2019";
-                    var startMonth = "6";
-                    var startDate = "09";
-                    var startHour = "0";
-                    var startMinute = "0";
-                    var startSecond = "0";
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) {
-                        document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
-                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    } else {
-                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
-                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    }
-                }
-                setInterval(siteTime, 1000);
-            </script>
             
             <br>
             
@@ -1351,10 +1389,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->
@@ -1364,29 +1402,13 @@ $(function () {
     </a>
 </div>
 
-	
-	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
-    
-	<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162023690-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-162023690-1');
-</script>
-
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1407,33 +1429,10 @@ $(function () {
 </script>
 
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i["DaoVoiceObject"] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            a.charset = "utf-8";
-            m.parentNode.insertBefore(a, m)
-        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
-            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
-        daovoice('init', {
-            app_id: "a7fc98ad"
-        });
-        daovoice('update');
-    </script>
+    <script async src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1441,10 +1440,20 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/background/canvas-nest.js"></script>
+    
+
+    
+
     
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/instantpage.js" type="module"></script>
     
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/instantpage/instantpage.js" type="module"></script>
+    
+
 </body>
 
 </html>

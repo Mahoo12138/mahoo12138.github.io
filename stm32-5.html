@@ -4,13 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-	<meta name="baidu-site-verification" content="4duikEwdKV">
-	<meta name="google-site-verification" content="ITtW-qXOslWyS9zHoz5wrnatPs5ylPbgA4RDG4Hak4k">
     <meta name="keywords" content="利用FSMC模拟8080时序控制LCD, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
-    <meta name="description" content="注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！
-ILI9341 液晶控制器
-
-ILI9341 控制器内部电路连接完">
+    <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,22 +13,21 @@ ILI9341 控制器内部电路连接完">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>利用FSMC模拟8080时序控制LCD | 黄同学的博客</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-    
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/jquery.min.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <title>利用FSMC模拟8080时序控制LCD | 黄同学的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/jquery/jquery.min.js"></script>
     
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
@@ -41,11 +35,11 @@ ILI9341 控制器内部电路连接完">
 <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">黄同学的博客</span>
                 </a>
@@ -143,7 +137,7 @@ ILI9341 控制器内部电路连接完">
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">黄同学的博客</div>
         <div class="logo-desc">
@@ -218,7 +212,7 @@ ILI9341 控制器内部电路连接完">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -330,7 +324,7 @@ ILI9341 控制器内部电路连接完">
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -394,6 +388,14 @@ ILI9341 控制器内部电路连接完">
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
+        
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
     }
 
     #toc-content .is-active-link {
@@ -473,7 +475,7 @@ ILI9341 控制器内部电路连接完">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.4k
                 </div>
                 
 
@@ -487,124 +489,116 @@ ILI9341 控制器内部电路连接完">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！</p>
-<h2 id="ILI9341-液晶控制器">ILI9341 液晶控制器</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/ili9341.png" alt="ILI9341控制器内部框图"></p>
+<h2 id="ILI9341-液晶控制器"><a href="#ILI9341-液晶控制器" class="headerlink" title="ILI9341 液晶控制器"></a>ILI9341 液晶控制器</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/ili9341.png" alt="ILI9341控制器内部框图"></p>
 <p>ILI9341 控制器内部电路连接完后，其余信号线引出到排针</p>
 <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/lcd.png" alt="液晶屏引出的信号线" style="zoom:67%;">
-<h3 id="液晶屏引出的信号线说明">液晶屏引出的信号线说明</h3>
-<table>
+
+<h3 id="液晶屏引出的信号线说明"><a href="#液晶屏引出的信号线说明" class="headerlink" title="液晶屏引出的信号线说明"></a>液晶屏引出的信号线说明</h3><table>
 <thead>
 <tr>
-<th style="text-align:center">信号线</th>
-<th style="text-align:center">ILI9341 对 应 的信号线</th>
-<th style="text-align:left">说明</th>
+<th align="center">信号线</th>
+<th align="center">ILI9341 对 应 的信号线</th>
+<th align="left">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">LCD_DB[15:0]</td>
-<td style="text-align:center">D[15:0]</td>
-<td style="text-align:left">数据信号</td>
+<tbody><tr>
+<td align="center">LCD_DB[15:0]</td>
+<td align="center">D[15:0]</td>
+<td align="left">数据信号</td>
 </tr>
 <tr>
-<td style="text-align:center">LCD_RD</td>
-<td style="text-align:center">RDX</td>
-<td style="text-align:left">读数据信号，低电平有效 ，</td>
+<td align="center">LCD_RD</td>
+<td align="center">RDX</td>
+<td align="left">读数据信号，低电平有效 ，</td>
 </tr>
 <tr>
-<td style="text-align:center">LCD_RS</td>
-<td style="text-align:center">D/CX</td>
-<td style="text-align:left">数据/命令信号，高电平时， D[15:0]表示的是数据(RGB 像素数据或命令数据)；低电平时，D[15:0]表示控制命令</td>
+<td align="center">LCD_RS</td>
+<td align="center">D/CX</td>
+<td align="left">数据/命令信号，高电平时， D[15:0]表示的是数据(RGB 像素数据或命令数据)；低电平时，D[15:0]表示控制命令</td>
 </tr>
 <tr>
-<td style="text-align:center">LCD_RESET</td>
-<td style="text-align:center">RESX</td>
-<td style="text-align:left">复位信号，低电平有效</td>
+<td align="center">LCD_RESET</td>
+<td align="center">RESX</td>
+<td align="left">复位信号，低电平有效</td>
 </tr>
 <tr>
-<td style="text-align:center">LCD_WR</td>
-<td style="text-align:center">WRX</td>
-<td style="text-align:left">写数据信号，低电平有效</td>
+<td align="center">LCD_WR</td>
+<td align="center">WRX</td>
+<td align="left">写数据信号，低电平有效</td>
 </tr>
 <tr>
-<td style="text-align:center">LCD_CS</td>
-<td style="text-align:center">CSX</td>
-<td style="text-align:left">片选信号，低电平有效</td>
+<td align="center">LCD_CS</td>
+<td align="center">CSX</td>
+<td align="left">片选信号，低电平有效</td>
 </tr>
 <tr>
-<td style="text-align:center">LCD_BK</td>
-<td style="text-align:center">-</td>
-<td style="text-align:left">背光信号，低电平点亮</td>
+<td align="center">LCD_BK</td>
+<td align="center">-</td>
+<td align="left">背光信号，低电平点亮</td>
 </tr>
 <tr>
-<td style="text-align:center">GPIO[5:1]</td>
-<td style="text-align:center">-</td>
-<td style="text-align:left">触摸屏的控制信号线，下一章再介绍</td>
+<td align="center">GPIO[5:1]</td>
+<td align="center">-</td>
+<td align="left">触摸屏的控制信号线，下一章再介绍</td>
 </tr>
-</tbody>
-</table>
-<h2 id="FSMC简介">FSMC简介</h2>
-<p>STM32F1 系列芯片使用 FSMC 外设来管理扩展的存储器， FSMC 是 Flexible Static<br>
-Memory Controller 的缩写，译为灵活的静态存储控制器。它可以用于驱动包括 SRAM、<br>
-NOR FLASH 以及 NAND FLSAH 类型的存储器，不能驱动如 SDRAM 这种动态的存储器而<br>
-在 STM32F429 系列的控制器中，它具有 FMC 外设，支持控制 SDRAM 存储器。</p>
+</tbody></table>
+<h2 id="FSMC简介"><a href="#FSMC简介" class="headerlink" title="FSMC简介"></a>FSMC简介</h2><p>STM32F1 系列芯片使用 FSMC 外设来管理扩展的存储器， FSMC 是 Flexible Static<br>Memory Controller 的缩写，译为灵活的静态存储控制器。它可以用于驱动包括 SRAM、<br>NOR FLASH 以及 NAND FLSAH 类型的存储器，不能驱动如 SDRAM 这种动态的存储器而<br>在 STM32F429 系列的控制器中，它具有 FMC 外设，支持控制 SDRAM 存储器。  </p>
 <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/fsmc.png" style="zoom:80%;">
+
 <p>MCU 对液晶屏的操作实际上就是把显示数据写入到显存中，与控制存储器非常类似，且8080 接口的通讯时序完全可以使用 FSMC 外设产生。</p>
-<h3 id="模拟-8080-接口时序">模拟 8080 接口时序</h3>
-<p>在模拟控制 LCD 时，是使用 FSMC 的 NOR\PSRAM 模式的， 而且使用的是类似异步、 地址与数据线独立的  NOR FLASH 类型的模式 B，实际上 CLK、 NWAIT、 NADV 引脚并没有使用到。</p>
+<h3 id="模拟-8080-接口时序"><a href="#模拟-8080-接口时序" class="headerlink" title="模拟 8080 接口时序"></a>模拟 8080 接口时序</h3><p>在模拟控制 LCD 时，是使用 FSMC 的 NOR\PSRAM 模式的， 而且使用的是类似异步、 地址与数据线独立的  NOR FLASH 类型的模式 B，实际上 CLK、 NWAIT、 NADV 引脚并没有使用到。  </p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">FSMC 信 号 名</th>
-<th style="text-align:center">信号方向</th>
+<th align="center">FSMC 信 号 名</th>
+<th align="center">信号方向</th>
 <th>功能</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">CLK</td>
-<td style="text-align:center">输出</td>
+<tbody><tr>
+<td align="center">CLK</td>
+<td align="center">输出</td>
 <td>时钟（同步突发模式使用）</td>
 </tr>
 <tr>
-<td style="text-align:center">A[25:0]</td>
-<td style="text-align:center">输出</td>
+<td align="center">A[25:0]</td>
+<td align="center">输出</td>
 <td>地址总线</td>
 </tr>
 <tr>
-<td style="text-align:center">D[15:0]</td>
-<td style="text-align:center">输入/输出</td>
+<td align="center">D[15:0]</td>
+<td align="center">输入/输出</td>
 <td>双向数据总线</td>
 </tr>
 <tr>
-<td style="text-align:center">NE[x]</td>
-<td style="text-align:center">输出</td>
+<td align="center">NE[x]</td>
+<td align="center">输出</td>
 <td>片选， x = 1…4</td>
 </tr>
 <tr>
-<td style="text-align:center">NOE</td>
-<td style="text-align:center">输出</td>
+<td align="center">NOE</td>
+<td align="center">输出</td>
 <td>输出使能</td>
 </tr>
 <tr>
-<td style="text-align:center">NWE</td>
-<td style="text-align:center">输出</td>
+<td align="center">NWE</td>
+<td align="center">输出</td>
 <td>写使能</td>
 </tr>
 <tr>
-<td style="text-align:center">NWAIT</td>
-<td style="text-align:center">输入</td>
+<td align="center">NWAIT</td>
+<td align="center">输入</td>
 <td>NOR 闪存要求 FSMC 等待的信号</td>
 </tr>
 <tr>
-<td style="text-align:center">NADV</td>
-<td style="text-align:center">输出</td>
+<td align="center">NADV</td>
+<td align="center">输出</td>
 <td>地址、数据线复用时作锁存信号</td>
 </tr>
-</tbody>
-</table>
-<p>对比 FSMC NOR/PSRAM 中的模式 B 时序与 ILI9341 液晶控制器芯片使用的 8080 时序可发现，这两个时序是十分相似的(除了 FSMC 的地址线 A 和 8080 的 D/CX 线，可以说是完全一样)</p>
+</tbody></table>
+<p>对比 FSMC NOR/PSRAM 中的模式 B 时序与 ILI9341 液晶控制器芯片使用的 8080 时序可发现，这两个时序是十分相似的(除了 FSMC 的地址线 A 和 8080 的 D/CX 线，可以说是完全一样)  </p>
 <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/8080vsnorflash.png" alt="FSMC模式B时序与8080时序对比（写过程）" style="zoom:80%;">
+
 <table>
 <thead>
 <tr>
@@ -614,8 +608,7 @@ NOR FLASH 以及 NAND FLSAH 类型的存储器，不能驱动如 SDRAM 这种动
 <th>功能</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>NEx</td>
 <td>片选信号</td>
 <td>CSX</td>
@@ -639,224 +632,194 @@ NOR FLASH 以及 NAND FLSAH 类型的存储器，不能驱动如 SDRAM 这种动
 <td>D/CX</td>
 <td>数据/命令选择</td>
 </tr>
-</tbody>
-</table>
-<p>为了模拟出 8080 时序，我们可以把 FSMC 的 A0 地址线(也可以使用其它 A1/A2 等地<br>
-址线)与 ILI9341 芯片 8080 接口的 D/CX 信号线连接，那么当 A0 为高电平时(即 D/CX 为高<br>
-电平)，数据线 D[15:0]的信号会被 ILI9341 理解为数值，若 A0 为低电平时(即 D/CX 为低电<br>
-平)，传输的信号则会被理解为命令。</p>
-<h3 id="FSMC的地址映射">FSMC的地址映射</h3>
-<p>使用 FSMC 外接存储器时，其存储单元是映射到 STM32 的内部寻址空间的，这里也涉及到使用地址线某个引脚时，需要计算对应的地址，以达到控制输出高低电平。</p>
+</tbody></table>
+<p>为了模拟出 8080 时序，我们可以把 FSMC 的 A0 地址线(也可以使用其它 A1/A2 等地<br>址线)与 ILI9341 芯片 8080 接口的 D/CX 信号线连接，那么当 A0 为高电平时(即 D/CX 为高<br>电平)，数据线 D[15:0]的信号会被 ILI9341 理解为数值，若 A0 为低电平时(即 D/CX 为低电<br>平)，传输的信号则会被理解为命令。  </p>
+<h3 id="FSMC的地址映射"><a href="#FSMC的地址映射" class="headerlink" title="FSMC的地址映射"></a>FSMC的地址映射</h3><p>使用 FSMC 外接存储器时，其存储单元是映射到 STM32 的内部寻址空间的，这里也涉及到使用地址线某个引脚时，需要计算对应的地址，以达到控制输出高低电平。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/fsmc_addr.png" alt="FSMC 的地址映射"></p>
-<h2 id="代码分析">代码分析</h2>
-<h3 id="液晶LCD硬件相关宏定义">液晶LCD硬件相关宏定义</h3>
-<p>根据液晶屏的原理图，将FSMC 控制液晶屏硬件相关的配置都以宏的形式定义：</p>
+<h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><h3 id="液晶LCD硬件相关宏定义"><a href="#液晶LCD硬件相关宏定义" class="headerlink" title="液晶LCD硬件相关宏定义"></a>液晶LCD硬件相关宏定义</h3><p>根据液晶屏的原理图，将FSMC 控制液晶屏硬件相关的配置都以宏的形式定义：</p>
 <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/lcd_pin.png" alt="开发板与屏幕的连接" style="zoom:67%;">
-<pre class=" language-language-c"><code class="language-language-c">/*****************	LCD控制信号	******************/
-//片选引脚
-#define		ILI9341_CS_CLK		RCC_APB2Periph_GPIOD
-#define 	ILI9341_CS_PORT 	GPIOD
-#define 	ILI9341_CS_PIN 		GPIO_Pin_7
 
-//数据命令引脚
-#define		ILI9341_DC_CLK		RCC_APB2Periph_GPIOD
-#define		ILI9341_DC_PORT		GPIOD
-#define		ILI9341_DC_PIN		GPIO_Pin_11
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">/*****************    LCD控制信号    ******************/</span>
+<span class="token comment" spellcheck="true">//片选引脚</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>        ILI9341_CS_CLK        RCC_APB2Periph_GPIOD</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>     ILI9341_CS_PORT     GPIOD</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>     ILI9341_CS_PIN         GPIO_Pin_7</span>
 
-/****************	数据信号线	*****************/
-#define 	ILI9341_D0_CLK 		RCC_APB2Periph_GPIOD
-#define 	ILI9341_D0_PORT 	GPIOD
-#define 	ILI9341_D0_PIN 		GPIO_Pin_14
+<span class="token comment" spellcheck="true">//数据命令引脚</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>        ILI9341_DC_CLK        RCC_APB2Periph_GPIOD</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>        ILI9341_DC_PORT        GPIOD</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>        ILI9341_DC_PIN        GPIO_Pin_11</span>
 
-//其他引脚省略
-</code></pre>
-<h3 id="初始化-FSMC-的-GPIO">初始化 FSMC 的 GPIO</h3>
-<p>利用上面的宏，编写 FSMC 的 GPIO 引脚初始化函数，对于 FSMC 引脚，全部直接初始化为复用推挽输出模式即可，而背光 BK 引脚及液晶复信 RST 信号则被初始化成普通的推挽输出模式，这两个液晶控制信号直接输出普通的电平控制即可。</p>
-<pre class=" language-language-c"><code class="language-language-c">static void ILI9341_GPIO_Config (void)
-{
-	GPIO_InitTypeDef GPIO_InitStructure;
+<span class="token comment" spellcheck="true">/****************    数据信号线    *****************/</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>     ILI9341_D0_CLK         RCC_APB2Periph_GPIOD</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>     ILI9341_D0_PORT     GPIOD</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>     ILI9341_D0_PIN         GPIO_Pin_14</span>
 
-    /* 使能 FSMC 对应相应管脚时钟*/
-    RCC_APB2PeriphClockCmd (
-    /* 控制信号 */
-    ILI9341_CS_CLK|ILI9341_DC_CLK|ILI9341_WR_CLK|
-    ILI9341_RD_CLK |ILI9341_BK_CLK|ILI9341_RST_CLK|
-    /* 数据信号 */
-    ILI9341_D0_CLK|ILI9341_D1_CLK, ENABLE);
-    /* 省略部分信号线 */
+<span class="token comment" spellcheck="true">//其他引脚省略</span></code></pre>
+<h3 id="初始化-FSMC-的-GPIO"><a href="#初始化-FSMC-的-GPIO" class="headerlink" title="初始化 FSMC 的 GPIO"></a>初始化 FSMC 的 GPIO</h3><p>利用上面的宏，编写 FSMC 的 GPIO 引脚初始化函数，对于 FSMC 引脚，全部直接初始化为复用推挽输出模式即可，而背光 BK 引脚及液晶复信 RST 信号则被初始化成普通的推挽输出模式，这两个液晶控制信号直接输出普通的电平控制即可。  </p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">ILI9341_GPIO_Config</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    GPIO_InitTypeDef GPIO_InitStructure<span class="token punctuation">;</span>
 
-    /* 配置 FSMC 相对应的数据线,FSMC-D0~D15 */
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
-    GPIO_InitStructure.GPIO_Pin = ILI9341_D0_PIN;
-    
-    GPIO_Init(ILI9341_D0_PORT, &GPIO_InitStructure);
-	/* 省略部分信号线 */
-	
-    //设置复用推挽输出
- 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    
- 	GPIO_InitStructure.GPIO_Pin = ILI9341_RD_PIN;
- 	GPIO_Init (ILI9341_RD_PORT, &GPIO_InitStructure);
-	/* 省略WR, CS, DC 控制引脚 */
-    
-    //设置普通推挽输出
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;	
- 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    /* 配置 LCD 复位 RST 控制管脚 */
- 	GPIO_InitStructure.GPIO_Pin = ILI9341_RST_PIN;
- 	GPIO_Init (ILI9341_RST_PORT, &GPIO_InitStructure);
-    /* 配置 LCD 背光控制管脚 BK */
-    GPIO_InitStructure.GPIO_Pin = ILI9341_BK_PIN;
- 	GPIO_Init (ILI9341_BK_PORT, &GPIO_InitStructure);
-}
-</code></pre>
-<h3 id="配置-FSMC-的模式">配置 FSMC 的模式</h3>
-<pre class=" language-language-c"><code class="language-language-c">static void ILI9341_FSMC_Config (void)
-{	
-    /* FSMC模式初始化结构体 */
-	FSMC_NORSRAMInitTypeDef 		FSMC_NORSRAMInitStructure;
-    /* 读写时序结构体 */
- 	FSMC_NORSRAMTimingInitTypeDef 	readWriteTiming;
- 
- 	/* 使能 FSMC 时钟*/
- 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_FSMC, ENABLE);
- 	
- 	//地址建立时间（ADDSET）为 1 个 HCLK 2/72M=28ns
- 	readWriteTiming.FSMC_AddressSetupTime = 0x01; //地址建立时间
- 	//数据保持时间（DATAST） + 1 个 HCLK = 5/72M=70ns
-    readWriteTiming.FSMC_DataSetupTime = 0x04; //数据建立时间
- 	//选择控制的模式
- 	//模式 B, 异步 NOR FLASH 模式，与 ILI9341 的 8080 时序匹配
- 	readWriteTiming.FSMC_AccessMode = FSMC_AccessMode_B;
- 
- 	/* 以下配置与模式 B 无关 */
- 	readWriteTiming.FSMC_AddressHoldTime = 0x00; //地址保持时间，模式 B未用到
- 	//设置总线转换周期，仅用于复用模式的 NOR 操作
- 	readWriteTiming.FSMC_BusTurnAroundDuration = 0x00;
-  	//设置时钟分频，仅用于同步类型的存储器
- 	readWriteTiming.FSMC_CLKDivision = 0x00;
- 	//数据保持时间，仅用于同步型的 NOR
- 	readWriteTiming.FSMC_DataLatency = 0x00;
-    
-    //选择使用的bank, 本次实例中使用的是FSMC_NE1
-    //需要在宏定义中定义：#define FSMC_Bank1_NORSRAMx FSMC_Bank1_NORSRAM1
-    FSMC_NORSRAMInitStructure.FSMC_Bank = FSMC_Bank1_NORSRAMx;
-    //设置地址总线是否与数据总线是否复用，仅用于NOR
- 	FSMC_NORSRAMInitStructure.FSMC_DataAddressMux = FSMC_DataAddressMux_Disable;
-    //设置要控制的存储器类型：本实例使用的是异步NOR
- 	FSMC_NORSRAMInitStructure.FSMC_MemoryType = FSMC_MemoryType_NOR;
-    /* 设置存储器的数据宽度 */
- 	FSMC_NORSRAMInitStructure.FSMC_MemoryDataWidth = FSMC_MemoryDataWidth_16b;
-    /* 设置是否支持突发访问模式，只支持同步类型的存储器 */
- 	FSMC_NORSRAMInitStructure.FSMC_BurstAccessMode = FSMC_BurstAccessMode_Disable;
-    /* 设置等待信号的极性，仅用于同步类型存储器 */
- 	FSMC_NORSRAMInitStructure.FSMC_WaitSignalPolarity = FSMC_WaitSignalPolarity_Low;
-    /* 设置是否支持对齐的突发模式，仅用于同步 */
- 	FSMC_NORSRAMInitStructure.FSMC_WrapMode = FSMC_WrapMode_Disable;
-    /* 配置等待信号（插入时间）在等待前有效还是等待期间有效，仅用于同步 */
- 	FSMC_NORSRAMInitStructure.FSMC_WaitSignalActive = FSMC_WaitSignalActive_BeforeWaitState;
-    /* 设置是否写使能 */
- 	FSMC_NORSRAMInitStructure.FSMC_WriteOperation = FSMC_WriteOperation_Enable;
-    
-    /* 设置是否使能等待状态插入，用于设置当存储器处于突发传输模式时，
+    <span class="token comment" spellcheck="true">/* 使能 FSMC 对应相应管脚时钟*/</span>
+    <span class="token function">RCC_APB2PeriphClockCmd</span> <span class="token punctuation">(</span>
+    <span class="token comment" spellcheck="true">/* 控制信号 */</span>
+    ILI9341_CS_CLK<span class="token operator">|</span>ILI9341_DC_CLK<span class="token operator">|</span>ILI9341_WR_CLK<span class="token operator">|</span>
+    ILI9341_RD_CLK <span class="token operator">|</span>ILI9341_BK_CLK<span class="token operator">|</span>ILI9341_RST_CLK<span class="token operator">|</span>
+    <span class="token comment" spellcheck="true">/* 数据信号 */</span>
+    ILI9341_D0_CLK<span class="token operator">|</span>ILI9341_D1_CLK<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 省略部分信号线 */</span>
+
+    <span class="token comment" spellcheck="true">/* 配置 FSMC 相对应的数据线,FSMC-D0~D15 */</span>
+    GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Speed <span class="token operator">=</span> GPIO_Speed_50MHz<span class="token punctuation">;</span>
+    GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Mode <span class="token operator">=</span> GPIO_Mode_AF_PP<span class="token punctuation">;</span>
+    GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span> ILI9341_D0_PIN<span class="token punctuation">;</span>
+
+    <span class="token function">GPIO_Init</span><span class="token punctuation">(</span>ILI9341_D0_PORT<span class="token punctuation">,</span> <span class="token operator">&amp;</span>GPIO_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 省略部分信号线 */</span>
+
+    <span class="token comment" spellcheck="true">//设置复用推挽输出</span>
+     GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Mode <span class="token operator">=</span> GPIO_Mode_AF_PP<span class="token punctuation">;</span>
+    GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Speed <span class="token operator">=</span> GPIO_Speed_50MHz<span class="token punctuation">;</span>
+
+     GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span> ILI9341_RD_PIN<span class="token punctuation">;</span>
+     <span class="token function">GPIO_Init</span> <span class="token punctuation">(</span>ILI9341_RD_PORT<span class="token punctuation">,</span> <span class="token operator">&amp;</span>GPIO_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 省略WR, CS, DC 控制引脚 */</span>
+
+    <span class="token comment" spellcheck="true">//设置普通推挽输出</span>
+    GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Mode <span class="token operator">=</span> GPIO_Mode_Out_PP<span class="token punctuation">;</span>    
+     GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Speed <span class="token operator">=</span> GPIO_Speed_50MHz<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 配置 LCD 复位 RST 控制管脚 */</span>
+     GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span> ILI9341_RST_PIN<span class="token punctuation">;</span>
+     <span class="token function">GPIO_Init</span> <span class="token punctuation">(</span>ILI9341_RST_PORT<span class="token punctuation">,</span> <span class="token operator">&amp;</span>GPIO_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 配置 LCD 背光控制管脚 BK */</span>
+    GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span> ILI9341_BK_PIN<span class="token punctuation">;</span>
+     <span class="token function">GPIO_Init</span> <span class="token punctuation">(</span>ILI9341_BK_PORT<span class="token punctuation">,</span> <span class="token operator">&amp;</span>GPIO_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="配置-FSMC-的模式"><a href="#配置-FSMC-的模式" class="headerlink" title="配置 FSMC 的模式"></a>配置 FSMC 的模式</h3><pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">ILI9341_FSMC_Config</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>    
+    <span class="token comment" spellcheck="true">/* FSMC模式初始化结构体 */</span>
+    FSMC_NORSRAMInitTypeDef         FSMC_NORSRAMInitStructure<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 读写时序结构体 */</span>
+     FSMC_NORSRAMTimingInitTypeDef     readWriteTiming<span class="token punctuation">;</span>
+
+     <span class="token comment" spellcheck="true">/* 使能 FSMC 时钟*/</span>
+     <span class="token function">RCC_AHBPeriphClockCmd</span><span class="token punctuation">(</span>RCC_AHBPeriph_FSMC<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+     <span class="token comment" spellcheck="true">//地址建立时间（ADDSET）为 1 个 HCLK 2/72M=28ns</span>
+     readWriteTiming<span class="token punctuation">.</span>FSMC_AddressSetupTime <span class="token operator">=</span> <span class="token number">0x01</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//地址建立时间</span>
+     <span class="token comment" spellcheck="true">//数据保持时间（DATAST） + 1 个 HCLK = 5/72M=70ns</span>
+    readWriteTiming<span class="token punctuation">.</span>FSMC_DataSetupTime <span class="token operator">=</span> <span class="token number">0x04</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//数据建立时间</span>
+     <span class="token comment" spellcheck="true">//选择控制的模式</span>
+     <span class="token comment" spellcheck="true">//模式 B, 异步 NOR FLASH 模式，与 ILI9341 的 8080 时序匹配</span>
+     readWriteTiming<span class="token punctuation">.</span>FSMC_AccessMode <span class="token operator">=</span> FSMC_AccessMode_B<span class="token punctuation">;</span>
+
+     <span class="token comment" spellcheck="true">/* 以下配置与模式 B 无关 */</span>
+     readWriteTiming<span class="token punctuation">.</span>FSMC_AddressHoldTime <span class="token operator">=</span> <span class="token number">0x00</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//地址保持时间，模式 B未用到</span>
+     <span class="token comment" spellcheck="true">//设置总线转换周期，仅用于复用模式的 NOR 操作</span>
+     readWriteTiming<span class="token punctuation">.</span>FSMC_BusTurnAroundDuration <span class="token operator">=</span> <span class="token number">0x00</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">//设置时钟分频，仅用于同步类型的存储器</span>
+     readWriteTiming<span class="token punctuation">.</span>FSMC_CLKDivision <span class="token operator">=</span> <span class="token number">0x00</span><span class="token punctuation">;</span>
+     <span class="token comment" spellcheck="true">//数据保持时间，仅用于同步型的 NOR</span>
+     readWriteTiming<span class="token punctuation">.</span>FSMC_DataLatency <span class="token operator">=</span> <span class="token number">0x00</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//选择使用的bank, 本次实例中使用的是FSMC_NE1</span>
+    <span class="token comment" spellcheck="true">//需要在宏定义中定义：#define FSMC_Bank1_NORSRAMx FSMC_Bank1_NORSRAM1</span>
+    FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_Bank <span class="token operator">=</span> FSMC_Bank1_NORSRAMx<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//设置地址总线是否与数据总线是否复用，仅用于NOR</span>
+     FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_DataAddressMux <span class="token operator">=</span> FSMC_DataAddressMux_Disable<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//设置要控制的存储器类型：本实例使用的是异步NOR</span>
+     FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_MemoryType <span class="token operator">=</span> FSMC_MemoryType_NOR<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 设置存储器的数据宽度 */</span>
+     FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_MemoryDataWidth <span class="token operator">=</span> FSMC_MemoryDataWidth_16b<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 设置是否支持突发访问模式，只支持同步类型的存储器 */</span>
+     FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_BurstAccessMode <span class="token operator">=</span> FSMC_BurstAccessMode_Disable<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 设置等待信号的极性，仅用于同步类型存储器 */</span>
+     FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_WaitSignalPolarity <span class="token operator">=</span> FSMC_WaitSignalPolarity_Low<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 设置是否支持对齐的突发模式，仅用于同步 */</span>
+     FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_WrapMode <span class="token operator">=</span> FSMC_WrapMode_Disable<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 配置等待信号（插入时间）在等待前有效还是等待期间有效，仅用于同步 */</span>
+     FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_WaitSignalActive <span class="token operator">=</span> FSMC_WaitSignalActive_BeforeWaitState<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 设置是否写使能 */</span>
+     FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_WriteOperation <span class="token operator">=</span> FSMC_WriteOperation_Enable<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/* 设置是否使能等待状态插入，用于设置当存储器处于突发传输模式时，
      * 是否允许通过 NWAIT 信号插入等待状态，不使用 
-     */
- 	FSMC_NORSRAMInitStructure.FSMC_WaitSignal = FSMC_WaitSignal_Disable;
-    /* 设置是否使能扩展模式，不使用，读写同一时序*/
- 	FSMC_NORSRAMInitStructure.FSMC_ExtendedMode = FSMC_ExtendedMode_Disable;
-    /* 设置是否使能写突发操作 */
- 	FSMC_NORSRAMInitStructure.FSMC_WriteBurst = FSMC_WriteBurst_Disable;
-    /* 当不使用扩展模式时，本参数用于配置读写时序，否则用于配置读时序 */
- 	FSMC_NORSRAMInitStructure.FSMC_ReadWriteTimingStruct = &readWriteTiming;
-    /* 当使用扩展模式时，本参数用于配置写时序 */
-	FSMC_NORSRAMInitStructure.FSMC_WriteTimingStruct = &readWriteTiming;
- 	//初始化FSMC的配置
- 	FSMC_NORSRAMInit (&FSMC_NORSRAMInitStructure);
- 	/* 使能 FSMC_Bank1_NORSRAMx */
- 	FSMC_NORSRAMCmd (FSMC_Bank1_NORSRAMx, ENABLE);
-}
-</code></pre>
-<h3 id="计算控制液晶屏时使用的地址">计算控制液晶屏时使用的地址</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/lie.png" alt=""></p>
+     */</span>
+     FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_WaitSignal <span class="token operator">=</span> FSMC_WaitSignal_Disable<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 设置是否使能扩展模式，不使用，读写同一时序*/</span>
+     FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_ExtendedMode <span class="token operator">=</span> FSMC_ExtendedMode_Disable<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 设置是否使能写突发操作 */</span>
+     FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_WriteBurst <span class="token operator">=</span> FSMC_WriteBurst_Disable<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 当不使用扩展模式时，本参数用于配置读写时序，否则用于配置读时序 */</span>
+     FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_ReadWriteTimingStruct <span class="token operator">=</span> <span class="token operator">&amp;</span>readWriteTiming<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/* 当使用扩展模式时，本参数用于配置写时序 */</span>
+    FSMC_NORSRAMInitStructure<span class="token punctuation">.</span>FSMC_WriteTimingStruct <span class="token operator">=</span> <span class="token operator">&amp;</span>readWriteTiming<span class="token punctuation">;</span>
+     <span class="token comment" spellcheck="true">//初始化FSMC的配置</span>
+     <span class="token function">FSMC_NORSRAMInit</span> <span class="token punctuation">(</span><span class="token operator">&amp;</span>FSMC_NORSRAMInitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token comment" spellcheck="true">/* 使能 FSMC_Bank1_NORSRAMx */</span>
+     <span class="token function">FSMC_NORSRAMCmd</span> <span class="token punctuation">(</span>FSMC_Bank1_NORSRAMx<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="计算控制液晶屏时使用的地址"><a href="#计算控制液晶屏时使用的地址" class="headerlink" title="计算控制液晶屏时使用的地址"></a>计算控制液晶屏时使用的地址</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/lie.png" alt=""></p>
 <ul>
-<li>
-<p>首先确定板子NEx引脚的连接，本次实例使用的是<code>FSMC_NE1</code></p>
+<li><p>首先确定板子NEx引脚的连接，本次实例使用的是<code>FSMC_NE1</code></p>
 </li>
-<li>
-<p>在 数据手册 --&gt; 存储器映像 中查询<code>FSMC_bnak1 NOR/PSRAM 1</code>的地址：</p>
+<li><p>在 数据手册 –&gt; 存储器映像 中查询<code>FSMC_bnak1 NOR/PSRAM 1</code>的地址：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/fsmc_bank1_nor_addr.png" alt=""></p>
 </li>
-<li>
-<p>使用的是<code>FSMS_NE1</code>也就是当访问到<code>0x6000000-0x63FFFFFF</code>这个地址范围内时，FSMC都会产生有效的访问时序；本实例中使用的是<code>FSMC_A16</code>地址线作为命令/数据选择线，即：</p>
+<li><p>使用的是<code>FSMS_NE1</code>也就是当访问到<code>0x6000000-0x63FFFFFF</code>这个地址范围内时，FSMC都会产生有效的访问时序；本实例中使用的是<code>FSMC_A16</code>地址线作为命令/数据选择线，即：</p>
 <ul>
-<li>
-<p>使<code>FSMC_A16</code>为高电平，即第十六位为 1 ，可用地址范围内任意地址做一下运算：</p>
-<pre class=" language-language-c"><code class="language-language-c">0X6000 0000 |= (1<<16) = 0x6001 0000;
-</code></pre>
+<li><p>使<code>FSMC_A16</code>为高电平，即第十六位为 1 ，可用地址范围内任意地址做一下运算：</p>
+<pre class=" language-c"><code class="language-c"><span class="token number">0X6000</span> <span class="token number">0000</span> <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">16</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0x6001</span> <span class="token number">0000</span><span class="token punctuation">;</span></code></pre>
 </li>
-<li>
-<p>同样的，使<code>FSMC_A16</code>为低电平，即：</p>
-<pre class=" language-language-c"><code class="language-language-c">0X6000 0000 &= ~ (1<<16) = 0x6000 0000;
-</code></pre>
+<li><p>同样的，使<code>FSMC_A16</code>为低电平，即：</p>
+<pre class=" language-c"><code class="language-c"><span class="token number">0X6000</span> <span class="token number">0000</span> <span class="token operator">&amp;</span><span class="token operator">=</span> <span class="token operator">~</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token number">16</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0x6000</span> <span class="token number">0000</span><span class="token punctuation">;</span></code></pre>
 </li>
 </ul>
 </li>
-<li>
-<p>由于地址线转换的问题，这里不细说，需要知道的是，STM32 内部的 HADDR 与 FSMC 的连接关系会左移一位，计算关系也会改变：</p>
+<li><p>由于地址线转换的问题，这里不细说，需要知道的是，STM32 内部的 HADDR 与 FSMC 的连接关系会左移一位，计算关系也会改变：</p>
 <ul>
-<li>
-<p>使<code>FSMC_A16</code>地址线为高电平：</p>
-<pre class=" language-language-c"><code class="language-language-c">0X6000 0000 |= (1<<(16+1)) = 0x6002 0000;
-</code></pre>
+<li><p>使<code>FSMC_A16</code>地址线为高电平：</p>
+<pre class=" language-c"><code class="language-c"><span class="token number">0X6000</span> <span class="token number">0000</span> <span class="token operator">|</span><span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0x6002</span> <span class="token number">0000</span><span class="token punctuation">;</span></code></pre>
 </li>
-<li>
-<p>使<code>FSMC_A16</code>地址线为低电平：</p>
-<pre class=" language-language-c"><code class="language-language-c">0X6000 0000 &= ~(1<<(16+1)) = 0x6000 0000;
-</code></pre>
+<li><p>使<code>FSMC_A16</code>地址线为低电平：</p>
+<pre class=" language-c"><code class="language-c"><span class="token number">0X6000</span> <span class="token number">0000</span> <span class="token operator">&amp;</span><span class="token operator">=</span> <span class="token operator">~</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">&lt;&lt;</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0x6000</span> <span class="token number">0000</span><span class="token punctuation">;</span></code></pre>
 </li>
 </ul>
 </li>
 </ul>
-<h5 id="封装函数">封装函数</h5>
-<p>因为在实例后面会频繁对LCD进行操作，所以把发送命令及发送数据的操作封装成了内联函数，会更方便调用：</p>
-<pre class=" language-language-c"><code class="language-language-c">/*********** 定义 FSMC 参数宏 **********/
-//FSMC_Bank1_NORSRAM 用于 LCD 命令操作的地址
-#define FSMC_Addr_ILI9341_CMD ( ( uint32_t ) 0x60020000 )
+<h5 id="封装函数"><a href="#封装函数" class="headerlink" title="封装函数"></a>封装函数</h5><p>因为在实例后面会频繁对LCD进行操作，所以把发送命令及发送数据的操作封装成了内联函数，会更方便调用：</p>
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">/*********** 定义 FSMC 参数宏 **********/</span>
+<span class="token comment" spellcheck="true">//FSMC_Bank1_NORSRAM 用于 LCD 命令操作的地址</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> FSMC_Addr_ILI9341_CMD ( ( uint32_t ) 0x60020000 )</span>
 
-//FSMC_Bank1_NORSRAM 用于 LCD 数据操作的地址
-#define FSMC_Addr_ILI9341_DATA ( ( uint32_t ) 0x60000000 )
-</code></pre>
-<pre class=" language-language-c"><code class="language-language-c">//发送数据
-__inline void ILI9341_Write_Cmd (uint16_t usCmd)
-{
-    (__IO uint16_t *)(FSMC_Addr_ILI9341_CMD) = usCmd;
-}
-//写入数据
-__inline void ILI9341_Write_Data (uint16_t usData)
-{
-	(__IO uint16_t *)(FSMC_Addr_ILI9341_DATA) = usData;
-}
-</code></pre>
-<p>需要写操作时，只要把要发送的命令代码或数据作为参数输入到函数然后调用即可，对于液晶屏的读操作，把向指针赋值的过程改为读取指针内容即可。</p>
-<pre class=" language-language-c"><code class="language-language-c">//读取数据
-__inline uint16_t ILI9341_Read_Data (void)
-{
-	return (*FSMC_Addr_ILI9341_DATA);
-}
-</code></pre>
-<h4 id="检验封装">检验封装</h4>
-<p>在上述函数封装好之后，进行一些测试检验使很有必要，我们可以查询<code>ILI9341</code>的数据文档，选择合适的命令进行测试：</p>
+<span class="token comment" spellcheck="true">//FSMC_Bank1_NORSRAM 用于 LCD 数据操作的地址</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> FSMC_Addr_ILI9341_DATA ( ( uint32_t ) 0x60000000 )</span></code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">//发送数据</span>
+__inline <span class="token keyword">void</span> <span class="token function">ILI9341_Write_Cmd</span> <span class="token punctuation">(</span>uint16_t usCmd<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token punctuation">(</span>__IO uint16_t <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">(</span>FSMC_Addr_ILI9341_CMD<span class="token punctuation">)</span> <span class="token operator">=</span> usCmd<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">//写入数据</span>
+__inline <span class="token keyword">void</span> <span class="token function">ILI9341_Write_Data</span> <span class="token punctuation">(</span>uint16_t usData<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token punctuation">(</span>__IO uint16_t <span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">(</span>FSMC_Addr_ILI9341_DATA<span class="token punctuation">)</span> <span class="token operator">=</span> usData<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>需要写操作时，只要把要发送的命令代码或数据作为参数输入到函数然后调用即可，对于液晶屏的读操作，把向指针赋值的过程改为读取指针内容即可。  </p>
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">//读取数据</span>
+__inline uint16_t <span class="token function">ILI9341_Read_Data</span> <span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">*</span>FSMC_Addr_ILI9341_DATA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h4 id="检验封装"><a href="#检验封装" class="headerlink" title="检验封装"></a>检验封装</h4><p>在上述函数封装好之后，进行一些测试检验使很有必要，我们可以查询<code>ILI9341</code>的数据文档，选择合适的命令进行测试：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/ili9341_0ch.png" alt=""></p>
 <p>当发送命令<code>0x0C</code>，第二个参数会返回 LCD 的像素信息，可以封装一个检验函数如下：</p>
-<pre class=" language-language-c"><code class="language-language-c">uint16_t Read_Pixel_Format(void)
-{
-    ILI9341_Write_Cmd(0x0C);	//发送命令参数
-    ILI9341_Read_Data();		//读取第一个返回参数
-    return ILI9341_Read_Data();	//返回第二个读取参数
-}
-</code></pre>
+<pre class=" language-c"><code class="language-c">uint16_t <span class="token function">Read_Pixel_Format</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">ILI9341_Write_Cmd</span><span class="token punctuation">(</span><span class="token number">0x0C</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//发送命令参数</span>
+    <span class="token function">ILI9341_Read_Data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//读取第一个返回参数</span>
+    <span class="token keyword">return</span> <span class="token function">ILI9341_Read_Data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//返回第二个读取参数</span>
+<span class="token punctuation">}</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -877,19 +840,59 @@ __inline uint16_t ILI9341_Read_Data (void)
           });
       </script>
             </div>
-			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<ins class="adsbygoogle"
-				 style="display:block; text-align:center;"
-				 data-ad-layout="in-article"
-				 data-ad-format="fluid"
-				 data-ad-client="ca-pub-7748017869031823"
-				 data-ad-slot="6534294934"></ins>
-			<script>
-				 (adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
             <hr/>
 
             
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn" rel="external nofollow noreferrer">Mahoo Huang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn/stm32-5.html">http://mahoo12138.cn/stm32-5.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
 
 
 
@@ -906,13 +909,13 @@ __inline uint16_t ILI9341_Read_Data (void)
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/css/share.min.css">
 
 <div id="article-share">
     
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <div class="social-share" data-sites="twitter,facebook,qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -1030,10 +1033,10 @@ __inline uint16_t ILI9341_Read_Data (void)
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1296,7 +1299,7 @@ __inline uint16_t ILI9341_Read_Data (void)
 </style>
 
 <div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
         <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
         <span>评论</span>
     </div>
@@ -1304,8 +1307,8 @@ __inline uint16_t ILI9341_Read_Data (void)
     </div>
 </div>
 
-<script src="/libs/valine/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1343,9 +1346,8 @@ __inline uint16_t ILI9341_Read_Data (void)
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            内联函数 —— C 中关键字 inline
-调用函数时，一般会由于建立调用、传递参数、跳转到函数代码并返回等花费掉一些时间，而且一些函数被频繁调用，不断地有函数入栈，即函数栈，会造成栈空间或栈内存的大量消耗。
-为了解决这个问题，在C99中特
+                            内联函数 —— C 中关键字 inline调用函数时，一般会由于建立调用、传递参数、跳转到函数代码并返回等花费掉一些时间，而且一些函数被频繁调用，不断地有函数入栈，即函数栈，会造成栈空间或栈内存的大量消耗。
+为了解决这个问题，在C99中特别
                         
                     </div>
                     <div class="publish-info">
@@ -1393,9 +1395,8 @@ __inline uint16_t ILI9341_Read_Data (void)
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前言
-自从上学期期末考试以后，就没有更新博客了，那时候是因为，你懂的嘛；
-回到家后，肯定是玩啦，这么长的假期，同学聚会也少不了，过年期间更是忙的没话说，况且，今年的春节被这个新型冠状病毒整的是你死我活的，国家都进入一种战时状态，天佑中华吧，
+                            前言自从上学期期末考试以后，就没有更新博客了，那时候是因为，你懂的嘛；
+回到家后，肯定是玩啦，这么长的假期，同学聚会也少不了，过年期间更是忙的没话说，况且，今年的春节被这个新型冠状病毒整的是你死我活的，国家都进入一种战时状态，天佑中华吧，早
                         
                     </div>
                     <div class="publish-info">
@@ -1434,17 +1435,21 @@ __inline uint16_t ILI9341_Read_Data (void)
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -1472,7 +1477,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1553,7 +1558,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </main>
 
 
-<script src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
     MathJax.Hub.Config({
         tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
@@ -1562,7 +1567,55 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
@@ -1570,9 +1623,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
-            
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.6k</span>&nbsp;字
             
             
             
@@ -1591,50 +1641,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
-            
-            <span id="sitetime">载入运行时间...</span>
-            <script>
-                function siteTime() {
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = "2019";
-                    var startMonth = "6";
-                    var startDate = "09";
-                    var startHour = "0";
-                    var startMinute = "0";
-                    var startSecond = "0";
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) {
-                        document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
-                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    } else {
-                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
-                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    }
-                }
-                setInterval(siteTime, 1000);
-            </script>
             
             <br>
             
@@ -1697,10 +1703,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->
@@ -1710,29 +1716,13 @@ $(function () {
     </a>
 </div>
 
-	
-	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
-    
-	<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162023690-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-162023690-1');
-</script>
-
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1753,33 +1743,10 @@ $(function () {
 </script>
 
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i["DaoVoiceObject"] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            a.charset = "utf-8";
-            m.parentNode.insertBefore(a, m)
-        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
-            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
-        daovoice('init', {
-            app_id: "a7fc98ad"
-        });
-        daovoice('update');
-    </script>
+    <script async src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1787,10 +1754,20 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/background/canvas-nest.js"></script>
+    
+
+    
+
     
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/instantpage.js" type="module"></script>
     
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/instantpage/instantpage.js" type="module"></script>
+    
+
 </body>
 
 </html>

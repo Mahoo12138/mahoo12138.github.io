@@ -172,7 +172,7 @@ code {
     z-index: 1;
     filter: invert(50%);
     cursor: pointer;
-} 
+}
 
 .code-expand {
     position: absolute;
@@ -230,7 +230,7 @@ cite {
 }
 
 mark {
-    background-color: rgb(189, 243, 189);
+    background-color: #fcf8e3;
     padding: .2em;
 }
 
@@ -241,6 +241,8 @@ mark {
 
 .card .card-image img {
     border-radius: 8px 8px 0 0;
+    /* 修改文章列表图片填充样式为 cover 以覆盖整个区域而不会被缩放 */
+    object-fit: cover;
 }
 
 .container .row {
@@ -304,6 +306,11 @@ header .brand-logo .logo-img {
 
 header .brand-logo .logo-span {
     font-size: 2rem;
+}
+
+/*修改顶部 logo 的文字垂直对齐为 top，避免默认 middle 看起来偏下*/
+header .brand-logo .waves-effect {
+    vertical-align: top;
 }
 
 header .button-collapse i {
@@ -1298,6 +1305,7 @@ thead {
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 3px 5px rgba(0, 0, 0, .12);
+    z-index: 0;
 }
 
 .chip-container .chip:hover {
@@ -1986,7 +1994,7 @@ footer .copy-right {
     /* absolute position */
     position: absolute;
     /* set position to right bottom corner of block */
-    right: 0;
+    right: 0.2em;
     bottom: 0;
 }
 
@@ -2001,7 +2009,8 @@ footer .copy-right {
     /* set width and height */
     width: 1em;
     height: 1em;
-    margin-top: 0.2em;
+    /* fix the problem of hidden failure */
+    margin-top: 0.4em;
     /* bg color = bg color under block */
     background: white;
 }

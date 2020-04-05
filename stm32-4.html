@@ -4,12 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-	<meta name="baidu-site-verification" content="4duikEwdKV">
-	<meta name="google-site-verification" content="ITtW-qXOslWyS9zHoz5wrnatPs5ylPbgA4RDG4Hak4k">
     <meta name="keywords" content="那个深秋的夜晚——与ADC的浪漫邂逅, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
-    <meta name="description" content="注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！
-ADC简介
-STM32f103 系列有 3 个 ADC，精度为 1">
+    <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,22 +13,21 @@ STM32f103 系列有 3 个 ADC，精度为 1">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>那个深秋的夜晚——与ADC的浪漫邂逅 | 黄同学的博客</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-    
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/jquery.min.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <title>那个深秋的夜晚——与ADC的浪漫邂逅 | 黄同学的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/jquery/jquery.min.js"></script>
     
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
@@ -40,11 +35,11 @@ STM32f103 系列有 3 个 ADC，精度为 1">
 <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">黄同学的博客</span>
                 </a>
@@ -142,7 +137,7 @@ STM32f103 系列有 3 个 ADC，精度为 1">
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">黄同学的博客</div>
         <div class="logo-desc">
@@ -217,7 +212,7 @@ STM32f103 系列有 3 个 ADC，精度为 1">
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -329,7 +324,7 @@ STM32f103 系列有 3 个 ADC，精度为 1">
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -393,6 +388,14 @@ STM32f103 系列有 3 个 ADC，精度为 1">
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
+        
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
     }
 
     #toc-content .is-active-link {
@@ -486,386 +489,334 @@ STM32f103 系列有 3 个 ADC，精度为 1">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！</p>
-<h2 id="ADC简介">ADC简介</h2>
-<p>STM32f103 系列有 3 个 ADC，精度为 12 位，每个 ADC 最多有 16 个外部通道，可测量16个外部和2个内部信号源。其中ADC1 和 ADC2 都有 16 个外部通道，ADC3 根据 CPU 引脚的不同通道数也不同，一般都有8 个外部通道。</p>
+<h2 id="ADC简介"><a href="#ADC简介" class="headerlink" title="ADC简介"></a>ADC简介</h2><p>STM32f103 系列有 3 个 ADC，精度为 12 位，每个 ADC 最多有 16 个外部通道，可测量16个外部和2个内部信号源。其中ADC1 和 ADC2 都有 16 个外部通道，ADC3 根据 CPU 引脚的不同通道数也不同，一般都有8 个外部通道。</p>
 <p>ADC的结果可以左对齐或右对齐方式存储在16位数据寄存器中。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/adc.png" alt="单个ADC框图"></p>
-<h3 id="电压输入范围">电压输入范围</h3>
-<p>输入电压：$V_{REF-} \leq V_{IN} \leq V_{REF+}$，决定输入电压的引脚：$V_{REF-}, V_{REF+},VDDA,VSSA$，把$VSSA$和$V_{REF-}$接地，$V_{REF+}$和$VDDA$接$3.3V$，得到ADC的输入电压范围为：<mark>0~3.3V</mark>。</p>
+<h3 id="电压输入范围"><a href="#电压输入范围" class="headerlink" title="电压输入范围"></a>电压输入范围</h3><p>输入电压：$V_{REF-} \leq V_{IN} \leq V_{REF+}$，决定输入电压的引脚：$V_{REF-}, V_{REF+},VDDA,VSSA$，把$VSSA$和$V_{REF-}$接地，$V_{REF+}$和$VDDA$接$3.3V$，得到ADC的输入电压范围为：==0~3.3V==。</p>
 <blockquote>
-<p>VDD： D即device 表示器件的意思，是器件内部的工作电压。</p>
-<p>VDDA(A表示 Analog 【模拟】)是模拟电源，当使用到模拟信号的时候，比如AD（模数）或者DA（数模）的时候，系统会使用VDDA的电压作为参考电压来。不要求精准使用的话，可以直接把VDDA和VDD同时接入$3.3V$就行。如果要求精准，则需要做一个稳压电路，再接入VDDA 。</p>
-<p>VSS：S即series 表示公共连接的意思，通常指电路公共接地端电压 ，VSSA同理为模拟部分的电源。</p>
-<p>对于数字电路来说，VCC是电路的供电电压,VDD是芯片的工作电压(通常$VCC&gt;VDD$)，$VSS$是接地点。<br>
-例如，对于ARM单片机来说，其供电电压$VCC$一般为5V，一般经过稳压模块将其转换为单片机工作电压$VDD = 3.3V$。</p>
+<p> VDD： D即device 表示器件的意思，是器件内部的工作电压。 </p>
+<p> VDDA(A表示 Analog 【模拟】)是模拟电源，当使用到模拟信号的时候，比如AD（模数）或者DA（数模）的时候，系统会使用VDDA的电压作为参考电压来。不要求精准使用的话，可以直接把VDDA和VDD同时接入$3.3V$就行。如果要求精准，则需要做一个稳压电路，再接入VDDA 。</p>
+<p> VSS：S即series 表示公共连接的意思，通常指电路公共接地端电压 ，VSSA同理为模拟部分的电源。</p>
+<p>对于数字电路来说，VCC是电路的供电电压,VDD是芯片的工作电压(通常$VCC&gt;VDD$)，$VSS$是接地点。<br>例如，对于ARM单片机来说，其供电电压$VCC$一般为5V，一般经过稳压模块将其转换为单片机工作电压$VDD = 3.3V$。</p>
 </blockquote>
-<h4 id="定制电压范围">定制电压范围</h4>
-<p>例如将电压范围设成$-10V$~ $10V$，可以通过下图的附加扩展电路实现：</p>
+<h4 id="定制电压范围"><a href="#定制电压范围" class="headerlink" title="定制电压范围"></a>定制电压范围</h4><p>例如将电压范围设成$-10V$~ $10V$，可以通过下图的附加扩展电路实现：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/-10~10.png" alt="附加电路"></p>
-<p>根据基尔霍夫定律（KCL），即节点流入的电流等于流出的电流可以得到：<br>
-$$<br>
-{(V_{IN}-V_{OUT})\over 2 } + {(3.3V-V_{OUT})\over R_1 } = {V_{OUT} \over R_3}<br>
-$$<br>
-解得：																																		 	$V_{OUT}={(V_{IN}+ 10)\over 6}$</p>
+<p>根据基尔霍夫定律（KCL），即节点流入的电流等于流出的电流可以得到：<br>$$<br>{(V_{IN}-V_{OUT})\over 2 } + {(3.3V-V_{OUT})\over R_1 } = {V_{OUT} \over R_3}<br>$$<br>解得：                                                                                                                                             $V_{OUT}={(V_{IN}+ 10)\over 6}$</p>
 <p>在附加电路的条件下，当$V_{IN}=-10V$时，$V_{OUT}=0$；当$V_{IN}=10V$时，$V_{OUT}=3.3V$。以此达到测量$-10V$~ $10V$电压的目的。</p>
-<h3 id="输入通道">输入通道</h3>
-<p>输入通道，顾名思义为将电压输入到ADC的通道，STM32 的 ADC 多达 18 个通道，具体参考下图：</p>
+<h3 id="输入通道"><a href="#输入通道" class="headerlink" title="输入通道"></a>输入通道</h3><p>输入通道，顾名思义为将电压输入到ADC的通道，STM32 的 ADC 多达 18 个通道，具体参考下图：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/%E8%BE%93%E5%85%A5%E9%80%9A%E9%81%93.png" alt="输入通道"></p>
 <p>外部的 16 个通道在转换的时候又分为规则通道和注入通道，其中规则通道最多有 16路，注入通道最多有 4 路。</p>
 <ul>
 <li>规则通道：也就是一般情况下用到的通道；</li>
 <li>注入通道：可以在规则通道转换的时候强行插入转换，享有转换特权，有点像中断的操作。</li>
 </ul>
-<h3 id="转换顺序">转换顺序</h3>
-<ul>
-<li>
-<p>规则序列</p>
+<h3 id="转换顺序"><a href="#转换顺序" class="headerlink" title="转换顺序"></a>转换顺序</h3><ul>
+<li><p>规则序列</p>
 <p>转换的优先级并不是根据通道的编号来确定的，需要操作规则序列寄存器<code>SQRx</code>(x=1,2,3)，例如将通道六设置为第十个转换，SQ10这个位写6即可。SQL1中SQL位用于设置转换通道的数量，具体的操作都可以库函数代劳。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/%E8%BD%AC%E6%8D%A2%E9%A1%BA%E5%BA%8F_%E8%A7%84%E5%88%99.png" alt="规则序列"></p>
 </li>
-<li>
-<p>注入序列</p>
+<li><p>注入序列</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/%E8%BD%AC%E6%8D%A2%E9%A1%BA%E5%BA%8F_%E6%B3%A8%E5%85%A5.png" alt="注入序列"></p>
 <p>注入序列的转换顺序稍有不一样，当<code>JL</code>的值小于<code>4</code>时，第一次转的顺序是<code>JSQx</code>(x=4-JL)；当JL等于4时，与SQR一致。</p>
 </li>
 </ul>
-<h3 id="触发源">触发源</h3>
-<p>触发源可以看作是系统给ADC这个外设的一个信号，当触发源激活时，ADC就开始进行转换。触发源一般有两种：软件触发和外部事件触发（包括内部定时器和外部IO）；</p>
+<h3 id="触发源"><a href="#触发源" class="headerlink" title="触发源"></a>触发源</h3><p>触发源可以看作是系统给ADC这个外设的一个信号，当触发源激活时，ADC就开始进行转换。触发源一般有两种：软件触发和外部事件触发（包括内部定时器和外部IO）；</p>
 <ul>
-<li>
-<p>软件触发</p>
+<li><p>软件触发</p>
 <p>在<code>ADC_CR2</code>的<code>ADON</code>位写1，开始转换；</p>
 </li>
-<li>
-<p>外部事件触发</p>
+<li><p>外部事件触发</p>
 <p>外部触发源很多，不在此详叙，主要经过<code>EXTSEL[2:0]</code>和 <code>JEXTSEL[2:0]</code>位来选择，<code>EXTTRIG</code> 和<code>JEXTTRIG</code>这两位来激活。</p>
 </li>
 </ul>
-<h3 id="转换时间">转换时间</h3>
-<h4 id="ADC时钟">ADC时钟</h4>
-<p>ADC 输入时钟 ADC_CLK 由 PCLK2 经过分频产生，最大是 14M，分频因子由 RCC 时钟配置寄存器<code> RCC_CFGR</code> 的位 15:14 <code>ADCPRE[1:0]</code>设置，可以是 2/4/6/8 分频，注意这里没有 1 分频。一般我们设置 $PCLK2=HCLK=72M$。</p>
-<h4 id="采样时间">采样时间</h4>
-<p>ADC 使用若干个 <code>ADC_CLK</code> 周期对输入的电压进行采样，采样的周期数可通过 ADC 采样时间寄存器 <code>ADC_SMPR1</code> 和 <code>ADC_SMPR2</code> 中的 <code>SMP[2:0]</code>位设置，ADC_SMPR2 控制的是通道 0<sub>9，<code>ADC_SMPR1 </code>控制的是通道 10</sub>17。每个通道可以分别用不同的时间采样。其中采样周期最小是 1.5 个，即如果我们要达到最快的采样，那么应该设置采样周期为 1.5个周期，这里说的周期就是$ 1\over ADC_{CLK}$。</p>
-<p>ADC 的转换时间跟 ADC 的输入时钟和采样时间有关，公式为：<br>
-$$<br>
-Tconv = 采样时间 + 12.5 个周期。<br>
-$$<br>
-当 $ADCLK = 14MHZ$ （最高），采样时间设置为 1.5 周期（最快），那么总的转换时间（最短）$T_{conv}$ = 1.5 周期 + 12.5 周期 = 14 周期 = 1us。一般我们设置 $PCLK2=72M$，经过 ADC 预分频器能分频到最大的时钟只能是 12M，采样周期设置为 1.5 个周期，算出最短的转换时间为 1.17us，这个才是最常用的。</p>
-<h3 id="数据寄存器">数据寄存器</h3>
-<p>ADC转换后，规则组数据存放在<code>ADC_DR</code>寄存器中，注入组在<code>JDRx</code>。</p>
-<h4 id="规则数据寄存器">规则数据寄存器</h4>
-<p>ADC 规则组数据寄存器 <code>ADC_DR</code> 只有一个，是一个 32 位的寄存器，低 16 位在单 ADC时使用，高 16 位是在 ADC1 中双模式下保存 ADC2 转换的规则数据，双模式就是 ADC1 和ADC2 同时使用。在单模式下，ADC1/2/3 都不使用高 16 位。因为 ADC 的精度是 12 位，<br>
-无论<code> ADC_DR</code> 的高 16 或者低 16 位都放不满，只能左对齐或者右对齐，具体是以哪一种方式存放，由 <code>ADC_CR2</code> 的 11 位 <code>ALIGN </code>设置。</p>
+<h3 id="转换时间"><a href="#转换时间" class="headerlink" title="转换时间"></a>转换时间</h3><h4 id="ADC时钟"><a href="#ADC时钟" class="headerlink" title="ADC时钟"></a>ADC时钟</h4><p>ADC 输入时钟 ADC_CLK 由 PCLK2 经过分频产生，最大是 14M，分频因子由 RCC 时钟配置寄存器<code>RCC_CFGR</code> 的位 15:14 <code>ADCPRE[1:0]</code>设置，可以是 2/4/6/8 分频，注意这里没有 1 分频。一般我们设置 $PCLK2=HCLK=72M$。</p>
+<h4 id="采样时间"><a href="#采样时间" class="headerlink" title="采样时间"></a>采样时间</h4><p>ADC 使用若干个 <code>ADC_CLK</code> 周期对输入的电压进行采样，采样的周期数可通过 ADC 采样时间寄存器 <code>ADC_SMPR1</code> 和 <code>ADC_SMPR2</code> 中的 <code>SMP[2:0]</code>位设置，ADC_SMPR2 控制的是通道 0<sub>9，<code>ADC_SMPR1</code>控制的是通道 10</sub>17。每个通道可以分别用不同的时间采样。其中采样周期最小是 1.5 个，即如果我们要达到最快的采样，那么应该设置采样周期为 1.5个周期，这里说的周期就是$ 1\over ADC_{CLK}$。</p>
+<p>ADC 的转换时间跟 ADC 的输入时钟和采样时间有关，公式为：<br>$$<br>Tconv = 采样时间 + 12.5 个周期。<br>$$<br>当 $ADCLK = 14MHZ$ （最高），采样时间设置为 1.5 周期（最快），那么总的转换时间（最短）$T_{conv}$ = 1.5 周期 + 12.5 周期 = 14 周期 = 1us。一般我们设置 $PCLK2=72M$，经过 ADC 预分频器能分频到最大的时钟只能是 12M，采样周期设置为 1.5 个周期，算出最短的转换时间为 1.17us，这个才是最常用的。</p>
+<h3 id="数据寄存器"><a href="#数据寄存器" class="headerlink" title="数据寄存器"></a>数据寄存器</h3><p>ADC转换后，规则组数据存放在<code>ADC_DR</code>寄存器中，注入组在<code>JDRx</code>。</p>
+<h4 id="规则数据寄存器"><a href="#规则数据寄存器" class="headerlink" title="规则数据寄存器"></a>规则数据寄存器</h4><p>ADC 规则组数据寄存器 <code>ADC_DR</code> 只有一个，是一个 32 位的寄存器，低 16 位在单 ADC时使用，高 16 位是在 ADC1 中双模式下保存 ADC2 转换的规则数据，双模式就是 ADC1 和ADC2 同时使用。在单模式下，ADC1/2/3 都不使用高 16 位。因为 ADC 的精度是 12 位，<br>无论<code>ADC_DR</code> 的高 16 或者低 16 位都放不满，只能左对齐或者右对齐，具体是以哪一种方式存放，由 <code>ADC_CR2</code> 的 11 位 <code>ALIGN</code>设置。</p>
 <p>由于数据寄存器只有一个，而通道却有多个，<strong>多通道转换时为了避免数据被覆盖，转换完成时应立刻将数据取走</strong>，一般开启<code>DMA</code>传输模式，直接将数据传输给变量。</p>
-<h4 id="注入数据寄存器">注入数据寄存器</h4>
-<p>ADC 注入组最多有 4 个通道，刚好注入数据寄存器也有 4 个，每个通道对应着自己的寄存器，不会跟规则寄存器那样产生数据覆盖的问题。<code>ADC_JDRx</code> 是 32 位的，低 16 位有效，高 16 位保留，数据同样分为左对齐和右对齐，具体是以哪一种方式存放，由<br>
-<code>ADC_CR2</code> 的 11 位<code> ALIGN</code> 设置。</p>
-<h3 id="中断">中断</h3>
-<h4 id="转换结束中断">转换结束中断</h4>
-<p>数据转换结束后，可以产生中断，中断分为三种：</p>
+<h4 id="注入数据寄存器"><a href="#注入数据寄存器" class="headerlink" title="注入数据寄存器"></a>注入数据寄存器</h4><p>ADC 注入组最多有 4 个通道，刚好注入数据寄存器也有 4 个，每个通道对应着自己的寄存器，不会跟规则寄存器那样产生数据覆盖的问题。<code>ADC_JDRx</code> 是 32 位的，低 16 位有效，高 16 位保留，数据同样分为左对齐和右对齐，具体是以哪一种方式存放，由<br><code>ADC_CR2</code> 的 11 位<code>ALIGN</code> 设置。</p>
+<h3 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h3><h4 id="转换结束中断"><a href="#转换结束中断" class="headerlink" title="转换结束中断"></a>转换结束中断</h4><p>数据转换结束后，可以产生中断，中断分为三种：</p>
 <ul>
-<li>
-<p>*规则通道转换结束中断，*对应中断位：<code>ADC_IT_EOC</code>;</p>
+<li><p><em>规则通道转换结束中断，</em>对应中断位：<code>ADC_IT_EOC</code>;</p>
 </li>
-<li>
-<p>*注入转换通道转换结束中断，*对应中断位：<code>ADC_IT_JEOC</code>;</p>
+<li><p><em>注入转换通道转换结束中断，</em>对应中断位：<code>ADC_IT_JEOC</code>;</p>
 </li>
-<li>
-<p><em>模拟看门狗中断</em>，对应中断位：<code>ADC_IT_AWD</code>。</p>
+<li><p><em>模拟看门狗中断</em>，对应中断位：<code>ADC_IT_AWD</code>。</p>
 </li>
 </ul>
-<h4 id="模拟看门狗中断">模拟看门狗中断</h4>
-<p>当被 ADC 转换的模拟电压低于低阈值或者高于高阈值时，就会产生中断，<strong>前提是我们开启了模拟看门狗中断</strong>，其中低阈值和高阈值由 <code>ADC_LTR</code> 和 <code>ADC_HTR</code> 设置。例如我们设置的电压高阈值为3.3V，若接入的模拟电压高于3.3V时，即产生中断。</p>
-<h4 id="DMA-请求">DMA 请求</h4>
-<p>规则和注入通道转换结束后，除了产生中断外，还可以产生 DMA 请求，把转换好的数据直接存储在内存里面。要注意的是<strong>只有 ADC1 和 ADC3 可以产生 DMA 请求</strong>。</p>
-<h3 id="双-ADC-模式">双 ADC 模式</h3>
-<p>AD 转换包括采样阶段和转换阶段，在采样阶段才对通道数据进行采集；而在转换阶段只是将采集到的数据进行转换为数字量输出，此刻通道数据变化不会改变转换结果。独立模式的 ADC 采集需要在一个通道采集并且转换完成后才会进行下一个通道的采集。而双重 ADC 的机制就是使用两个 ADC 同时采样一个或者多个通道。双重 ADC 模式较独立模式一个最大的优势就是提高了采样率，弥补了单个 ADC 采样不够快的缺点。</p>
-<p>启用双 ADC 模式的时候，通过配置 <code>ADC_CR1 </code>寄存器的<code> DUALMOD[3:0]</code>位，可以有几种不同的模式：</p>
+<h4 id="模拟看门狗中断"><a href="#模拟看门狗中断" class="headerlink" title="模拟看门狗中断"></a>模拟看门狗中断</h4><p>当被 ADC 转换的模拟电压低于低阈值或者高于高阈值时，就会产生中断，<strong>前提是我们开启了模拟看门狗中断</strong>，其中低阈值和高阈值由 <code>ADC_LTR</code> 和 <code>ADC_HTR</code> 设置。例如我们设置的电压高阈值为3.3V，若接入的模拟电压高于3.3V时，即产生中断。</p>
+<h4 id="DMA-请求"><a href="#DMA-请求" class="headerlink" title="DMA 请求"></a>DMA 请求</h4><p>规则和注入通道转换结束后，除了产生中断外，还可以产生 DMA 请求，把转换好的数据直接存储在内存里面。要注意的是<strong>只有 ADC1 和 ADC3 可以产生 DMA 请求</strong>。</p>
+<h3 id="双-ADC-模式"><a href="#双-ADC-模式" class="headerlink" title="双 ADC 模式"></a>双 ADC 模式</h3><p>AD 转换包括采样阶段和转换阶段，在采样阶段才对通道数据进行采集；而在转换阶段只是将采集到的数据进行转换为数字量输出，此刻通道数据变化不会改变转换结果。独立模式的 ADC 采集需要在一个通道采集并且转换完成后才会进行下一个通道的采集。而双重 ADC 的机制就是使用两个 ADC 同时采样一个或者多个通道。双重 ADC 模式较独立模式一个最大的优势就是提高了采样率，弥补了单个 ADC 采样不够快的缺点。</p>
+<p>启用双 ADC 模式的时候，通过配置 <code>ADC_CR1</code>寄存器的<code>DUALMOD[3:0]</code>位，可以有几种不同的模式：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">模式</th>
-<th style="text-align:left">简介</th>
+<th align="center">模式</th>
+<th align="left">简介</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">同步注入模式</td>
-<td style="text-align:left">ADC1 和 ADC2 同时转换一个注入通道组，其中 ADC1 为主，ADC2 为从。转换的数据存储在每个 ADC 接口的<code>ADC_JDRx</code>寄存器中。</td>
+<tbody><tr>
+<td align="center">同步注入模式</td>
+<td align="left">ADC1 和 ADC2 同时转换一个注入通道组，其中 ADC1 为主，ADC2 为从。转换的数据存储在每个 ADC 接口的<code>ADC_JDRx</code>寄存器中。</td>
 </tr>
 <tr>
-<td style="text-align:center">同步规则模式</td>
-<td style="text-align:left">ADC1 和 ADC2 同时转换一个规则通道组，其中 ADC1 为主，ADC2 为从。ADC1 转换的结果放在 <code>ADC1_DR</code> 的低 16 位，ADC2 转换的结果放在 <code>ADC1_DR</code> 的高十六位。</td>
+<td align="center">同步规则模式</td>
+<td align="left">ADC1 和 ADC2 同时转换一个规则通道组，其中 ADC1 为主，ADC2 为从。ADC1 转换的结果放在 <code>ADC1_DR</code> 的低 16 位，ADC2 转换的结果放在 <code>ADC1_DR</code> 的高十六位。</td>
 </tr>
 <tr>
-<td style="text-align:center">快速交叉模式</td>
-<td style="text-align:left">ADC1 和 ADC2 交替采集一个规则通道组（通常为一个通道）。当ADC2 触发之后，ADC1 需要等待 <mark>7</mark>个<code> ADCCLK</code> 之后才能触发。</td>
+<td align="center">快速交叉模式</td>
+<td align="left">ADC1 和 ADC2 交替采集一个规则通道组（通常为一个通道）。当ADC2 触发之后，ADC1 需要等待 ==7==个<code>ADCCLK</code> 之后才能触发。</td>
 </tr>
 <tr>
-<td style="text-align:center">慢速交叉模式</td>
-<td style="text-align:left">ADC1 和 ADC2 交替采集一个规则通道组（只能为一个通道）。当ADC2 触发之后，ADC1 需要等待 <mark>14</mark> 个<code> ADCCLK</code> 之后才能触发。</td>
+<td align="center">慢速交叉模式</td>
+<td align="left">ADC1 和 ADC2 交替采集一个规则通道组（只能为一个通道）。当ADC2 触发之后，ADC1 需要等待 ==14== 个<code>ADCCLK</code> 之后才能触发。</td>
 </tr>
 <tr>
-<td style="text-align:center">交替触发模式</td>
-<td style="text-align:left">ADC1 和 ADC2 轮流采集注入通道组，当 ADC1 所有通道采集完毕之后再采集 ADC2 的通道，如此循环。跟交叉采集不一样。</td>
+<td align="center">交替触发模式</td>
+<td align="left">ADC1 和 ADC2 轮流采集注入通道组，当 ADC1 所有通道采集完毕之后再采集 ADC2 的通道，如此循环。跟交叉采集不一样。</td>
 </tr>
 <tr>
-<td style="text-align:center">混合的规则/注入同步模式</td>
-<td style="text-align:left">规则组同步转换被中断，以启动注入组的同步转换。分开两个模式来理解就可以了，区别就是注入组可以中断规则组的转换。</td>
+<td align="center">混合的规则/注入同步模式</td>
+<td align="left">规则组同步转换被中断，以启动注入组的同步转换。分开两个模式来理解就可以了，区别就是注入组可以中断规则组的转换。</td>
 </tr>
 <tr>
-<td style="text-align:center">混 合 的 同 步 规则+交替触发模式</td>
-<td style="text-align:left">规则组同步转换被中断，以启动注入组交替触发转换。分开两个模式来理解就可以了，区别就是注入组可以中断规则组的转换。</td>
+<td align="center">混 合 的 同 步 规则+交替触发模式</td>
+<td align="left">规则组同步转换被中断，以启动注入组交替触发转换。分开两个模式来理解就可以了，区别就是注入组可以中断规则组的转换。</td>
 </tr>
 <tr>
-<td style="text-align:center">混合同步注入+交叉模式</td>
-<td style="text-align:left">交叉转换可以被同步注入模式中断。这种情况下，交叉转换被中断，注入转换被启动。</td>
+<td align="center">混合同步注入+交叉模式</td>
+<td align="left">交叉转换可以被同步注入模式中断。这种情况下，交叉转换被中断，注入转换被启动。</td>
 </tr>
-</tbody>
-</table>
-<h2 id="例程设计">例程设计</h2>
-<p>STM32 的 ADC 功能繁多，以下通过三个基础例程尽量展示ADC的功能，代码中均没有使用宏定义，是为了看得更直观。</p>
-<h3 id="独立模式单通道">独立模式单通道</h3>
-<p>**1) **初始 ADC 用到的 GPIO，这里我们以<code>GPIOC1</code>为例：</p>
-<pre class=" language-language-c"><code class="language-language-c">void ADCx_GPIO_Config(void){
-    GPIO_InitTypeDef GPIO_InitStructure;
-	
-    // 打开 ADC IO 端口时钟
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);
-	
-    // 配置 ADC IO 引脚模式
-	// 必须为模拟输入
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AIN;
-	// 初始化 ADC IO
-	GPIO_Init(GPIOC, &GPIO_InitStructure); 
-}
-</code></pre>
+</tbody></table>
+<h2 id="例程设计"><a href="#例程设计" class="headerlink" title="例程设计"></a>例程设计</h2><p>STM32 的 ADC 功能繁多，以下通过三个基础例程尽量展示ADC的功能，代码中均没有使用宏定义，是为了看得更直观。</p>
+<h3 id="独立模式单通道"><a href="#独立模式单通道" class="headerlink" title="独立模式单通道"></a>独立模式单通道</h3><p>*<em>1) *</em>初始 ADC 用到的 GPIO，这里我们以<code>GPIOC1</code>为例：</p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">ADCx_GPIO_Config</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    GPIO_InitTypeDef GPIO_InitStructure<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 打开 ADC IO 端口时钟</span>
+    <span class="token function">RCC_APB2PeriphClockCmd</span><span class="token punctuation">(</span>RCC_APB2Periph_GPIOC<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 配置 ADC IO 引脚模式</span>
+    <span class="token comment" spellcheck="true">// 必须为模拟输入</span>
+    GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span> GPIO_Pin_1<span class="token punctuation">;</span>
+    GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Mode <span class="token operator">=</span> GPIO_Mode_AIN<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 初始化 ADC IO</span>
+    <span class="token function">GPIO_Init</span><span class="token punctuation">(</span>GPIOC<span class="token punctuation">,</span> <span class="token operator">&amp;</span>GPIO_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span></code></pre>
 <p><strong>2)</strong> 设置 ADC 的工作参数并初始化（以ADC1为例）；</p>
-<pre class=" language-language-c"><code class="language-language-c">void ADCx_Mode_Config(void){
-    ADC_InitTypeDef ADC_InitStructure;
-    // 打开 ADC 时钟
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_ADC1, ENABLE);
-    // ADC 模式配置
-	// 只使用一个 ADC，属于独立模式
-    ADC_InitStructure.ADC_Mode = ADC_Mode_Independent;
-    
-    // 禁止扫描模式，多通道才要，单通道不需要
-    ADC_InitStructure.ADC_ScanConvMode = DISABLE;
-    
-    // 连续转换模式
-    ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;
-    
-    // 不用外部触发转换，软件开启即可
-    ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
-	
-	// 转换结果右对齐
-    ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;
-	
-    // 转换通道 1 个
-    ADC_InitStructure.ADC_NbrOfChannel = 1;
-	// 初始化 ADC
-	ADC_Init(ADC1, &ADC_InitStructure);
-    // 配置ADC时钟为PCLK2的8分频，即9MHz
-	RCC_ADCCLKConfig(RCC_PCLK2_Div8); 
-	
-	// 配置 ADC 通道转换顺序和采样时间
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_13, 1, ADC_SampleTime_55Cycles5);
-    /**
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">ADCx_Mode_Config</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    ADC_InitTypeDef ADC_InitStructure<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 打开 ADC 时钟</span>
+    <span class="token function">RCC_APB2PeriphClockCmd</span><span class="token punctuation">(</span>RCC_APB2Periph_ADC1<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// ADC 模式配置</span>
+    <span class="token comment" spellcheck="true">// 只使用一个 ADC，属于独立模式</span>
+    ADC_InitStructure<span class="token punctuation">.</span>ADC_Mode <span class="token operator">=</span> ADC_Mode_Independent<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 禁止扫描模式，多通道才要，单通道不需要</span>
+    ADC_InitStructure<span class="token punctuation">.</span>ADC_ScanConvMode <span class="token operator">=</span> DISABLE<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 连续转换模式</span>
+    ADC_InitStructure<span class="token punctuation">.</span>ADC_ContinuousConvMode <span class="token operator">=</span> ENABLE<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 不用外部触发转换，软件开启即可</span>
+    ADC_InitStructure<span class="token punctuation">.</span>ADC_ExternalTrigConv <span class="token operator">=</span> ADC_ExternalTrigConv_None<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 转换结果右对齐</span>
+    ADC_InitStructure<span class="token punctuation">.</span>ADC_DataAlign <span class="token operator">=</span> ADC_DataAlign_Right<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 转换通道 1 个</span>
+    ADC_InitStructure<span class="token punctuation">.</span>ADC_NbrOfChannel <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 初始化 ADC</span>
+    <span class="token function">ADC_Init</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>ADC_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 配置ADC时钟为PCLK2的8分频，即9MHz</span>
+    <span class="token function">RCC_ADCCLKConfig</span><span class="token punctuation">(</span>RCC_PCLK2_Div8<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+    <span class="token comment" spellcheck="true">// 配置 ADC 通道转换顺序和采样时间</span>
+    <span class="token function">ADC_RegularChannelConfig</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span> ADC_Channel_13<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> ADC_SampleTime_55Cycles5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/**
       * @param1 ADC 外设
       * @param2 通道选择
       * @param3 转换顺序 1~16
       * @param4 采样周期
-	  */
-	// ADC 转换结束产生中断，在中断服务程序中读取转换值
-	ADC_ITConfig(ADC1, ADC_IT_EOC, ENABLE);
-	
-	// 开启ADC，并开始转换
-	ADC_Cmd(ADC1, ENABLE);
-	
-	// 初始化ADC 校准寄存器  
-	ADC_ResetCalibration(ADC1);
-	// 等待校准寄存器初始化完成
-	while(ADC_GetResetCalibrationStatus(ADC1));
-	
-	// ADC开始校准
-	ADC_StartCalibration(ADC1);
-	// 等待校准完成
-	while(ADC_GetCalibrationStatus(ADC1));
-	
-	// 由于没有采用外部触发，所以使用软件触发ADC转换 
-	ADC_SoftwareStartConvCmd(ADC1, ENABLE);
-}
-</code></pre>
-<p>**3) **配置中断源和中断优先级；</p>
-<pre class=" language-language-c"><code class="language-language-c">void ADC_NVIC_Config(void){
-  	NVIC_InitTypeDef NVIC_InitStructure;
-	// 优先级分组
-	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
+      */</span>
+    <span class="token comment" spellcheck="true">// ADC 转换结束产生中断，在中断服务程序中读取转换值</span>
+    <span class="token function">ADC_ITConfig</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span> ADC_IT_EOC<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  	// 配置中断优先级
- 	NVIC_InitStructure.NVIC_IRQChannel = ADC1_2_IRQn;
-  	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
-  	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
-  	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-  	NVIC_Init(&NVIC_InitStructure);
-}
-</code></pre>
+    <span class="token comment" spellcheck="true">// 开启ADC，并开始转换</span>
+    <span class="token function">ADC_Cmd</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 初始化ADC 校准寄存器  </span>
+    <span class="token function">ADC_ResetCalibration</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 等待校准寄存器初始化完成</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">ADC_GetResetCalibrationStatus</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// ADC开始校准</span>
+    <span class="token function">ADC_StartCalibration</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 等待校准完成</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">ADC_GetCalibrationStatus</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 由于没有采用外部触发，所以使用软件触发ADC转换 </span>
+    <span class="token function">ADC_SoftwareStartConvCmd</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>*<em>3) *</em>配置中断源和中断优先级；</p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">ADC_NVIC_Config</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      NVIC_InitTypeDef NVIC_InitStructure<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 优先级分组</span>
+    <span class="token function">NVIC_PriorityGroupConfig</span><span class="token punctuation">(</span>NVIC_PriorityGroup_1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment" spellcheck="true">// 配置中断优先级</span>
+     NVIC_InitStructure<span class="token punctuation">.</span>NVIC_IRQChannel <span class="token operator">=</span> ADC1_2_IRQn<span class="token punctuation">;</span>
+      NVIC_InitStructure<span class="token punctuation">.</span>NVIC_IRQChannelPreemptionPriority <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+      NVIC_InitStructure<span class="token punctuation">.</span>NVIC_IRQChannelSubPriority <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+      NVIC_InitStructure<span class="token punctuation">.</span>NVIC_IRQChannelCmd <span class="token operator">=</span> ENABLE<span class="token punctuation">;</span>
+      <span class="token function">NVIC_Init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>NVIC_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p><strong>4)</strong> 中断服务函数</p>
-<pre class=" language-language-c"><code class="language-language-c">void ADC1_2_IRQHandler(void){	
-	if (ADC_GetITStatus(ADC1,ADC_IT_EOC)==SET) {
-		// 读取ADC的转换值
-		ADC_ConvertedValue = ADC_GetConversionValue(ADC1);
-        // ADC_ConvertedValue为转换值，定义原型为：__IO uint16_t ADC_ConvertedValue;
-	}
-	ADC_ClearITPendingBit(ADC1,ADC_IT_EOC);
-}
-</code></pre>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">ADC1_2_IRQHandler</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ADC_GetITStatus</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span>ADC_IT_EOC<span class="token punctuation">)</span><span class="token operator">==</span>SET<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 读取ADC的转换值</span>
+        ADC_ConvertedValue <span class="token operator">=</span> <span class="token function">ADC_GetConversionValue</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// ADC_ConvertedValue为转换值，定义原型为：__IO uint16_t ADC_ConvertedValue;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">ADC_ClearITPendingBit</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span>ADC_IT_EOC<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <p><strong>5)</strong> main()函数</p>
-<pre class=" language-language-c"><code class="language-language-c">extern __IO uint16_t ADC_ConvertedValue;
-// 局部变量，用于保存转换计算后的电压值 	 
-float ADC_ConvertedValueLocal;   
+<pre class=" language-c"><code class="language-c"><span class="token keyword">extern</span> __IO uint16_t ADC_ConvertedValue<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 局部变量，用于保存转换计算后的电压值      </span>
+<span class="token keyword">float</span> ADC_ConvertedValueLocal<span class="token punctuation">;</span>   
 
-int main(void){
-    // 默认已经完成了串口配置
-	USART_Config();
-	ADCx_GPIO_Config();
-	ADCx_Mode_Config();
-	ADC_NVIC_Config();
-	printf("\t\n ----这是一个串口发送实验----\r\n");
-    ADC_ConvertedValueLocal =(float) ADC_ConvertedValue/4096*3.3; 
-    printf("\r\n The current AD value = 0x%04X \r\n",ADC_ConvertedValue); 
-    printf("\r\n The current AD value = %f V \r\n",ADC_ConvertedValueLocal); 
-    printf("\r\n\r\n");
-}
-</code></pre>
-<h3 id="独立模式多通道">独立模式多通道</h3>
-<p>因为与单通道大多配置都相同，因此只列出差异部分。</p>
-<p>**1) **初始 ADC 用到的 GPIO；</p>
-<pre class=" language-language-c"><code class="language-language-c">GPIO_InitStructure.GPIO_Pin = 	ADC_PIN1 | ADC_PIN2 | ADC_PIN3 | ADC_PIN4 | ADC_PIN5 | ADC_PIN6;
-</code></pre>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 默认已经完成了串口配置</span>
+    <span class="token function">USART_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ADCx_GPIO_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ADCx_Mode_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ADC_NVIC_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\t\n ----这是一个串口发送实验----\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ADC_ConvertedValueLocal <span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> ADC_ConvertedValue<span class="token operator">/</span><span class="token number">4096</span><span class="token operator">*</span><span class="token number">3.3</span><span class="token punctuation">;</span> 
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n The current AD value = 0x%04X \r\n"</span><span class="token punctuation">,</span>ADC_ConvertedValue<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n The current AD value = %f V \r\n"</span><span class="token punctuation">,</span>ADC_ConvertedValueLocal<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="独立模式多通道"><a href="#独立模式多通道" class="headerlink" title="独立模式多通道"></a>独立模式多通道</h3><p>因为与单通道大多配置都相同，因此只列出差异部分。</p>
+<p>*<em>1) *</em>初始 ADC 用到的 GPIO；</p>
+<pre class=" language-c"><code class="language-c">GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span>     ADC_PIN1 <span class="token operator">|</span> ADC_PIN2 <span class="token operator">|</span> ADC_PIN3 <span class="token operator">|</span> ADC_PIN4 <span class="token operator">|</span> ADC_PIN5 <span class="token operator">|</span> ADC_PIN6<span class="token punctuation">;</span></code></pre>
 <p><strong>2)</strong> 设置 ADC 的工作参数并初始化，还需要对DMA进行配置；</p>
-<pre class=" language-language-c"><code class="language-language-c">	DMA_InitTypeDef DMA_InitStructure;
-	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);					// 打开 DMA 时钟
-	DMA_InitStructure.DMA_PeripheralBaseAddr = (u32)(&(ADC_x->DR));		// 外设基址为：ADC 数据寄存器地址
-	DMA_InitStructure.DMA_MemoryBaseAddr = (u32)ADC_ConvertedValue;		// 存储器地址,用户自定义变量（数组名）
-	DMA_InitStructure.DMA_DIR = DMA_DIR_PeripheralSRC;					// 数据源来自外设
-	DMA_InitStructure.DMA_BufferSize = 6;								// 缓冲区大小，应该等于数据目的地的数目大小
-	DMA_InitStructure.DMA_PeripheralInc = DMA_PeripheralInc_Disable;	// 外设寄存器只有一个，地址不用递增
-	DMA_InitStructure.DMA_MemoryInc = DMA_MemoryInc_Enable; 			// 存储器地址递增
-	// 外设数据大小为半字，即两个字节
-	DMA_InitStructure.DMA_PeripheralDataSize = DMA_PeripheralDataSize_HalfWord;	
-	DMA_InitStructure.DMA_MemoryDataSize = DMA_MemoryDataSize_HalfWord; // 内存数据大小也为半字，跟外设数据大小相同
-	DMA_InitStructure.DMA_Mode = DMA_Mode_Circular;						// 循环传输模式
+<pre class=" language-c"><code class="language-c">    DMA_InitTypeDef DMA_InitStructure<span class="token punctuation">;</span>
+    <span class="token function">RCC_AHBPeriphClockCmd</span><span class="token punctuation">(</span>RCC_AHBPeriph_DMA1<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>                    <span class="token comment" spellcheck="true">// 打开 DMA 时钟</span>
+    DMA_InitStructure<span class="token punctuation">.</span>DMA_PeripheralBaseAddr <span class="token operator">=</span> <span class="token punctuation">(</span>u32<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token punctuation">(</span>ADC_x<span class="token operator">-></span>DR<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// 外设基址为：ADC 数据寄存器地址</span>
+    DMA_InitStructure<span class="token punctuation">.</span>DMA_MemoryBaseAddr <span class="token operator">=</span> <span class="token punctuation">(</span>u32<span class="token punctuation">)</span>ADC_ConvertedValue<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// 存储器地址,用户自定义变量（数组名）</span>
+    DMA_InitStructure<span class="token punctuation">.</span>DMA_DIR <span class="token operator">=</span> DMA_DIR_PeripheralSRC<span class="token punctuation">;</span>                    <span class="token comment" spellcheck="true">// 数据源来自外设</span>
+    DMA_InitStructure<span class="token punctuation">.</span>DMA_BufferSize <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>                                <span class="token comment" spellcheck="true">// 缓冲区大小，应该等于数据目的地的数目大小</span>
+    DMA_InitStructure<span class="token punctuation">.</span>DMA_PeripheralInc <span class="token operator">=</span> DMA_PeripheralInc_Disable<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 外设寄存器只有一个，地址不用递增</span>
+    DMA_InitStructure<span class="token punctuation">.</span>DMA_MemoryInc <span class="token operator">=</span> DMA_MemoryInc_Enable<span class="token punctuation">;</span>             <span class="token comment" spellcheck="true">// 存储器地址递增</span>
+    <span class="token comment" spellcheck="true">// 外设数据大小为半字，即两个字节</span>
+    DMA_InitStructure<span class="token punctuation">.</span>DMA_PeripheralDataSize <span class="token operator">=</span> DMA_PeripheralDataSize_HalfWord<span class="token punctuation">;</span>    
+    DMA_InitStructure<span class="token punctuation">.</span>DMA_MemoryDataSize <span class="token operator">=</span> DMA_MemoryDataSize_HalfWord<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 内存数据大小也为半字，跟外设数据大小相同</span>
+    DMA_InitStructure<span class="token punctuation">.</span>DMA_Mode <span class="token operator">=</span> DMA_Mode_Circular<span class="token punctuation">;</span>                        <span class="token comment" spellcheck="true">// 循环传输模式</span>
 
-	// DMA 传输通道优先级为高，当使用一个DMA通道时，优先级设置不影响
-	DMA_InitStructure.DMA_Priority = DMA_Priority_High;	
-	
-	// 禁止存储器到存储器模式，因为是从外设到存储器
-	DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;					
-	
-	DMA_Init(DMA1_Channel1, &DMA_InitStructure);						// 初始化DMA	
-	DMA_Cmd(DMA1_Channel1 , ENABLE);									// 使能 DMA 通道
-/* -------------------------------------------------------------------------------------------------------*/
+    <span class="token comment" spellcheck="true">// DMA 传输通道优先级为高，当使用一个DMA通道时，优先级设置不影响</span>
+    DMA_InitStructure<span class="token punctuation">.</span>DMA_Priority <span class="token operator">=</span> DMA_Priority_High<span class="token punctuation">;</span>    
 
-	ADC_InitStructure.ADC_ScanConvMode = ENABLE;						// 扫描模式 多通道
-	ADC_InitStructure.ADC_NbrOfChannel = 6;								// 转换通道个数
+    <span class="token comment" spellcheck="true">// 禁止存储器到存储器模式，因为是从外设到存储器</span>
+    DMA_InitStructure<span class="token punctuation">.</span>DMA_M2M <span class="token operator">=</span> DMA_M2M_Disable<span class="token punctuation">;</span>                    
 
-	// 配置ADC 通道的转换顺序和采样时间
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_10, 1, ADC_SampleTime_55Cycles5);
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_11, 2, ADC_SampleTime_55Cycles5);
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_12, 3, ADC_SampleTime_55Cycles5);
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_13, 4, ADC_SampleTime_55Cycles5);
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_14, 5, ADC_SampleTime_55Cycles5);
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_15, 6, ADC_SampleTime_55Cycles5);
-	
-	ADC_DMACmd(ADC1, ENABLE);											// 使能ADC DMA 请求
-</code></pre>
+    <span class="token function">DMA_Init</span><span class="token punctuation">(</span>DMA1_Channel1<span class="token punctuation">,</span> <span class="token operator">&amp;</span>DMA_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>                        <span class="token comment" spellcheck="true">// 初始化DMA    </span>
+    <span class="token function">DMA_Cmd</span><span class="token punctuation">(</span>DMA1_Channel1 <span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>                                    <span class="token comment" spellcheck="true">// 使能 DMA 通道</span>
+<span class="token comment" spellcheck="true">/* -------------------------------------------------------------------------------------------------------*/</span>
+
+    ADC_InitStructure<span class="token punctuation">.</span>ADC_ScanConvMode <span class="token operator">=</span> ENABLE<span class="token punctuation">;</span>                        <span class="token comment" spellcheck="true">// 扫描模式 多通道</span>
+    ADC_InitStructure<span class="token punctuation">.</span>ADC_NbrOfChannel <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span>                                <span class="token comment" spellcheck="true">// 转换通道个数</span>
+
+    <span class="token comment" spellcheck="true">// 配置ADC 通道的转换顺序和采样时间</span>
+    <span class="token function">ADC_RegularChannelConfig</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span> ADC_Channel_10<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> ADC_SampleTime_55Cycles5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ADC_RegularChannelConfig</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span> ADC_Channel_11<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> ADC_SampleTime_55Cycles5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ADC_RegularChannelConfig</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span> ADC_Channel_12<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> ADC_SampleTime_55Cycles5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ADC_RegularChannelConfig</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span> ADC_Channel_13<span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> ADC_SampleTime_55Cycles5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ADC_RegularChannelConfig</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span> ADC_Channel_14<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> ADC_SampleTime_55Cycles5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ADC_RegularChannelConfig</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span> ADC_Channel_15<span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> ADC_SampleTime_55Cycles5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">ADC_DMACmd</span><span class="token punctuation">(</span>ADC1<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>                                            <span class="token comment" spellcheck="true">// 使能ADC DMA 请求</span></code></pre>
 <p><strong>3)</strong> main()函数</p>
-<pre class=" language-language-c"><code class="language-language-c">// ADC1转换的电压值通过DMA方式传到SRAM
-extern __IO uint16_t ADC_ConvertedValue[6];
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">// ADC1转换的电压值通过DMA方式传到SRAM</span>
+<span class="token keyword">extern</span> __IO uint16_t ADC_ConvertedValue<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-// 局部变量，用于保存转换计算后的电压值 	 
-float ADC_ConvertedValueLocal[6];         
+<span class="token comment" spellcheck="true">// 局部变量，用于保存转换计算后的电压值      </span>
+<span class="token keyword">float</span> ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>         
 
-int main(void){
-    // 默认已经完成了串口配置
-	USART_Config();
-	ADCx_GPIO_Config();
-	ADCx_Mode_Config();;
-	printf("\t\n ----这是一个串口发送实验----\r\n");
-    ADC_ConvertedValueLocal[0] =(float) ADC_ConvertedValue[0]/4096*3.3;
-    ADC_ConvertedValueLocal[1] =(float) ADC_ConvertedValue[1]/4096*3.3;
-    ADC_ConvertedValueLocal[2] =(float) ADC_ConvertedValue[2]/4096*3.3;
-    ADC_ConvertedValueLocal[3] =(float) ADC_ConvertedValue[3]/4096*3.3;
-    ADC_ConvertedValueLocal[4] =(float) ADC_ConvertedValue[4]/4096*3.3;
-    ADC_ConvertedValueLocal[5] =(float) ADC_ConvertedValue[5]/4096*3.3;
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 默认已经完成了串口配置</span>
+    <span class="token function">USART_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ADCx_GPIO_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ADCx_Mode_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\t\n ----这是一个串口发送实验----\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> ADC_ConvertedValue<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">/</span><span class="token number">4096</span><span class="token operator">*</span><span class="token number">3.3</span><span class="token punctuation">;</span>
+    ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> ADC_ConvertedValue<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">/</span><span class="token number">4096</span><span class="token operator">*</span><span class="token number">3.3</span><span class="token punctuation">;</span>
+    ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> ADC_ConvertedValue<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">/</span><span class="token number">4096</span><span class="token operator">*</span><span class="token number">3.3</span><span class="token punctuation">;</span>
+    ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> ADC_ConvertedValue<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token operator">/</span><span class="token number">4096</span><span class="token operator">*</span><span class="token number">3.3</span><span class="token punctuation">;</span>
+    ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> ADC_ConvertedValue<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token operator">/</span><span class="token number">4096</span><span class="token operator">*</span><span class="token number">3.3</span><span class="token punctuation">;</span>
+    ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> ADC_ConvertedValue<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token operator">/</span><span class="token number">4096</span><span class="token operator">*</span><span class="token number">3.3</span><span class="token punctuation">;</span>
 
-    printf("\r\n CH0 value = %f V \r\n",ADC_ConvertedValueLocal[0]);
-    printf("\r\n CH1 value = %f V \r\n",ADC_ConvertedValueLocal[1]);
-    printf("\r\n CH2 value = %f V \r\n",ADC_ConvertedValueLocal[2]);
-    printf("\r\n CH3 value = %f V \r\n",ADC_ConvertedValueLocal[3]);
-    printf("\r\n CH4 value = %f V \r\n",ADC_ConvertedValueLocal[4]);
-    printf("\r\n CH5 value = %f V \r\n",ADC_ConvertedValueLocal[5]);
-    printf("\r\n\r\n");
-}
-</code></pre>
-<h3 id="双ADC同步规则">双ADC同步规则</h3>
-<p>**1) **初始 ADC 用到的 GPIO；</p>
-<pre class=" language-language-c"><code class="language-language-c">	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;
-</code></pre>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n CH0 value = %f V \r\n"</span><span class="token punctuation">,</span>ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n CH1 value = %f V \r\n"</span><span class="token punctuation">,</span>ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n CH2 value = %f V \r\n"</span><span class="token punctuation">,</span>ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n CH3 value = %f V \r\n"</span><span class="token punctuation">,</span>ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n CH4 value = %f V \r\n"</span><span class="token punctuation">,</span>ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n CH5 value = %f V \r\n"</span><span class="token punctuation">,</span>ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="双ADC同步规则"><a href="#双ADC同步规则" class="headerlink" title="双ADC同步规则"></a>双ADC同步规则</h3><p>*<em>1) *</em>初始 ADC 用到的 GPIO；</p>
+<pre class=" language-c"><code class="language-c">    GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span> GPIO_Pin_1<span class="token punctuation">;</span>
+    GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span> GPIO_Pin_4<span class="token punctuation">;</span></code></pre>
 <p><strong>2)</strong> 设置 ADC 的工作参数并初始化，还需要对DMA进行配置；</p>
-<pre class=" language-language-C"><code class="language-language-C">	ADC_InitStructure.ADC_Mode = ADC_Mode_RegSimult;			// 双ADC的规则同步
-	ADC_InitStructure.ADC_ScanConvMode = ENABLE ; 				// 扫描模式
-	ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;			// 连续转换模式
-	// 不用外部触发转换，软件开启即可
-	ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
-	
-	ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;		// 转换结果右对齐
-	ADC_InitStructure.ADC_NbrOfChannel = 1;		       			// 转换通道个数	
-	ADC_Init(ADCx_1, &ADC_InitStructure);						// 初始化ADC			
-	RCC_ADCCLKConfig(RCC_PCLK2_Div8); 							// 配置ADC时钟PCLK2的8分频，即9MHz
-	// 配置ADC1 通道的转换顺序和采样时间
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_11, 1, ADC_SampleTime_239Cycles5);
-	ADC_DMACmd(ADC1, ENABLE);									// 使能ADC DMA 请求
-	// 由于没有采用外部触发，所以使用软件触发ADC转换 
-	ADC_SoftwareStartConvCmd(ADCx_1, ENABLE);
+<pre class=" language-C"><code class="language-C">    ADC_InitStructure.ADC_Mode = ADC_Mode_RegSimult;            // 双ADC的规则同步
+    ADC_InitStructure.ADC_ScanConvMode = ENABLE ;                 // 扫描模式
+    ADC_InitStructure.ADC_ContinuousConvMode = ENABLE;            // 连续转换模式
+    // 不用外部触发转换，软件开启即可
+    ADC_InitStructure.ADC_ExternalTrigConv = ADC_ExternalTrigConv_None;
 
-	ADC_Init(ADC2, &ADC_InitStructure);	
-	// 配置ADC2 通道的转换顺序和采样时间
-	ADC_RegularChannelConfig(ADC2, ADC_Channel_14, 1, ADC_SampleTime_239Cycles5);
-	
-  	ADC_ExternalTrigConvCmd(ADC2, ENABLE);						// 使能ADC2的外部触发转换
-</code></pre>
+    ADC_InitStructure.ADC_DataAlign = ADC_DataAlign_Right;        // 转换结果右对齐
+    ADC_InitStructure.ADC_NbrOfChannel = 1;                           // 转换通道个数    
+    ADC_Init(ADCx_1, &ADC_InitStructure);                        // 初始化ADC            
+    RCC_ADCCLKConfig(RCC_PCLK2_Div8);                             // 配置ADC时钟PCLK2的8分频，即9MHz
+    // 配置ADC1 通道的转换顺序和采样时间
+    ADC_RegularChannelConfig(ADC1, ADC_Channel_11, 1, ADC_SampleTime_239Cycles5);
+    ADC_DMACmd(ADC1, ENABLE);                                    // 使能ADC DMA 请求
+    // 由于没有采用外部触发，所以使用软件触发ADC转换 
+    ADC_SoftwareStartConvCmd(ADCx_1, ENABLE);
+
+    ADC_Init(ADC2, &ADC_InitStructure);    
+    // 配置ADC2 通道的转换顺序和采样时间
+    ADC_RegularChannelConfig(ADC2, ADC_Channel_14, 1, ADC_SampleTime_239Cycles5);
+
+      ADC_ExternalTrigConvCmd(ADC2, ENABLE);                        // 使能ADC2的外部触发转换</code></pre>
 <p><strong>3)</strong> main()函数</p>
-<pre class=" language-language-c"><code class="language-language-c">// ADC1转换的电压值通过MDA方式传到SRAM
-extern __IO uint32_t ADC_ConvertedValue[1];
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">// ADC1转换的电压值通过MDA方式传到SRAM</span>
+<span class="token keyword">extern</span> __IO uint32_t ADC_ConvertedValue<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-// 局部变量，用于保存转换计算后的电压值 	 
-float ADC_ConvertedValueLocal[NOFCHANEL*2];        
+<span class="token comment" spellcheck="true">// 局部变量，用于保存转换计算后的电压值      </span>
+<span class="token keyword">float</span> ADC_ConvertedValueLocal<span class="token punctuation">[</span>NOFCHANEL<span class="token operator">*</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>        
 
-int main(void){		
-	uint16_t temp0=0 ,temp1=0;
-	USART_Config();						// 默认已经完成了串口配置
-	ADCx_GPIO_Config();					// GPIO 初始化
-	ADCx_Mode_Config();					// ADC 初始化
-	printf("\r\n ----这是一个双ADC规则同步采集实验----\r\n");
-	
-    // 取出ADC1数据寄存器的高16位，这个是ADC2的转换数据
-	temp0 = (ADC_ConvertedValue[0]&0XFFFF0000) >> 16;
-    // 取出ADC1数据寄存器的低16位，这个是ADC1的转换数据
-    temp1 = (ADC_ConvertedValue[0]&0XFFFF);	
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        
+    uint16_t temp0<span class="token operator">=</span><span class="token number">0</span> <span class="token punctuation">,</span>temp1<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token function">USART_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                        <span class="token comment" spellcheck="true">// 默认已经完成了串口配置</span>
+    <span class="token function">ADCx_GPIO_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                    <span class="token comment" spellcheck="true">// GPIO 初始化</span>
+    <span class="token function">ADCx_Mode_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                    <span class="token comment" spellcheck="true">// ADC 初始化</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n ----这是一个双ADC规则同步采集实验----\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    ADC_ConvertedValueLocal[0] =(float) temp0/4096*3.3;
-    ADC_ConvertedValueLocal[1] =(float) temp1/4096*3.3;
+    <span class="token comment" spellcheck="true">// 取出ADC1数据寄存器的高16位，这个是ADC2的转换数据</span>
+    temp0 <span class="token operator">=</span> <span class="token punctuation">(</span>ADC_ConvertedValue<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">&amp;</span><span class="token number">0XFFFF0000</span><span class="token punctuation">)</span> <span class="token operator">>></span> <span class="token number">16</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 取出ADC1数据寄存器的低16位，这个是ADC1的转换数据</span>
+    temp1 <span class="token operator">=</span> <span class="token punctuation">(</span>ADC_ConvertedValue<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">&amp;</span><span class="token number">0XFFFF</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
 
-    printf("\r\n ADCx_1 value = %f V \r\n", ADC_ConvertedValueLocal[1]);
-    printf("\r\n ADCx_2 value = %f V \r\n", ADC_ConvertedValueLocal[0]);
-    printf("\r\n\r\n");
-	}
-}
-</code></pre>
+    ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> temp0<span class="token operator">/</span><span class="token number">4096</span><span class="token operator">*</span><span class="token number">3.3</span><span class="token punctuation">;</span>
+    ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> temp1<span class="token operator">/</span><span class="token number">4096</span><span class="token operator">*</span><span class="token number">3.3</span><span class="token punctuation">;</span>
+
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n ADCx_1 value = %f V \r\n"</span><span class="token punctuation">,</span> ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n ADCx_2 value = %f V \r\n"</span><span class="token punctuation">,</span> ADC_ConvertedValueLocal<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\r\n\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -886,19 +837,59 @@ int main(void){
           });
       </script>
             </div>
-			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<ins class="adsbygoogle"
-				 style="display:block; text-align:center;"
-				 data-ad-layout="in-article"
-				 data-ad-format="fluid"
-				 data-ad-client="ca-pub-7748017869031823"
-				 data-ad-slot="6534294934"></ins>
-			<script>
-				 (adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
             <hr/>
 
             
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn" rel="external nofollow noreferrer">Mahoo Huang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn/stm32-4.html">http://mahoo12138.cn/stm32-4.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
 
 
 
@@ -915,13 +906,13 @@ int main(void){
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/css/share.min.css">
 
 <div id="article-share">
     
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <div class="social-share" data-sites="twitter,facebook,qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -1039,10 +1030,10 @@ int main(void){
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1305,7 +1296,7 @@ int main(void){
 </style>
 
 <div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
         <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
         <span>评论</span>
     </div>
@@ -1313,8 +1304,8 @@ int main(void){
     </div>
 </div>
 
-<script src="/libs/valine/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1352,10 +1343,7 @@ int main(void){
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python学习Demo
-1.1 输入输出
-
-
+                            Python学习Demo1.1 输入输出
 使用input()函数获取键盘输入
 a = int(input('a = '))
 
@@ -1364,7 +1352,7 @@ a = int(input('a = '))
 使用getpass，输入无回显
 import getpass
 
-username = input('请输
+username = input('请输入用户
                         
                     </div>
                     <div class="publish-info">
@@ -1412,9 +1400,8 @@ username = input('请输
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Win10 子系统 Ubuntu 安装 Apache2 错误
-安装好 Apache2 后，通过命令service apache2 start 启动，报错为：
-AH00076: Failed to enable APR_TCP_DEFER_A
+                            Win10 子系统 Ubuntu 安装 Apache2 错误安装好 Apache2 后，通过命令service apache2 start启动，报错为：
+AH00076: Failed to enable APR_TCP_DEFER_ACC
                         
                     </div>
                     <div class="publish-info">
@@ -1453,17 +1440,21 @@ AH00076: Failed to enable APR_TCP_DEFER_A
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -1491,7 +1482,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1572,7 +1563,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </main>
 
 
-<script src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
     MathJax.Hub.Config({
         tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
@@ -1581,7 +1572,55 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
@@ -1589,9 +1628,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
-            
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.6k</span>&nbsp;字
             
             
             
@@ -1610,50 +1646,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
-            
-            <span id="sitetime">载入运行时间...</span>
-            <script>
-                function siteTime() {
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = "2019";
-                    var startMonth = "6";
-                    var startDate = "09";
-                    var startHour = "0";
-                    var startMinute = "0";
-                    var startSecond = "0";
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) {
-                        document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
-                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    } else {
-                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
-                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    }
-                }
-                setInterval(siteTime, 1000);
-            </script>
             
             <br>
             
@@ -1716,10 +1708,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->
@@ -1729,29 +1721,13 @@ $(function () {
     </a>
 </div>
 
-	
-	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
-    
-	<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162023690-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-162023690-1');
-</script>
-
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1772,33 +1748,10 @@ $(function () {
 </script>
 
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i["DaoVoiceObject"] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            a.charset = "utf-8";
-            m.parentNode.insertBefore(a, m)
-        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
-            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
-        daovoice('init', {
-            app_id: "a7fc98ad"
-        });
-        daovoice('update');
-    </script>
+    <script async src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1806,10 +1759,20 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/background/canvas-nest.js"></script>
+    
+
+    
+
     
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/instantpage.js" type="module"></script>
     
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/instantpage/instantpage.js" type="module"></script>
+    
+
 </body>
 
 </html>

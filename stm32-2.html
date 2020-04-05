@@ -4,12 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-	<meta name="baidu-site-verification" content="4duikEwdKV">
-	<meta name="google-site-verification" content="ITtW-qXOslWyS9zHoz5wrnatPs5ylPbgA4RDG4Hak4k">
     <meta name="keywords" content="STM32的中断优先级及中断编程, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
-    <meta name="description" content="注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！
-中断优先级
-在STM32中，由内核外设NVIC（嵌套向量中断控制器">
+    <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,22 +13,21 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>STM32的中断优先级及中断编程 | 黄同学的博客</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-    
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/jquery.min.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <title>STM32的中断优先级及中断编程 | 黄同学的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/jquery/jquery.min.js"></script>
     
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
@@ -40,11 +35,11 @@
 <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">黄同学的博客</span>
                 </a>
@@ -142,7 +137,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">黄同学的博客</div>
         <div class="logo-desc">
@@ -217,7 +212,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -329,7 +324,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -393,6 +388,14 @@
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
+        
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
     }
 
     #toc-content .is-active-link {
@@ -486,202 +489,188 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！</p>
-<h2 id="中断优先级">中断优先级</h2>
-<p>在STM32中，由内核外设<code>NVIC（嵌套向量中断控制器）</code>控制着整个芯片中断的相关功能，在 NVIC 中有一个<code>IPR寄存器</code>用来配置外部中断的优先级，宽度为8bit，在F103只使用了高4bit。</p>
+<h2 id="中断优先级"><a href="#中断优先级" class="headerlink" title="中断优先级"></a>中断优先级</h2><p>在STM32中，由内核外设<code>NVIC（嵌套向量中断控制器）</code>控制着整个芯片中断的相关功能，在 NVIC 中有一个<code>IPR寄存器</code>用来配置外部中断的优先级，宽度为8bit，在F103只使用了高4bit。</p>
 <p>优先级分组由另一个内核外设<code>SCB（系统控制块）</code>的<code>AIRCR（应用程序中断及复位寄存器）</code>的PRIGROUP的[10:8]位决定，</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">组</th>
-<th style="text-align:center">AIRCR</th>
-<th style="text-align:center">分配情况[7:4]</th>
-<th style="text-align:center">描述</th>
+<th align="center">组</th>
+<th align="center">AIRCR</th>
+<th align="center">分配情况[7:4]</th>
+<th align="center">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">111</td>
-<td style="text-align:center">0 : 4</td>
-<td style="text-align:center">抢占优先级0位，4位响应优先级</td>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">111</td>
+<td align="center">0 : 4</td>
+<td align="center">抢占优先级0位，4位响应优先级</td>
 </tr>
 <tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">110</td>
-<td style="text-align:center">1 : 3</td>
-<td style="text-align:center">抢占优先级1位，3位响应优先级</td>
+<td align="center">1</td>
+<td align="center">110</td>
+<td align="center">1 : 3</td>
+<td align="center">抢占优先级1位，3位响应优先级</td>
 </tr>
 <tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">101</td>
-<td style="text-align:center">2 : 2</td>
-<td style="text-align:center">抢占优先级2位，2位响应优先级</td>
+<td align="center">2</td>
+<td align="center">101</td>
+<td align="center">2 : 2</td>
+<td align="center">抢占优先级2位，2位响应优先级</td>
 </tr>
 <tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">100</td>
-<td style="text-align:center">3 : 1</td>
-<td style="text-align:center">抢占优先级3位，1位响应优先级</td>
+<td align="center">3</td>
+<td align="center">100</td>
+<td align="center">3 : 1</td>
+<td align="center">抢占优先级3位，1位响应优先级</td>
 </tr>
 <tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">011</td>
-<td style="text-align:center">4 : 0</td>
-<td style="text-align:center">抢占优先级4位，0位响应优先级</td>
+<td align="center">4</td>
+<td align="center">011</td>
+<td align="center">4 : 0</td>
+<td align="center">抢占优先级4位，0位响应优先级</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>从上表来看，当设置为组3时，每个中断优先寄存器的高四位中，前高三位为抢占优先级，低一位是响应优先级。即可设置抢占优先级别为0~7，响应优先级别为1/0。</p>
 <p>当然，抢占优先级是高于响应优先级的，数值越小所代表的优先级也越高；抢占优先级顾名思义为级别高的优先级可以打断级别低的，而抢占优先级相同的情况下，响应优先级高的，则先响应，但是不能打断低的响应优先级，响应表现的是响应的速度。</p>
 <p>当两个优先级都相同的时候，这时候就根据中断向量表中编号判断优先级。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/it_list.png" alt="it_list"></p>
-<h2 id="中断例程">中断例程</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/interupt.png" alt="原理图"></p>
+<h2 id="中断例程"><a href="#中断例程" class="headerlink" title="中断例程"></a>中断例程</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/interupt.png" alt="原理图"></p>
 <p>例程规划的是设置KEY1，KEY2为外部中断，当触发中断后，中断服务函数将两个LED的状态反转，</p>
-<h3 id="初始化GPIO">初始化GPIO</h3>
-<p>首先将LED所在的GPIO初始化，具体操作封装在函数<code>LED_GPIO_Config()</code>内：</p>
-<pre class=" language-language-c"><code class="language-language-c">/*定义一个GPIO_InitTypeDef类型的结构体*/
-GPIO_InitTypeDef GPIO_InitStructure;
+<h3 id="初始化GPIO"><a href="#初始化GPIO" class="headerlink" title="初始化GPIO"></a>初始化GPIO</h3><p>首先将LED所在的GPIO初始化，具体操作封装在函数<code>LED_GPIO_Config()</code>内：</p>
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">/*定义一个GPIO_InitTypeDef类型的结构体*/</span>
+GPIO_InitTypeDef GPIO_InitStructure<span class="token punctuation">;</span>
 
-/*开启LED相关的GPIO外设时钟*/
-RCC_APB2PeriphClockCmd( LED1_GPIO_CLK | LED2_GPIO_CLK | LED3_GPIO_CLK, ENABLE);
+<span class="token comment" spellcheck="true">/*开启LED相关的GPIO外设时钟*/</span>
+<span class="token function">RCC_APB2PeriphClockCmd</span><span class="token punctuation">(</span> LED1_GPIO_CLK <span class="token operator">|</span> LED2_GPIO_CLK <span class="token operator">|</span> LED3_GPIO_CLK<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-/*选择要控制的GPIO引脚*/
-GPIO_InitStructure.GPIO_Pin = GPIO_Pin_5;	
-/*设置引脚模式为通用推挽输出*/
-GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;   
-/*设置引脚速率为50MHz */   
-GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
-/*调用库函数，初始化GPIO*/
-GPIO_Init(GPIOB, &GPIO_InitStructure);	
-		
-/*选择要控制的GPIO引脚*/
-GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
-/*调用库函数，初始化GPIO*/
-GPIO_Init(GPIOB, &GPIO_InitStructure);
-		
-/*选择要控制的GPIO引脚*/
-GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1;
-/*调用库函数，初始化GPIOF*/
-GPIO_Init(GPIOB, &GPIO_InitStructure);
+<span class="token comment" spellcheck="true">/*选择要控制的GPIO引脚*/</span>
+GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span> GPIO_Pin_5<span class="token punctuation">;</span>    
+<span class="token comment" spellcheck="true">/*设置引脚模式为通用推挽输出*/</span>
+GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Mode <span class="token operator">=</span> GPIO_Mode_Out_PP<span class="token punctuation">;</span>   
+<span class="token comment" spellcheck="true">/*设置引脚速率为50MHz */</span>   
+GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Speed <span class="token operator">=</span> GPIO_Speed_50MHz<span class="token punctuation">;</span> 
+<span class="token comment" spellcheck="true">/*调用库函数，初始化GPIO*/</span>
+<span class="token function">GPIO_Init</span><span class="token punctuation">(</span>GPIOB<span class="token punctuation">,</span> <span class="token operator">&amp;</span>GPIO_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>    
 
-/* 关闭所有led灯	*/
-GPIO_SetBits(GPIOB, GPIO_Pin_5);		
-GPIO_SetBits(GPIOB, GPIO_Pin_0);	 
-GPIO_SetBits(GPIOB, GPIO_Pin_1);
-</code></pre>
-<h3 id="初始化EXTI">初始化EXTI</h3>
-<p>具体的操作都封装在函数<code>EXTI_Key_Config()</code>内：</p>
-<pre class=" language-language-c"><code class="language-language-c">GPIO_InitTypeDef GPIO_InitStructure; 
-EXTI_InitTypeDef EXTI_InitStructure;
+<span class="token comment" spellcheck="true">/*选择要控制的GPIO引脚*/</span>
+GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span> GPIO_Pin_0<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/*调用库函数，初始化GPIO*/</span>
+<span class="token function">GPIO_Init</span><span class="token punctuation">(</span>GPIOB<span class="token punctuation">,</span> <span class="token operator">&amp;</span>GPIO_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-/*开启按键GPIO口的时钟*/
-RCC_APB2PeriphClockCmd((RCC_APB2Periph_GPIOA|RCC_APB2Periph_AFIO),ENABLE);
-												
-/* 配置 NVIC 中断*/
-NVIC_Configuration();
-	
-/*--------------------------KEY1配置-----------------------------*/
-/* 选择按键用到的GPIO */	
- GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
-/* 配置为浮空输入 */	
-GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-GPIO_Init(GPIOA, &GPIO_InitStructure);
+<span class="token comment" spellcheck="true">/*选择要控制的GPIO引脚*/</span>
+GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span> GPIO_Pin_1<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/*调用库函数，初始化GPIOF*/</span>
+<span class="token function">GPIO_Init</span><span class="token punctuation">(</span>GPIOB<span class="token punctuation">,</span> <span class="token operator">&amp;</span>GPIO_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-/* 选择EXTI的信号源 */
-GPIO_EXTILineConfig(GPIO_PortSourceGPIOA, GPIO_PinSource0); 
-EXTI_InitStructure.EXTI_Line = EXTI_Line0;
-	
-/* EXTI为中断模式 */
-EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-/* 上升沿中断 */
-EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Rising;
-/* 使能中断 */	
-EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-EXTI_Init(&EXTI_InitStructure);
-	
-/*--------------------------KEY2配置-----------------------------*/
-/* 选择按键用到的GPIO */	
-GPIO_InitStructure.GPIO_Pin = GPIO_Pin_13;
-/* 配置为浮空输入 */	
-GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-GPIO_Init(GPIOC, &GPIO_InitStructure);
-/* 选择EXTI的信号源 */
-GPIO_EXTILineConfig(GPIO_PortSourceGPIOC, GPIO_PinSource13); 
-EXTI_InitStructure.EXTI_Line = EXTI_Line13;
-/* EXTI为中断模式 */
-EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
-/* 下降沿中断 */
-EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
-/* 使能中断 */	
-EXTI_InitStructure.EXTI_LineCmd = ENABLE;
-EXTI_Init(&EXTI_InitStructure);
-</code></pre>
-<h4 id="配置NVTI中断">配置NVTI中断</h4>
-<p><mark>NVIC_Configuration()</mark></p>
-<pre class=" language-language-c"><code class="language-language-c">NVIC_InitTypeDef NVIC_InitStructure;
-  
-/* 配置NVIC为优先级组1 */
-NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
-  
-/* 配置中断源：按键1 */
-NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
-/* 配置抢占优先级 */
-NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
-/* 配置子优先级 */
-NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
-/* 使能中断通道 */
-NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
-NVIC_Init(&NVIC_InitStructure);
-  
-/* 配置中断源：按键2，其他使用上面相关配置 */  
-NVIC_InitStructure.NVIC_IRQChannel = EXTI15_10_IRQn;
-NVIC_Init(&NVIC_InitStructure);
-</code></pre>
-<h3 id="中断服务函数">中断服务函数</h3>
-<p>上述初始化操作完成后，则在文件<code>stm32f10x_it.c</code>中编写中断服务函数了，编写中断服务函数，要对应其中断信号源，例如按键key1的中断源为<code>EXTI0_IRQn</code>，对应的中断服务函数则为<code>EXTI0_IRQHandler</code>。</p>
-<pre class=" language-language-c"><code class="language-language-c">/* 定义控制IO的宏 */
-#define digitalToggle(p,i) {p->ODR ^=i;} //输出反转状态
-#define LED1_TOGGLE		 digitalToggle(GPIOB,GPIO_Pin_5)
-#define LED2_TOGGLE		 digitalToggle(GPIOB,GPIO_Pin_0)
+<span class="token comment" spellcheck="true">/* 关闭所有led灯    */</span>
+<span class="token function">GPIO_SetBits</span><span class="token punctuation">(</span>GPIOB<span class="token punctuation">,</span> GPIO_Pin_5<span class="token punctuation">)</span><span class="token punctuation">;</span>        
+<span class="token function">GPIO_SetBits</span><span class="token punctuation">(</span>GPIOB<span class="token punctuation">,</span> GPIO_Pin_0<span class="token punctuation">)</span><span class="token punctuation">;</span>     
+<span class="token function">GPIO_SetBits</span><span class="token punctuation">(</span>GPIOB<span class="token punctuation">,</span> GPIO_Pin_1<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="初始化EXTI"><a href="#初始化EXTI" class="headerlink" title="初始化EXTI"></a>初始化EXTI</h3><p>具体的操作都封装在函数<code>EXTI_Key_Config()</code>内：</p>
+<pre class=" language-c"><code class="language-c">GPIO_InitTypeDef GPIO_InitStructure<span class="token punctuation">;</span> 
+EXTI_InitTypeDef EXTI_InitStructure<span class="token punctuation">;</span>
 
-void EXTI0_IRQHandler(void){
-  //确保是否产生了EXTI Line中断
-	if(EXTI_GetITStatus(EXTI_Line0) != RESET){
-		// LED1 取反		
-		LED1_TOGGLE;
-    	//清除中断标志位
-		EXTI_ClearITPendingBit(EXTI_Line0);     
-	}  
-}
+<span class="token comment" spellcheck="true">/*开启按键GPIO口的时钟*/</span>
+<span class="token function">RCC_APB2PeriphClockCmd</span><span class="token punctuation">(</span><span class="token punctuation">(</span>RCC_APB2Periph_GPIOA<span class="token operator">|</span>RCC_APB2Periph_AFIO<span class="token punctuation">)</span><span class="token punctuation">,</span>ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-void EXTI15_10_IRQHandler(void){
-  //确保是否产生了EXTI Line中断
-	if(EXTI_GetITStatus(EXTI_Line13) != RESET){
-		// LED2 取反		
-		LED2_TOGGLE;
-    	//清除中断标志位
-		EXTI_ClearITPendingBit(EXTI_Line13);     
-	}  
-}
-</code></pre>
-<h3 id="main-函数">main()函数</h3>
-<pre class=" language-language-c"><code class="language-language-c">int main(void){
-	/* LED 端口初始化 */
-	LED_GPIO_Config();
-	  	
-	/* 初始化EXTI中断，按下按键会触发中断，
-  	*  触发中断会进入stm32f4xx_it.c文件中的函数
-	*  EXTI0_IRQHandler和EXTI15_10_IRQHandler，处理中断，反转LED灯。
-	*/
-	EXTI_Key_Config(); 
-	
-	/* 等待中断，由于使用中断方式，CPU不用轮询按键 */
-	while(1){
-        
-	}
-}
-</code></pre>
+<span class="token comment" spellcheck="true">/* 配置 NVIC 中断*/</span>
+<span class="token function">NVIC_Configuration</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/*--------------------------KEY1配置-----------------------------*/</span>
+<span class="token comment" spellcheck="true">/* 选择按键用到的GPIO */</span>    
+ GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span> GPIO_Pin_0<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/* 配置为浮空输入 */</span>    
+GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Mode <span class="token operator">=</span> GPIO_Mode_IN_FLOATING<span class="token punctuation">;</span>
+<span class="token function">GPIO_Init</span><span class="token punctuation">(</span>GPIOA<span class="token punctuation">,</span> <span class="token operator">&amp;</span>GPIO_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* 选择EXTI的信号源 */</span>
+<span class="token function">GPIO_EXTILineConfig</span><span class="token punctuation">(</span>GPIO_PortSourceGPIOA<span class="token punctuation">,</span> GPIO_PinSource0<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+EXTI_InitStructure<span class="token punctuation">.</span>EXTI_Line <span class="token operator">=</span> EXTI_Line0<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* EXTI为中断模式 */</span>
+EXTI_InitStructure<span class="token punctuation">.</span>EXTI_Mode <span class="token operator">=</span> EXTI_Mode_Interrupt<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/* 上升沿中断 */</span>
+EXTI_InitStructure<span class="token punctuation">.</span>EXTI_Trigger <span class="token operator">=</span> EXTI_Trigger_Rising<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/* 使能中断 */</span>    
+EXTI_InitStructure<span class="token punctuation">.</span>EXTI_LineCmd <span class="token operator">=</span> ENABLE<span class="token punctuation">;</span>
+<span class="token function">EXTI_Init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>EXTI_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/*--------------------------KEY2配置-----------------------------*/</span>
+<span class="token comment" spellcheck="true">/* 选择按键用到的GPIO */</span>    
+GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span> GPIO_Pin_13<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/* 配置为浮空输入 */</span>    
+GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Mode <span class="token operator">=</span> GPIO_Mode_IN_FLOATING<span class="token punctuation">;</span>
+<span class="token function">GPIO_Init</span><span class="token punctuation">(</span>GPIOC<span class="token punctuation">,</span> <span class="token operator">&amp;</span>GPIO_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/* 选择EXTI的信号源 */</span>
+<span class="token function">GPIO_EXTILineConfig</span><span class="token punctuation">(</span>GPIO_PortSourceGPIOC<span class="token punctuation">,</span> GPIO_PinSource13<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+EXTI_InitStructure<span class="token punctuation">.</span>EXTI_Line <span class="token operator">=</span> EXTI_Line13<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/* EXTI为中断模式 */</span>
+EXTI_InitStructure<span class="token punctuation">.</span>EXTI_Mode <span class="token operator">=</span> EXTI_Mode_Interrupt<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/* 下降沿中断 */</span>
+EXTI_InitStructure<span class="token punctuation">.</span>EXTI_Trigger <span class="token operator">=</span> EXTI_Trigger_Falling<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/* 使能中断 */</span>    
+EXTI_InitStructure<span class="token punctuation">.</span>EXTI_LineCmd <span class="token operator">=</span> ENABLE<span class="token punctuation">;</span>
+<span class="token function">EXTI_Init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>EXTI_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4 id="配置NVTI中断"><a href="#配置NVTI中断" class="headerlink" title="配置NVTI中断"></a>配置NVTI中断</h4><p>==NVIC_Configuration()==</p>
+<pre class=" language-c"><code class="language-c">NVIC_InitTypeDef NVIC_InitStructure<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* 配置NVIC为优先级组1 */</span>
+<span class="token function">NVIC_PriorityGroupConfig</span><span class="token punctuation">(</span>NVIC_PriorityGroup_1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* 配置中断源：按键1 */</span>
+NVIC_InitStructure<span class="token punctuation">.</span>NVIC_IRQChannel <span class="token operator">=</span> EXTI0_IRQn<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/* 配置抢占优先级 */</span>
+NVIC_InitStructure<span class="token punctuation">.</span>NVIC_IRQChannelPreemptionPriority <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/* 配置子优先级 */</span>
+NVIC_InitStructure<span class="token punctuation">.</span>NVIC_IRQChannelSubPriority <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/* 使能中断通道 */</span>
+NVIC_InitStructure<span class="token punctuation">.</span>NVIC_IRQChannelCmd <span class="token operator">=</span> ENABLE<span class="token punctuation">;</span>
+<span class="token function">NVIC_Init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>NVIC_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/* 配置中断源：按键2，其他使用上面相关配置 */</span>  
+NVIC_InitStructure<span class="token punctuation">.</span>NVIC_IRQChannel <span class="token operator">=</span> EXTI15_10_IRQn<span class="token punctuation">;</span>
+<span class="token function">NVIC_Init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>NVIC_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="中断服务函数"><a href="#中断服务函数" class="headerlink" title="中断服务函数"></a>中断服务函数</h3><p>上述初始化操作完成后，则在文件<code>stm32f10x_it.c</code>中编写中断服务函数了，编写中断服务函数，要对应其中断信号源，例如按键key1的中断源为<code>EXTI0_IRQn</code>，对应的中断服务函数则为<code>EXTI0_IRQHandler</code>。</p>
+<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">/* 定义控制IO的宏 */</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> digitalToggle(p,i) {p->ODR ^=i;} </span><span class="token comment" spellcheck="true">//输出反转状态</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> LED1_TOGGLE         digitalToggle(GPIOB,GPIO_Pin_5)</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> LED2_TOGGLE         digitalToggle(GPIOB,GPIO_Pin_0)</span>
+
+<span class="token keyword">void</span> <span class="token function">EXTI0_IRQHandler</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//确保是否产生了EXTI Line中断</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">EXTI_GetITStatus</span><span class="token punctuation">(</span>EXTI_Line0<span class="token punctuation">)</span> <span class="token operator">!=</span> RESET<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// LED1 取反        </span>
+        LED1_TOGGLE<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//清除中断标志位</span>
+        <span class="token function">EXTI_ClearITPendingBit</span><span class="token punctuation">(</span>EXTI_Line0<span class="token punctuation">)</span><span class="token punctuation">;</span>     
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">EXTI15_10_IRQHandler</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">//确保是否产生了EXTI Line中断</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">EXTI_GetITStatus</span><span class="token punctuation">(</span>EXTI_Line13<span class="token punctuation">)</span> <span class="token operator">!=</span> RESET<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// LED2 取反        </span>
+        LED2_TOGGLE<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//清除中断标志位</span>
+        <span class="token function">EXTI_ClearITPendingBit</span><span class="token punctuation">(</span>EXTI_Line13<span class="token punctuation">)</span><span class="token punctuation">;</span>     
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span></code></pre>
+<h3 id="main-函数"><a href="#main-函数" class="headerlink" title="main()函数"></a>main()函数</h3><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/* LED 端口初始化 */</span>
+    <span class="token function">LED_GPIO_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/* 初始化EXTI中断，按下按键会触发中断，
+      *  触发中断会进入stm32f4xx_it.c文件中的函数
+    *  EXTI0_IRQHandler和EXTI15_10_IRQHandler，处理中断，反转LED灯。
+    */</span>
+    <span class="token function">EXTI_Key_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+    <span class="token comment" spellcheck="true">/* 等待中断，由于使用中断方式，CPU不用轮询按键 */</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -702,19 +691,59 @@ void EXTI15_10_IRQHandler(void){
           });
       </script>
             </div>
-			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<ins class="adsbygoogle"
-				 style="display:block; text-align:center;"
-				 data-ad-layout="in-article"
-				 data-ad-format="fluid"
-				 data-ad-client="ca-pub-7748017869031823"
-				 data-ad-slot="6534294934"></ins>
-			<script>
-				 (adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
             <hr/>
 
             
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn" rel="external nofollow noreferrer">Mahoo Huang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn/stm32-2.html">http://mahoo12138.cn/stm32-2.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
 
 
 
@@ -731,13 +760,13 @@ void EXTI15_10_IRQHandler(void){
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/css/share.min.css">
 
 <div id="article-share">
     
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <div class="social-share" data-sites="twitter,facebook,qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -855,10 +884,10 @@ void EXTI15_10_IRQHandler(void){
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1121,7 +1150,7 @@ void EXTI15_10_IRQHandler(void){
 </style>
 
 <div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
         <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
         <span>评论</span>
     </div>
@@ -1129,8 +1158,8 @@ void EXTI15_10_IRQHandler(void){
     </div>
 </div>
 
-<script src="/libs/valine/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1170,10 +1199,8 @@ void EXTI15_10_IRQHandler(void){
                         
                             注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！
 输入模式
-
-
 上拉输入（GPIO_Mode_IPU）
-上拉即把电位
+上拉即把电位提高
                         
                     </div>
                     <div class="publish-info">
@@ -1214,7 +1241,7 @@ void EXTI15_10_IRQHandler(void){
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="关于汇编语言的一点点学习笔记">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/7.jpg" class="responsive-img" alt="关于汇编语言的一点点学习笔记">
                         
                         <span class="card-title">关于汇编语言的一点点学习笔记</span>
                     </div>
@@ -1226,10 +1253,9 @@ void EXTI15_10_IRQHandler(void){
 汇编指令和机器指令的差别在于指令的表示方法上，汇编指令是机器指令便于记忆的书写格式。
 汇编指令是机器指令的助记符，便于程序员更好的操作。
 汇编语言的组成
-
 汇编指令（机器码的助记符）
 伪指令（由编译器执行）
-其他
+其他符
                         
                     </div>
                     <div class="publish-info">
@@ -1268,17 +1294,21 @@ void EXTI15_10_IRQHandler(void){
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -1306,7 +1336,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1387,7 +1417,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </main>
 
 
-<script src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
     MathJax.Hub.Config({
         tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
@@ -1396,7 +1426,55 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
@@ -1404,9 +1482,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
-            
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.6k</span>&nbsp;字
             
             
             
@@ -1425,50 +1500,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
-            
-            <span id="sitetime">载入运行时间...</span>
-            <script>
-                function siteTime() {
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = "2019";
-                    var startMonth = "6";
-                    var startDate = "09";
-                    var startHour = "0";
-                    var startMinute = "0";
-                    var startSecond = "0";
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) {
-                        document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
-                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    } else {
-                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
-                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    }
-                }
-                setInterval(siteTime, 1000);
-            </script>
             
             <br>
             
@@ -1531,10 +1562,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->
@@ -1544,29 +1575,13 @@ $(function () {
     </a>
 </div>
 
-	
-	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
-    
-	<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162023690-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-162023690-1');
-</script>
-
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1587,33 +1602,10 @@ $(function () {
 </script>
 
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i["DaoVoiceObject"] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            a.charset = "utf-8";
-            m.parentNode.insertBefore(a, m)
-        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
-            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
-        daovoice('init', {
-            app_id: "a7fc98ad"
-        });
-        daovoice('update');
-    </script>
+    <script async src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1621,10 +1613,20 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/background/canvas-nest.js"></script>
+    
+
+    
+
     
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/instantpage.js" type="module"></script>
     
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/instantpage/instantpage.js" type="module"></script>
+    
+
 </body>
 
 </html>

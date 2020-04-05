@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mahoo12138.cn/"/>
-  <updated>2020-04-05T07:29:26.279Z</updated>
+  <updated>2020-04-05T08:27:48.487Z</updated>
   <id>http://mahoo12138.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://mahoo12138.cn/stm32-6.html"/>
     <id>http://mahoo12138.cn/stm32-6.html</id>
     <published>2020-03-13T13:12:43.000Z</published>
-    <updated>2020-04-05T07:29:26.279Z</updated>
+    <updated>2020-04-05T08:27:48.487Z</updated>
     
     <summary type="html">
     
@@ -30,8 +30,7 @@
         
         
           &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
-&lt;h2 id=&quot;定时器分类&quot;&gt;定时器分类&lt;/h2&gt;
-&lt;p&gt;STM32F1
+&lt;h2 id=&quot;定时器分类&quot;&gt;&lt;a href=&quot;#定时器分类&quot;
         
       
     
@@ -85,7 +84,7 @@
       
         
         
-          &lt;h3 id=&quot;内联函数-——-C-中关键字-inline&quot;&gt;内联函数 —— C 中关键字
+          &lt;h3 id=&quot;内联函数-——-C-中关键字-inline&quot;&gt;&lt;a href=&quot;#内联函数-——-C-中关键字-inline&quot; class=&quot;headerlink&quot; title=&quot;内联函数 —— C 中关键字 inline&quot;&gt;&lt;/a&gt;内联函数 —— C 中关键字
         
       
     
@@ -112,7 +111,7 @@
         
         
           &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
-&lt;h2 id=&quot;ILI9341-液晶控制器&quot;&gt;ILI9341
+&lt;h2 id=&quot;ILI9341-液晶控制器&quot;&gt;&lt;a
         
       
     
@@ -138,7 +137,7 @@
       
         
         
-          &lt;h3
+          &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
         
       
     
@@ -164,10 +163,7 @@
       
         
         
-          &lt;h2 id=&quot;流程图基础&quot;&gt;流程图基础&lt;/h2&gt;
-&lt;p&gt;首先我们先来了解下流程图的基础，这样才能更好的使用该工具。&lt;/p&gt;
-&lt;p&gt;流程图，是对某一个问题的定义、分析或解法的图形表示，图中用各种符号来表示操作、数据、流向以及装置等。&lt;/p&gt;
-&lt;h3
+          &lt;h2 id=&quot;流程图基础&quot;&gt;&lt;a href=&quot;#流程图基础&quot; class=&quot;headerlink&quot;
         
       
     
@@ -220,9 +216,7 @@
       
         
         
-          &lt;h2 id=&quot;脚注&quot;&gt;脚注&lt;/h2&gt;
-&lt;pre class=&quot; language-language-markdown&quot;&gt;&lt;code class=&quot;language-language-markdown&quot;&gt;这是一个链接到老黄博客的脚注[^1]。
-[^1]:
+          &lt;h2 id=&quot;脚注&quot;&gt;&lt;a href=&quot;#脚注&quot; class=&quot;headerlink&quot; title=&quot;脚注&quot;&gt;&lt;/a&gt;脚注&lt;/h2&gt;&lt;pre class=&quot; language-markdown&quot;&gt;&lt;code
         
       
     
@@ -250,7 +244,7 @@
       
         
         
-          &lt;h2
+          &lt;h2 id=&quot;代码及相关详解&quot;&gt;&lt;a href=&quot;#代码及相关详解&quot; class=&quot;headerlink&quot;
         
       
     
@@ -276,12 +270,7 @@
       
         
         
-          &lt;h1&gt;Python学习Demo&lt;/h1&gt;
-&lt;h2 id=&quot;1-1-输入输出&quot;&gt;1.1 输入输出&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;使用input()函数获取键盘输入&lt;/p&gt;
-&lt;pre class=&quot; language-language-python&quot;&gt;&lt;code
+          &lt;h1 id=&quot;Python学习Demo&quot;&gt;&lt;a href=&quot;#Python学习Demo&quot; class=&quot;headerlink&quot; title=&quot;Python学习Demo&quot;&gt;&lt;/a&gt;Python学习Demo&lt;/h1&gt;&lt;h2 id=&quot;1-1-输入输出&quot;&gt;&lt;a
         
       
     
@@ -308,8 +297,7 @@
         
         
           &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
-&lt;h2 id=&quot;ADC简介&quot;&gt;ADC简介&lt;/h2&gt;
-&lt;p&gt;STM32f103 系列有 3
+&lt;h2 id=&quot;ADC简介&quot;&gt;&lt;a href=&quot;#ADC简介&quot;
         
       
     
@@ -335,8 +323,7 @@
       
         
         
-          &lt;h2 id=&quot;Win10-子系统-Ubuntu-安装-Apache2-错误&quot;&gt;Win10 子系统 Ubuntu 安装 Apache2 错误&lt;/h2&gt;
-&lt;p&gt;安装好 Apache2 后，通过命令&lt;code&gt;service apache2 start
+          &lt;h2 id=&quot;Win10-子系统-Ubuntu-安装-Apache2-错误&quot;&gt;&lt;a href=&quot;#Win10-子系统-Ubuntu-安装-Apache2-错误&quot; class=&quot;headerlink&quot; title=&quot;Win10 子系统 Ubuntu 安装 Apache2
         
       
     
@@ -359,13 +346,12 @@
     <summary type="html">
     
       &lt;p&gt;之前看到有朋友在服务器上，搭建了&lt;a href=&quot;https://jupyter.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Jupyter Notebook&lt;/a&gt;（一个笔记本，支持多种编程语言），觉得挺好的，自己也想弄个用用，无奈没有服务器，只好另寻他径。&lt;/p&gt;
-&lt;h2 id=&quot;启用Win10子系统&quot;&gt;启用Win10子系统&lt;/h2&gt;
-&lt;p&gt;网络上有很多教程，就不赘述了:&lt;/p&gt;
+&lt;h2 id=&quot;启用Win10子系统&quot;&gt;&lt;a href=&quot;#启用Win10子系统&quot; class=&quot;headerlink&quot; title=&quot;启用Win10子系统&quot;&gt;&lt;/a&gt;启用Win10子系统&lt;/h2&gt;&lt;p&gt;网络上有很多教程，就不赘述了:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%90%AF%E7%94%A8Win10%E7%9A%84Linux%E5%AD%90%E7%B3%BB%E7%BB%9F&quot;&gt;手把手教你启用Win10的Linux子系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;手把手教你启用Win10的Linux子系统&quot;&gt;手把手教你启用Win10的Linux子系统&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/c3025989c28c&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Win10上体验Linux子系统–Linux虚拟机的完美替代方案&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;安装Jupyter-Notebook&quot;&gt;安装Jupyter Notebook&lt;/h2&gt;
+&lt;h2 id=&quot;安装Jupyter-Notebook&quot;&gt;&lt;a href=&quot;#安装Jupyter-Notebook&quot; class=&quot;headerlink&quot; title=&quot;安装Jupyter Notebook&quot;&gt;&lt;/a&gt;安装Jupyter Notebook&lt;/h2&gt;
     
     </summary>
     
@@ -391,10 +377,7 @@
       
         
         
-          &lt;h2 id=&quot;0UL-1UL&quot;&gt;0UL/1UL&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;0UL 表示 无符号长整型 	0&lt;br&gt;
-1UL 表示 无符号长整型 	1&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;一般的 &lt;strong&gt;1&lt;/strong&gt;
+          &lt;h2 id=&quot;0UL-1UL&quot;&gt;&lt;a href=&quot;#0UL-1UL&quot; class=&quot;headerlink&quot; title=&quot;0UL/1UL&quot;&gt;&lt;/a&gt;0UL/1UL&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;0UL 表示 无符号长整型     0&lt;br&gt;1UL 表示 无符号长整型    
         
       
     
@@ -421,8 +404,7 @@
         
         
           &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
-&lt;h2 id=&quot;SysTick介绍&quot;&gt;SysTick介绍&lt;/h2&gt;
-&lt;p&gt;SysTick
+&lt;h2 id=&quot;SysTick介绍&quot;&gt;&lt;a href=&quot;#SysTick介绍&quot;
         
       
     
@@ -448,11 +430,8 @@
       
         
         
-          &lt;h2 id=&quot;安装sitemap&quot;&gt;安装sitemap&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Windows环境下直接在博客根目录打开&lt;code&gt;Git Bash&lt;/code&gt;，运行命令：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre class=&quot;
+          &lt;h2 id=&quot;安装sitemap&quot;&gt;&lt;a href=&quot;#安装sitemap&quot; class=&quot;headerlink&quot; title=&quot;安装sitemap&quot;&gt;&lt;/a&gt;安装sitemap&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Windows环境下直接在博客根目录打开&lt;code&gt;Git
         
       
     
@@ -480,9 +459,7 @@
       
         
         
-          &lt;h2 id=&quot;普通宏定义&quot;&gt;普通宏定义&lt;/h2&gt;
-&lt;pre class=&quot; language-language-c&quot;&gt;&lt;code class=&quot;language-language-c&quot;&gt;#define PI 3.14
-#define a
+          &lt;h2 id=&quot;普通宏定义&quot;&gt;&lt;a href=&quot;#普通宏定义&quot; class=&quot;headerlink&quot; title=&quot;普通宏定义&quot;&gt;&lt;/a&gt;普通宏定义&lt;/h2&gt;&lt;pre class=&quot; language-c&quot;&gt;&lt;code class=&quot;language-c&quot;&gt;&lt;span
         
       
     
@@ -509,7 +486,7 @@
         
         
           &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
-&lt;h2
+&lt;h2 id=&quot;输入模式&quot;&gt;&lt;a href=&quot;#输入模式&quot;
         
       
     
@@ -536,7 +513,7 @@
         
         
           &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
-&lt;h2
+&lt;h2 id=&quot;中断优先级&quot;&gt;&lt;a href=&quot;#中断优先级&quot;
         
       
     
@@ -565,7 +542,7 @@
           &lt;p&gt;汇编语言的主体是汇编指令。&lt;/p&gt;
 &lt;p&gt;汇编指令和机器指令的差别在于指令的表示方法上，汇编指令是机器指令便于记忆的书写格式。&lt;/p&gt;
 &lt;p&gt;汇编指令是机器指令的助记符，便于程序员更好的操作。&lt;/p&gt;
-&lt;h3
+&lt;h3 id=&quot;汇编语言的组成&quot;&gt;&lt;a href=&quot;#汇编语言的组成&quot;
         
       
     

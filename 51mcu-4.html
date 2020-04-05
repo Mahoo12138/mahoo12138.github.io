@@ -4,12 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-	<meta name="baidu-site-verification" content="4duikEwdKV">
-	<meta name="google-site-verification" content="ITtW-qXOslWyS9zHoz5wrnatPs5ylPbgA4RDG4Hak4k">
     <meta name="keywords" content="51单片机学习之独立键盘输入, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
-    <meta name="description" content="概念基础
-上拉电阻
-上拉电阻就是将一个不确定信号（高或低电平），通过一个电阻与电源VCC相连，固定在高电平，电阻同时起限流作用。下拉同理，也是将一个不确定信号（高或低电平），通过一个电阻与地GND相连，固定在低电平。上拉电阻和下拉电阻二者共">
+    <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,22 +13,21 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>51单片机学习之独立键盘输入 | 黄同学的博客</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-    
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/jquery.min.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <title>51单片机学习之独立键盘输入 | 黄同学的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/jquery/jquery.min.js"></script>
     
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
@@ -40,11 +35,11 @@
 <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">黄同学的博客</span>
                 </a>
@@ -142,7 +137,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">黄同学的博客</div>
         <div class="logo-desc">
@@ -217,7 +212,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -329,7 +324,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -393,6 +388,14 @@
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
+        
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
     }
 
     #toc-content .is-active-link {
@@ -472,7 +475,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    391
+                    394
                 </div>
                 
 
@@ -485,44 +488,39 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="概念基础">概念基础</h2>
-<h3 id="上拉电阻">上拉电阻</h3>
-<p>上拉电阻就是将一个不确定信号（高或低电平），通过一个电阻与电源VCC相连，固定在高电平，电阻同时起限流作用。下拉同理，也是将一个不确定信号（高或低电平），通过一个电阻与地GND相连，固定在低电平。上拉电阻和下拉电阻二者共同的作用是：</p>
+                <h2 id="概念基础"><a href="#概念基础" class="headerlink" title="概念基础"></a>概念基础</h2><h3 id="上拉电阻"><a href="#上拉电阻" class="headerlink" title="上拉电阻"></a>上拉电阻</h3><p>上拉电阻就是将一个不确定信号（高或低电平），通过一个电阻与电源VCC相连，固定在高电平，电阻同时起限流作用。下拉同理，也是将一个不确定信号（高或低电平），通过一个电阻与地GND相连，固定在低电平。上拉电阻和下拉电阻二者共同的作用是：</p>
 <ul>
 <li>避免电压的“悬浮”，否则会容易产生积累电荷，静电荷造成电路的不稳定；</li>
 <li>在引脚电平不定的时候，让后面有一个稳定的电平；</li>
 <li>提高输出引脚的驱动能力。</li>
 </ul>
-<h3 id="键盘防抖">键盘防抖</h3>
-<p>当按一次按键时，由于按键有反应时间，以及抖动，造成机器感应到多次按键操作，而<strong>防抖</strong>就是让按键在抖动的过程中（一般是5-10ms）仅让机器感应到按键的一次操作。</p>
+<h3 id="键盘防抖"><a href="#键盘防抖" class="headerlink" title="键盘防抖"></a>键盘防抖</h3><p>当按一次按键时，由于按键有反应时间，以及抖动，造成机器感应到多次按键操作，而<strong>防抖</strong>就是让按键在抖动的过程中（一般是5-10ms）仅让机器感应到按键的一次操作。</p>
 <p><strong>软件防抖程序思路：</strong></p>
 <p><img src="/51mcu-4/D:%5CMahoo%5CPictures%5CBlog%5Chexo_images%5CStudy%5C51mcu%5C%E8%BD%AF%E4%BB%B6%E9%98%B2%E6%8A%96.png" alt="软件防抖程序思路"></p>
-<h2 id="程序代码">程序代码</h2>
-<pre class=" language-language-c"><code class="language-language-c">#include<reg52.h>
+<h2 id="程序代码"><a href="#程序代码" class="headerlink" title="程序代码"></a>程序代码</h2><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;reg52.h></span></span>
 
-sbit led0 = P1^0;
-sbit k1 = P3^4;
+sbit led0 <span class="token operator">=</span> P1<span class="token operator">^</span><span class="token number">0</span><span class="token punctuation">;</span>
+sbit k1 <span class="token operator">=</span> P3<span class="token operator">^</span><span class="token number">4</span><span class="token punctuation">;</span>
 
-void Delay(unsigned int ms){
-	unsigned int i ,j;
-	for(i = ms; i > 0; i--){
-		for(j = 112; j>0; j--);
-	}
-}
+<span class="token keyword">void</span> <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> ms<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> i <span class="token punctuation">,</span>j<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> ms<span class="token punctuation">;</span> i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">112</span><span class="token punctuation">;</span> j<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-void main(){
-	P1 = 0xff;
-	while(1){
-		if(k1 == 0){		//判断是否有按下按键的信号
-			Delay(5);		//延时5ms，防抖
-			if(k1 == 0){	//再次判断是否按键按下
-				while(k1 == 1);	//直到按键松开，之后后续代码
-				led0 = ~led0;	//
-			}
-		}
-	}
-}
-</code></pre>
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    P1 <span class="token operator">=</span> <span class="token number">0xff</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>k1 <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token comment" spellcheck="true">//判断是否有按下按键的信号</span>
+            <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//延时5ms，防抖</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>k1 <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token comment" spellcheck="true">//再次判断是否按键按下</span>
+                <span class="token keyword">while</span><span class="token punctuation">(</span>k1 <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//直到按键松开，之后后续代码</span>
+                led0 <span class="token operator">=</span> <span class="token operator">~</span>led0<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -543,19 +541,59 @@ void main(){
           });
       </script>
             </div>
-			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<ins class="adsbygoogle"
-				 style="display:block; text-align:center;"
-				 data-ad-layout="in-article"
-				 data-ad-format="fluid"
-				 data-ad-client="ca-pub-7748017869031823"
-				 data-ad-slot="6534294934"></ins>
-			<script>
-				 (adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
             <hr/>
 
             
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn" rel="external nofollow noreferrer">Mahoo Huang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn/51mcu-4.html">http://mahoo12138.cn/51mcu-4.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
 
 
 
@@ -572,13 +610,13 @@ void main(){
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/css/share.min.css">
 
 <div id="article-share">
     
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <div class="social-share" data-sites="twitter,facebook,qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -696,10 +734,10 @@ void main(){
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -962,7 +1000,7 @@ void main(){
 </style>
 
 <div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
         <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
         <span>评论</span>
     </div>
@@ -970,8 +1008,8 @@ void main(){
     </div>
 </div>
 
-<script src="/libs/valine/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1009,10 +1047,8 @@ void main(){
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            概念基础
-单片机延时基础
-之前的延时我们都使用的是利用C语言的多次的空循环进行延迟操作，这样的缺点是：CPU时间被占用无法进行其他任务，导致系统效率降低。而且延时时间越长，该缺点越明显，所以，这种延时操作只适用于短暂延时，或简单的项目。
-而
+                            概念基础单片机延时基础之前的延时我们都使用的是利用C语言的多次的空循环进行延迟操作，这样的缺点是：CPU时间被占用无法进行其他任务，导致系统效率降低。而且延时时间越长，该缺点越明显，所以，这种延时操作只适用于短暂延时，或简单的项目。
+而定时
                         
                     </div>
                     <div class="publish-info">
@@ -1060,8 +1096,7 @@ void main(){
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            段选和位选
-例如，你要控制四个数码管，依次是1，2，3，4，你要选择哪一个数码管（一个数码管即为一个“日”）这就是位选，顾名思义为选择位置；之后你要让选择的数码管显示某一个数字或符号，你就要控制数码管的a,b,c,d,e,f,g这七个发光二
+                            段选和位选例如，你要控制四个数码管，依次是1，2，3，4，你要选择哪一个数码管（一个数码管即为一个“日”）这就是位选，顾名思义为选择位置；之后你要让选择的数码管显示某一个数字或符号，你就要控制数码管的a,b,c,d,e,f,g这七个发光二极
                         
                     </div>
                     <div class="publish-info">
@@ -1100,17 +1135,21 @@ void main(){
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -1138,7 +1177,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1219,7 +1258,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </main>
 
 
-<script src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
     MathJax.Hub.Config({
         tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
@@ -1228,7 +1267,55 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
@@ -1236,9 +1323,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
-            
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.6k</span>&nbsp;字
             
             
             
@@ -1257,50 +1341,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
-            
-            <span id="sitetime">载入运行时间...</span>
-            <script>
-                function siteTime() {
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = "2019";
-                    var startMonth = "6";
-                    var startDate = "09";
-                    var startHour = "0";
-                    var startMinute = "0";
-                    var startSecond = "0";
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) {
-                        document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
-                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    } else {
-                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
-                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    }
-                }
-                setInterval(siteTime, 1000);
-            </script>
             
             <br>
             
@@ -1363,10 +1403,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->
@@ -1376,29 +1416,13 @@ $(function () {
     </a>
 </div>
 
-	
-	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
-    
-	<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162023690-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-162023690-1');
-</script>
-
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1419,33 +1443,10 @@ $(function () {
 </script>
 
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i["DaoVoiceObject"] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            a.charset = "utf-8";
-            m.parentNode.insertBefore(a, m)
-        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
-            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
-        daovoice('init', {
-            app_id: "a7fc98ad"
-        });
-        daovoice('update');
-    </script>
+    <script async src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1453,10 +1454,20 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/background/canvas-nest.js"></script>
+    
+
+    
+
     
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/instantpage.js" type="module"></script>
     
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/instantpage/instantpage.js" type="module"></script>
+    
+
 </body>
 
 </html>

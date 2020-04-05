@@ -4,13 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-	<meta name="baidu-site-verification" content="4duikEwdKV">
-	<meta name="google-site-verification" content="ITtW-qXOslWyS9zHoz5wrnatPs5ylPbgA4RDG4Hak4k">
     <meta name="keywords" content="51单片机学习之定时器, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
-    <meta name="description" content="概念基础
-单片机延时基础
-之前的延时我们都使用的是利用C语言的多次的空循环进行延迟操作，这样的缺点是：CPU时间被占用无法进行其他任务，导致系统效率降低。而且延时时间越长，该缺点越明显，所以，这种延时操作只适用于短暂延时，或简单的项目。
-而">
+    <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,22 +13,21 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>51单片机学习之定时器 | 黄同学的博客</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-    
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/jquery.min.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <title>51单片机学习之定时器 | 黄同学的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/jquery/jquery.min.js"></script>
     
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
@@ -41,11 +35,11 @@
 <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">黄同学的博客</span>
                 </a>
@@ -143,7 +137,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">黄同学的博客</div>
         <div class="logo-desc">
@@ -218,7 +212,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -330,7 +324,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -394,6 +388,14 @@
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
+        
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
     }
 
     #toc-content .is-active-link {
@@ -486,203 +488,174 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="概念基础">概念基础</h2>
-<h3 id="单片机延时基础">单片机延时基础</h3>
-<p>之前的延时我们都使用的是利用C语言的多次的空循环进行延迟操作，这样的缺点是：CPU时间被占用无法进行其他任务，导致系统效率降低。而且延时时间越长，该缺点越明显，所以，这种延时操作只适用于短暂延时，或简单的项目。</p>
+                <h2 id="概念基础"><a href="#概念基础" class="headerlink" title="概念基础"></a>概念基础</h2><h3 id="单片机延时基础"><a href="#单片机延时基础" class="headerlink" title="单片机延时基础"></a>单片机延时基础</h3><p>之前的延时我们都使用的是利用C语言的多次的空循环进行延迟操作，这样的缺点是：CPU时间被占用无法进行其他任务，导致系统效率降低。而且延时时间越长，该缺点越明显，所以，这种延时操作只适用于短暂延时，或简单的项目。</p>
 <p>而定时器/计数器的使用，实现了单片机对时间的有效控制。单片机中有多个定时/计数器，都可以实现定时和计数的功能。</p>
-<h3 id="定时-计数器结构">定时/计数器结构</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E5%AE%9A%E6%97%B6%E8%AE%A1%E6%95%B0%E5%99%A8.png" alt="定时/计数器结构"></p>
+<h3 id="定时-计数器结构"><a href="#定时-计数器结构" class="headerlink" title="定时/计数器结构"></a>定时/计数器结构</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E5%AE%9A%E6%97%B6%E8%AE%A1%E6%95%B0%E5%99%A8.png" alt="定时/计数器结构"></p>
 <p>16位寄存器T0、T1分别由TH0、TL0和TH1、TL1四个8位计数器组成 ，其中两个定时器的区别为：</p>
 <ul>
-<li>T0（定时器0）可分成2个独立的8位定时器，而定时器1则不能；</li>
-<li>T1（定时器1）可作为串口的波特率发生器，而定时器0则不能。</li>
+<li>T0（定时器0）可分成2个独立的8位定时器，而定时器1则不能； </li>
+<li>T1（定时器1）可作为串口的波特率发生器，而定时器0则不能。 </li>
 </ul>
 <p>还有两个特殊功能寄存器用于控制定时/计数器：</p>
 <ul>
 <li>TMOD，工作方式控制寄存器，确定工作方式和功能；</li>
 <li>TCON，工作状态控制寄存器，控制定时/计数器的启动、停止及溢出标志。</li>
 </ul>
-<h3 id="定时-计数器控制">定时/计数器控制</h3>
-<h4 id="工作方式寄存器TMOD">工作方式寄存器TMOD</h4>
-<p>低四位（0，1，2，3）用于T0，高四位用于T1：</p>
+<h3 id="定时-计数器控制"><a href="#定时-计数器控制" class="headerlink" title="定时/计数器控制"></a>定时/计数器控制</h3><h4 id="工作方式寄存器TMOD"><a href="#工作方式寄存器TMOD" class="headerlink" title="工作方式寄存器TMOD"></a>工作方式寄存器TMOD</h4><p>低四位（0，1，2，3）用于T0，高四位用于T1：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">位</th>
-<th style="text-align:center">7</th>
-<th style="text-align:center">6</th>
-<th style="text-align:center">5</th>
-<th style="text-align:center">4</th>
-<th style="text-align:center">3</th>
-<th style="text-align:center">2</th>
-<th style="text-align:center">1</th>
-<th style="text-align:center">0</th>
+<th align="center">位</th>
+<th align="center">7</th>
+<th align="center">6</th>
+<th align="center">5</th>
+<th align="center">4</th>
+<th align="center">3</th>
+<th align="center">2</th>
+<th align="center">1</th>
+<th align="center">0</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">功能</td>
-<td style="text-align:center">GATE</td>
-<td style="text-align:center">$C/\overline{T}$</td>
-<td style="text-align:center">M1</td>
-<td style="text-align:center">M0</td>
-<td style="text-align:center">GATE</td>
-<td style="text-align:center">$C/\overline{T}$</td>
-<td style="text-align:center">M1</td>
-<td style="text-align:center">M0</td>
+<tbody><tr>
+<td align="center">功能</td>
+<td align="center">GATE</td>
+<td align="center">$C/\overline{T}$</td>
+<td align="center">M1</td>
+<td align="center">M0</td>
+<td align="center">GATE</td>
+<td align="center">$C/\overline{T}$</td>
+<td align="center">M1</td>
+<td align="center">M0</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
-<li>
-<p><strong>GATE</strong>：门控位，用于控制定时器的启动是否受外部中断源的影响。当GATE = 0时，只要使用软件将TCON中的TR0或TR1置为1，就可以启动定时/计数器工作；当GATE = 0时，要用软件将TCON中的TR0或TR1为1，同时外部中断的引脚INT0/1也为高电平，才可以启动定时/计数器。即此时多了一个启动条件：INT0/1引脚需为高电平。</p>
+<li><p><strong>GATE</strong>：门控位，用于控制定时器的启动是否受外部中断源的影响。当GATE = 0时，只要使用软件将TCON中的TR0或TR1置为1，就可以启动定时/计数器工作；当GATE = 0时，要用软件将TCON中的TR0或TR1为1，同时外部中断的引脚INT0/1也为高电平，才可以启动定时/计数器。即此时多了一个启动条件：INT0/1引脚需为高电平。</p>
 </li>
-<li>
-<p>$C/\overline{T}$：定时/计数器模式选择位，当$C/\overline{T}=0$ 为定时模式；$C/\overline{T}= 1$为计数模式。</p>
+<li><p>$C/\overline{T}$：定时/计数器模式选择位，当$C/\overline{T}=0$ 为定时模式；$C/\overline{T}= 1$为计数模式。</p>
 </li>
-<li>
-<p><strong>M1/M0</strong>：工作方式设置位，定时/计数器有四种工作方式：</p>
+<li><p><strong>M1/M0</strong>：工作方式设置位，定时/计数器有四种工作方式：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">M1M0</th>
-<th style="text-align:center">工作方式</th>
-<th style="text-align:center">说明</th>
+<th align="center">M1M0</th>
+<th align="center">工作方式</th>
+<th align="center">说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">00</td>
-<td style="text-align:center">方式0</td>
-<td style="text-align:center">13位定时/计数器</td>
+<tbody><tr>
+<td align="center">00</td>
+<td align="center">方式0</td>
+<td align="center">13位定时/计数器</td>
 </tr>
 <tr>
-<td style="text-align:center">01</td>
-<td style="text-align:center">方式1</td>
-<td style="text-align:center">16位定时/计数器</td>
+<td align="center">01</td>
+<td align="center">方式1</td>
+<td align="center">16位定时/计数器</td>
 </tr>
 <tr>
-<td style="text-align:center">10</td>
-<td style="text-align:center">方式2</td>
-<td style="text-align:center">8位自动重装定时/计数器</td>
+<td align="center">10</td>
+<td align="center">方式2</td>
+<td align="center">8位自动重装定时/计数器</td>
 </tr>
 <tr>
-<td style="text-align:center">11</td>
-<td style="text-align:center">方式3</td>
-<td style="text-align:center">T0分成两个独立的定位/计数器，T1此方式停止计数</td>
+<td align="center">11</td>
+<td align="center">方式3</td>
+<td align="center">T0分成两个独立的定位/计数器，T1此方式停止计数</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 </li>
 </ul>
-<h5 id="定时-计数器工作方式">定时/计数器工作方式</h5>
-<ul>
-<li>
-<p><strong>方式0：为13位定时计数器</strong>：由TL0的低5位（高3位未用）和TH0的8位组成。TL0的低5位溢出时向TH0进位，TH0溢出时，置位TCON中的TF0标志，向CPU发出中断请求。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E6%96%B9%E5%BC%8F0.png" alt="方式0"></p>
+<h5 id="定时-计数器工作方式"><a href="#定时-计数器工作方式" class="headerlink" title="定时/计数器工作方式"></a>定时/计数器工作方式</h5><ul>
+<li><p><strong>方式0：为13位定时计数器</strong>：由TL0的低5位（高3位未用）和TH0的8位组成。TL0的低5位溢出时向TH0进位，TH0溢出时，置位TCON中的TF0标志，向CPU发出中断请求。</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E6%96%B9%E5%BC%8F0.png" alt="方式0"> </p>
 <p>计数个数与计数初值的关系：$X = 2^8-N$</p>
 </li>
-<li>
-<p><strong>方式1：为16位定时计数器</strong>：由TL0作为低8位，TH0 作为高8位，组成了16位加1计数器 。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E6%96%B9%E5%BC%8F1.png" alt="方式1"></p>
-<p>计数个数与计数初值的关系为：$X=2^{16}－N$</p>
+<li><p><strong>方式1：为16位定时计数器</strong>：由TL0作为低8位，TH0 作为高8位，组成了16位加1计数器 。</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E6%96%B9%E5%BC%8F1.png" alt="方式1"></p>
+<p>  计数个数与计数初值的关系为：$X=2^{16}－N$</p>
 </li>
-<li>
-<p><strong>方式2：8位自动重装初值定时/计数器</strong></p>
+<li><p><strong>方式2：8位自动重装初值定时/计数器</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E6%96%B9%E5%BC%8F2.png" alt="方式2"></p>
-<p>计数个数与计数初值的关系为：$X=2^8－N$</p>
+<p> 计数个数与计数初值的关系为：$X=2^8－N$ </p>
 </li>
-<li>
-<p><strong>方式3：只适用于定时/计数器T0</strong>，定时器T1处于方式3时相当于TR1=0，停止计数。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E6%96%B9%E5%BC%8F3.png" alt="方式3"></p>
-<p>工作方式3将T0分成为两个独立的8位计数器TL0和TH0 。</p>
+<li><p><strong>方式3：只适用于定时/计数器T0</strong>，定时器T1处于方式3时相当于TR1=0，停止计数。</p>
+<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E6%96%B9%E5%BC%8F3.png" alt="方式3"> </p>
+<p>  工作方式3将T0分成为两个独立的8位计数器TL0和TH0 。 </p>
 </li>
 </ul>
-<h4 id="工作状态寄存器TCON">工作状态寄存器TCON</h4>
-<table>
+<h4 id="工作状态寄存器TCON"><a href="#工作状态寄存器TCON" class="headerlink" title="工作状态寄存器TCON"></a>工作状态寄存器TCON</h4><table>
 <thead>
 <tr>
-<th style="text-align:center">位序</th>
-<th style="text-align:center">D7</th>
-<th style="text-align:center">D6</th>
-<th style="text-align:center">D5</th>
-<th style="text-align:center">D4</th>
-<th style="text-align:center">D3</th>
-<th style="text-align:center">D2</th>
-<th style="text-align:center">D1</th>
-<th style="text-align:center">D0</th>
+<th align="center">位序</th>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">位名称</td>
-<td style="text-align:center">TF1</td>
-<td style="text-align:center">TR1</td>
-<td style="text-align:center">TF0</td>
-<td style="text-align:center">TR0</td>
-<td style="text-align:center">IE1</td>
-<td style="text-align:center">IT1</td>
-<td style="text-align:center">IE0</td>
-<td style="text-align:center">IT0</td>
+<tbody><tr>
+<td align="center">位名称</td>
+<td align="center">TF1</td>
+<td align="center">TR1</td>
+<td align="center">TF0</td>
+<td align="center">TR0</td>
+<td align="center">IE1</td>
+<td align="center">IT1</td>
+<td align="center">IE0</td>
+<td align="center">IT0</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
-<li>
-<p>TF1：T1溢出标志位</p>
+<li><p>TF1：T1溢出标志位</p>
 <p>当T1计数满溢出时，硬件将TF1置1，并申请中断。接入服务程序之后，其将自动清零；T1工作时，CPU可随时查询TF1的状态。所以，TF1可用作查询测试的标志。TF1也可以用软件置1或清0，同硬件的效果一样。</p>
 </li>
-<li>
-<p>TR1：T1运行控制位</p>
+<li><p>TR1：T1运行控制位</p>
 <p>TR1 = 1：启动定时器；TR1 = 0：关闭计时器，由软件控制。</p>
 </li>
-<li>
-<p>TF0：T0溢出标志位</p>
+<li><p>TF0：T0溢出标志位</p>
 <p>功能同TF1，工作对象是T0。</p>
 </li>
-<li>
-<p>TR0：T0运行控制位</p>
+<li><p>TR0：T0运行控制位</p>
 <p>功能同TF1，工作对象是T0。</p>
 </li>
-<li>
-<p>IE1：外部中断1请求标志位</p>
-</li>
-<li>
-<p>IT1：外部中断1触发方式选择位</p>
-</li>
-<li>
-<p>IE0：外部中断0请求标志位</p>
-</li>
-<li>
-<p>IT1：外部中断0触发方式选择位</p>
+<li><p>IE1：外部中断1请求标志位</p>
 </li>
 </ul>
-<h3 id="定时-计数器原理">定时/计数器原理</h3>
-<p>定时/计数器的实质是<strong>加1计数器</strong>，由高8位和低8位2个寄存器组成。加1计数器有两个计数脉冲来源：一是由系统的时钟振荡输出脉冲经12分频后送来；二是由T0或T1引脚输入的外部脉冲源。</p>
+<ul>
+<li>IT1：外部中断1触发方式选择位</li>
+</ul>
+<ul>
+<li>IE0：外部中断0请求标志位</li>
+</ul>
+<ul>
+<li>IT1：外部中断0触发方式选择位</li>
+</ul>
+<h3 id="定时-计数器原理"><a href="#定时-计数器原理" class="headerlink" title="定时/计数器原理"></a>定时/计数器原理</h3><p>定时/计数器的实质是<strong>加1计数器</strong>，由高8位和低8位2个寄存器组成。加1计数器有两个计数脉冲来源：一是由系统的时钟振荡输出脉冲经12分频后送来；二是由T0或T1引脚输入的外部脉冲源。</p>
 <p>每来一个脉冲，计数器加1，当加到计数器全为1的时候，再输入一个脉冲使计数器归零，且计数器的溢出时TCON中的TF0或TF1置1，向CPU发出中断请求（定时/计数器中断允许时）。</p>
 <p>如果定时/计数器处于定时模式，则表示定时时间结束；计数模式即计数值已满。所以，溢出时计数器的值减去计数器的初值即为加1计数器的计数值。</p>
 <p>当设置为定时器模式时，加1计数器是对内部机器周期计数（1个机器周期相当于12个震荡周期，即<strong>计数频率为晶振频率的$1/12$</strong>）。计数个数乘以机器周期$T_{cy}$就是定时时间t。</p>
 <p>设置为计数器模式时，外部事件计数脉冲由T0或T1引脚输入到计数器。在每个机器周期的S5P2期间采样T0，T1引脚电平。当某周期采样到一高电平输入，而下一周期又采样到一低电平时，则计数器加1，更新的计数值，在下一个周期的S3P1期间装入计数器。由于检测一个从1到0的下降沿需要两个机器周期，因此要求被采样的电平至少要维持一个机器周期。当晶振频率为12MHz时，最高计数频率不超过1/2MHz，即计数脉冲的周期要大于$2\mu{s}$。</p>
-<h4 id="CPU-时序的有关知识">CPU 时序的有关知识</h4>
-<ul>
-<li>S5P2： 代表第5状态中的第二节拍</li>
+<h4 id="CPU-时序的有关知识"><a href="#CPU-时序的有关知识" class="headerlink" title="CPU 时序的有关知识"></a>CPU 时序的有关知识</h4><ul>
+<li>S5P2： 代表第5状态中的第二节拍 </li>
 </ul>
 <blockquote>
 <p>机器周期：一般也叫CPU周期。 表示从内存读取一条指令字的最短时间，它是指令周期的最小单位。它等于单指令的周期长度 。 在51单片机中 一个机器周期=6状态周期=12时钟周期。</p>
 </blockquote>
 <blockquote>
-<p>指令周期：一条指令包括1个或多个机器周期。所有的C语言代码最后都会编译成汇编代码来执行，而执行一条汇编指令需要的机器周期就叫做指令周期</p>
+<p> 指令周期：一条指令包括1个或多个机器周期。所有的C语言代码最后都会编译成汇编代码来执行，而执行一条汇编指令需要的机器周期就叫做指令周期 </p>
 </blockquote>
 <blockquote>
-<p>状态周期：在8051单片机中把一个时钟周期定义为一个节拍（用P表示），二个节拍定义为一个状态周期（用S表示）。一个状态周期等于两个时钟周期。</p>
+<p> 状态周期：在8051单片机中把一个时钟周期定义为一个节拍（用P表示），二个节拍定义为一个状态周期（用S表示）。一个状态周期等于两个时钟周期。 </p>
 </blockquote>
 <blockquote>
-<p>时钟周期：又叫<strong>振荡周期</strong>， 是指为单片机提供时钟信号的振荡源的周期（ 晶振频率的倒数 ）。</p>
+<p> 时钟周期：又叫<strong>振荡周期</strong>， 是指为单片机提供时钟信号的振荡源的周期（ 晶振频率的倒数 ）。</p>
 </blockquote>
-<h3 id="定时-计数器操作">定时/计数器操作</h3>
-<ul>
-<li>
-<p>步骤：</p>
+<h3 id="定时-计数器操作"><a href="#定时-计数器操作" class="headerlink" title="定时/计数器操作"></a>定时/计数器操作</h3><ul>
+<li><p>步骤：</p>
 <ol>
 <li>选择工作方式（设置M1，M0）</li>
 <li>选择控制方式（设置GATE）</li>
@@ -693,85 +666,77 @@
 <li>打开计数器（设置TR1和TR0）</li>
 </ol>
 </li>
-<li>
-<p>配置计数器：</p>
-<pre class=" language-language-c"><code class="language-language-c">void TimerConfiguration(){
-    TMOD = 0X01;	//定时器T0工作方式1
-    TH0 = 0X3c;		//设置初始值
-    TL0 = 0X0B0;	
-    EA = 1;			//打开总中断
-    ET0 = 1;		//打开定时器T0中断
-    TR0 = 1;		//启动定时器T0
-}
-</code></pre>
+<li><p>配置计数器：</p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">TimerConfiguration</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    TMOD <span class="token operator">=</span> <span class="token number">0X01</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//定时器T0工作方式1</span>
+    TH0 <span class="token operator">=</span> <span class="token number">0X3c</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//设置初始值</span>
+    TL0 <span class="token operator">=</span> <span class="token number">0X0B0</span><span class="token punctuation">;</span>    
+    EA <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//打开总中断</span>
+    ET0 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//打开定时器T0中断</span>
+    TR0 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//启动定时器T0</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
-<li>
-<p>定时器T0初值计算（晶振为12MHz）</p>
-<p><strong>51单片机内部时钟频率是外部时钟的12分频</strong>， 也就是说当外部晶振的频率输入到单片机里面的时候要进行12分频。比如说你用的是12MHz的晶振，那么单片机内部的时钟频率就是$12MHz\over12$ = 1MHz，当你使用12MHz的外部晶振的时候，机器周期=$1 \over1MHz$=$1\mu{s}$。</p>
-<p>当我们需要定时50ms时，则计数值为${50ms}\over{1{\mu}s}$=50000，所以<strong>初值 = 最大值计数值 - 50000 = 15536</strong> (3cb0)，即$TH_x$ =0x3c，$TL_x$= 0xb0。</p>
+<li><p>定时器T0初值计算（晶振为12MHz）</p>
+<p> <strong>51单片机内部时钟频率是外部时钟的12分频</strong>， 也就是说当外部晶振的频率输入到单片机里面的时候要进行12分频。比如说你用的是12MHz的晶振，那么单片机内部的时钟频率就是$12MHz\over12$ = 1MHz，当你使用12MHz的外部晶振的时候，机器周期=$1 \over1MHz$=$1\mu{s}$。 </p>
+<p>当我们需要定时50ms时，则计数值为${50ms}\over{1{\mu}s}$=50000，所以<strong>初值 = 最大值计数值 - 50000 = 15536</strong> (3cb0)，即$TH_x$ =0x3c，$TL_x$= 0xb0。 </p>
 </li>
 </ul>
-<h2 id="程序代码">程序代码</h2>
-<ul>
-<li>
-<p>LED按定时器T0设定的时间周期闪烁</p>
-<pre class=" language-language-c"><code class="language-language-c">#include<reg52.h>
-sbit led = P1 ^ 0;
+<h2 id="程序代码"><a href="#程序代码" class="headerlink" title="程序代码"></a>程序代码</h2><ul>
+<li><p>LED按定时器T0设定的时间周期闪烁</p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;reg52.h></span></span>
+sbit led <span class="token operator">=</span> P1 <span class="token operator">^</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-void t0_init(){
-    TMOD = 0X01;	//设置定时器T0工作方式1	
-    TH0 = 0X3c;		//设置初始值
-    TH0 = 0Xb0;
-    EA = 1;			//打开总中断
-    ET0 = 1;		//打开定时器T0中断
-    TR0 = 1;		//启动定时器T0
-}
+<span class="token keyword">void</span> <span class="token function">t0_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    TMOD <span class="token operator">=</span> <span class="token number">0X01</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//设置定时器T0工作方式1    </span>
+    TH0 <span class="token operator">=</span> <span class="token number">0X3c</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//设置初始值</span>
+    TH0 <span class="token operator">=</span> <span class="token number">0Xb0</span><span class="token punctuation">;</span>
+    EA <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//打开总中断</span>
+    ET0 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//打开定时器T0中断</span>
+    TR0 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//启动定时器T0</span>
+<span class="token punctuation">}</span>
 
-void main(){
-    led = 1;
-    t0_init();
-    while(1);
-}
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    led <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">t0_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-void t0() interrupt 1{
-    TH0 = 0X3c;		//设置初始值
-    TL0 = 0Xb0;
-    led = ~led;		
-}
-</code></pre>
+<span class="token keyword">void</span> <span class="token function">t0</span><span class="token punctuation">(</span><span class="token punctuation">)</span> interrupt <span class="token number">1</span><span class="token punctuation">{</span>
+    TH0 <span class="token operator">=</span> <span class="token number">0X3c</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//设置初始值</span>
+    TL0 <span class="token operator">=</span> <span class="token number">0Xb0</span><span class="token punctuation">;</span>
+    led <span class="token operator">=</span> <span class="token operator">~</span>led<span class="token punctuation">;</span>        
+<span class="token punctuation">}</span></code></pre>
 </li>
-<li>
-<p>LED按500ms/次的精确频率闪动</p>
-<pre class=" language-language-c"><code class="language-language-c">#include<reg52.h>
-sbit led = P1 ^ 0;
-int i = 0;
+<li><p>LED按500ms/次的精确频率闪动</p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;reg52.h></span></span>
+sbit led <span class="token operator">=</span> P1 <span class="token operator">^</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-void t1_init(){
-    TMOD = 0X10;	//设置定时器T1工作方式1	
-    TH0 = 0X3c;		//设置初始值
-    TH0 = 0Xb0;
-    EA = 1;			//打开总中断
-    ET1 = 1;		//打开定时器T1中断
-    TR1 = 1;		//启动定时器T1
-}
+<span class="token keyword">void</span> <span class="token function">t1_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    TMOD <span class="token operator">=</span> <span class="token number">0X10</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//设置定时器T1工作方式1    </span>
+    TH0 <span class="token operator">=</span> <span class="token number">0X3c</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//设置初始值</span>
+    TH0 <span class="token operator">=</span> <span class="token number">0Xb0</span><span class="token punctuation">;</span>
+    EA <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">//打开总中断</span>
+    ET1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//打开定时器T1中断</span>
+    TR1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//启动定时器T1</span>
+<span class="token punctuation">}</span>
 
-void main(){
-    led = 1;
-    t1_init();
-    while(1){
-        if(i == 10){
-            led = ~led;
-            i = 0;
-        }
-    }
-}
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    led <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">t1_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            led <span class="token operator">=</span> <span class="token operator">~</span>led<span class="token punctuation">;</span>
+            i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-void t1() interrupt 3{
-    TH0 = 0X3c;		//设置初始值
-    TL0 = 0Xb0;
-   	i++;
-}
-</code></pre>
+<span class="token keyword">void</span> <span class="token function">t1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> interrupt <span class="token number">3</span><span class="token punctuation">{</span>
+    TH0 <span class="token operator">=</span> <span class="token number">0X3c</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//设置初始值</span>
+    TL0 <span class="token operator">=</span> <span class="token number">0Xb0</span><span class="token punctuation">;</span>
+       i<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 </li>
 </ul>
 <script>
@@ -794,19 +759,59 @@ void t1() interrupt 3{
           });
       </script>
             </div>
-			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<ins class="adsbygoogle"
-				 style="display:block; text-align:center;"
-				 data-ad-layout="in-article"
-				 data-ad-format="fluid"
-				 data-ad-client="ca-pub-7748017869031823"
-				 data-ad-slot="6534294934"></ins>
-			<script>
-				 (adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
             <hr/>
 
             
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn" rel="external nofollow noreferrer">Mahoo Huang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn/51mcu-6.html">http://mahoo12138.cn/51mcu-6.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
 
 
 
@@ -823,13 +828,13 @@ void t1() interrupt 3{
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/css/share.min.css">
 
 <div id="article-share">
     
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <div class="social-share" data-sites="twitter,facebook,qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -947,10 +952,10 @@ void t1() interrupt 3{
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1213,7 +1218,7 @@ void t1() interrupt 3{
 </style>
 
 <div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
         <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
         <span>评论</span>
     </div>
@@ -1221,8 +1226,8 @@ void t1() interrupt 3{
     </div>
 </div>
 
-<script src="/libs/valine/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1260,9 +1265,7 @@ void t1() interrupt 3{
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            概念基础
-什么是中断
-当你正在看动漫时，突然手机来电话了，你暂停动漫，去接电话，在接电话的时候，又有人敲门，你暂时放下电话，去开门。我们可以把看动漫当作在执行主程序，那么电话就是中断源，电话铃响了就是中断请求，暂停动漫即是现场保护，接电话就
+                            概念基础什么是中断当你正在看动漫时，突然手机来电话了，你暂停动漫，去接电话，在接电话的时候，又有人敲门，你暂时放下电话，去开门。我们可以把看动漫当作在执行主程序，那么电话就是中断源，电话铃响了就是中断请求，暂停动漫即是现场保护，接电话就是中
                         
                     </div>
                     <div class="publish-info">
@@ -1310,9 +1313,7 @@ void t1() interrupt 3{
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            概念基础
-上拉电阻
-上拉电阻就是将一个不确定信号（高或低电平），通过一个电阻与电源VCC相连，固定在高电平，电阻同时起限流作用。下拉同理，也是将一个不确定信号（高或低电平），通过一个电阻与地GND相连，固定在低电平。上拉电阻和下拉电阻二者共
+                            概念基础上拉电阻上拉电阻就是将一个不确定信号（高或低电平），通过一个电阻与电源VCC相连，固定在高电平，电阻同时起限流作用。下拉同理，也是将一个不确定信号（高或低电平），通过一个电阻与地GND相连，固定在低电平。上拉电阻和下拉电阻二者共同的
                         
                     </div>
                     <div class="publish-info">
@@ -1351,17 +1352,21 @@ void t1() interrupt 3{
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -1389,7 +1394,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1470,7 +1475,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </main>
 
 
-<script src="https://cdn.bootcss.com/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
     MathJax.Hub.Config({
         tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
@@ -1479,7 +1484,55 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
@@ -1487,9 +1540,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
-            
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.6k</span>&nbsp;字
             
             
             
@@ -1508,50 +1558,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
-            
-            <span id="sitetime">载入运行时间...</span>
-            <script>
-                function siteTime() {
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = "2019";
-                    var startMonth = "6";
-                    var startDate = "09";
-                    var startHour = "0";
-                    var startMinute = "0";
-                    var startSecond = "0";
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) {
-                        document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
-                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    } else {
-                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
-                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    }
-                }
-                setInterval(siteTime, 1000);
-            </script>
             
             <br>
             
@@ -1614,10 +1620,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->
@@ -1627,29 +1633,13 @@ $(function () {
     </a>
 </div>
 
-	
-	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
-    
-	<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162023690-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-162023690-1');
-</script>
-
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1670,33 +1660,10 @@ $(function () {
 </script>
 
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i["DaoVoiceObject"] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            a.charset = "utf-8";
-            m.parentNode.insertBefore(a, m)
-        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
-            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
-        daovoice('init', {
-            app_id: "a7fc98ad"
-        });
-        daovoice('update');
-    </script>
+    <script async src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1704,10 +1671,20 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/background/canvas-nest.js"></script>
+    
+
+    
+
     
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/instantpage.js" type="module"></script>
     
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/instantpage/instantpage.js" type="module"></script>
+    
+
 </body>
 
 </html>

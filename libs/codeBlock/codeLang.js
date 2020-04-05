@@ -18,4 +18,3 @@ $(function () {
     $(this).siblings(".code_lang").text(lang_name);
   });
 });
-© 2020 GitHub, Inc.

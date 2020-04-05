@@ -4,14 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-	<meta name="baidu-site-verification" content="4duikEwdKV">
-	<meta name="google-site-verification" content="ITtW-qXOslWyS9zHoz5wrnatPs5ylPbgA4RDG4Hak4k">
     <meta name="keywords" content="Win10子系统Ubuntu下配置Jupyter Notebook并实现内网穿透, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
-    <meta name="description" content="之前看到有朋友在服务器上，搭建了Jupyter Notebook（一个笔记本，支持多种编程语言），觉得挺好的，自己也想弄个用用，无奈没有服务器，只好另寻他径。
-启用Win10子系统
-网络上有很多教程，就不赘述了:
-
-手把手教你启用Win10">
+    <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,22 +13,21 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Win10子系统Ubuntu下配置Jupyter Notebook并实现内网穿透 | 黄同学的博客</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
-    
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/jquery.min.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <title>Win10子系统Ubuntu下配置Jupyter Notebook并实现内网穿透 | 黄同学的博客</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/jquery/jquery.min.js"></script>
     
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
@@ -42,11 +35,11 @@
 <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="nav-wrapper head-container">
+        <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">黄同学的博客</span>
                 </a>
@@ -144,7 +137,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">黄同学的博客</div>
         <div class="logo-desc">
@@ -219,7 +212,7 @@
 			
 			    <i class="fa-fw fas fa-comments"></i>
 			
-			Contact
+			留言板
 		</a>
           
         </li>
@@ -313,7 +306,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -331,7 +324,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/css/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -395,6 +388,14 @@
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
+        
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
     }
 
     #toc-content .is-active-link {
@@ -478,7 +479,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    691
+                    690
                 </div>
                 
 
@@ -492,91 +493,64 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>之前看到有朋友在服务器上，搭建了<a href="https://jupyter.org/" target="_blank" rel="noopener">Jupyter Notebook</a>（一个笔记本，支持多种编程语言），觉得挺好的，自己也想弄个用用，无奈没有服务器，只好另寻他径。</p>
-<h2 id="启用Win10子系统">启用Win10子系统</h2>
-<p>网络上有很多教程，就不赘述了:</p>
+<h2 id="启用Win10子系统"><a href="#启用Win10子系统" class="headerlink" title="启用Win10子系统"></a>启用Win10子系统</h2><p>网络上有很多教程，就不赘述了:</p>
 <ul>
-<li><a href="%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%90%AF%E7%94%A8Win10%E7%9A%84Linux%E5%AD%90%E7%B3%BB%E7%BB%9F">手把手教你启用Win10的Linux子系统</a></li>
+<li><a href="手把手教你启用Win10的Linux子系统">手把手教你启用Win10的Linux子系统</a></li>
 <li><a href="https://www.jianshu.com/p/c3025989c28c" target="_blank" rel="noopener">Win10上体验Linux子系统–Linux虚拟机的完美替代方案</a></li>
 </ul>
-<h2 id="安装Jupyter-Notebook">安装Jupyter Notebook</h2>
-<a id="more"></a>
-<h3 id="安装">安装</h3>
-<p>在子系统中选择用python来安装jupyter，因为Ubuntu自带了python3</p>
+<h2 id="安装Jupyter-Notebook"><a href="#安装Jupyter-Notebook" class="headerlink" title="安装Jupyter Notebook"></a>安装Jupyter Notebook</h2><a id="more"></a>
+
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在子系统中选择用python来安装jupyter，因为Ubuntu自带了python3</p>
 <ol>
-<li>
-<p>将pip升级到最新版本</p>
-<pre class=" language-language-python"><code class="language-language-python">pip3 install --upgrade pip
-</code></pre>
+<li><p>将pip升级到最新版本</p>
+<pre class=" language-python"><code class="language-python">pip3 install <span class="token operator">-</span><span class="token operator">-</span>upgrade pip</code></pre>
 </li>
-<li>
-<p>安装Jupyter Notebook</p>
-<pre><code>pip3 install jupyter
-</code></pre>
-</li>
+<li><p>安装Jupyter Notebook</p>
+<pre><code>pip3 install jupyter</code></pre></li>
 </ol>
-<h3 id="配置">配置</h3>
-<p>配置的过程中如有疑问，请查阅官方文档，命令如下：</p>
-<pre class=" language-language-shell"><code class="language-language-shell">jupyter notebook --help
-</code></pre>
-<h4 id="默认端口启动">默认端口启动</h4>
-<p>安装完成后，在终端输入命令：</p>
-<pre class=" language-language-shell"><code class="language-language-shell">jupyter notebook
-</code></pre>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>配置的过程中如有疑问，请查阅官方文档，命令如下：</p>
+<pre class=" language-shell"><code class="language-shell">jupyter notebook --help</code></pre>
+<h4 id="默认端口启动"><a href="#默认端口启动" class="headerlink" title="默认端口启动"></a>默认端口启动</h4><p>安装完成后，在终端输入命令：</p>
+<pre class=" language-shell"><code class="language-shell">jupyter notebook</code></pre>
 <p>执行命令后，在终端中会有一些提示信息：</p>
-<pre class=" language-language-shell"><code class="language-language-shell">[I 00:09:44.222 NotebookApp] Serving notebooks from local directory: /home/mahoo12138
+<pre class=" language-shell"><code class="language-shell">[I 00:09:44.222 NotebookApp] Serving notebooks from local directory: /home/mahoo12138
 [I 00:09:44.223 NotebookApp] The Jupyter Notebook is running at:
 [I 00:09:44.224 NotebookApp] http://localhost:8888/
-[I 00:09:44.225 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-</code></pre>
+[I 00:09:44.225 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).</code></pre>
 <ul>
 <li>注意：之后在Jupyter Notebook的所有操作，都请保持终端<strong>不要关闭</strong>，因为一旦关闭终端，就会断开与本地服务器的链接，jupyter notebook也就关闭了。</li>
-<li>此时在浏览器中打开**<code>http://localhost:8888</code>**，即可看到jupyter notebook</li>
+<li>此时在浏览器中打开<strong><code>http://localhost:8888</code></strong>，即可看到jupyter notebook</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Tutorials/jupyter/localhost.png" alt=""></p>
-<h4 id="指定端口启动">指定端口启动</h4>
-<p>如果你想指定端口启动，可输入以下命令：</p>
-<pre class=" language-language-shell"><code class="language-language-shell">jupyter notebook --port <port_number>
-</code></pre>
-<h4 id="修改配置文件">修改配置文件</h4>
+<h4 id="指定端口启动"><a href="#指定端口启动" class="headerlink" title="指定端口启动"></a>指定端口启动</h4><p>如果你想指定端口启动，可输入以下命令：</p>
+<pre class=" language-shell"><code class="language-shell">jupyter notebook --port <port_number></code></pre>
+<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><ul>
+<li><p>终端修改</p>
 <ul>
-<li>
-<p>终端修改</p>
-<ul>
-<li>
-<p>生成配置文件</p>
-<pre class=" language-language-shell"><code class="language-language-shell">jupyter notebook --generate-config
-</code></pre>
+<li><p>生成配置文件</p>
+<pre class=" language-shell"><code class="language-shell">jupyter notebook --generate-config</code></pre>
 </li>
-<li>
-<p>生成密码</p>
-<pre class=" language-language-shell"><code class="language-language-shell">jupyter notebook password
-</code></pre>
+<li><p>生成密码</p>
+<pre class=" language-shell"><code class="language-shell">jupyter notebook password</code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Tutorials/jupyter/password.png" alt=""></p>
 </li>
 </ul>
 </li>
-<li>
-<p>文件修改</p>
+<li><p>文件修改</p>
 <ul>
 <li>Win10子系统Ubuntu的目录在<em>C:\Users\用户名\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home</em></li>
 </ul>
-<p>在<strong>home</strong>中打开<em>Ubuntu用户名</em> \ .jupyter\jupyter_notebook_config.py文件，如果你准备远程访问，可以定位到<em>c.NotebookApp.allow_remote_access</em>，删除**#<strong>，修改值为</strong>True**</p>
+<p>在<strong>home</strong>中打开<em>Ubuntu用户名</em> \ .jupyter\jupyter_notebook_config.py文件，如果你准备远程访问，可以定位到<em>c.NotebookApp.allow_remote_access</em>，删除<strong>#</strong>，修改值为<strong>True</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Tutorials/jupyter/allow_amote_access.png" alt=""></p>
 </li>
 </ul>
-<h2 id="远程访问Jupyter-Notebook">远程访问Jupyter Notebook</h2>
-<h3 id="内网穿透">内网穿透</h3>
-<p>由于是在本地搭建的jupyter Notebook，在外网上是访问不了的，如果想远程访问的话，需要内网穿透，这里推荐使用**<a href="https://natapp.cn/" target="_blank" rel="noopener">NATAPPP</a>**，注册后会有两条免费的隧道使用，配置如图：</p>
+<h2 id="远程访问Jupyter-Notebook"><a href="#远程访问Jupyter-Notebook" class="headerlink" title="远程访问Jupyter Notebook"></a>远程访问Jupyter Notebook</h2><h3 id="内网穿透"><a href="#内网穿透" class="headerlink" title="内网穿透"></a>内网穿透</h3><p>由于是在本地搭建的jupyter Notebook，在外网上是访问不了的，如果想远程访问的话，需要内网穿透，这里推荐使用<strong><a href="https://natapp.cn/" target="_blank" rel="noopener">NATAPPP</a></strong>，注册后会有两条免费的隧道使用，配置如图：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Tutorials/jupyter/natapp.png" alt=""></p>
 <ul>
-<li>
-<p>之后下载客户端：<a href="https://natapp.cn/#download" target="_blank" rel="noopener">直达链接</a></p>
+<li><p>之后下载客户端：<a href="https://natapp.cn/#download" target="_blank" rel="noopener">直达链接</a></p>
 </li>
-<li>
-<p>打开客户端，输入<em>natapp -authtoken=(之前复制的字符)</em>，回车</p>
-<pre><code>natapp -authtoken=255bf538d7b773f6
-</code></pre>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Tutorials/jupyter/natapp_ok.png" alt=""></p>
+<li><p>打开客户端，输入<em>natapp -authtoken=(之前复制的字符)</em>，回车</p>
+<pre><code>natapp -authtoken=255bf538d7b773f6</code></pre><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Tutorials/jupyter/natapp_ok.png" alt=""></p>
 </li>
 </ul>
 <p>图中的地址就是外网访问地址了，当然要保持Ubuntu子系统客户端和Natapp客户端同时运行，jupyter notebook才能打开，还有一个体验极差的设置，免费的内网穿透隧道会不定时更换地址，如果真的需要长时间运行，付费版才是王道。</p>
@@ -600,19 +574,59 @@
           });
       </script>
             </div>
-			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<ins class="adsbygoogle"
-				 style="display:block; text-align:center;"
-				 data-ad-layout="in-article"
-				 data-ad-format="fluid"
-				 data-ad-client="ca-pub-7748017869031823"
-				 data-ad-slot="6534294934"></ins>
-			<script>
-				 (adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
             <hr/>
 
             
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn" rel="external nofollow noreferrer">Mahoo Huang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://mahoo12138.cn/jupyter.html">http://mahoo12138.cn/jupyter.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
 
 
 
@@ -633,13 +647,13 @@
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/css/share.min.css">
 
 <div id="article-share">
     
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <div class="social-share" data-sites="twitter,facebook,qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -757,10 +771,10 @@
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1023,7 +1037,7 @@
 </style>
 
 <div class="card valine-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
         <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
         <span>评论</span>
     </div>
@@ -1031,8 +1045,8 @@
     </div>
 </div>
 
-<script src="/libs/valine/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1070,9 +1084,8 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Win10 子系统 Ubuntu 安装 Apache2 错误
-安装好 Apache2 后，通过命令service apache2 start 启动，报错为：
-AH00076: Failed to enable APR_TCP_DEFER_A
+                            Win10 子系统 Ubuntu 安装 Apache2 错误安装好 Apache2 后，通过命令service apache2 start启动，报错为：
+AH00076: Failed to enable APR_TCP_DEFER_ACC
                         
                     </div>
                     <div class="publish-info">
@@ -1120,11 +1133,9 @@ AH00076: Failed to enable APR_TCP_DEFER_A
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            0UL/1UL
-0UL 表示 无符号长整型 	0
-1UL 表示 无符号长整型 	1
+                            0UL/1UL0UL 表示 无符号长整型     01UL 表示 无符号长整型     1
 一般的 1 没有后缀，系统默认指定的类型为int，即有符号的整型数。
-除此之外还可以将l，u自由组合形成多种后缀（不区分大小写），单独添加也没问题，例如：2
+除此之外还可以将l，u自由组合形成多种后缀（不区分大小写），单独添加也没问题，
                         
                     </div>
                     <div class="publish-info">
@@ -1163,17 +1174,21 @@ AH00076: Failed to enable APR_TCP_DEFER_A
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -1201,7 +1216,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1284,7 +1299,55 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 
     <footer class="page-footer bg-color">
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
@@ -1292,9 +1355,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
-            
-            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.6k</span>&nbsp;字
             
             
             
@@ -1313,50 +1373,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </span>
             
             <br>
-            
-            <span id="sitetime">载入运行时间...</span>
-            <script>
-                function siteTime() {
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var startYear = "2019";
-                    var startMonth = "6";
-                    var startDate = "09";
-                    var startHour = "0";
-                    var startMinute = "0";
-                    var startSecond = "0";
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth() + 1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
-                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
-                    var diff = t2 - t1;
-                    var diffYears = Math.floor(diff / years);
-                    var diffDays = Math.floor((diff / days) - diffYears * 365);
-                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
-                        minutes);
-                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
-                        diffMinutes * minutes) / seconds);
-                    if (startYear == todayYear) {
-                        document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
-                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    } else {
-                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
-                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
-                    }
-                }
-                setInterval(siteTime, 1000);
-            </script>
             
             <br>
             
@@ -1419,10 +1435,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->
@@ -1432,29 +1448,13 @@ $(function () {
     </a>
 </div>
 
-	
-	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
-    
-	<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162023690-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-162023690-1');
-</script>
-
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1475,33 +1475,10 @@ $(function () {
 </script>
 
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/busuanzi.pure.mini.js"></script>
-    
-
-    
-
-    
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i["DaoVoiceObject"] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            a.charset = "utf-8";
-            m.parentNode.insertBefore(a, m)
-        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
-            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
-        daovoice('init', {
-            app_id: "a7fc98ad"
-        });
-        daovoice('update');
-    </script>
+    <script async src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1509,10 +1486,20 @@ $(function () {
     
 
     
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/background/canvas-nest.js"></script>
+    
+
+    
+
     
     
-    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/js/instantpage.js" type="module"></script>
     
+    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/instantpage/instantpage.js" type="module"></script>
+    
+
 </body>
 
 </html>
