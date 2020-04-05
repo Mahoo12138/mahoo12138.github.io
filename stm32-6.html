@@ -20,15 +20,15 @@ STM32F1 系列中，除了互联型的产品，共有 8 个">
     <title>超乎你想象的Stm32中的TIM定时器 | 黄同学的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/css/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     
-    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/jquery.min.js"></script>
 	
 	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	
@@ -311,7 +311,7 @@ STM32F1 系列中，除了互联型的产品，共有 8 个">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/stm32.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/hexo_images/cover/stm32.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -329,7 +329,7 @@ STM32F1 系列中，除了互联型的产品，共有 8 个">
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/css/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -465,14 +465,14 @@ STM32F1 系列中，除了互联型的产品，共有 8 个">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-23
+                    2020-03-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    621
+                    1.2k
                 </div>
                 
 
@@ -534,8 +534,8 @@ STM32F1 系列中，除了互联型的产品，共有 8 个">
 </tr>
 </tbody>
 </table>
-<h2 id="基本定时器框图">基本定时器框图</h2>
-<img src="/stm32-6/Pictures\Blog\hexo_images\Study\STM32\tim1.png" style="zoom: 67%;">
+<h2 id="基本定时器">基本定时器</h2>
+<img src="/stm32-6/Pictures\js-css-cdn\hexo_images\Study\STM32\tim1.png" style="zoom: 67%;">
 <ol>
 <li>
 <p><strong>时钟源</strong>	TIMxCLK由APB1预分频提供，库函数中 APB1 预分频系数为 2 ，定时器时钟TIMxCLK = 36 * 2 =72</p>
@@ -557,22 +557,125 @@ STM32F1 系列中，除了互联型的产品，共有 8 个">
 <li>设置 ARR = 1000 - 1，0 ~ 999，计数1000次</li>
 <li>中断周期 T = 1000 * 1 / 1000000 = 1 ms，（1MHz 周期为 1 ns）</li>
 </ul>
-<h2 id="定时器初始化结构体">定时器初始化结构体</h2>
+<h3 id="定时器初始化结构体">定时器初始化结构体</h3>
 <p>基本定时器只用到<code>TIM_TimeBaseInitTypeDef</code>结构体：</p>
 <pre class=" language-language-c"><code class="language-language-c">typedef struct {
     uint16_t TIM_Prescaler; 		// 预分频器
-    uint16_t TIM_CounterMode; 		// 计数模式
+    uint16_t TIM_CounterMode; 		// 计数模式，向上或向下
     uint32_t TIM_Period; 			// 定时器周期
-    uint16_t TIM_ClockDivision; 	// 时钟分频
-    uint8_t TIM_RepetitionCounter; 	// 重复计算器
+    uint16_t TIM_ClockDivision; 	// 外部时钟分频
+    uint8_t TIM_RepetitionCounter; 	// 重复计算器，高级寄存器专用
 } TIM_TimeBaseInitTypeDef;
 </code></pre>
-<p>而且只用到两个成员<mark>TIM_Prescaler</mark>和<mark>TIM_Period</mark>，也就是定时器分配器设置和定时器周期（自动重装载寄存器值）。aDAD</p>
-<p>$\sum+ \pi + 2+1$</p>
-<p>为什么啊?<br>
-$$<br>
-\Large {\sum^n_{i=1}} i+2<br>
-$$</p>
+<p>而且只用到两个成员<mark>TIM_Prescaler</mark>和<mark>TIM_Period</mark>，也就是定时器分配器设置和定时器周期（自动重装载寄存器值）。</p>
+<h3 id="代码实例——实现-1s-定时">代码实例——实现 1s 定时</h3>
+<p><strong>初始化基本定时器</strong></p>
+<pre class=" language-language-c"><code class="language-language-c">/********************基本定时器 TIM 参数定义，只限 TIM6、 7************/
+
+#define BASIC_TIM6 		// 如果使用 TIM7，注释掉这个宏即可
+
+#ifdef  BASIC_TIM6 		// 使用基本定时器 TIM6
+#define BASIC_TIM 						TIM6
+#define BASIC_TIM_APBxClock_FUN 		RCC_APB1PeriphClockCmd
+#define BASIC_TIM_CLK 					RCC_APB1Periph_TIM6
+#define BASIC_TIM_IRQ 					TIM6_IRQn
+#define BASIC_TIM_IRQHandler 			TIM6_IRQHandler
+
+#else 					// 使用基本定时器 TIM7
+#define BASIC_TIM 						TIM7						// 定时器
+#define BASIC_TIM_APBxClock_FUN 		RCC_APB1PeriphClockCmd		// 时钟函数
+#define BASIC_TIM_CLK 					RCC_APB1Periph_TIM7			// 时钟
+#define BASIC_TIM_IRQ 					TIM7_IRQn					// 中断源
+#define BASIC_TIM_IRQHandler 			TIM7_IRQHandler				// 中断服务函数
+
+#endif
+</code></pre>
+<pre class=" language-language-c"><code class="language-language-c">void BASIC_TIM_Config(void)
+{
+    TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
+
+    // 开启定时器时钟，即内部时钟 CK_INT=72M
+    BASIC_TIM_APBxClock_FUN(BASIC_TIM_CLK, ENABLE);
+
+    // 自动重装载寄存器周的值(计数值)
+    TIM_TimeBaseStructure.TIM_Period=1000;
+
+    // 累计 TIM_Period 个频率后产生一个更新或者中断
+    // 时钟预分频数为 71，则驱动计数器的时钟 CK_CNT = CK_INT / (71+1)=1M
+    TIM_TimeBaseStructure.TIM_Prescaler= 71;
+
+    // 其余三个结构体变量，基本定时器没有，不用管
+
+    // 初始化定时器
+    TIM_TimeBaseInit(BASIC_TIM, &TIM_TimeBaseStructure);
+
+    // 清除计数器中断标志位
+    TIM_ClearFlag(BASIC_TIM, TIM_FLAG_Update);
+
+    // 开启计数器中断
+    TIM_ITConfig(BASIC_TIM,TIM_IT_Update,ENABLE);
+
+    // 使能计数器
+    TIM_Cmd(BASIC_TIM, ENABLE);
+
+    // 暂时关闭定时器的时钟，等待使用
+    BASIC_TIM_APBxClock_FUN(BASIC_TIM_CLK, DISABLE);
+ }  
+</code></pre>
+<p>把定时器设置自动重装载寄存器 ARR 的值为 1000，设置时钟预分频器为 71，则驱动计数器的时钟： CK_CNT = CK_INT / (71+1)=1M，则计数器计数一次的时间等于：1/CK_CNT=1us，当计数器计数到 ARR 的值 1000 时，产生一次中断，则中断一次的时间为： 1/CK_CNT*ARR = 1ms。</p>
+<p><strong>定时器中断优先级配置</strong></p>
+<pre class=" language-language-c"><code class="language-language-c">// 中断优先级配置
+void BASIC_TIM_NVIC_Config(void)
+{
+    NVIC_InitTypeDef NVIC_InitStructure;
+    // 设置中断组为 0
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+    // 设置中断来源为基本定时器
+    NVIC_InitStructure.NVIC_IRQChannel = BASIC_TIM_IRQ ;
+    // 设置主优先级为 0
+    NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
+    // 设置抢占优先级为 3
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;
+    
+    NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+    NVIC_Init(&NVIC_InitStructure);
+ }  
+</code></pre>
+<p><strong>定时器中断服务程序</strong></p>
+<pre class=" language-language-c"><code class="language-language-c">void BASIC_TIM_IRQHandler (void)
+{
+    if ( TIM_GetITStatus( BASIC_TIM, TIM_IT_Update) != RESET ) {
+        time++;
+        TIM_ClearITPendingBit(BASIC_TIM , TIM_FLAG_Update);
+    }
+}
+</code></pre>
+<p>定时器中断一次的时间是 1ms，定义一个全局变量 time 表示中断次数。实现一个 1s 的定时，只需判断 time 是否等于 1000 即可， 1000 * 1ms = 1s。然后把 time 清 0，重新计数，在最后，需要将中断标志位清除掉。</p>
+<p><strong>主函数</strong></p>
+<pre class=" language-language-c"><code class="language-language-c">int main(void)
+{
+    /* led 端口配置 */
+    LED_GPIO_Config();
+
+    /* 基本定时器 TIMx,x[6,7] 定时配置 */
+    BASIC_TIM_Config();
+
+    /* 配置基本定时器 TIMx,x[6,7]的中断优先级 */
+    BASIC_TIM_NVIC_Config();
+
+    /* 基本定时器 TIMx,x[6,7] 重新开时钟，开始计时 */
+    BASIC_TIM_APBxClock_FUN(BASIC_TIM_CLK, ENABLE);
+
+    while (1) {
+    	if ( time == 1000 ) { 
+        	/* 1000 * 1 ms = 1s 时间到 */
+            time = 0;
+            /* LED1 取反 */
+            LED1_TOGGLE;
+        }
+    }
+ }
+</code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1021,7 +1124,7 @@ $$</p>
 </div>
 
 <script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1052,7 +1155,7 @@ $$</p>
                 <a href="/stm32-6.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/stm32.jpg" class="responsive-img" alt="超乎你想象的Stm32中的TIM定时器">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/hexo_images/cover/stm32.jpg" class="responsive-img" alt="超乎你想象的Stm32中的TIM定时器">
                         
                         <span class="card-title">超乎你想象的Stm32中的TIM定时器</span>
                     </div>
@@ -1193,7 +1296,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1293,7 +1396,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.9k</span>&nbsp;字
+                class="white-color">50.6k</span>&nbsp;字
             
             
             
@@ -1431,15 +1534,28 @@ $(function () {
     </a>
 </div>
 
-
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+    
+	<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162023690-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-162023690-1');
+</script>
 
 
     <!-- Baidu Analytics -->
@@ -1461,10 +1577,10 @@ $(function () {
 </script>
 
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/clicklove.js" async="async"></script>
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1497,7 +1613,7 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/instantpage.js" type="module"></script>
     
 </body>
 

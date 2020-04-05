@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://mahoo12138.cn/vuejs.html</loc>
+    <lastmod>2020-04-04</lastmod>
+  </url>  <url>
+    <loc>http://mahoo12138.cn/git.html</loc>
+    <lastmod>2020-04-03</lastmod>
+  </url>  <url>
+    <loc>http://mahoo12138.cn/stm32-6.html</loc>
+    <lastmod>2020-03-31</lastmod>
+  </url>  <url>
+    <loc>http://mahoo12138.cn/stm32-2.html</loc>
+    <lastmod>2020-03-31</lastmod>
+  </url>  <url>
     <loc>http://mahoo12138.cn/android-splash.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
@@ -10,13 +22,7 @@
     <loc>http://mahoo12138.cn/win10-ubuntu.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/vuejs.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
     <loc>http://mahoo12138.cn/tutorial-2.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
-    <loc>http://mahoo12138.cn/stm32-6.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/stm32-5.html</loc>
@@ -26,9 +32,6 @@
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/stm32-3.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
-    <loc>http://mahoo12138.cn/stm32-2.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/stm32-1.html</loc>
@@ -74,9 +77,6 @@
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/hexo-2.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
-    <loc>http://mahoo12138.cn/git.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/flutter.html</loc>

@@ -20,15 +20,15 @@
     <title>我的网页梦 —— 前端基础 &amp; Vuejs | 黄同学的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/css/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     
-    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/jquery.min.js"></script>
 	
 	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	
@@ -329,7 +329,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/css/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -465,7 +465,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-23
+                    2020-04-04
                 </div>
                 
 
@@ -512,6 +512,34 @@
 </code></pre>
 </li>
 </ol>
+<h4 id="实现网页无法选中">实现网页无法选中</h4>
+<ul>
+<li>
+<p>通过CSS</p>
+<pre class=" language-language-css"><code class="language-language-css">*{
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+</code></pre>
+</li>
+<li>
+<p>通过JS</p>
+<pre class=" language-language-javascript"><code class="language-language-javascript">//禁止页面选择以及鼠标右键
+document.οncοntextmenu=function(){return false;}; 
+document.onselectstart=function(){return false;};
+</code></pre>
+</li>
+<li>
+<p>通过H5的body标签</p>
+<pre class=" language-language-html"><code class="language-language-html"><body οncοntextmenu="return false;" onselectstart="return false">
+</code></pre>
+</li>
+</ul>
 <h3 id="前端框架——Vuejs">前端框架——Vuejs</h3>
 <p>有了一些基础，再加上我这颗想要速成的心，我接着就看<a href="https://cn.vuejs.org/" target="_blank" rel="noopener">Vuejs</a>相关的内容了，这里拿出一个常见的 UI 案例——<strong>Tabbar</strong>，作为练习。</p>
 <h4 id="基本结构的搭建">基本结构的搭建</h4>
@@ -1097,7 +1125,7 @@ props: {
 </div>
 
 <script src="/libs/valine/av-min.js"></script>
-<script src="/libs/valine/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1268,7 +1296,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1361,7 +1389,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.9k</span>&nbsp;字
+                class="white-color">50.6k</span>&nbsp;字
             
             
             
@@ -1499,15 +1527,28 @@ $(function () {
     </a>
 </div>
 
-
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+	
+	<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+    
+	<script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162023690-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-162023690-1');
+</script>
 
 
     <!-- Baidu Analytics -->
@@ -1529,10 +1570,10 @@ $(function () {
 </script>
 
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/clicklove.js" async="async"></script>
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1565,7 +1606,7 @@ $(function () {
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/js/instantpage.js" type="module"></script>
     
 </body>
 
