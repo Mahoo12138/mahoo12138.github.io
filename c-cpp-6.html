@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="C++中的cin,getchar,get,getline详解, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="C语言再学习之基础语法, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,18 +16,18 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C++中的cin,getchar,get,getline详解 | 黄同学的博客</title>
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.png">
+    <title>C语言再学习之基础语法 | 黄同学的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/jquery/jquery.min.js"></script>
+    <script src="/libs/jquery/jquery.min.js"></script>
 	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -40,7 +40,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">黄同学的博客</span>
                 </a>
@@ -138,7 +138,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">黄同学的博客</div>
         <div class="logo-desc">
@@ -307,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/cplusplus.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/c.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++中的cin,getchar,get,getline详解</h1>
+                    <h1 class="description center-align post-title">C语言再学习之基础语法</h1>
                 </div>
             </div>
         </div>
@@ -325,7 +325,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -464,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-11
+                    2020-02-26
                 </div>
                 
 
@@ -478,7 +478,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    101
+                    235
                 </div>
                 
 
@@ -491,72 +491,18 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="cin"><a href="#cin" class="headerlink" title="cin"></a>cin</h1><p>获取输入的一个字符或数字：</p>
-<pre class=" language-c++"><code class="language-c++">int a;
-cin >> a;</code></pre>
-<p>cin &gt;&gt; 会自动隐性字符，如空格，制表符（Tab），回车等，若不想过滤掉这些字符，可以用noskipws流进行控制，后文会对noskipws这些操作符做一个总结，先看例子：</p>
-<pre class=" language-c++"><code class="language-c++">char test[5];
-for (int i = 0;i < 5;i++){
-    cin >> noskipws >> test[i];
-}
-for (int i = 0;i < 5;i++){
-    cout << test[i];
-}</code></pre>
-<p>输出结果如下：</p>
-<pre class=" language-c++"><code class="language-c++">ma oo
-m
-a
+                <h3 id="内联函数-——-C-中关键字-inline"><a href="#内联函数-——-C-中关键字-inline" class="headerlink" title="内联函数 —— C 中关键字 inline"></a>内联函数 —— C 中关键字 inline</h3><p>调用函数时，一般会由于建立调用、传递参数、跳转到函数代码并返回等花费掉一些时间，而且一些函数被频繁调用，不断地有函数入栈，即<strong>函数栈</strong>，会造成栈空间或<strong>栈内存</strong>的大量消耗。</p>
+<p>为了解决这个问题，在C99中特别地引入了<strong>inline修饰符</strong>，即内联函数。</p>
+<p>关键字 inline 告诉编译器，任何地方只要调用内联函数，就直接把该函数的机器码插入到调用它的地方，类似于带参宏。</p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">inline</span> <span class="token keyword">int</span> <span class="token function">max</span> <span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>a <span class="token operator">></span> b<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> a<span class="token punctuation">;</span>
+    <span class="token keyword">else</span>
+        <span class="token keyword">return</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-o
-o</code></pre>
-<p>还有一个要注意的是，使用cin输入时遇到空白字符后后面的字符会被过滤掉，即会停留在缓冲区，当下一个cin输入时会直接从缓冲区读取：</p>
-<pre class=" language-c++"><code class="language-c++">char test_1[10];
-char test_2[10];
-cin >> test_1;
-cin >> test_2;
-cout << test_1 << endl;
-cout << test_2 << endl;</code></pre>
-<p>执行结果如下：</p>
-<pre class=" language-c++"><code class="language-c++">Hello World     //输入字符
-Hello           //test_1，遇到空格停止输入
-World           //test_2，从输入流缓冲区读取被过滤掉的字符</code></pre>
-<h1 id="cin-get"><a href="#cin-get" class="headerlink" title="cin.get()"></a>cin.get()</h1><h2 id="含一个参数"><a href="#含一个参数" class="headerlink" title="含一个参数"></a>含一个参数</h2><p>cin.get(数组名)，一次读取一个字符：</p>
-<pre class=" language-c++"><code class="language-c++">char test[5];
-for (int i = 0;i < 5;i++){
-    cin.get(test[i]);
-}</code></pre>
-<h2 id="含两个参数"><a href="#含两个参数" class="headerlink" title="含两个参数"></a>含两个参数</h2><p>cin.get(数组名,接收的字符数量)，可以接收空格，遇到回车停止。先看例子：</p>
-<pre class=" language-c++"><code class="language-c++">char test_1[10];
-cin.get(test_1,10);
-cout << test_1;</code></pre>
-<p>执行如下：</p>
-<pre class=" language-c++"><code class="language-c++">1234567890          //输入10个数字
-123456789           //输出了前9个</code></pre>
-<p>因为数组最后一个字符是’\0’,所以字符长度为10的数组只能接收9个字符。</p>
-<h1 id="cin-getline"><a href="#cin-getline" class="headerlink" title="cin.getline()"></a>cin.getline()</h1><p>函数重载显示：</p>
-<pre class=" language-c++"><code class="language-c++">istream& getline (char* s, streamsize n );
-istream& getline (char* s, streamsize n, char delim );</code></pre>
-<p>getline内有三个参数，一个字符数组，一个读取的数量，以及定界字符（默认’\n’）,通过流对象调用使用，读取的最后一个字符为’\0’，例如：</p>
-<pre class=" language-c++"><code class="language-c++">char test[5];
-cin.getline(test,5);
-cout << test;</code></pre>
-<p>输入输出结果：</p>
-<pre class=" language-c++"><code class="language-c++">ma hoo
-ma h</code></pre>
-<h1 id="getline-string"><a href="#getline-string" class="headerlink" title="getline (string)"></a>getline (string)</h1><p>重载形式：</p>
-<pre class=" language-c++"><code class="language-c++">istream& getline (istream&  is, string& str, char delim);
-istream& getline (istream&& is, string& str, char delim);
-istream& getline (istream&  is, string& str);
-istream& getline (istream&& is, string& str);</code></pre>
-<p>首先看到string就知道这应该要包含#include&lt;<strong>string</strong>&gt;头文件，getline内有三个参数，一个流对象，字符串和定界字符，例如：</p>
-<pre class=" language-c++"><code class="language-c++">char ch = 'o';    //定界字符'o'
-string str;
-getline(cin,str,ch);
-cout << str;</code></pre>
-<pre class=" language-c++"><code class="language-c++">mahoo    //控制台输入
-mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
-<p>当然，也可以不用定界字符参数，默认为’\n’，getline可以接受空格，不能接受回车，据我测试，getline执行后会把缓冲区中的回车读走，但没有存入到指定的字符串中，贴代码：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/C++/test.png" alt=""><br>当输入”mahoo”(getline)和”a”(getchar)后，”b”读到了<code>c = getchar()</code>缓冲区的<code>'\n'</code>，而<code>c = getchar()</code>却没读到<code>getline</code>的回车。</p>
+a <span class="token operator">=</span> <span class="token function">max</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 等价于 "a = (x > y ? x : y);"</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -600,7 +546,7 @@ mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mahoo12138.cn/c-c-0.html">http://mahoo12138.cn/c-c-0.html</a>
+                    <a href="http://mahoo12138.cn/c-cpp-6.html">http://mahoo12138.cn/c-cpp-6.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -646,13 +592,13 @@ mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
 
 <div id="article-share">
     
     
     <div class="social-share" data-sites="twitter,facebook,qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/js/social-share.min.js"></script>
+    <script src="/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -770,10 +716,10 @@ mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
                         <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
                     </ul>
                     <div id="alipay">
-                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -1044,8 +990,8 @@ mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/av-min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/valine/Valine.min.js"></script>
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1072,35 +1018,31 @@ mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/life-greenhand.html">
+                <a href="/font-end-1.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/16.jpg" class="responsive-img" alt="什么！我怎么突然就不是处男了???">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="简单入门CSS预处理器Less和Sass">
                         
-                        <span class="card-title">什么！我怎么突然就不是处男了???</span>
+                        <span class="card-title">简单入门CSS预处理器Less和Sass</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            最近，一位要好的朋友没事做要我发给TA我的手臂照片，我当时也没想什么，就撸起袖子拍了，结果TA给我发了这个：
-
-在人的手臂关节内侧，往手掌方向大约一寸左右的地方，有一道类似于刀痕或手指甲划痕的线，一般都很明显，这就是所谓的处男线了.
-
-我赶
+                            Sass和Less都属于CSS预处理器，CSS预处理器定义了一种新的语言，其基本的思想是，用一种特殊的语言，为CSS增加一些编程的特性，如变量、语句，函数、继承等概念。将CSS作为目标生成文件，然后开发者就只要使用这种语言进行CSS的编码开
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-08
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/生活科普/" class="post-category">
-                                    生活科普
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -1110,8 +1052,12 @@ mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/处男线/">
-                        <span class="chip bg-color">处男线</span>
+                    <a href="/tags/Less/">
+                        <span class="chip bg-color">Less</span>
+                    </a>
+                    
+                    <a href="/tags/Sass/">
+                        <span class="chip bg-color">Sass</span>
                     </a>
                     
                 </div>
@@ -1125,28 +1071,25 @@ mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/c-c-1.html">
+                <a href="/stm32-5.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/cplusplus.jpg" class="responsive-img" alt="C++中的文件输入和输出">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/stm32.jpg" class="responsive-img" alt="利用FSMC模拟8080时序控制LCD">
                         
-                        <span class="card-title">C++中的文件输入和输出</span>
+                        <span class="card-title">利用FSMC模拟8080时序控制LCD</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C++ I/O类软件包处理文件输入和输出的方式与处理标准输入和输出的方式非常相似。
-简单的文件I/O要让程序写入文件，必须这样做:
-
-创建一个ofstream对象来管理输出流；
-将该对象与特定的文件关联起来；
-以使用cout的方式使用该对象
+                            注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！
+ILI9341 液晶控制器
+ILI9341 控制器内部电路连接完后
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-25
                             </span>
                         <span class="publish-author">
                             
@@ -1163,8 +1106,8 @@ mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-C/">
-                        <span class="chip bg-color">C/C++</span>
+                    <a href="/tags/STM32/">
+                        <span class="chip bg-color">STM32</span>
                     </a>
                     
                 </div>
@@ -1180,21 +1123,21 @@ mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -1222,7 +1165,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/tocbot/tocbot.min.js"></script>
+<script src="/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1306,7 +1249,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.css">
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
         font-size: 12px;
@@ -1350,7 +1293,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
@@ -1441,10 +1384,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
+<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->
@@ -1455,12 +1398,12 @@ $(function () {
 </div>
 
 
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/matery.js"></script>
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1481,21 +1424,40 @@ $(function () {
 </script>
 
     
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/clicklove.js" async="async"></script>
+    <script src="/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
     
 
     
-
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "a7fc98ad"
+        });
+        daovoice('update');
+    </script>
     
 
     
     <script type="text/javascript" color="0,0,255"
         pointColor="0,0,255" opacity='0.7'
         zIndex="-1" count="99"
-        src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/background/canvas-nest.js"></script>
+        src="/libs/background/canvas-nest.js"></script>
     
 
     
@@ -1503,7 +1465,7 @@ $(function () {
     
     
     
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
 </body>

@@ -250,7 +250,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, rgb(253, 173, 186) 0%, #2196f3 100%);
+    background-image: linear-gradient(to right, rgba(240, 87, 113, 0.493) 0%, #098cf77c 100%);
 }
 
 .text-color {
@@ -590,6 +590,8 @@ header .go-back i {
     position: relative;
 }
 
+ 
+
 .bg-cover .description {
     font-weight: 300;
     font-size: 1.25rem;
@@ -752,6 +754,28 @@ header .go-back i {
 @media only screen and (max-width: 601px) {
     .index-card .card .card-content {
         padding: 10px 10px;
+    }
+    .bg-cover .title {
+        font-size: 2.8rem;
+        line-height: 1.85em;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    header .brand-logo .logo-span {
+        font-size: 1.4rem;
+        line-height: 1;
+    }
+
+}
+@media only screen and (max-width: 320px) {
+    header .brand-logo .logo-span {
+        font-size: 1.2rem;
+    }
+    .bg-cover .title {
+        font-size: 2rem;
+        line-height: 1.4em;
+        margin-bottom: 20px;
+        position: relative;
     }
 }
 

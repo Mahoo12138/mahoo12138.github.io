@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://mahoo12138.cn/backend-1.html</loc>
+    <lastmod>2020-04-11</lastmod>
+  </url>  <url>
+    <loc>http://mahoo12138.cn/tutorial-1.html</loc>
+    <lastmod>2020-04-07</lastmod>
+  </url>  <url>
+    <loc>http://mahoo12138.cn/tutorial-2.html</loc>
+    <lastmod>2020-04-07</lastmod>
+  </url>  <url>
+    <loc>http://mahoo12138.cn/markdown.html</loc>
+    <lastmod>2020-04-07</lastmod>
+  </url>  <url>
+    <loc>http://mahoo12138.cn/git.html</loc>
+    <lastmod>2020-04-06</lastmod>
+  </url>  <url>
     <loc>http://mahoo12138.cn/stm32-6.html</loc>
     <lastmod>2020-04-05</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/vuejs.html</loc>
+    <loc>http://mahoo12138.cn/font-end-2.html</loc>
     <lastmod>2020-04-04</lastmod>
-  </url>  <url>
-    <loc>http://mahoo12138.cn/git.html</loc>
-    <lastmod>2020-04-03</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/stm32-2.html</loc>
     <lastmod>2020-03-31</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/android-splash.html</loc>
+    <loc>http://mahoo12138.cn/android-2.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/jupyter.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/win10-ubuntu.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
-    <loc>http://mahoo12138.cn/tutorial-2.html</loc>
+    <loc>http://mahoo12138.cn/other-1.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/stm32-5.html</loc>
@@ -37,79 +46,61 @@
     <loc>http://mahoo12138.cn/stm32-1.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/python-demo.html</loc>
+    <loc>http://mahoo12138.cn/py-2.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/python-1.html</loc>
+    <loc>http://mahoo12138.cn/py-1.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/pre-css.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
-    <loc>http://mahoo12138.cn/pc-2.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
-    <loc>http://mahoo12138.cn/pc-1.html</loc>
+    <loc>http://mahoo12138.cn/font-end-1.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/office.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/mk-2.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
-    <loc>http://mahoo12138.cn/mk-1.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
     <loc>http://mahoo12138.cn/linux-1.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/life-greenhand.html</loc>
+    <loc>http://mahoo12138.cn/android-5.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/kotlin.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
-    <loc>http://mahoo12138.cn/java-jdk.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
-    <loc>http://mahoo12138.cn/hexo-seo.html</loc>
+    <loc>http://mahoo12138.cn/other-2.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/hexo-2.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/flutter.html</loc>
+    <loc>http://mahoo12138.cn/hexo-1.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/c-c-5.html</loc>
+    <loc>http://mahoo12138.cn/android-6.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/c-c-4.html</loc>
+    <loc>http://mahoo12138.cn/c-cpp-6.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/c-c-3.html</loc>
+    <loc>http://mahoo12138.cn/c-cpp-5.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/c-c-2.html</loc>
+    <loc>http://mahoo12138.cn/c-cpp-4.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/c-c-1.html</loc>
+    <loc>http://mahoo12138.cn/c-cpp-3.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/c-c-0.html</loc>
+    <loc>http://mahoo12138.cn/c-cpp-2.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/asm.html</loc>
+    <loc>http://mahoo12138.cn/c-cpp-1.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/android-md.html</loc>
+    <loc>http://mahoo12138.cn/android-3.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/android-java.html</loc>
+    <loc>http://mahoo12138.cn/android-1.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
-    <loc>http://mahoo12138.cn/android.html</loc>
+    <loc>http://mahoo12138.cn/android-4.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/51mcu-6.html</loc>
