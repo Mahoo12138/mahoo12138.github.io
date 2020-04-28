@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://mahoo12138.cn/android-6.html</loc>
+    <lastmod>2020-04-28</lastmod>
+  </url>  <url>
     <loc>http://mahoo12138.cn/backend-1.html</loc>
-    <lastmod>2020-04-11</lastmod>
+    <lastmod>2020-04-21</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/tutorial-1.html</loc>
     <lastmod>2020-04-07</lastmod>
@@ -71,9 +74,6 @@
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/hexo-1.html</loc>
-    <lastmod>2020-03-23</lastmod>
-  </url>  <url>
-    <loc>http://mahoo12138.cn/android-6.html</loc>
     <lastmod>2020-03-23</lastmod>
   </url>  <url>
     <loc>http://mahoo12138.cn/c-cpp-6.html</loc>

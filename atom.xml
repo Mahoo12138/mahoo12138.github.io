@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mahoo12138.cn/"/>
-  <updated>2020-04-11T15:39:45.801Z</updated>
+  <updated>2020-04-28T03:03:03.226Z</updated>
   <id>http://mahoo12138.cn/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>利用ADB将安卓投屏到电脑进行调试开发</title>
+    <link href="http://mahoo12138.cn/android-6.html"/>
+    <id>http://mahoo12138.cn/android-6.html</id>
+    <published>2020-04-27T02:01:25.000Z</published>
+    <updated>2020-04-28T03:03:03.226Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;保证手机与电脑在同一个局域网下，然后查看手机的IP地址：&lt;/p&gt;
+&lt;h2 id=&quot;投屏准备&quot;&gt;&lt;a href=&quot;#投屏准备&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="adb" scheme="http://mahoo12138.cn/tags/adb/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Express &amp; MongoDB 实战</title>
     <link href="http://mahoo12138.cn/backend-1.html"/>
     <id>http://mahoo12138.cn/backend-1.html</id>
     <published>2020-04-11T13:48:43.000Z</published>
-    <updated>2020-04-11T15:39:45.801Z</updated>
+    <updated>2020-04-21T10:37:57.277Z</updated>
     
     <summary type="html">
     
@@ -526,32 +553,6 @@
     
     
       <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++再学习之基础语法</title>
-    <link href="http://mahoo12138.cn/c-cpp-4.html"/>
-    <id>http://mahoo12138.cn/c-cpp-4.html</id>
-    <published>2019-10-24T08:48:43.000Z</published>
-    <updated>2020-03-23T15:58:50.144Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;define宏定义&quot;&gt;&lt;a href=&quot;#define宏定义&quot; class=&quot;headerlink&quot; title=&quot;#define宏定义&quot;&gt;&lt;/a&gt;#define宏定义&lt;/h2&gt;&lt;pre class=&quot; language-c++&quot;&gt;&lt;code
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="C/C++" scheme="http://mahoo12138.cn/tags/C-C/"/>
     
   </entry>
   

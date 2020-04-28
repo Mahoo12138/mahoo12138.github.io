@@ -17,17 +17,17 @@
 
 
     <title>关于 | 黄同学的博客</title>
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/my.css">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/jquery/jquery.min.js"></script>
+    <script src="/libs/jquery/jquery.min.js"></script>
 	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -40,7 +40,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">黄同学的博客</span>
                 </a>
@@ -138,7 +138,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">黄同学的博客</div>
         <div class="logo-desc">
@@ -344,7 +344,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/banner/' + new Date().getDay() + '.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 </script>
 
 
@@ -374,7 +374,7 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">27</a></span>
+    <span class="count"><a href="/tags">26</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -383,7 +383,7 @@
                     <div class="col s12 m12 l4">
                         <div class="profile center-align">
                             <div class="avatar">
-                                <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/avatar.jpg" alt="Mahoo Huang"
+                                <img src="/medias/avatar.jpg" alt="Mahoo Huang"
                                      class="circle responsive-img avatar-img">
                             </div>
                             <div class="author">
@@ -404,7 +404,7 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">27</a></span>
+    <span class="count"><a href="/tags">26</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -535,7 +535,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
 <script>
     let postsChart = echarts.init(document.getElementById('posts-chart'));
     let categoriesChart = echarts.init(document.getElementById('categories-chart'));
@@ -564,7 +564,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,3,1,3,5,0,11,7,4,0,3,2,1],
+                data: [0,3,1,3,4,0,11,7,4,0,3,2,2],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -606,7 +606,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"学习笔记","value":32},{"name":"技术教程","value":8}],
+                data: [{"name":"学习笔记","value":31},{"name":"技术教程","value":9}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -630,7 +630,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["51单片机","C/C++","STM32","Android","Java","Hexo","Ubuntu","Python","Material Design","Kotlin"]
+                data: ["51单片机","C/C++","STM32","Android","Java","Hexo","Ubuntu","Python","Kotlin","adb"]
             }
         ],
         yAxis: [
@@ -772,28 +772,22 @@
             
             
             
-            
-            
-            <a href="/tags/Material-Design/">
-                <span class="chip center-align waves-effect waves-light chip-default">Material Design</span>
-            </a>
-            
-            
-            
             <a href="/tags/Kotlin/">
                 <span class="chip center-align waves-effect waves-light chip-default">Kotlin</span>
             </a>
             
             
             
-            <a href="/tags/Flutter/">
-                <span class="chip center-align waves-effect waves-light chip-default">Flutter</span>
+            <a href="/tags/adb/">
+                <span class="chip center-align waves-effect waves-light chip-default">adb</span>
             </a>
             
             
             
-            <a href="/tags/Dart/">
-                <span class="chip center-align waves-effect waves-light chip-default">Dart</span>
+            
+            
+            <a href="/tags/Material-Design/">
+                <span class="chip center-align waves-effect waves-light chip-default">Material Design</span>
             </a>
             
             
@@ -812,12 +806,6 @@
             
             
             
-            <a href="/tags/Vuejs/">
-                <span class="chip center-align waves-effect waves-light chip-default">Vuejs</span>
-            </a>
-            
-            
-            
             <a href="/tags/Less/">
                 <span class="chip center-align waves-effect waves-light chip-default">Less</span>
             </a>
@@ -830,20 +818,14 @@
             
             
             
-            <a href="/tags/git/">
-                <span class="chip center-align waves-effect waves-light chip-default">git</span>
+            <a href="/tags/Vuejs/">
+                <span class="chip center-align waves-effect waves-light chip-default">Vuejs</span>
             </a>
             
             
             
             <a href="/tags/Hexo/">
                 <span class="chip center-align waves-effect waves-light chip-default">Hexo</span>
-            </a>
-            
-            
-            
-            <a href="/tags/SEO/">
-                <span class="chip center-align waves-effect waves-light chip-default">SEO</span>
             </a>
             
             
@@ -860,8 +842,14 @@
             
             
             
-            <a href="/tags/Linux/">
-                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
+            <a href="/tags/git/">
+                <span class="chip center-align waves-effect waves-light chip-default">git</span>
+            </a>
+            
+            
+            
+            <a href="/tags/SEO/">
+                <span class="chip center-align waves-effect waves-light chip-default">SEO</span>
             </a>
             
             
@@ -884,6 +872,12 @@
             
             
             
+            <a href="/tags/Linux/">
+                <span class="chip center-align waves-effect waves-light chip-default">Linux</span>
+            </a>
+            
+            
+            
             <a href="/tags/office/">
                 <span class="chip center-align waves-effect waves-light chip-default">office</span>
             </a>
@@ -894,14 +888,14 @@
             
             
             
-            <a href="/tags/副屏/">
-                <span class="chip center-align waves-effect waves-light chip-default">副屏</span>
+            <a href="/tags/免费图床/">
+                <span class="chip center-align waves-effect waves-light chip-default">免费图床</span>
             </a>
             
             
             
-            <a href="/tags/免费图床/">
-                <span class="chip center-align waves-effect waves-light chip-default">免费图床</span>
+            <a href="/tags/副屏/">
+                <span class="chip center-align waves-effect waves-light chip-default">副屏</span>
             </a>
             
             
@@ -924,19 +918,19 @@
         
         <div class="photo col s12 m6 l4" data-aos="fade-up">
             <div class="img-item" data-src="/medias/featureimages/0.jpg">
-                <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/0.jpg" class="responsive-img">
+                <img src="/medias/featureimages/0.jpg" class="responsive-img">
             </div>
         </div>
         
         <div class="photo col s12 m6 l4" data-aos="fade-up">
             <div class="img-item" data-src="/medias/featureimages/1.jpg">
-                <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/1.jpg" class="responsive-img">
+                <img src="/medias/featureimages/1.jpg" class="responsive-img">
             </div>
         </div>
         
         <div class="photo col s12 m6 l4" data-aos="fade-up">
             <div class="img-item" data-src="/medias/featureimages/2.jpg">
-                <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/2.jpg" class="responsive-img">
+                <img src="/medias/featureimages/2.jpg" class="responsive-img">
             </div>
         </div>
         
@@ -963,7 +957,7 @@
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.css">
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
         font-size: 12px;
@@ -1007,7 +1001,7 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
@@ -1098,10 +1092,10 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
+<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->
@@ -1112,12 +1106,12 @@ $(function () {
 </div>
 
 
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aos/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/matery.js"></script>
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1138,10 +1132,10 @@ $(function () {
 </script>
 
     
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/clicklove.js" async="async"></script>
+    <script src="/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1171,7 +1165,7 @@ $(function () {
     <script type="text/javascript" color="0,0,255"
         pointColor="0,0,255" opacity='0.7'
         zIndex="-1" count="99"
-        src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/background/canvas-nest.js"></script>
+        src="/libs/background/canvas-nest.js"></script>
     
 
     
@@ -1179,7 +1173,7 @@ $(function () {
     
     
     
-    <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
 </body>
