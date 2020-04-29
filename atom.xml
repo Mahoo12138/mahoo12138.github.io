@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mahoo12138.cn/"/>
-  <updated>2020-04-28T03:03:03.429Z</updated>
+  <updated>2020-04-29T03:54:45.487Z</updated>
   <id>http://mahoo12138.cn/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>安卓开发学习之DrawerLayout</title>
+    <link href="http://mahoo12138.cn/android-7.html"/>
+    <id>http://mahoo12138.cn/android-7.html</id>
+    <published>2020-04-29T02:09:45.000Z</published>
+    <updated>2020-04-29T03:54:45.487Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;为什么要使用导航抽屉？&quot;&gt;&lt;a href=&quot;#为什么要使用导航抽屉？&quot; class=&quot;headerlink&quot; title=&quot;为什么要使用导航抽屉？&quot;&gt;&lt;/a&gt;为什么要使用导航抽屉？&lt;/h2&gt;&lt;p&gt;Android
+        
+      
+    
+    </summary>
+    
+      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Android" scheme="http://mahoo12138.cn/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title>利用ADB将安卓投屏到电脑进行调试开发</title>
     <link href="http://mahoo12138.cn/android-6.html"/>
     <id>http://mahoo12138.cn/android-6.html</id>
     <published>2020-04-27T02:01:25.000Z</published>
-    <updated>2020-04-28T03:03:03.429Z</updated>
+    <updated>2020-04-29T03:55:44.763Z</updated>
     
     <summary type="html">
     
@@ -38,6 +64,8 @@
     
       <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
+    
+      <category term="Android" scheme="http://mahoo12138.cn/tags/Android/"/>
     
       <category term="adb" scheme="http://mahoo12138.cn/tags/adb/"/>
     
@@ -499,33 +527,6 @@
     
     
       <category term="C/C++" scheme="http://mahoo12138.cn/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>理解STM32的八种输入输出模式</title>
-    <link href="http://mahoo12138.cn/stm32-1.html"/>
-    <id>http://mahoo12138.cn/stm32-1.html</id>
-    <published>2019-10-31T02:12:43.000Z</published>
-    <updated>2020-03-23T15:58:50.233Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
-&lt;h2 id=&quot;输入模式&quot;&gt;&lt;a href=&quot;#输入模式&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
     
   </entry>
   
