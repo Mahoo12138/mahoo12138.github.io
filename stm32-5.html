@@ -17,7 +17,7 @@
 
 
     <title>利用FSMC模拟8080时序控制LCD | 黄同学的博客</title>
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.png">
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.css">
@@ -40,7 +40,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.ico" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">黄同学的博客</span>
                 </a>
@@ -138,7 +138,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.ico" class="logo-img circle responsive-img">
         
         <div class="logo-name">黄同学的博客</div>
         <div class="logo-desc">
@@ -307,7 +307,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/stm32.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/stm32.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -411,7 +411,7 @@
         
         position: fixed;
         right: 15px;
-        bottom: 76px;
+        bottom: 150px;
         padding-top: 15px;
         margin-bottom: 0;
         z-index: 998;
@@ -471,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-23
+                    2020-05-01
                 </div>
                 
 
@@ -492,9 +492,9 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！</p>
-<h2 id="ILI9341-液晶控制器"><a href="#ILI9341-液晶控制器" class="headerlink" title="ILI9341 液晶控制器"></a>ILI9341 液晶控制器</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/ili9341.png" alt="ILI9341控制器内部框图"></p>
+<h2 id="ILI9341-液晶控制器"><a href="#ILI9341-液晶控制器" class="headerlink" title="ILI9341 液晶控制器"></a>ILI9341 液晶控制器</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/STM32/ili9341.png" alt="ILI9341控制器内部框图"></p>
 <p>ILI9341 控制器内部电路连接完后，其余信号线引出到排针</p>
-<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/lcd.png" alt="液晶屏引出的信号线" style="zoom:67%;">
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/STM32/lcd.png" alt="液晶屏引出的信号线" style="zoom:67%;">
 
 <h3 id="液晶屏引出的信号线说明"><a href="#液晶屏引出的信号线说明" class="headerlink" title="液晶屏引出的信号线说明"></a>液晶屏引出的信号线说明</h3><table>
 <thead>
@@ -546,7 +546,7 @@
 </tr>
 </tbody></table>
 <h2 id="FSMC简介"><a href="#FSMC简介" class="headerlink" title="FSMC简介"></a>FSMC简介</h2><p>STM32F1 系列芯片使用 FSMC 外设来管理扩展的存储器， FSMC 是 Flexible Static<br>Memory Controller 的缩写，译为灵活的静态存储控制器。它可以用于驱动包括 SRAM、<br>NOR FLASH 以及 NAND FLSAH 类型的存储器，不能驱动如 SDRAM 这种动态的存储器而<br>在 STM32F429 系列的控制器中，它具有 FMC 外设，支持控制 SDRAM 存储器。  </p>
-<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/fsmc.png" style="zoom:80%;">
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/STM32/fsmc.png" style="zoom:80%;">
 
 <p>MCU 对液晶屏的操作实际上就是把显示数据写入到显存中，与控制存储器非常类似，且8080 接口的通讯时序完全可以使用 FSMC 外设产生。</p>
 <h3 id="模拟-8080-接口时序"><a href="#模拟-8080-接口时序" class="headerlink" title="模拟 8080 接口时序"></a>模拟 8080 接口时序</h3><p>在模拟控制 LCD 时，是使用 FSMC 的 NOR\PSRAM 模式的， 而且使用的是类似异步、 地址与数据线独立的  NOR FLASH 类型的模式 B，实际上 CLK、 NWAIT、 NADV 引脚并没有使用到。  </p>
@@ -600,7 +600,7 @@
 </tr>
 </tbody></table>
 <p>对比 FSMC NOR/PSRAM 中的模式 B 时序与 ILI9341 液晶控制器芯片使用的 8080 时序可发现，这两个时序是十分相似的(除了 FSMC 的地址线 A 和 8080 的 D/CX 线，可以说是完全一样)  </p>
-<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/8080vsnorflash.png" alt="FSMC模式B时序与8080时序对比（写过程）" style="zoom:80%;">
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/STM32/8080vsnorflash.png" alt="FSMC模式B时序与8080时序对比（写过程）" style="zoom:80%;">
 
 <table>
 <thead>
@@ -638,9 +638,9 @@
 </tbody></table>
 <p>为了模拟出 8080 时序，我们可以把 FSMC 的 A0 地址线(也可以使用其它 A1/A2 等地<br>址线)与 ILI9341 芯片 8080 接口的 D/CX 信号线连接，那么当 A0 为高电平时(即 D/CX 为高<br>电平)，数据线 D[15:0]的信号会被 ILI9341 理解为数值，若 A0 为低电平时(即 D/CX 为低电<br>平)，传输的信号则会被理解为命令。  </p>
 <h3 id="FSMC的地址映射"><a href="#FSMC的地址映射" class="headerlink" title="FSMC的地址映射"></a>FSMC的地址映射</h3><p>使用 FSMC 外接存储器时，其存储单元是映射到 STM32 的内部寻址空间的，这里也涉及到使用地址线某个引脚时，需要计算对应的地址，以达到控制输出高低电平。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/fsmc_addr.png" alt="FSMC 的地址映射"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/STM32/fsmc_addr.png" alt="FSMC 的地址映射"></p>
 <h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><h3 id="液晶LCD硬件相关宏定义"><a href="#液晶LCD硬件相关宏定义" class="headerlink" title="液晶LCD硬件相关宏定义"></a>液晶LCD硬件相关宏定义</h3><p>根据液晶屏的原理图，将FSMC 控制液晶屏硬件相关的配置都以宏的形式定义：</p>
-<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/lcd_pin.png" alt="开发板与屏幕的连接" style="zoom:67%;">
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/STM32/lcd_pin.png" alt="开发板与屏幕的连接" style="zoom:67%;">
 
 <pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">/*****************    LCD控制信号    ******************/</span>
 <span class="token comment" spellcheck="true">//片选引脚</span>
@@ -763,12 +763,12 @@
      <span class="token comment" spellcheck="true">/* 使能 FSMC_Bank1_NORSRAMx */</span>
      <span class="token function">FSMC_NORSRAMCmd</span> <span class="token punctuation">(</span>FSMC_Bank1_NORSRAMx<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<h3 id="计算控制液晶屏时使用的地址"><a href="#计算控制液晶屏时使用的地址" class="headerlink" title="计算控制液晶屏时使用的地址"></a>计算控制液晶屏时使用的地址</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/lie.png" alt=""></p>
+<h3 id="计算控制液晶屏时使用的地址"><a href="#计算控制液晶屏时使用的地址" class="headerlink" title="计算控制液晶屏时使用的地址"></a>计算控制液晶屏时使用的地址</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/STM32/lie.png" alt=""></p>
 <ul>
 <li><p>首先确定板子NEx引脚的连接，本次实例使用的是<code>FSMC_NE1</code></p>
 </li>
 <li><p>在 数据手册 –&gt; 存储器映像 中查询<code>FSMC_bnak1 NOR/PSRAM 1</code>的地址：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/fsmc_bank1_nor_addr.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/STM32/fsmc_bank1_nor_addr.png" alt=""></p>
 </li>
 <li><p>使用的是<code>FSMS_NE1</code>也就是当访问到<code>0x6000000-0x63FFFFFF</code>这个地址范围内时，FSMC都会产生有效的访问时序；本实例中使用的是<code>FSMC_A16</code>地址线作为命令/数据选择线，即：</p>
 <ul>
@@ -815,7 +815,7 @@ __inline uint16_t <span class="token function">ILI9341_Read_Data</span> <span cl
     <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token operator">*</span>FSMC_Addr_ILI9341_DATA<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <h4 id="检验封装"><a href="#检验封装" class="headerlink" title="检验封装"></a>检验封装</h4><p>在上述函数封装好之后，进行一些测试检验使很有必要，我们可以查询<code>ILI9341</code>的数据文档，选择合适的命令进行测试：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/STM32/ili9341_0ch.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/STM32/ili9341_0ch.png" alt=""></p>
 <p>当发送命令<code>0x0C</code>，第二个参数会返回 LCD 的像素信息，可以封装一个检验函数如下：</p>
 <pre class=" language-c"><code class="language-c">uint16_t <span class="token function">Read_Pixel_Format</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
@@ -1341,7 +1341,7 @@ __inline uint16_t <span class="token function">ILI9341_Read_Data</span> <span cl
                 <a href="/c-cpp-6.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/c.jpg" class="responsive-img" alt="C语言再学习之基础语法">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/c.jpg" class="responsive-img" alt="C语言再学习之基础语法">
                         
                         <span class="card-title">C语言再学习之基础语法</span>
                     </div>
@@ -1390,7 +1390,7 @@ __inline uint16_t <span class="token function">ILI9341_Read_Data</span> <span cl
                 <a href="/font-end-2.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/vuejs.png" class="responsive-img" alt="我的网页梦 —— 前端基础 & Vuejs">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/vuejs.png" class="responsive-img" alt="我的网页梦 —— 前端基础 & Vuejs">
                         
                         <span class="card-title">我的网页梦 —— 前端基础 & Vuejs</span>
                     </div>

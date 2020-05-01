@@ -17,7 +17,7 @@
 
 
     <title>51单片机学习之中断系统 | 黄同学的博客</title>
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.png">
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.css">
@@ -40,7 +40,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.ico" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">黄同学的博客</span>
                 </a>
@@ -138,7 +138,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.ico" class="logo-img circle responsive-img">
         
         <div class="logo-name">黄同学的博客</div>
         <div class="logo-desc">
@@ -307,7 +307,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/51.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -411,7 +411,7 @@
         
         position: fixed;
         right: 15px;
-        bottom: 76px;
+        bottom: 150px;
         padding-top: 15px;
         margin-bottom: 0;
         z-index: 998;
@@ -471,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-23
+                    2020-05-01
                 </div>
                 
 
@@ -541,7 +541,7 @@
 <td align="center">4</td>
 </tr>
 </tbody></table>
-<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/51%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F.jpg" alt="中断系统结构"> </p>
+<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/51%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F.jpg" alt="中断系统结构"> </p>
 <p>从前面的介绍我们可以知道，不管主程序执行到什么地方，只要外部中断0产生请求，内核就要响应该中断，就回到0003H这个地址去执行代码。如果使用汇编语言，则要记住每个中断源对应的地址；C语言则需要记住序号即可。</p>
 <h3 id="中断控制"><a href="#中断控制" class="headerlink" title="中断控制"></a><strong><font size="5">中断控制</font></strong></h3><p>4个特殊功能寄存器来实施中断控制：</p>
 <ul>
@@ -1282,24 +1282,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/51mcu-6.html">
+                <a href="/51mcu-2.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/51.jpg" class="responsive-img" alt="51单片机学习之定时器">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg" class="responsive-img" alt="51单片机学习之串口通信">
                         
-                        <span class="card-title">51单片机学习之定时器</span>
+                        <span class="card-title">51单片机学习之串口通信</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            概念基础单片机延时基础之前的延时我们都使用的是利用C语言的多次的空循环进行延迟操作，这样的缺点是：CPU时间被占用无法进行其他任务，导致系统效率降低。而且延时时间越长，该缺点越明显，所以，这种延时操作只适用于短暂延时，或简单的项目。
-而定时
+                            基础知识通信知识
+
+串行通信：数据字节一位一位在一条传输线上逐个传输；
+并行通信：多位数据字节同时传输，控制简单，传输速度快。
+
+
+
+异步通信：是指通信的发送与接收设备使用各自的时钟控制数据的发送和接收过程。为使双方的收发协调，要求发送和接
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-15
                         </span>
                         <span class="publish-author">
                             
@@ -1331,18 +1337,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/51mcu-4.html">
+                <a href="/51mcu-6.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/51.jpg" class="responsive-img" alt="51单片机学习之独立键盘输入">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg" class="responsive-img" alt="51单片机学习之定时器">
                         
-                        <span class="card-title">51单片机学习之独立键盘输入</span>
+                        <span class="card-title">51单片机学习之定时器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            概念基础上拉电阻上拉电阻就是将一个不确定信号（高或低电平），通过一个电阻与电源VCC相连，固定在高电平，电阻同时起限流作用。下拉同理，也是将一个不确定信号（高或低电平），通过一个电阻与地GND相连，固定在低电平。上拉电阻和下拉电阻二者共同的
+                            概念基础单片机延时基础之前的延时我们都使用的是利用C语言的多次的空循环进行延迟操作，这样的缺点是：CPU时间被占用无法进行其他任务，导致系统效率降低。而且延时时间越长，该缺点越明显，所以，这种延时操作只适用于短暂延时，或简单的项目。
+而定时
                         
                     </div>
                     <div class="publish-info">

@@ -17,7 +17,7 @@
 
 
     <title>利用Cloud Studio为博客搭建免费图床 | 黄同学的博客</title>
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.png">
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.css">
@@ -40,7 +40,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.ico" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">黄同学的博客</span>
                 </a>
@@ -138,7 +138,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.ico" class="logo-img circle responsive-img">
         
         <div class="logo-name">黄同学的博客</div>
         <div class="logo-desc">
@@ -411,7 +411,7 @@
         
         position: fixed;
         right: 15px;
-        bottom: 76px;
+        bottom: 150px;
         padding-top: 15px;
         margin-bottom: 0;
         z-index: 998;
@@ -471,14 +471,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-07
+                    2020-05-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    977
+                    975
                 </div>
                 
 
@@ -508,13 +508,13 @@
 <p>腾讯云开发者平台：<a href="https://dev.tencent.com/" target="_blank" rel="noopener"> https://dev.tencent.com/ </a></p>
 </li>
 <li><p>新建一个项目</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Tutorials/pic_cs/new.png" alt="新建项目"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/Tutorials/pic_cs/new.png" alt="新建项目"></p>
 <p>项目名称，地址自定义，是否公开勾选。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Tutorials/pic_cs/new1.png" alt="新建项目"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/Tutorials/pic_cs/new1.png" alt="新建项目"></p>
 </li>
 </ul>
 <p>进入新建项目界面，打开右侧<code>代码 -&gt;代码浏览</code>，复制该项目的HTTPS地址。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Tutorials/pic_cs/new2.png" alt="项目界面"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/Tutorials/pic_cs/new2.png" alt="项目界面"></p>
 <h2 id="连接本地存储库和远程存储库"><a href="#连接本地存储库和远程存储库" class="headerlink" title="连接本地存储库和远程存储库"></a>连接本地存储库和远程存储库</h2><p>当你往本地存储库添加图片后，使用指令：</p>
 <pre class=" language-shell"><code class="language-shell">git add .
 git commit -m "自定义内容"
@@ -522,7 +522,7 @@ git remote add origin 刚才复制的的HTTPS地址
 git push origin master</code></pre>
 <p>这样的话，图片已经同步到远程存储库了，当然你对<code>git</code>相当熟悉的话，以上全是废话，此教程仅针对刚搭建博客的小白。</p>
 <h2 id="开启Pages服务绑定域名"><a href="#开启Pages服务绑定域名" class="headerlink" title="开启Pages服务绑定域名"></a>开启Pages服务绑定域名</h2><p>打开此界面，按提示绑定域名即可</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Tutorials/pic_cs/pages.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/Tutorials/pic_cs/pages.png" alt=""></p>
 <h2 id="通过直链引用图片"><a href="#通过直链引用图片" class="headerlink" title="通过直链引用图片"></a>通过直链引用图片</h2><p>这里我举例来说明比较好懂，在写博客的过程中，当你引入一张图片时，例如是这样的：</p>
 <pre class=" language-shell"><code class="language-shell">D:\Mahoo\Pictures\Blog\test.png</code></pre>
 <p>这时该图片的本地地址，在已经开启Pages服务并且绑定域名的情况下，你绑定的域名直接指向了git本地存储库的根目录，也就是<code>Blog</code>，所以则可以将本地地址改成网络直链：</p>
@@ -534,7 +534,7 @@ f <span class="token operator">=</span> open<span class="token punctuation">(</s
 string <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
 f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 key <span class="token operator">=</span> r<span class="token string">'D:\\Mahoo\\Pictures\\Blog\\hexo_images\\Tutorials\\pic_cs\\'</span>
-new <span class="token operator">=</span> <span class="token string">'https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Tutorials/pic_cs/'</span>
+new <span class="token operator">=</span> <span class="token string">'https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/Tutorials/pic_cs/'</span>
 <span class="token comment" spellcheck="true"># result = re.compile(key).findall(string)</span>
 <span class="token comment" spellcheck="true"># print(result)</span>
 string <span class="token operator">=</span> re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span>key<span class="token punctuation">,</span> new<span class="token punctuation">,</span> string<span class="token punctuation">)</span>
@@ -552,7 +552,7 @@ f<span class="token punctuation">.</span>close<span class="token punctuation">(<
     string <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
     f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
     key <span class="token operator">=</span> <span class="token string">'http://airlife.club/'</span>        <span class="token comment" spellcheck="true">#旧域名</span>
-    new <span class="token operator">=</span> <span class="token string">'https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/'</span>        <span class="token comment" spellcheck="true">#新域名</span>
+    new <span class="token operator">=</span> <span class="token string">'https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/'</span>        <span class="token comment" spellcheck="true">#新域名</span>
     string <span class="token operator">=</span> re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span>key<span class="token punctuation">,</span> new<span class="token punctuation">,</span> string<span class="token punctuation">)</span>
     f <span class="token operator">=</span> open<span class="token punctuation">(</span><span class="token string">'D:/Mahoo/BLog/source/_posts/'</span> <span class="token operator">+</span> files<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span>
     f<span class="token punctuation">.</span>write<span class="token punctuation">(</span>string<span class="token punctuation">)</span>
@@ -1075,7 +1075,7 @@ f<span class="token punctuation">.</span>close<span class="token punctuation">(<
                 <a href="/c-cpp-4.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/cplusplus.jpg" class="responsive-img" alt="C++再学习之基础语法">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/cplusplus.jpg" class="responsive-img" alt="C++再学习之基础语法">
                         
                         <span class="card-title">C++再学习之基础语法</span>
                     </div>
@@ -1134,7 +1134,7 @@ int main() {
                 <a href="/51mcu-2.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/51.jpg" class="responsive-img" alt="51单片机学习之串口通信">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg" class="responsive-img" alt="51单片机学习之串口通信">
                         
                         <span class="card-title">51单片机学习之串口通信</span>
                     </div>

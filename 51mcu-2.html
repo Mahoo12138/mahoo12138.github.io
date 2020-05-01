@@ -17,7 +17,7 @@
 
 
     <title>51单片机学习之串口通信 | 黄同学的博客</title>
-    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.png">
+    <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/materialize/materialize.min.css">
@@ -40,7 +40,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.ico" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">黄同学的博客</span>
                 </a>
@@ -138,7 +138,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/logo.ico" class="logo-img circle responsive-img">
         
         <div class="logo-name">黄同学的博客</div>
         <div class="logo-desc">
@@ -307,7 +307,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/51.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -411,7 +411,7 @@
         
         position: fixed;
         right: 15px;
-        bottom: 76px;
+        bottom: 150px;
         padding-top: 15px;
         margin-bottom: 0;
         z-index: 998;
@@ -471,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-23
+                    2020-05-01
                 </div>
                 
 
@@ -491,20 +491,20 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="通信知识"><a href="#通信知识" class="headerlink" title="通信知识"></a>通信知识</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E4%BF%A1.png" alt="通信分类"></p>
+                <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="通信知识"><a href="#通信知识" class="headerlink" title="通信知识"></a>通信知识</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E4%BF%A1.png" alt="通信分类"></p>
 <ul>
 <li>串行通信：数据字节一位一位在一条传输线上逐个传输；</li>
 <li>并行通信：多位数据字节同时传输，控制简单，传输速度快。</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E5%B9%B6%E8%A1%8C%E4%BC%A0%E8%BE%93%E5%92%8C%E4%B8%B2%E8%A1%8C%E4%BC%A0%E8%BE%93.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E5%B9%B6%E8%A1%8C%E4%BC%A0%E8%BE%93%E5%92%8C%E4%B8%B2%E8%A1%8C%E4%BC%A0%E8%BE%93.png" alt=""></p>
 <ul>
-<li><p>异步通信：是指通信的发送与接收设备使用各自的时钟控制数据的发送和接收过程。为使双方的收发协调，要求发送和接受设备的时钟尽可能一致。  <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1%E6%97%B6%E9%92%9F.png" alt="异步通信时钟"> </p>
+<li><p>异步通信：是指通信的发送与接收设备使用各自的时钟控制数据的发送和接收过程。为使双方的收发协调，要求发送和接受设备的时钟尽可能一致。  <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E5%BC%82%E6%AD%A5%E9%80%9A%E4%BF%A1%E6%97%B6%E9%92%9F.png" alt="异步通信时钟"> </p>
 <p>异步通信是以字符（构成的帧）为单位进行传输，字符与字符之间的间隙（时间间隔）是任意的，但每个字符中的各位是以固定的时间传送的，即字符之间不一定有“位间隔”的整数倍的关系，但同一字符内的各位之间的距离均为“位间隔”的整数倍。 </p>
-<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E5%AD%97%E7%AC%A6%E5%B8%A7.png" alt="字符帧"> </p>
+<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E5%AD%97%E7%AC%A6%E5%B8%A7.png" alt="字符帧"> </p>
 <p>异步通信的特点：不要求收发双方时钟的严格一致，实现容易，设备开销较小，但每个字符要附加2～3位用于起止位，各帧之间还有间隔，因此传输效率不高。 </p>
 </li>
 <li><p>同步通信 ： 同步通信时要建立发送方时钟对接收方时钟的直接控制，使双方达到完全同步。此时，传输数据的位之间的距离均为“位间隔”的整数倍，同时传送的字符间不留间隙，即保持位同步关系，也保持字符同步关系。发送方对接收方的同步可以通过两种方法实现。 </p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95.png" alt="左为字符同步，右为位同步"> </p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95.png" alt="左为字符同步，右为位同步"> </p>
 </li>
 </ul>
 <h4 id="串行通信的传输方向"><a href="#串行通信的传输方向" class="headerlink" title="串行通信的传输方向"></a>串行通信的传输方向</h4><ul>
@@ -529,7 +529,7 @@
 <li><p>传输距离随着传输速率的增加而减小。</p>
 </li>
 </ul>
-<h3 id="51串行口"><a href="#51串行口" class="headerlink" title="51串行口"></a>51串行口</h3><h4 id="串行口结构"><a href="#串行口结构" class="headerlink" title="串行口结构"></a>串行口结构</h4><p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E4%B8%B2%E5%8F%A3%E7%BB%93%E6%9E%84.png" alt="串口结构"> </p>
+<h3 id="51串行口"><a href="#51串行口" class="headerlink" title="51串行口"></a>51串行口</h3><h4 id="串行口结构"><a href="#串行口结构" class="headerlink" title="串行口结构"></a>串行口结构</h4><p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E4%B8%B2%E5%8F%A3%E7%BB%93%E6%9E%84.png" alt="串口结构"> </p>
 <p>该结构中有两个物理上独立的接收、发送缓冲器SBUF属于特殊功能寄存器，可同时发送、接收数据。它们占用同一地址（99H）；接收器是双缓冲结构；发送缓冲器，因为发送时CPU是主动的，不会产生重叠错误。</p>
 <h4 id="状态寄存器"><a href="#状态寄存器" class="headerlink" title="状态寄存器"></a>状态寄存器</h4><ul>
 <li><p>工作发生寄存器 SCON</p>
@@ -661,24 +661,24 @@
 <h4 id="串行口的工作方式"><a href="#串行口的工作方式" class="headerlink" title="串行口的工作方式"></a>串行口的工作方式</h4><ol>
 <li><p>方式0</p>
 <p>方式0时，串行口为<strong>同步移位寄存器</strong>的输入输出方式。主要用于扩展并行输入或输出口。数据由RXD（P3.0）引脚输入或输出，同步移位脉冲由TXD（P3.1）引脚输出。发送和接收均为8位数据，<u>低位在先，高位在后</u>。波特率固定为$f_{osc}/12$。 </p>
-<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F0_%E8%BE%93%E5%87%BA.png" alt="输出"> </p>
-<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F0_%E8%BE%93%E5%85%A5.png" alt="输入"> </p>
+<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F0_%E8%BE%93%E5%87%BA.png" alt="输出"> </p>
+<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F0_%E8%BE%93%E5%85%A5.png" alt="输入"> </p>
 </li>
 <li><p>方式1</p>
 <p>方式1是10位数据的异步通信口。TXD为数据发送引脚，RXD为数据接收引脚，传送一帧数据的格式如图所示。其中1位起始位，8位数据位，1位停止位。 </p>
-<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F1.png" alt="方式1"> </p>
-<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F1_%E8%BE%93%E5%87%BA.png" alt="输出"> </p>
-<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F1_%E8%BE%93%E5%85%A5.png" alt="输入"> </p>
+<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F1.png" alt="方式1"> </p>
+<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F1_%E8%BE%93%E5%87%BA.png" alt="输出"> </p>
+<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F1_%E8%BE%93%E5%85%A5.png" alt="输入"> </p>
 <p>用软件置REN为1时，接收器以所选择波特率的16倍速率采样RXD引脚电平，检测到RXD引脚输入电平发生负跳变时，则说明起始位有效，将其移入输入移位寄存器，并开始接收这一帧信息的其余位。接收过程中，数据从输入移位寄存器右边移入，起始位移至输入移位寄存器最左边时，控制电路进行最后一次移位。当RI=0，且SM2=0（或接收到的停止位为1）时，将接收到的9位数据的前8位数据装入接收SBUF，第9位（停止位）进入RB8，并置RI=1，向CPU请求中断。 </p>
 </li>
 <li><p>方式2和方式3</p>
-<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F2%E5%92%8C%E6%96%B9%E5%BC%8F3.png" alt="方式2和方式3"> </p>
+<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F2%E5%92%8C%E6%96%B9%E5%BC%8F3.png" alt="方式2和方式3"> </p>
 </li>
 </ol>
 <p>方式2和方式3时起始位1位，数据9位（含1位附加的第9位，发送时为SCON中的TB8，接收时为RB8），停止位1位，一帧数据为11位。方式2的波特率固定为晶振频率的1/64或1/32，方式3的波特率由定时器T1的溢出率决定。 </p>
-<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F2%E5%92%8C%E6%96%B9%E5%BC%8F3_%E8%BE%93%E5%87%BA.png" alt="输出"> </p>
+<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F2%E5%92%8C%E6%96%B9%E5%BC%8F3_%E8%BE%93%E5%87%BA.png" alt="输出"> </p>
 <p>发送开始时，先把起始位0输出到TXD引脚，然后发送移位寄存器的输出位（D0）到TXD引脚。每一个移位脉冲都使输出移位寄存器的各位右移一位，并由TXD引脚输出。 第一次移位时，停止位“1”移入输出移位寄存器的第9位上 ，以后每次移位，左边都移入0。当停止位移至输出位时，左边其余位全为0，检测电路检测到这一条件时，使控制电路进行最后一次移位，并置TI=1，向CPU请求中断。 </p>
-<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F2%E5%92%8C%E6%96%B9%E5%BC%8F3_%E8%BE%93%E5%85%A5.png" alt="输入"> </p>
+<p> <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E4%B8%B2%E5%8F%A3_%E6%96%B9%E5%BC%8F2%E5%92%8C%E6%96%B9%E5%BC%8F3_%E8%BE%93%E5%85%A5.png" alt="输入"> </p>
 <p>接收时，数据从右边移入输入移位寄存器，在起始位0移到最左边时，控制电路进行最后一次移位。当RI=0，且SM2=0（或接收到的第9位数据为1）时，接收到的数据装入接收缓冲器SBUF和RB8（接收数据的第9位），置RI=1，向CPU请求中断。如果条件不满足，则数据丢失，且不置位RI，继续搜索RXD引脚的负跳变。 </p>
 <h4 id="波特率的计算"><a href="#波特率的计算" class="headerlink" title="波特率的计算"></a>波特率的计算</h4><p>在串行通信中，收发双方对发送或接收数据的速率要有约定。 通过软件可对单片机串行口编程为四种工作方式，其中方式0和方式2的波特率是固定的，而方式1和方式3的波特率是可变的， <strong>由定时器T1的溢出率来决定</strong>。 </p>
 <p>串行口的四种工作方式对应三种波特率。由于输入的移位时钟的来源不同，所以，各种方式的波特率计算公式也不相同。 </p>
@@ -693,7 +693,7 @@
 </li>
 </ul>
 <p>当T1作为波特率发生器时，最典型的用法是使T1工作在自动重装的8位定时器方式（即方式2，且TCON的TR1=1，以启动定时器）。这时溢出率取决于TH1中的计数值。 T1 溢出率 = $f_{osc} /{12×(256 －X)} $，X为定时器的初值。在单片机的应用中，常用的晶振频率为：12MHz和11.0592MHz。所以，选用的波特率也相对固定。常用的串行口波特率以及各参数的关系如图所示：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/Study/51mcu/%E6%B3%A2%E7%89%B9%E7%8E%87%E5%92%8CT1.png" alt="常用波特率与定时器T1的参数关系"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/51mcu/%E6%B3%A2%E7%89%B9%E7%8E%87%E5%92%8CT1.png" alt="常用波特率与定时器T1的参数关系"></p>
 <h4 id="串口的操作步骤"><a href="#串口的操作步骤" class="headerlink" title="串口的操作步骤"></a>串口的操作步骤</h4><p> 串行口工作之前，应对其进行初始化，主要是设置产生波特率的定时器T1、串行口控制和中断控制。 </p>
 <ol>
 <li>设置波特率<ul>
@@ -1313,19 +1313,18 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/51mcu-6.html">
+                <a href="/51mcu-5.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.0/hexo_images/cover/51.jpg" class="responsive-img" alt="51单片机学习之定时器">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg" class="responsive-img" alt="51单片机学习之中断系统">
                         
-                        <span class="card-title">51单片机学习之定时器</span>
+                        <span class="card-title">51单片机学习之中断系统</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            概念基础单片机延时基础之前的延时我们都使用的是利用C语言的多次的空循环进行延迟操作，这样的缺点是：CPU时间被占用无法进行其他任务，导致系统效率降低。而且延时时间越长，该缺点越明显，所以，这种延时操作只适用于短暂延时，或简单的项目。
-而定时
+                            概念基础什么是中断当你正在看动漫时，突然手机来电话了，你暂停动漫，去接电话，在接电话的时候，又有人敲门，你暂时放下电话，去开门。我们可以把看动漫当作在执行主程序，那么电话就是中断源，电话铃响了就是中断请求，暂停动漫即是现场保护，接电话就是中
                         
                     </div>
                     <div class="publish-info">

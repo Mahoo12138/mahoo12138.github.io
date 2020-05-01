@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mahoo12138.cn/"/>
-  <updated>2020-04-29T03:54:45.487Z</updated>
+  <updated>2020-05-01T10:08:22.400Z</updated>
   <id>http://mahoo12138.cn/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>安卓开发学习之ResyclerView</title>
+    <link href="http://mahoo12138.cn/android-8.html"/>
+    <id>http://mahoo12138.cn/android-8.html</id>
+    <published>2020-05-01T05:09:45.000Z</published>
+    <updated>2020-05-01T10:08:22.400Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;添加依赖&quot;&gt;&lt;a href=&quot;#添加依赖&quot; class=&quot;headerlink&quot; title=&quot;添加依赖&quot;&gt;&lt;/a&gt;添加依赖&lt;/h2&gt;&lt;p&gt;除了引入&lt;code&gt;recyclerview&lt;/code&gt;，还引入&lt;code&gt;cardview&lt;/code&gt;，它将作为
+        
+      
+    
+    </summary>
+    
+      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Android" scheme="http://mahoo12138.cn/tags/Android/"/>
+    
+  </entry>
+  
+  <entry>
     <title>安卓开发学习之DrawerLayout</title>
     <link href="http://mahoo12138.cn/android-7.html"/>
     <id>http://mahoo12138.cn/android-7.html</id>
     <published>2020-04-29T02:09:45.000Z</published>
-    <updated>2020-04-29T03:54:45.487Z</updated>
+    <updated>2020-05-01T06:53:20.922Z</updated>
     
     <summary type="html">
     
@@ -47,7 +73,7 @@
     <link href="http://mahoo12138.cn/android-6.html"/>
     <id>http://mahoo12138.cn/android-6.html</id>
     <published>2020-04-27T02:01:25.000Z</published>
-    <updated>2020-04-29T03:55:44.763Z</updated>
+    <updated>2020-05-01T06:53:20.920Z</updated>
     
     <summary type="html">
     
@@ -76,7 +102,7 @@
     <link href="http://mahoo12138.cn/backend-1.html"/>
     <id>http://mahoo12138.cn/backend-1.html</id>
     <published>2020-04-11T13:48:43.000Z</published>
-    <updated>2020-04-21T10:37:57.277Z</updated>
+    <updated>2020-05-01T06:53:20.925Z</updated>
     
     <summary type="html">
     
@@ -104,7 +130,7 @@
     <link href="http://mahoo12138.cn/stm32-6.html"/>
     <id>http://mahoo12138.cn/stm32-6.html</id>
     <published>2020-03-13T13:12:43.000Z</published>
-    <updated>2020-04-05T08:27:48.487Z</updated>
+    <updated>2020-05-01T06:53:20.974Z</updated>
     
     <summary type="html">
     
@@ -131,7 +157,7 @@
     <link href="http://mahoo12138.cn/font-end-1.html"/>
     <id>http://mahoo12138.cn/font-end-1.html</id>
     <published>2020-03-08T08:00:21.000Z</published>
-    <updated>2020-03-23T15:58:50.228Z</updated>
+    <updated>2020-05-01T06:53:20.938Z</updated>
     
     <summary type="html">
     
@@ -159,7 +185,7 @@
     <link href="http://mahoo12138.cn/c-cpp-6.html"/>
     <id>http://mahoo12138.cn/c-cpp-6.html</id>
     <published>2020-02-26T13:48:43.000Z</published>
-    <updated>2020-03-23T15:58:50.149Z</updated>
+    <updated>2020-05-01T06:53:20.936Z</updated>
     
     <summary type="html">
     
@@ -185,7 +211,7 @@
     <link href="http://mahoo12138.cn/stm32-5.html"/>
     <id>http://mahoo12138.cn/stm32-5.html</id>
     <published>2020-02-25T02:12:43.000Z</published>
-    <updated>2020-03-23T15:58:50.272Z</updated>
+    <updated>2020-05-01T06:53:20.972Z</updated>
     
     <summary type="html">
     
@@ -212,7 +238,7 @@
     <link href="http://mahoo12138.cn/font-end-2.html"/>
     <id>http://mahoo12138.cn/font-end-2.html</id>
     <published>2020-02-18T08:00:21.000Z</published>
-    <updated>2020-04-04T09:38:15.882Z</updated>
+    <updated>2020-05-01T06:53:20.941Z</updated>
     
     <summary type="html">
     
@@ -238,7 +264,7 @@
     <link href="http://mahoo12138.cn/office.html"/>
     <id>http://mahoo12138.cn/office.html</id>
     <published>2019-12-05T14:12:00.000Z</published>
-    <updated>2020-03-23T15:58:50.205Z</updated>
+    <updated>2020-05-01T06:53:20.953Z</updated>
     
     <summary type="html">
     
@@ -265,7 +291,7 @@
     <link href="http://mahoo12138.cn/markdown.html"/>
     <id>http://mahoo12138.cn/markdown.html</id>
     <published>2019-12-04T13:02:43.000Z</published>
-    <updated>2020-04-07T14:23:33.422Z</updated>
+    <updated>2020-05-01T06:53:20.951Z</updated>
     
     <summary type="html">
     
@@ -294,7 +320,7 @@
     <link href="http://mahoo12138.cn/py-1.html"/>
     <id>http://mahoo12138.cn/py-1.html</id>
     <published>2019-12-03T13:48:43.000Z</published>
-    <updated>2020-03-23T15:58:50.229Z</updated>
+    <updated>2020-05-01T06:53:20.961Z</updated>
     
     <summary type="html">
     
@@ -320,7 +346,7 @@
     <link href="http://mahoo12138.cn/py-2.html"/>
     <id>http://mahoo12138.cn/py-2.html</id>
     <published>2019-12-02T13:45:43.000Z</published>
-    <updated>2020-03-23T15:58:50.232Z</updated>
+    <updated>2020-05-01T06:53:20.963Z</updated>
     
     <summary type="html">
     
@@ -346,7 +372,7 @@
     <link href="http://mahoo12138.cn/stm32-4.html"/>
     <id>http://mahoo12138.cn/stm32-4.html</id>
     <published>2019-11-17T15:12:43.000Z</published>
-    <updated>2020-03-23T15:58:50.250Z</updated>
+    <updated>2020-05-01T06:53:20.970Z</updated>
     
     <summary type="html">
     
@@ -373,7 +399,7 @@
     <link href="http://mahoo12138.cn/other-1.html"/>
     <id>http://mahoo12138.cn/other-1.html</id>
     <published>2019-11-13T12:54:20.617Z</published>
-    <updated>2020-03-23T15:58:50.278Z</updated>
+    <updated>2020-05-01T06:53:20.957Z</updated>
     
     <summary type="html">
     
@@ -399,17 +425,17 @@
     <link href="http://mahoo12138.cn/jupyter.html"/>
     <id>http://mahoo12138.cn/jupyter.html</id>
     <published>2019-11-13T12:54:20.597Z</published>
-    <updated>2020-03-23T15:59:22.045Z</updated>
+    <updated>2020-05-01T06:53:20.947Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;之前看到有朋友在服务器上，搭建了&lt;a href=&quot;https://jupyter.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Jupyter Notebook&lt;/a&gt;（一个笔记本，支持多种编程语言），觉得挺好的，自己也想弄个用用，无奈没有服务器，只好另寻他径。&lt;/p&gt;
-&lt;h2 id=&quot;启用Win10子系统&quot;&gt;&lt;a href=&quot;#启用Win10子系统&quot; class=&quot;headerlink&quot; title=&quot;启用Win10子系统&quot;&gt;&lt;/a&gt;启用Win10子系统&lt;/h2&gt;&lt;p&gt;网络上有很多教程，就不赘述了:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;手把手教你启用Win10的Linux子系统&quot;&gt;手把手教你启用Win10的Linux子系统&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/c3025989c28c&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Win10上体验Linux子系统–Linux虚拟机的完美替代方案&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;安装Jupyter-Notebook&quot;&gt;&lt;a href=&quot;#安装Jupyter-Notebook&quot; class=&quot;headerlink&quot; title=&quot;安装Jupyter Notebook&quot;&gt;&lt;/a&gt;安装Jupyter Notebook&lt;/h2&gt;
+      
+      
+        
+        
+          &lt;p&gt;之前看到有朋友在服务器上，搭建了&lt;a href=&quot;https://jupyter.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Jupyter
+        
+      
     
     </summary>
     
@@ -427,7 +453,7 @@
     <link href="http://mahoo12138.cn/c-cpp-3.html"/>
     <id>http://mahoo12138.cn/c-cpp-3.html</id>
     <published>2019-11-12T12:48:43.000Z</published>
-    <updated>2020-03-23T15:58:50.139Z</updated>
+    <updated>2020-05-01T06:53:20.930Z</updated>
     
     <summary type="html">
     
@@ -453,7 +479,7 @@
     <link href="http://mahoo12138.cn/stm32-3.html"/>
     <id>http://mahoo12138.cn/stm32-3.html</id>
     <published>2019-11-11T14:12:43.000Z</published>
-    <updated>2020-03-23T15:58:50.248Z</updated>
+    <updated>2020-05-01T06:53:20.969Z</updated>
     
     <summary type="html">
     
@@ -480,7 +506,7 @@
     <link href="http://mahoo12138.cn/hexo-2.html"/>
     <id>http://mahoo12138.cn/hexo-2.html</id>
     <published>2019-11-06T14:48:43.000Z</published>
-    <updated>2020-03-23T15:58:50.189Z</updated>
+    <updated>2020-05-01T06:53:20.946Z</updated>
     
     <summary type="html">
     
@@ -509,7 +535,7 @@
     <link href="http://mahoo12138.cn/c-cpp-5.html"/>
     <id>http://mahoo12138.cn/c-cpp-5.html</id>
     <published>2019-11-02T08:48:43.000Z</published>
-    <updated>2020-03-23T15:58:50.146Z</updated>
+    <updated>2020-05-01T06:53:20.935Z</updated>
     
     <summary type="html">
     
@@ -527,33 +553,6 @@
     
     
       <category term="C/C++" scheme="http://mahoo12138.cn/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32的中断优先级及中断编程</title>
-    <link href="http://mahoo12138.cn/stm32-2.html"/>
-    <id>http://mahoo12138.cn/stm32-2.html</id>
-    <published>2019-10-31T02:12:43.000Z</published>
-    <updated>2020-03-31T15:17:44.866Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
-&lt;h2 id=&quot;中断优先级&quot;&gt;&lt;a href=&quot;#中断优先级&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
     
   </entry>
   

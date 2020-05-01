@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Ubuntu使用笔记, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="安卓开发学习之ResyclerView, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Ubuntu使用笔记 | 黄同学的博客</title>
+    <title>安卓开发学习之ResyclerView | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
@@ -307,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/android.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Ubuntu使用笔记</h1>
+                    <h1 class="description center-align post-title">安卓开发学习之ResyclerView</h1>
                 </div>
             </div>
         </div>
@@ -439,12 +439,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
-                            </a>
-                        
-                            <a href="/tags/Ubuntu/">
-                                <span class="chip bg-color">Ubuntu</span>
+                            <a href="/tags/Android/">
+                                <span class="chip bg-color">Android</span>
                             </a>
                         
                     </div>
@@ -455,8 +451,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/学习笔记/" class="post-category">
-                                学习笔记
+                            <a href="/categories/技术教程/" class="post-category">
+                                技术教程
                             </a>
                         
                     </div>
@@ -468,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-17
+                    2020-05-01
                 </div>
                 
 
@@ -482,7 +478,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    301
+                    681
                 </div>
                 
 
@@ -495,67 +491,143 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><ul>
-<li><code>ls</code>：列举当前目录<ul>
-<li>-a ：显示所有的文件，包括隐藏文件</li>
-<li>-b ：把文件名中不可输出的字符用反斜杠加字符编号形式输出</li>
-<li>-l ：显示文件详细信息（命令<code>ll</code>相当于<code>ls -l</code>）</li>
-</ul>
-</li>
-<li><code>cd</code>：回到当前用户工作目录<ul>
-<li><strong>.</strong>：当前目录</li>
-<li>*<em>.. *</em>：父目录</li>
-<li><strong>/</strong>：根目录</li>
-</ul>
-</li>
-<li><code>pwd</code>：查看当前目录</li>
-<li><code>clear</code>：清屏</li>
-</ul>
-<h1 id="更换软件源"><a href="#更换软件源" class="headerlink" title="更换软件源"></a>更换软件源</h1><ul>
-<li><p><strong>step 1：</strong>编辑<em>/etc/apt/sources.list</em>，将默认的<strong><a href="http://archive.ubuntu.com/ubuntu/" target="_blank" rel="noopener">http://archive.ubuntu.com/ubuntu/</a></strong>，修改为：</p>
+                <h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><p>除了引入<code>recyclerview</code>，还引入<code>cardview</code>，它将作为 recyclerview 的子布局</p>
+<pre><code>implementation "androidx.recyclerview:recyclerview:1.1.0"
+implementation "androidx.cardview:cardview:1.0.0"</code></pre><h2 id="设计视图"><a href="#设计视图" class="headerlink" title="设计视图"></a>设计视图</h2><p>在 <strong>/res/layout</strong> 中新建<code>recycler_item.xml</code>：</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>androidx.cardview.widget.CardView</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_margin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>4dp<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RelativeLayout</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>padding</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>10dp<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ImageView</span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50dp<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50dp<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/ic_android<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_marginEnd</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8dp<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/image_view<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TextView</span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/app_name<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_toEndOf</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@id/image_view<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>textSize</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>18sp<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>textColor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#000<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token style-attr language-css"><span class="token attr-name"><span class="token attr-name">Style</span></span><span class="token punctuation">="</span><span class="token attr-value">bold</span><span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/text_title_view<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TextView</span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>wrap_content<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@string/app_name<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_toEndOf</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@id/image_view<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_below</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@id/text_title_view<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/text_content_view<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>RelativeLayout</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>androidx.cardview.widget.CardView</span><span class="token punctuation">></span></span></code></pre>
+<p>在需要显示 <strong>RecyclerView</strong> 处，添加：</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RelativeLayout</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">xmlns:</span>tools</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/tools<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+    <span class="token attr-name"><span class="token namespace">tools:</span>context</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>.MainActivity<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>androidx.recyclerview.widget.RecyclerView</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/recycler_view<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>clipToPadding</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>padding</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>4dp<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">tools:</span>listitem</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@layout/recycler_item<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>RelativeLayout</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="构造适配器"><a href="#构造适配器" class="headerlink" title="构造适配器"></a>构造适配器</h2><p>适配器类<code>RecyclerAdapter</code>继承于类型为<code>RecyclerAdapter.ViewHolder</code>的模板类<code>RecyclerView.Adapter</code>，<code>ViewHolder</code>将子项视图解耦，以便绑定数据，适配器需要传入参数<code>RecyclerList</code>，也就是每个子项的数据来源；该子类中需要重写父类的三个方法：</p>
 <ul>
-<li>阿里云源: <a href="http://mirrors.aliyun.com/ubuntu/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu/</a></li>
-<li>清华源: <a href="http://mirrors.tuna.tsinghua.edu.cn/ubuntu/" target="_blank" rel="noopener">http://mirrors.tuna.tsinghua.edu.cn/ubuntu/</a></li>
-</ul>
+<li><p>onCreateViewHolder()：引入子项视图，</p>
 </li>
-<li><p><strong>step 2：</strong>更新源</p>
-<pre class=" language-shell"><code class="language-shell">sudo apt-get update</code></pre>
+<li><p>getItemCount()：返回子项的数量</p>
 </li>
-<li><p><strong>step 3：</strong>更新软件</p>
-<pre class=" language-shell"><code class="language-shell">sudo apt-get dist-upgrade
-sudo apt-get upgrade</code></pre>
+<li><p>onBindViewHolder()：将数据绑定到子项视图</p>
 </li>
 </ul>
-<h1 id="安装和使用Screen"><a href="#安装和使用Screen" class="headerlink" title="安装和使用Screen"></a>安装和使用Screen</h1><ul>
-<li><p>安装Screen</p>
-<pre class=" language-shell"><code class="language-shell">apt-get install screen</code></pre>
-</li>
-<li><p>创建一个名为<code>Test</code>的会话：</p>
-<pre class=" language-shell"><code class="language-shell">screen -S Test</code></pre>
-</li>
-<li><p>使用<code>Ctrl + A + D</code>退出回话</p>
-</li>
-<li><p>查看所有会话：</p>
-<pre class=" language-shell"><code class="language-shell">screen -ls</code></pre>
-</li>
-<li><p>重新连接会话：</p>
-<pre class=" language-shell"><code class="language-shell">screen -r Test</code></pre>
-</li>
-</ul>
-<h1 id="配置Python3环境"><a href="#配置Python3环境" class="headerlink" title="配置Python3环境"></a>配置Python3环境</h1><ul>
-<li><p>安装<code>python3</code></p>
-<pre class=" language-shell"><code class="language-shell">apt-get install python3</code></pre>
-</li>
-<li><p>安装<code>pip</code></p>
-<pre class=" language-shell"><code class="language-shell">apt-get install python3-pip</code></pre>
-<ul>
-<li><p>升级<code>pip</code></p>
-<pre class=" language-shell"><code class="language-shell">pip3 install --upgrade pip</code></pre>
-</li>
-</ul>
-</li>
-<li></li>
-</ul>
+<pre class=" language-kotlin"><code class="language-kotlin"><span class="token keyword">class</span> <span class="token function">RecyclerAdapter</span><span class="token punctuation">(</span><span class="token keyword">private</span> <span class="token keyword">val</span> RecyclerList<span class="token operator">:</span>List<span class="token operator">&lt;</span>RecyclerItem<span class="token operator">></span><span class="token punctuation">)</span><span class="token operator">:</span>RecyclerView<span class="token punctuation">.</span>Adapter<span class="token operator">&lt;</span>RecyclerAdapter<span class="token punctuation">.</span>ViewHolder<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">onCreateViewHolder</span><span class="token punctuation">(</span>parent<span class="token operator">:</span> ViewGroup<span class="token punctuation">,</span> viewType<span class="token operator">:</span> Int<span class="token punctuation">)</span><span class="token operator">:</span> ViewHolder <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> itemView <span class="token operator">=</span> LayoutInflater<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>parent<span class="token punctuation">.</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">inflate</span><span class="token punctuation">(</span>R<span class="token punctuation">.</span>layout<span class="token punctuation">.</span>recycler_item<span class="token punctuation">,</span>parent<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> <span class="token function">ViewHolder</span><span class="token punctuation">(</span>itemView<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">getItemCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> RecyclerList<span class="token punctuation">.</span>size
+
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">onBindViewHolder</span><span class="token punctuation">(</span>holder<span class="token operator">:</span> ViewHolder<span class="token punctuation">,</span> position<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">val</span> currentItem <span class="token operator">=</span> RecyclerList<span class="token punctuation">[</span>position<span class="token punctuation">]</span>
+        holder<span class="token punctuation">.</span>imageView<span class="token punctuation">.</span><span class="token function">setImageResource</span><span class="token punctuation">(</span>currentItem<span class="token punctuation">.</span>imageRes<span class="token punctuation">)</span>
+        holder<span class="token punctuation">.</span>textTitleView<span class="token punctuation">.</span>text <span class="token operator">=</span> currentItem<span class="token punctuation">.</span>textTitle
+        holder<span class="token punctuation">.</span>textContentView<span class="token punctuation">.</span>text <span class="token operator">=</span> currentItem<span class="token punctuation">.</span>textContent
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">class</span> <span class="token function">ViewHolder</span><span class="token punctuation">(</span>itemView<span class="token operator">:</span> View<span class="token punctuation">)</span><span class="token operator">:</span>RecyclerView<span class="token punctuation">.</span><span class="token function">ViewHolder</span><span class="token punctuation">(</span>itemView<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">val</span> imageView<span class="token operator">:</span>ImageView <span class="token operator">=</span> itemView<span class="token punctuation">.</span>image_view
+        <span class="token keyword">val</span> textTitleView<span class="token operator">:</span>TextView <span class="token operator">=</span> itemView<span class="token punctuation">.</span>text_title_view
+        <span class="token keyword">val</span> textContentView<span class="token operator">:</span>TextView <span class="token operator">=</span> itemView<span class="token punctuation">.</span>text_content_view
+    <span class="token punctuation">}</span>
+</code></pre>
+<h2 id="配置RecyclerView"><a href="#配置RecyclerView" class="headerlink" title="配置RecyclerView"></a>配置RecyclerView</h2><p>在对应的的 <strong>Activity</strong> 或 <strong>Fragment</strong> 中，加入如下代码：</p>
+<pre class=" language-kotlin"><code class="language-kotlin"><span class="token keyword">val</span> itemList <span class="token operator">=</span> <span class="token function">generateDummyList</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
+Log<span class="token punctuation">.</span><span class="token function">d</span><span class="token punctuation">(</span><span class="token string">"itemlist"</span><span class="token punctuation">,</span>itemList<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+recycler_view<span class="token punctuation">.</span>adapter <span class="token operator">=</span> <span class="token function">RecyclerAdapter</span><span class="token punctuation">(</span>itemList<span class="token punctuation">)</span>
+recycler_view<span class="token punctuation">.</span>layoutManager <span class="token operator">=</span> <span class="token function">LinearLayoutManager</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+recycler_view<span class="token punctuation">.</span><span class="token function">setHasFixedSize</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true">// 生成数据方法</span>
+ <span class="token keyword">private</span> <span class="token keyword">fun</span> <span class="token function">generateDummyList</span><span class="token punctuation">(</span>size<span class="token operator">:</span>Int<span class="token punctuation">)</span><span class="token operator">:</span>List<span class="token operator">&lt;</span>RecyclerItem<span class="token operator">></span><span class="token punctuation">{</span>
+        <span class="token keyword">val</span> list <span class="token operator">=</span> ArrayList<span class="token operator">&lt;</span>RecyclerItem<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token keyword">in</span> <span class="token number">0</span> until size<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">val</span> drawable <span class="token operator">=</span> <span class="token keyword">when</span><span class="token punctuation">(</span>i<span class="token operator">%</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token number">1</span> <span class="token operator">-></span> R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>ic_android
+                    <span class="token number">2</span> <span class="token operator">-></span> R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>ic_hand
+                    <span class="token keyword">else</span> <span class="token operator">-></span> R<span class="token punctuation">.</span>drawable<span class="token punctuation">.</span>ic_send
+            <span class="token punctuation">}</span>
+            <span class="token keyword">val</span> item <span class="token operator">=</span> <span class="token function">RecyclerItem</span><span class="token punctuation">(</span>drawable<span class="token punctuation">,</span><span class="token string">"Item<span class="token interpolation variable">$i</span>"</span><span class="token punctuation">,</span><span class="token string">"This is Icon named Item<span class="token interpolation variable">$i</span>"</span><span class="token punctuation">)</span>
+            list <span class="token operator">+=</span> item
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> list
+    <span class="token punctuation">}</span></code></pre>
+<h2 id="点击事件"><a href="#点击事件" class="headerlink" title="点击事件"></a>点击事件</h2><p>在适配器类<code>RecyclerAdapter</code>中添加如下代码：</p>
+<pre class=" language-kotlin"><code class="language-kotlin"><span class="token keyword">private</span> <span class="token keyword">lateinit</span> <span class="token keyword">var</span> clickListener<span class="token operator">:</span>OnItemClickListener
+
+<span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">onBindViewHolder</span><span class="token punctuation">(</span>holder<span class="token operator">:</span> ViewHolder<span class="token punctuation">,</span> position<span class="token operator">:</span> Int<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">val</span> currentItem <span class="token operator">=</span> RecyclerList<span class="token punctuation">[</span>position<span class="token punctuation">]</span>
+    holder<span class="token punctuation">.</span>imageView<span class="token punctuation">.</span><span class="token function">setImageResource</span><span class="token punctuation">(</span>currentItem<span class="token punctuation">.</span>imageRes<span class="token punctuation">)</span>
+    holder<span class="token punctuation">.</span>textTitleView<span class="token punctuation">.</span>text <span class="token operator">=</span> currentItem<span class="token punctuation">.</span>textTitle
+    holder<span class="token punctuation">.</span>textContentView<span class="token punctuation">.</span>text <span class="token operator">=</span> currentItem<span class="token punctuation">.</span>textContent
+
+    <span class="token comment" spellcheck="true">// 点击事件</span>
+    holder<span class="token punctuation">.</span>itemView<span class="token punctuation">.</span><span class="token function">setOnClickListener</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>clickListener<span class="token punctuation">.</span><span class="token function">onItemClick</span><span class="token punctuation">(</span>holder<span class="token punctuation">.</span>itemView<span class="token punctuation">,</span>position<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// 长按事件</span>
+    holder<span class="token punctuation">.</span>itemView<span class="token punctuation">.</span><span class="token function">setOnLongClickListener</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>clickListener<span class="token punctuation">.</span><span class="token function">onItemLongClick</span><span class="token punctuation">(</span>holder<span class="token punctuation">.</span>itemView<span class="token punctuation">,</span>position<span class="token punctuation">)</span>
+        <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 定义接口</span>
+<span class="token keyword">interface</span> OnItemClickListener<span class="token punctuation">{</span>
+    <span class="token keyword">fun</span> <span class="token function">onItemClick</span><span class="token punctuation">(</span>view<span class="token operator">:</span> View<span class="token punctuation">,</span> position<span class="token operator">:</span> Int<span class="token punctuation">)</span>
+    <span class="token keyword">fun</span> <span class="token function">onItemLongClick</span><span class="token punctuation">(</span>view<span class="token operator">:</span> View<span class="token punctuation">,</span> position<span class="token operator">:</span> Int<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 接口 set 方法</span>
+<span class="token keyword">fun</span> <span class="token function">setClickListener</span><span class="token punctuation">(</span>listener<span class="token operator">:</span> OnItemClickListener<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>clickListener <span class="token operator">=</span> listener
+<span class="token punctuation">}</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -599,7 +671,7 @@ sudo apt-get upgrade</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mahoo12138.cn/linux-1.html">http://mahoo12138.cn/linux-1.html</a>
+                    <a href="http://mahoo12138.cn/android-8.html">http://mahoo12138.cn/android-8.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -637,12 +709,8 @@ sudo apt-get upgrade</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
-                                </a>
-                            
-                                <a href="/tags/Ubuntu/">
-                                    <span class="chip bg-color">Ubuntu</span>
+                                <a href="/tags/Android/">
+                                    <span class="chip bg-color">Android</span>
                                 </a>
                             
                         </div>
@@ -1071,41 +1139,44 @@ sudo apt-get upgrade</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/android-4.html">
+                <a href="/android-8.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/android.png" class="responsive-img" alt="Android学习之掉坑记录">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/android.png" class="responsive-img" alt="安卓开发学习之ResyclerView">
                         
-                        <span class="card-title">Android学习之掉坑记录</span>
+                        <span class="card-title">安卓开发学习之ResyclerView</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Android8.0及以上版本自定义广播无法接收问题今天在学习广播过程中发现，自定义广播无效，由于使用的学习参考书是基于Android7.0的，所以，很自然的想到了可能由于版本问题，网上一查，果然。
-原因：Android8在静态广播的使用上
+                            添加依赖除了引入recyclerview，还引入cardview，它将作为 recyclerview 的子布局
+implementation "androidx.recyclerview:recyclerview:1.1.0"
+implem
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-07-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
+                            <a href="/categories/技术教程/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1124,36 +1195,31 @@ sudo apt-get upgrade</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/android-5.html">
+                <a href="/android-7.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/android.png" class="responsive-img" alt="Kotlin语言基础学习">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/android.png" class="responsive-img" alt="安卓开发学习之DrawerLayout">
                         
-                        <span class="card-title">Kotlin语言基础学习</span>
+                        <span class="card-title">安卓开发学习之DrawerLayout</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简单介绍定义包包的声明应处于源文件顶部：
-package my.demo
-import java.util.*
-//...
-目录与包的结构无需匹配：源代码可以放在文件系统的任意位置。
-定义函数带有两个Int参数，返回Int函数：
-fun s
+                            为什么要使用导航抽屉？Android 导航抽屉是一个滑动菜单，用于显示应用程序中的重要链接。 导航抽屉可轻松在这些链接之间来回导航。 默认情况下它是不可见的，需要通过向左滑动或在 ActionBar 中单击其图标来打开它。 其易用性如下：
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-07-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-29
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
+                            <a href="/categories/技术教程/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
@@ -1163,8 +1229,8 @@ fun s
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kotlin/">
-                        <span class="chip bg-color">Kotlin</span>
+                    <a href="/tags/Android/">
+                        <span class="chip bg-color">Android</span>
                     </a>
                     
                 </div>
