@@ -471,14 +471,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-01
+                    2020-05-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    704
+                    902
                 </div>
                 
 
@@ -494,11 +494,11 @@
                 <h2 id="0UL-1UL"><a href="#0UL-1UL" class="headerlink" title="0UL/1UL"></a>0UL/1UL</h2><p><strong>0UL 表示 无符号长整型     0<br>1UL 表示 无符号长整型     1</strong></p>
 <p>一般的 <strong>1</strong> 没有后缀，系统默认指定的类型为<code>int</code>，即有符号的整型数。</p>
 <p>除此之外还可以将<code>l</code>，<code>u</code>自由组合形成多种后缀（不区分大小写），单独添加也没问题，例如：==2u，3lu，4Lu==。</p>
-<p>主要的作用，我只在keil编译中遇到过，在宏定义中将<code>1 &lt;&lt; 16</code>这类操作，默认的是有符号的，需要将 1 改成 1ul 无符号长整型。</p>
+<p>主要的作用，我只在 keil 编译中遇到过，在宏定义中将<code>1 &lt;&lt; 16</code>这类操作，默认的是有符号的，需要将 1 改成 1ul 无符号长整型。</p>
 <p>参考自：<a href="https://blog.csdn.net/qq1987924/article/details/11369063" target="_blank" rel="noopener">c语言中的0UL或1UL是什么意思</a></p>
 <h2 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h2><p>首先我们来看volatile在维基百科中的一些简介，有个大概的了解：</p>
 <blockquote>
-<p> 在程序设计中，尤其是在C语言、C++、C#和Java语言中，使用volatile关键字声明的变量或对象通常具有与优化、多线程相关的特殊属性。通常，<strong>volatile</strong>关键字用来阻止（伪）编译器认为的无法“被代码本身”改变的代码（变量/对象）进行优化。如在C语言中，<strong>volatile</strong>关键字可以用来提醒编译器它后面所定义的变量随时有可能改变，因此编译后的程序每次需要存储或读取这个变量的时候，都会直接从变量地址中读取数据。如果没有volatile关键字，则编译器可能优化读取和存储，可能暂时使用寄存器中的值，如果这个变量由别的程序更新了的话，将出现不一致的现象。 </p>
+<p> 在程序设计中，尤其是在C语言、C++、C#和Java语言中，使用volatile关键字声明的变量或对象通常具有与优化、多线程相关的特殊属性。通常，<strong>volatile</strong>关键字用来阻止（伪）编译器认为的无法“被代码本身”改变的代码（变量/对象）进行优化。如在C语言中，<strong>volatile</strong>关键字可以用来提醒编译器它后面所定义的变量随时有可能改变，因此编译后的程序每次需要存储或读取这个变量的时候，<strong>都会直接从变量地址中读取数据</strong>。如果没有volatile关键字，则编译器可能优化读取和存储，可能暂时<strong>使用寄存器中的值</strong>，如果这个变量由别的程序更新了的话，将出现不一致的现象。 </p>
 </blockquote>
 <p>当用volatile声明变量时，则表示该变量随时可能发生变化，避免因为编译器对代码优化导致读脏数据，例如</p>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">int</span> a<span class="token punctuation">;</span>
@@ -509,7 +509,30 @@
 <p> 一个执行优化的编译器会提示没有代码能修改<code>a</code>的值，并假设它永远都只会是<code>0</code>。因此编译器将用类似==while (true);==的无限循环替换函数体；但是<code>a</code>可能指向一个随时都能被计算机系统其他部分修改的地址，例如CPU的硬件寄存器， 上面的代码永远检测不到这样的修改。如果不使用volatile关键字，编译器将假设当前程序是系统中唯一能改变这个值部分。 为了阻止编译器像上面那样优化代码，需要使用volatile关键字： </p>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">static</span> <span class="token keyword">volatile</span> <span class="token keyword">int</span> a<span class="token punctuation">;</span></code></pre>
 <p> 这样修改以后循环条件就不会被优化掉，当值改变的时候系统将会检测到。</p>
-<h3 id="参考自：Volatile变量"><a href="#参考自：Volatile变量" class="headerlink" title="参考自：Volatile变量"></a>参考自：<a href="https://zh.wikipedia.org/zh-hans/Volatile变量" target="_blank" rel="noopener">Volatile变量</a></h3><script>
+<h3 id="参考自：Volatile变量"><a href="#参考自：Volatile变量" class="headerlink" title="参考自：Volatile变量"></a>参考自：<a href="https://zh.wikipedia.org/zh-hans/Volatile变量" target="_blank" rel="noopener">Volatile变量</a></h3><h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>大多数情况下，我们用 const 定义的变量都认为是不可改变的，确实这是准确的，但有些情况下，我们能间接<strong>借助指针</strong>来修改：</p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>n<span class="token punctuation">;</span>
+    <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"n: %d *p:%d\n"</span><span class="token punctuation">,</span> n<span class="token punctuation">,</span><span class="token operator">*</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"n: %x p: %x"</span><span class="token punctuation">,</span><span class="token operator">&amp;</span>n<span class="token punctuation">,</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>输出结果为：</p>
+<pre class=" language-c"><code class="language-c">n<span class="token punctuation">:</span> <span class="token number">20</span> <span class="token operator">*</span>p<span class="token punctuation">:</span><span class="token number">20</span>
+n<span class="token punctuation">:</span> 61fe14 p<span class="token punctuation">:</span> 61fe14</code></pre>
+<p>此外也有情况下是不可修改的：</p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token keyword">const</span> <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>n<span class="token punctuation">;</span>
+    <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>程序编译正常，但运行时报错<code>Process finished with exit code -1073741819 (0xC0000005)</code>；</p>
+<p>这是因为 const 全局变量存储在全局存储空间，其值只有可读属性，不能修改；const 局部变量存储在堆栈中，可通过指针修改其值。</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1024,34 +1047,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/jupyter.html">
+                <a href="/stm32-4.html">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/stm32.jpg" class="responsive-img" alt="那个深秋的夜晚——与ADC的浪漫邂逅">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/2.jpg" class="responsive-img" alt="Win10子系统Ubuntu下配置Jupyter Notebook并实现内网穿透">
-                        
-                        <span class="card-title">Win10子系统Ubuntu下配置Jupyter Notebook并实现内网穿透</span>
+                        <span class="card-title">那个深秋的夜晚——与ADC的浪漫邂逅</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            之前看到有朋友在服务器上，搭建了Jupyter Notebook（一个笔记本，支持多种编程语言），觉得挺好的，自己也想弄个用用，无奈没有服务器，只好另寻他径。
-启用Win10子系统网络上有很多教程，就不赘述了:
-
-手把手教你启用Win10的
+                            注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！
+ADC简介STM32f103 系列有 3 个 ADC，精度为 12
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-17
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/技术教程/" class="post-category">
-                                    技术教程
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -1061,12 +1081,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Jupyter-Notebook/">
-                        <span class="chip bg-color">Jupyter Notebook</span>
-                    </a>
-                    
-                    <a href="/tags/内网穿透/">
-                        <span class="chip bg-color">内网穿透</span>
+                    <a href="/tags/STM32/">
+                        <span class="chip bg-color">STM32</span>
                     </a>
                     
                 </div>

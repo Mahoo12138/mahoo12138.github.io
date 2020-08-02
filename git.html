@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Git学习使用方法及错误记录, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="Git 版本控制使用填坑指北, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Git学习使用方法及错误记录 | 黄同学的博客</title>
+    <title>Git 版本控制使用填坑指北 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
@@ -312,7 +312,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git学习使用方法及错误记录</h1>
+                    <h1 class="description center-align post-title">Git 版本控制使用填坑指北</h1>
                 </div>
             </div>
         </div>
@@ -471,14 +471,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-01
+                    2020-07-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    481
+                    277
                 </div>
                 
 
@@ -491,64 +491,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="git使用记录"><a href="#git使用记录" class="headerlink" title="git使用记录"></a>git使用记录</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ul>
-<li><p>初始化仓库</p>
-<pre class=" language-shell"><code class="language-shell">git init</code></pre>
-</li>
-<li><p>添加文件/文件夹到本地仓库</p>
-<pre class=" language-shell"><code class="language-shell">git add file.txt
-git add Directory
-git add .    //添加当前目录所有项</code></pre>
-</li>
-<li><p>提交更改到本地仓库</p>
-<pre class=" language-shell"><code class="language-shell">git commit -m "initial commit"</code></pre>
-</li>
-<li><p>关联远程仓库</p>
-<pre class=" language-shell"><code class="language-shell">git remote add origin git@github.com:Mahoo12138/android_learn_demo.git</code></pre>
-</li>
-<li><p>推送到远程仓库</p>
-<pre><code>git push origin master</code></pre></li>
-<li><p>本地仓库删除文件</p>
-<pre class=" language-shell"><code class="language-shell">git rm -r Directory</code></pre>
-</li>
-</ul>
-<hr>
-<h3 id="回退版本"><a href="#回退版本" class="headerlink" title="回退版本"></a>回退版本</h3><ul>
-<li><p>回退本地版本</p>
-<ul>
-<li><p>先找到回退版本的<code>commit_id</code>：</p>
-<pre class=" language-shell"><code class="language-shell">git reflog</code></pre>
-</li>
-<li><p>然后回退版本</p>
-<pre class=" language-shell"><code class="language-shell">git reset --hard commit_id</code></pre>
-</li>
-</ul>
-</li>
-<li><p>远程分支回退</p>
-<ul>
-<li><p>先回退本地分支</p>
-</li>
-<li><p>强制推送到远程分支</p>
-<pre class=" language-shell"><code class="language-shell">git push -f origin master</code></pre>
-<p><code>origin</code>是一个名字，指的是你的远程代码库的标签，而<code>master</code>就是这个远程代码库repository的主分支</p>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<ul>
-<li><p>将<code>dist</code>作为子分支推送到github</p>
-<p><code>/dist</code> 目录需要被 git 记录，于是后面我们才可以用它作为子树（subtree），因此 <code>/dist</code> 不能被 <code>.gitignore</code> 规则排除，之后执行命令：</p>
-<pre><code>git subtree push --prefix dist origin gh-pages</code></pre><ul>
-<li><code>dist</code> 代表子树所在的目录名</li>
-<li><code>origin</code> 是 remote name</li>
-<li><code>gh-pages</code> 是目标分支名称</li>
-</ul>
-</li>
-</ul>
-<h2 id="错误记录"><a href="#错误记录" class="headerlink" title="错误记录"></a>错误记录</h2><ul>
-<li><p>git pull 失败 ,提示：<code>fatal: refusing to merge unrelated histories</code></p>
-<p><strong>原因：</strong>无关的仓库无法合并</p>
+                <h3 id="git-pull-失败-提示：fatal-refusing-to-merge-unrelated-histories"><a href="#git-pull-失败-提示：fatal-refusing-to-merge-unrelated-histories" class="headerlink" title="git pull 失败 ,提示：fatal: refusing to merge unrelated histories"></a>git pull 失败 ,提示：<code>fatal: refusing to merge unrelated histories</code></h3><p><strong>原因：</strong>无关的仓库无法合并</p>
 <p><strong>方法：</strong></p>
 <ul>
 <li><p>使用强制命令：</p>
@@ -557,25 +500,22 @@ git add .    //添加当前目录所有项</code></pre>
 <li><p>先将远程仓库拉取到本地仓库，再推送</p>
 </li>
 </ul>
-</li>
-<li><p>git push 失败，提示：<code>Updates were rejected because the tip of your current branch is behind</code></p>
-<p><strong>原因：</strong>本地仓库版本低于远程仓库版本，或做了一些自定义修改</p>
-<p><strong>方法：</strong></p>
-<ul>
-<li><p>强制推送</p>
+<h3 id="git-push-失败，提示：Updates-were-rejected-because-the-tip-of-your-current-branch-is-behind"><a href="#git-push-失败，提示：Updates-were-rejected-because-the-tip-of-your-current-branch-is-behind" class="headerlink" title="git push 失败，提示：Updates were rejected because the tip of your current branch is behind"></a>git push 失败，提示：<code>Updates were rejected because the tip of your current branch is behind</code></h3><p><strong>原因：</strong>本地仓库版本低于远程仓库版本，或做了一些自定义修改</p>
+<p><strong>方法：</strong>强制推送</p>
 <pre class=" language-shell"><code class="language-shell"> git push -u origin master -f</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
-<li><p>Win10下 git bash 中文显示乱码：类似﷨﷨﷨﷨或▒▒▒▒</p>
-<p><strong>解决方法</strong>：</p>
+<h3 id="Win10下-git-bash-中文显示乱码：类似﷨﷨﷨﷨或▒▒▒▒"><a href="#Win10下-git-bash-中文显示乱码：类似﷨﷨﷨﷨或▒▒▒▒" class="headerlink" title="Win10下 git bash 中文显示乱码：类似﷨﷨﷨﷨或▒▒▒▒"></a>Win10下 git bash 中文显示乱码：类似﷨﷨﷨﷨或▒▒▒▒</h3><p><strong>解决方法</strong>：</p>
 <ul>
 <li>在窗口内右击，选择<code>Options...</code></li>
 <li>在<code>Text</code>内，选择Locale为<em>zh_CN<em>，Character set 为</em>GBK</em></li>
 <li>Save</li>
 </ul>
+<h3 id="git-push-失败，提示：git-github-com-Permission-denied-publickey-fatal-Could-not-read-from-remote-repository"><a href="#git-push-失败，提示：git-github-com-Permission-denied-publickey-fatal-Could-not-read-from-remote-repository" class="headerlink" title="git push 失败，提示：git@github.com: Permission denied (publickey). fatal: Could not read from remote repository."></a>git push 失败，提示：<code>git@github.com: Permission denied (publickey). fatal: Could not read from remote repository.</code></h3><p><strong>原因</strong>：电脑公钥（publickey）未绑定到 Github，所以无法识别。 </p>
+<p>解决方法：</p>
+<ul>
+<li><p>获取本地电脑公钥：</p>
+<pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -C “你的邮箱”</code></pre>
+</li>
+<li><p>在 <em>Github → Settings → SHH and GPG keys</em>中，添加刚刚生成的 <code>SHH keys</code>即可</p>
 </li>
 </ul>
 <script>

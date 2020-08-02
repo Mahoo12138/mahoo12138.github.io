@@ -475,7 +475,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-01
+                    2020-05-12
                 </div>
                 
 
@@ -590,7 +590,12 @@
 </li>
 </ol>
 <h3 id="多行格式"><a href="#多行格式" class="headerlink" title="多行格式"></a>多行格式</h3><ol>
-<li>$$y =\begin{cases} a \ b \ c\end{cases}$$         <code>y =\begin{cases} a \\ b \\ c\end{cases}</code></li>
+<li><p>$$y =\begin{cases} a \ b \ c\end{cases}$$         <code>y =\begin{cases} a \\ b \\ c\end{cases}</code></p>
+</li>
+<li><p>`\begin{cases}<br> 1+1/2+\underbrace{1/3+1/4}_{&gt;1/2}+</p>
+<pre><code>\underbrace{1/5+1/6+1/7+1/8}_{&gt;1/2}+\cdots</code></pre><p>\end{cases}`<br>$$<br>\begin{cases}<br>  1+1/2+\underbrace{1/3+1/4}_{&gt;1/2}+</p>
+<pre><code>   \underbrace{1/5+1/6+1/7+1/8}_{&gt;1/2}+\cdots</code></pre><p>\end{cases}<br>$$</p>
+</li>
 </ol>
 <h3 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h3><table>
 <thead>
@@ -806,7 +811,8 @@
 <td><code>\varrho</code></td>
 </tr>
 </tbody></table>
-<p>$$<br>\begin{cases}<br>  1+1/2+\underbrace{1/3+1/4}<em>{&gt;1/2}+<br>       \underbrace{1/5+1/6+1/7+1/8}</em>{&gt;1/2}+\cdots<br>\end{cases}<br>$$</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>取消斜体：<code>$\rm {x+y}$</code>，$\rm {x+y}$</p>
+<p>加粗字体：<code>$\textbf {x+y}$</code>，$\textbf  {x+y}$</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
