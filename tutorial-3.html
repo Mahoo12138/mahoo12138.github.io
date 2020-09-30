@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="小记C语言中的宏定义及条件编译, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="Google Drive 调用 IDM 下载大文件, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>小记C语言中的宏定义及条件编译 | 黄同学的博客</title>
+    <title>Google Drive 调用 IDM 下载大文件 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
@@ -307,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/c.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">小记C语言中的宏定义及条件编译</h1>
+                    <h1 class="description center-align post-title">Google Drive 调用 IDM 下载大文件</h1>
                 </div>
             </div>
         </div>
@@ -437,13 +437,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/C-C/">
-                                <span class="chip bg-color">C/C++</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -451,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/学习笔记/" class="post-category">
-                                学习笔记
+                            <a href="/categories/技术教程/" class="post-category">
+                                技术教程
                             </a>
                         
                     </div>
@@ -464,21 +460,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-02
+                    2020-08-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-08
+                    2020-08-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    422
+                    370
                 </div>
                 
 
@@ -491,68 +487,26 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="普通宏定义"><a href="#普通宏定义" class="headerlink" title="普通宏定义"></a>普通宏定义</h2><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> PI 3.14</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> a (1+2)                </span><span class="token comment" spellcheck="true">//添加括号使语义表达更清楚</span>
-
-<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s:%d"</span><span class="token punctuation">,</span><span class="token string">"PI"</span><span class="token punctuation">,</span>PI<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//引号中的宏定义不会被替换，输出：PI:3.14</span>
-<span class="token macro property">#<span class="token directive keyword">undef</span> PI                    </span><span class="token comment" spellcheck="true">//取消PI的宏定义</span>
-
-<span class="token macro property">#<span class="token directive keyword">define</span> 1111 F                </span><span class="token comment" spellcheck="true">//报错，宏定义起始位不能为数字</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> word "apple            </span><span class="token comment" spellcheck="true">//宏定义中引号必须成对出现</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> char ‘a</span></code></pre>
-<h2 id="带参数的宏定义"><a href="#带参数的宏定义" class="headerlink" title="带参数的宏定义"></a>带参数的宏定义</h2><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAX(a,b)    (a>b ? a:b)</span>
-
-<span class="token macro property">#<span class="token directive keyword">define</span> MIN(a,b)    (a&lt;b ? a:b)</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token function">MAX</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">MIN</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>当宏定义需要多行的代码时，可以用<code>\</code>来连接：</p>
-<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> SWAP(a,b)   {\
-    int t = 0;  \
-    t = a;  \
-    a = b;  \
-    b = t;  \
-}</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span>y <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-    <span class="token function">SWAP</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d,%d"</span><span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="宏定义中的特殊符号"><a href="#宏定义中的特殊符号" class="headerlink" title="宏定义中的特殊符号"></a>宏定义中的特殊符号</h2><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> TOSTRING(a)        #a</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> CONNECT(a,b)    a##b</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">char</span> <span class="token operator">*</span>str0 <span class="token operator">=</span> <span class="token function">TOSTRING</span><span class="token punctuation">(</span>hello<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">char</span> <span class="token operator">*</span>str1 <span class="token operator">=</span> <span class="token function">CONNECT</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">,</span><span class="token string">"world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="宏定义实现条件编译"><a href="#宏定义实现条件编译" class="headerlink" title="宏定义实现条件编译"></a>宏定义实现条件编译</h2><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a><strong>基本用法</strong></h3><p>条件编译的控制与<code>if-else</code>语句相似，只不过控制的是是否将其后的代码段进行编译。</p>
-<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">if</span> (判断条件)</span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">else</span></span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">endif</span></span></code></pre>
-<pre class=" language-c"><code class="language-c">
-<span class="token macro property">#<span class="token directive keyword">if</span> (判断条件1)</span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">elif</span> (判断条件2)</span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">else</span></span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">endif</span></span></code></pre>
-<h3 id="其他用法"><a href="#其他用法" class="headerlink" title="其他用法"></a>其他用法</h3><p><code>if define</code>等价于<code>ifdef</code>，<code>ifndef</code>等价于<code>if !define()</code>：</p>
-<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">if</span> defined(PI)  </span><span class="token comment" spellcheck="true">//  如果前面已经定义过PI这个宏，就将code编译进去。</span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">endif</span></span>
-
-<span class="token macro property">#<span class="token directive keyword">if</span> defined(PI)  </span><span class="token comment" spellcheck="true">//  如果前面没有定义过PI这个宏，就将code编译进去。</span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">endif</span></span></code></pre>
-<h3 id="防止头文件重复引入"><a href="#防止头文件重复引入" class="headerlink" title="防止头文件重复引入"></a>防止头文件重复引入</h3><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">ifndef</span> _HEADER        </span><span class="token comment" spellcheck="true">//_HEADER为自定义的名称</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> _HEADER</span>
-    <span class="token comment" spellcheck="true">/*头文件其余内容*/</span>
-<span class="token macro property">#<span class="token directive keyword">endif</span></span></code></pre>
+                <p>最近在用 Google Drive 收集一些好东西，但是下载的时候由于文件过大的限制还是其他原因，遇到了一些问题：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20200822134231583.png" alt="image-20200822134231583"></p>
+<p>在网上找到了解决方法，在这里记录一下：</p>
+<ul>
+<li>右键点击文件，选择<strong>添加星标</strong></li>
+<li>在页面左栏的<code>已加星标</code>中，找到文件；右键点击文件<strong>复制</strong>，建立副本</li>
+<li>之后就可以下载创建的副本了</li>
+</ul>
+<p>但是下载<strong>默认调用系统浏览器</strong>进行下载，对于一些大文件，IDM 才算的上是称手的工具，利用 IDM 的浏览器插件也是无法调动 IDM 的，而当用浏览器下载的链接往 IDM 里添加任务，这当然是行不通的，总之无法获取到文件直链，网上也有很多方法，可以自行搜索，不过我都嫌太麻烦了，因为IDM 自带的小功能就能解决这个问题：</p>
+<ul>
+<li><p>找到 IDM  的快捷键，并作如下设置：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20200822135133027.png" alt="image-20200822135133027"></p>
+</li>
+<li><p>在下载副本文件时，会弹出警示框，显示<strong>无法对文件作病毒扫描</strong>，此时，按住<code>Alt</code>，再点击<code>仍然下载</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20200822135756432.png" alt="image-20200822135756432"></p>
+</li>
+<li><p>当捕获到的下载文件消息中含有<strong>副本</strong>二字时，则可以正常下载了：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20200822140007653.png" alt="image-20200822140007653"></p>
+</li>
+</ul>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -596,7 +550,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mahoo12138.cn/c-cpp-5.html">http://mahoo12138.cn/c-cpp-5.html</a>
+                    <a href="http://mahoo12138.cn/tutorial-3.html">http://mahoo12138.cn/tutorial-3.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -633,11 +587,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/C-C/">
-                                    <span class="chip bg-color">C/C++</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1068,83 +1018,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/hexo-2.html">
+                <a href="/stm32-7.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/hexo.png" class="responsive-img" alt="Hexo个人博客SEO优化指南">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/stm32.jpg" class="responsive-img" alt="超乎你想象的Stm32中的 TIM 定时器（提高篇）">
                         
-                        <span class="card-title">Hexo个人博客SEO优化指南</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            安装sitemap
-Windows环境下直接在博客根目录打开Git Bash，运行命令：
- npm install hexo-generator-sitemap --save 
- # sitemap.xml    提交给谷歌搜素引擎
- np
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-06
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/技术教程/" class="post-category">
-                                    技术教程
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/SEO/">
-                        <span class="chip bg-color">SEO</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/stm32-1.html">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/stm32.jpg" class="responsive-img" alt="理解STM32的八种输入输出模式">
-                        
-                        <span class="card-title">理解STM32的八种输入输出模式</span>
+                        <span class="card-title">超乎你想象的Stm32中的 TIM 定时器（提高篇）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！
-输入模式
-上拉输入（GPIO_Mode_IPU）
-上拉即把电位提高
+高级定时器(STM32F1 系列中为 TIM1 和 TIM8)和通
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-31
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-23
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1162,6 +1054,62 @@ Windows环境下直接在博客根目录打开Git Bash，运行命令：
                     
                     <a href="/tags/STM32/">
                         <span class="chip bg-color">STM32</span>
+                    </a>
+                    
+                    <a href="/tags/舵机/">
+                        <span class="chip bg-color">舵机</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/win-regedit.html">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/win10.png" class="responsive-img" alt="Win10 注册表的使用教程">
+                        
+                        <span class="card-title">Win10 注册表的使用教程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            右键新建内容无文本文档
+检查C:\WINDOWS\notepad.exe是否存在，如无可在搜索引擎中下载；
+
+新建后缀为.reg的文本文档，这里可以各自大显身手，留一个参考选择，打开 CMD命令窗口：
+copy con &lt;文件名>.t
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/技术教程/" class="post-category">
+                                    技术教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/注册表/">
+                        <span class="chip bg-color">注册表</span>
                     </a>
                     
                 </div>

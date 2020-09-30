@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="小记C语言中的宏定义及条件编译, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="超乎你想象的Stm32中的 TIM 定时器（提高篇）, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>小记C语言中的宏定义及条件编译 | 黄同学的博客</title>
+    <title>超乎你想象的Stm32中的 TIM 定时器（提高篇） | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
@@ -307,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/c.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/stm32.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">小记C语言中的宏定义及条件编译</h1>
+                    <h1 class="description center-align post-title">超乎你想象的Stm32中的 TIM 定时器（提高篇）</h1>
                 </div>
             </div>
         </div>
@@ -439,8 +439,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-C/">
-                                <span class="chip bg-color">C/C++</span>
+                            <a href="/tags/STM32/">
+                                <span class="chip bg-color">STM32</span>
+                            </a>
+                        
+                            <a href="/tags/舵机/">
+                                <span class="chip bg-color">舵机</span>
                             </a>
                         
                     </div>
@@ -464,21 +468,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-02
+                    2020-09-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-08
+                    2020-09-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    422
+                    1.5k
                 </div>
                 
 
@@ -491,68 +495,196 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="普通宏定义"><a href="#普通宏定义" class="headerlink" title="普通宏定义"></a>普通宏定义</h2><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> PI 3.14</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> a (1+2)                </span><span class="token comment" spellcheck="true">//添加括号使语义表达更清楚</span>
+                <p>注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！</p>
+<p>高级定时器(STM32F1 系列中为 TIM1 和 TIM8)和通用定时器在基本定时器的基础上引入了<strong>外部引脚</strong>，可以实现输入捕获和输出比较功能。高级定时器比通用定时器增加了<strong>可编程死区互补输出、重复计数器、带刹车(断路)功能</strong>，这些功能都是针对电机控制方面。</p>
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20200924221406588.png" alt="高级控制定时器框图" style="zoom:90%;">
 
-<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s:%d"</span><span class="token punctuation">,</span><span class="token string">"PI"</span><span class="token punctuation">,</span>PI<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//引号中的宏定义不会被替换，输出：PI:3.14</span>
-<span class="token macro property">#<span class="token directive keyword">undef</span> PI                    </span><span class="token comment" spellcheck="true">//取消PI的宏定义</span>
+<p>由于TIM高级定时器结构复杂，功能众多，可以直接看野火的开发书籍，不做过多详述，文章主要侧重几个常用实验，并在代码中层层递进。</p>
+<h2 id="PWM-信号输出控制-SG90-舵机"><a href="#PWM-信号输出控制-SG90-舵机" class="headerlink" title="PWM 信号输出控制 SG90 舵机"></a>PWM 信号输出控制 SG90 舵机</h2><p>该例程将通过将使用 STM32 输出 PWM 信号，控制 SG90 舵机进行转动，使用的是 TIM3 的通道1 为 PA6 口，舵机接线如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20200925162930796.png" alt="SG90 舵机实物图"></p>
+<h3 id="控制原理及-PWM-配置"><a href="#控制原理及-PWM-配置" class="headerlink" title="控制原理及 PWM 配置"></a>控制原理及 PWM 配置</h3><p><strong>伺服电机</strong>通常被称为<strong>舵机</strong>，它是一种带有输出轴的小装置。当我们向伺服器发送一个控制信号时，输出轴就可以转到特定的位置。只要控制信号持续不变，伺服机构就会保持轴的角度位置不改变。如果控制信号发生变化，输出轴的位置也会相应发生变化。</p>
+<p>舵机的内部结构如上图所示。你可以看到<em>控制电路，马达，一组齿轮和外壳</em>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/servo_structure.png" alt="舵机的内部结构"></p>
+<blockquote>
+<p>舵机内部的控制电路，电位计（可变电阻器）和电机均被连接到电路板上，如内部结构图的右边部分。控制电路通过电位计可监控舵机的当前角度。</p>
+<p>如果轴的位置与控制信号相符，那么电机就会关闭。如果控制电路发现这个角度不正确，它就会控制马达转动，直到它达到指定的角度。舵机角度根据制造商的不同而有所不同。比如，一个180度的舵机，它可以在0度至180度之间运动。由于限位装置被安装在主输出装置上，超出这个范围机械结构就不能再转动了。</p>
+<p>舵机的输出功率与它所需要转动的距离成正比。如果输出轴需要转动很长的距离，马达就会全速运转，如果它只需要短距离转动，马达就会以较慢的速度运行，这叫做速度比例控制。</p>
+</blockquote>
+<p>舵机的控制一般需要一个 20ms 的时基脉冲，该脉冲的高电平部分一般为 0.5ms~2.5ms 范围内的角度控制脉冲部分。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/servo_motion.gif" alt="舵机的运动原理"></p>
+<p>控制线用于传输角度控制信号。这个角度是由控制信号脉冲的持续时间决定的，这叫做<strong>脉冲编码调制（PCM）</strong>。舵机的控制一般需要一个20ms左右的时基脉冲，该脉冲的高电平部分一般为 0.5ms-2.5ms 范围，总间隔为 2ms。脉冲的宽度将决定马达转动的距离。例如：1.5毫秒的脉冲，电机将转向90度的位置（通常称为中立位置，对于180°舵机来说，就是90°位置）。如果脉冲宽度小于1.5毫秒，那么电机轴向朝向0度方向。如果脉冲宽度大于1.5毫秒，轴向就朝向180度方向。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/SERVO.gif" alt="伺服电机时序图"></p>
+<p>综上，设置PWM周期为20ms = (7200*200)/72000000=0.02，所以TIM_Period = 199，TIM_Prescaler = 7199。</p>
+<p>以180度舵机 SG90 为例，对应的控制关系是这样的：</p>
+<table>
+<thead>
+<tr>
+<th>脉冲宽度</th>
+<th>转动角度</th>
+<th>设置占空比</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0.5 ms</td>
+<td>0°</td>
+<td>175</td>
+</tr>
+<tr>
+<td>1.0 ms</td>
+<td>45°</td>
+<td>180</td>
+</tr>
+<tr>
+<td>1.5 ms</td>
+<td>90°</td>
+<td>185</td>
+</tr>
+<tr>
+<td>2.0 ms</td>
+<td>135°</td>
+<td>190</td>
+</tr>
+<tr>
+<td>2.5 ms</td>
+<td>180°</td>
+<td>195</td>
+</tr>
+</tbody></table>
+<h2 id="STM32工程目录"><a href="#STM32工程目录" class="headerlink" title="STM32工程目录"></a>STM32工程目录</h2><p>很久不接触 STM32 工程，文件结构差点乱了，这里贴个目录树：</p>
+<blockquote>
+<p>├─Doc<br>│      readme.txt<br>│<br>├─Libraries<br>│  ├─CMSIS<br>│  │  └─startup<br>│  │<br>│  └─FWlib<br>│      ├─inc<br>│      └─src<br>│<br>├─Listing<br>│<br>├─Output<br>│<br>├─Project<br>│  └─RVMDK（uv5）<br>│      └─DebugConfig<br>│<br>└─User<br>    │  main.c<br>    │  stm32f10x_conf.h<br>    │  stm32f10x_it.c<br>    │  stm32f10x_it.h<br>    │<br>    ├─PWM<br>    │      bsp_pwm.c<br>    │      bsp_pwm.h<br>    │<br>    └─SysTick<br>            bsp_SysTick.c<br>            bsp_SysTick.h</p>
+</blockquote>
+<h2 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h2><h4 id="bsp-pwm-h"><a href="#bsp-pwm-h" class="headerlink" title="bsp_pwm.h"></a>bsp_pwm.h</h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">ifndef</span>  _BSP_PWM_H_</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>  _BSP_PWM_H_</span>
 
-<span class="token macro property">#<span class="token directive keyword">define</span> 1111 F                </span><span class="token comment" spellcheck="true">//报错，宏定义起始位不能为数字</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> word "apple            </span><span class="token comment" spellcheck="true">//宏定义中引号必须成对出现</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> char ‘a</span></code></pre>
-<h2 id="带参数的宏定义"><a href="#带参数的宏定义" class="headerlink" title="带参数的宏定义"></a>带参数的宏定义</h2><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> MAX(a,b)    (a>b ? a:b)</span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stm32f10x.h"</span></span>
+<span class="token comment" spellcheck="true">// 这里使用 TIM3</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>            GENERAL_TIM                   TIM3</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>            GENERAL_TIM_APBxClock_FUN     RCC_APB1PeriphClockCmd</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>            GENERAL_TIM_CLK               RCC_APB1Periph_TIM3</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>            GENERAL_TIM_Period            199</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>            GENERAL_TIM_Prescaler         7199</span>
+<span class="token comment" spellcheck="true">// TIM3 输出比较通道</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>            GENERAL_TIM_CH1_GPIO_CLK      RCC_APB2Periph_GPIOA</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>            GENERAL_TIM_CH1_PORT          GPIOA</span>
+<span class="token macro property">#<span class="token directive keyword">define</span>            GENERAL_TIM_CH1_PIN           GPIO_Pin_6</span>
 
-<span class="token macro property">#<span class="token directive keyword">define</span> MIN(a,b)    (a&lt;b ? a:b)</span>
+<span class="token keyword">void</span> <span class="token function">GENERAL_TIM_Init</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token function">MAX</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">MIN</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span></code></pre>
+<h4 id="bsp-pwm-c"><a href="#bsp-pwm-c" class="headerlink" title="bsp_pwm.c"></a>bsp_pwm.c</h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"bsp_pwm.h"</span>   </span>
+
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">GENERAL_TIM_GPIO_Config</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    GPIO_InitTypeDef GPIO_InitStructure<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 输出比较通道1 GPIO 初始化</span>
+    <span class="token function">RCC_APB2PeriphClockCmd</span><span class="token punctuation">(</span>GENERAL_TIM_CH1_GPIO_CLK<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Pin <span class="token operator">=</span>  GENERAL_TIM_CH1_PIN<span class="token punctuation">;</span>
+    GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Mode <span class="token operator">=</span> GPIO_Mode_AF_PP<span class="token punctuation">;</span>
+    GPIO_InitStructure<span class="token punctuation">.</span>GPIO_Speed <span class="token operator">=</span> GPIO_Speed_50MHz<span class="token punctuation">;</span>
+    <span class="token function">GPIO_Init</span><span class="token punctuation">(</span>GENERAL_TIM_CH1_PORT<span class="token punctuation">,</span> <span class="token operator">&amp;</span>GPIO_InitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">GENERAL_TIM_Mode_Config</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+
+  <span class="token comment" spellcheck="true">// 开启定时器时钟,即内部时钟CK_INT=72M</span>
+    <span class="token function">GENERAL_TIM_APBxClock_FUN</span><span class="token punctuation">(</span>GENERAL_TIM_CLK<span class="token punctuation">,</span>ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">/*--------------------时基结构体初始化-------------------------*/</span>
+
+
+    TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 自动重装载寄存器的值，累计TIM_Period+1个频率后产生一个更新或者中断</span>
+    TIM_TimeBaseStructure<span class="token punctuation">.</span>TIM_Period <span class="token operator">=</span> GENERAL_TIM_Period<span class="token punctuation">;</span>    
+
+    <span class="token comment" spellcheck="true">// 驱动CNT计数器的时钟 = Fck_int/(psc+1)</span>
+    TIM_TimeBaseStructure<span class="token punctuation">.</span>TIM_Prescaler <span class="token operator">=</span> GENERAL_TIM_Prescaler<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 时钟分频因子 ，配置死区时间时需要用到</span>
+    <span class="token comment" spellcheck="true">// TIM_TimeBaseStructure.TIM_ClockDivision = 0;    </span>
+
+    <span class="token comment" spellcheck="true">// 计数器计数模式，设置为向上计数</span>
+    TIM_TimeBaseStructure<span class="token punctuation">.</span>TIM_CounterMode<span class="token operator">=</span>TIM_CounterMode_Up<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 重复计数器的值，没用到不用管</span>
+    TIM_TimeBaseStructure<span class="token punctuation">.</span>TIM_RepetitionCounter<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 初始化定时器</span>
+    <span class="token function">TIM_TimeBaseInit</span><span class="token punctuation">(</span>GENERAL_TIM<span class="token punctuation">,</span> <span class="token operator">&amp;</span>TIM_TimeBaseStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/*--------------------输出比较结构体初始化-------------------*/</span>    
+    <span class="token comment" spellcheck="true">// 占空比配置</span>
+    <span class="token comment" spellcheck="true">// uint16_t CCR_Val = 100;</span>
+
+
+    TIM_OCInitTypeDef  TIM_OCInitStructure<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 配置为PWM模式1</span>
+    TIM_OCInitStructure<span class="token punctuation">.</span>TIM_OCMode <span class="token operator">=</span> TIM_OCMode_PWM1<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 输出使能</span>
+    TIM_OCInitStructure<span class="token punctuation">.</span>TIM_OutputState <span class="token operator">=</span> TIM_OutputState_Enable<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 输出通道电平极性配置    </span>
+    TIM_OCInitStructure<span class="token punctuation">.</span>TIM_OCPolarity <span class="token operator">=</span> TIM_OCPolarity_Low<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 输出比较通道 1</span>
+    <span class="token comment" spellcheck="true">//TIM_OCInitStructure.TIM_Pulse = CCR_Val;</span>
+
+    <span class="token function">TIM_OC1Init</span><span class="token punctuation">(</span>GENERAL_TIM<span class="token punctuation">,</span> <span class="token operator">&amp;</span>TIM_OCInitStructure<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">TIM_OC1PreloadConfig</span><span class="token punctuation">(</span>GENERAL_TIM<span class="token punctuation">,</span> TIM_OCPreload_Enable<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 使能计数器</span>
+    <span class="token function">TIM_Cmd</span><span class="token punctuation">(</span>GENERAL_TIM<span class="token punctuation">,</span> ENABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">void</span> <span class="token function">GENERAL_TIM_Init</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">GENERAL_TIM_GPIO_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">GENERAL_TIM_Mode_Config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        
 <span class="token punctuation">}</span></code></pre>
-<p>当宏定义需要多行的代码时，可以用<code>\</code>来连接：</p>
-<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> SWAP(a,b)   {\
-    int t = 0;  \
-    t = a;  \
-    a = b;  \
-    b = t;  \
-}</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span>y <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">;</span>
-    <span class="token function">SWAP</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d,%d"</span><span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="宏定义中的特殊符号"><a href="#宏定义中的特殊符号" class="headerlink" title="宏定义中的特殊符号"></a>宏定义中的特殊符号</h2><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">define</span> TOSTRING(a)        #a</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> CONNECT(a,b)    a##b</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">char</span> <span class="token operator">*</span>str0 <span class="token operator">=</span> <span class="token function">TOSTRING</span><span class="token punctuation">(</span>hello<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">char</span> <span class="token operator">*</span>str1 <span class="token operator">=</span> <span class="token function">CONNECT</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">,</span><span class="token string">"world"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="宏定义实现条件编译"><a href="#宏定义实现条件编译" class="headerlink" title="宏定义实现条件编译"></a>宏定义实现条件编译</h2><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a><strong>基本用法</strong></h3><p>条件编译的控制与<code>if-else</code>语句相似，只不过控制的是是否将其后的代码段进行编译。</p>
-<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">if</span> (判断条件)</span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">else</span></span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">endif</span></span></code></pre>
-<pre class=" language-c"><code class="language-c">
-<span class="token macro property">#<span class="token directive keyword">if</span> (判断条件1)</span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">elif</span> (判断条件2)</span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">else</span></span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">endif</span></span></code></pre>
-<h3 id="其他用法"><a href="#其他用法" class="headerlink" title="其他用法"></a>其他用法</h3><p><code>if define</code>等价于<code>ifdef</code>，<code>ifndef</code>等价于<code>if !define()</code>：</p>
-<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">if</span> defined(PI)  </span><span class="token comment" spellcheck="true">//  如果前面已经定义过PI这个宏，就将code编译进去。</span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<h4 id="main-c"><a href="#main-c" class="headerlink" title="main.c"></a>main.c</h4><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"stm32f10x.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"bsp_pwm.h"</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"bsp_SysTick.h"</span></span>
 
-<span class="token macro property">#<span class="token directive keyword">if</span> defined(PI)  </span><span class="token comment" spellcheck="true">//  如果前面没有定义过PI这个宏，就将code编译进去。</span>
-    <span class="token punctuation">{</span>code<span class="token punctuation">}</span>
-<span class="token macro property">#<span class="token directive keyword">endif</span></span></code></pre>
-<h3 id="防止头文件重复引入"><a href="#防止头文件重复引入" class="headerlink" title="防止头文件重复引入"></a>防止头文件重复引入</h3><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">ifndef</span> _HEADER        </span><span class="token comment" spellcheck="true">//_HEADER为自定义的名称</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> _HEADER</span>
-    <span class="token comment" spellcheck="true">/*头文件其余内容*/</span>
-<span class="token macro property">#<span class="token directive keyword">endif</span></span></code></pre>
+
+<span class="token comment" spellcheck="true">/**
+  * @brief  主函数
+  * @param  无  
+  * @retval 无
+  */</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>    
+    <span class="token comment" spellcheck="true">/* 定时器初始化 */</span>
+    <span class="token function">GENERAL_TIM_Init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/* 配置SysTick 为10us中断一次 */</span>
+    <span class="token function">SysTick_Init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">SysTick_Delay_Ms</span><span class="token punctuation">(</span> <span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">TIM_SetCompare1</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span> <span class="token number">175</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// 0°</span>
+        <span class="token function">SysTick_Delay_Ms</span><span class="token punctuation">(</span> <span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">TIM_SetCompare1</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span> <span class="token number">180</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// 45°</span>
+        <span class="token function">SysTick_Delay_Ms</span><span class="token punctuation">(</span> <span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">TIM_SetCompare1</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span> <span class="token number">185</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// 90°</span>
+        <span class="token function">SysTick_Delay_Ms</span><span class="token punctuation">(</span> <span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">TIM_SetCompare1</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span> <span class="token number">190</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// 135°</span>
+        <span class="token function">SysTick_Delay_Ms</span><span class="token punctuation">(</span> <span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">TIM_SetCompare1</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span> <span class="token number">195</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token comment" spellcheck="true">// 180°</span>
+        <span class="token function">SysTick_Delay_Ms</span><span class="token punctuation">(</span> <span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span></code></pre>
+<h2 id="舵机测试"><a href="#舵机测试" class="headerlink" title="舵机测试"></a>舵机测试</h2><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/Video_20200925_103245_834.gif" alt="舵机测试" style="zoom:220%;">
+
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -596,7 +728,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mahoo12138.cn/c-cpp-5.html">http://mahoo12138.cn/c-cpp-5.html</a>
+                    <a href="http://mahoo12138.cn/stm32-7.html">http://mahoo12138.cn/stm32-7.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -634,8 +766,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-C/">
-                                    <span class="chip bg-color">C/C++</span>
+                                <a href="/tags/STM32/">
+                                    <span class="chip bg-color">STM32</span>
+                                </a>
+                            
+                                <a href="/tags/舵机/">
+                                    <span class="chip bg-color">舵机</span>
                                 </a>
                             
                         </div>
@@ -1064,86 +1200,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/hexo-2.html">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/hexo.png" class="responsive-img" alt="Hexo个人博客SEO优化指南">
-                        
-                        <span class="card-title">Hexo个人博客SEO优化指南</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            安装sitemap
-Windows环境下直接在博客根目录打开Git Bash，运行命令：
- npm install hexo-generator-sitemap --save 
- # sitemap.xml    提交给谷歌搜素引擎
- np
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-06
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/技术教程/" class="post-category">
-                                    技术教程
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
-                    </a>
-                    
-                    <a href="/tags/SEO/">
-                        <span class="chip bg-color">SEO</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/stm32-1.html">
+                <a href="/stm32-7.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/stm32.jpg" class="responsive-img" alt="理解STM32的八种输入输出模式">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/stm32.jpg" class="responsive-img" alt="超乎你想象的Stm32中的 TIM 定时器（提高篇）">
                         
-                        <span class="card-title">理解STM32的八种输入输出模式</span>
+                        <span class="card-title">超乎你想象的Stm32中的 TIM 定时器（提高篇）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！
-输入模式
-上拉输入（GPIO_Mode_IPU）
-上拉即把电位提高
+高级定时器(STM32F1 系列中为 TIM1 和 TIM8)和通
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-23
                             </span>
                         <span class="publish-author">
                             
@@ -1157,6 +1236,7 @@ Windows环境下直接在博客根目录打开Git Bash，运行命令：
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1164,6 +1244,56 @@ Windows环境下直接在博客根目录打开Git Bash，运行命令：
                         <span class="chip bg-color">STM32</span>
                     </a>
                     
+                    <a href="/tags/舵机/">
+                        <span class="chip bg-color">舵机</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/tutorial-3.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/8.jpg" class="responsive-img" alt="Google Drive 调用 IDM 下载大文件">
+                        
+                        <span class="card-title">Google Drive 调用 IDM 下载大文件</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            最近在用 Google Drive 收集一些好东西，但是下载的时候由于文件过大的限制还是其他原因，遇到了一些问题：
+
+在网上找到了解决方法，在这里记录一下：
+
+右键点击文件，选择添加星标
+在页面左栏的已加星标中，找到文件；右键点击文件复制，
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/技术教程/" class="post-category">
+                                    技术教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
@@ -1299,6 +1429,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
     <footer class="page-footer bg-color">

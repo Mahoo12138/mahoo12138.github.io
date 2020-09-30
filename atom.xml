@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mahoo12138.cn/"/>
-  <updated>2020-08-02T13:49:26.771Z</updated>
+  <updated>2020-09-25T14:36:25.317Z</updated>
   <id>http://mahoo12138.cn/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>超乎你想象的Stm32中的 TIM 定时器（提高篇）</title>
+    <link href="http://mahoo12138.cn/stm32-7.html"/>
+    <id>http://mahoo12138.cn/stm32-7.html</id>
+    <published>2020-09-23T06:12:43.000Z</published>
+    <updated>2020-09-25T14:36:25.317Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
+&lt;p&gt;高级定时器(STM32F1 系列中为 TIM1 和
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
+    
+      <category term="舵机" scheme="http://mahoo12138.cn/tags/%E8%88%B5%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Google Drive 调用 IDM 下载大文件</title>
+    <link href="http://mahoo12138.cn/tutorial-3.html"/>
+    <id>http://mahoo12138.cn/tutorial-3.html</id>
+    <published>2020-08-22T05:00:43.000Z</published>
+    <updated>2020-08-22T06:01:21.458Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近在用 Google Drive 收集一些好东西，但是下载的时候由于文件过大的限制还是其他原因，遇到了一些问题：&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Win10 注册表的使用教程</title>
@@ -39,6 +93,32 @@
     
     
       <category term="注册表" scheme="http://mahoo12138.cn/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安卓开发学习之底部导航栏实战</title>
+    <link href="http://mahoo12138.cn/android-10.html"/>
+    <id>http://mahoo12138.cn/android-10.html</id>
+    <published>2020-08-02T12:09:45.000Z</published>
+    <updated>2020-08-04T13:15:28.629Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&quot;创建主布局&quot;&gt;&lt;a href=&quot;#创建主布局&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Android" scheme="http://mahoo12138.cn/tags/Android/"/>
     
   </entry>
   
@@ -206,11 +286,11 @@
   </entry>
   
   <entry>
-    <title>超乎你想象的Stm32中的TIM定时器</title>
+    <title>超乎你想象的Stm32中的TIM定时器（基础篇）</title>
     <link href="http://mahoo12138.cn/stm32-6.html"/>
     <id>http://mahoo12138.cn/stm32-6.html</id>
     <published>2020-03-13T13:12:43.000Z</published>
-    <updated>2020-05-08T15:33:13.877Z</updated>
+    <updated>2020-09-23T06:41:39.537Z</updated>
     
     <summary type="html">
     
@@ -471,88 +551,6 @@
     
     
       <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>盘点C语言中你不知道的小细节</title>
-    <link href="http://mahoo12138.cn/c-cpp-3.html"/>
-    <id>http://mahoo12138.cn/c-cpp-3.html</id>
-    <published>2019-11-12T12:48:43.000Z</published>
-    <updated>2020-05-21T02:55:39.099Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;0UL-1UL&quot;&gt;&lt;a href=&quot;#0UL-1UL&quot; class=&quot;headerlink&quot; title=&quot;0UL/1UL&quot;&gt;&lt;/a&gt;0UL/1UL&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;0UL 表示 无符号长整型     0&lt;br&gt;1UL 表示 无符号长整型    
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="C/C++" scheme="http://mahoo12138.cn/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32的SysTick定时器初体验</title>
-    <link href="http://mahoo12138.cn/stm32-3.html"/>
-    <id>http://mahoo12138.cn/stm32-3.html</id>
-    <published>2019-11-11T14:12:43.000Z</published>
-    <updated>2020-05-08T15:33:13.872Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
-&lt;h2 id=&quot;SysTick介绍&quot;&gt;&lt;a href=&quot;#SysTick介绍&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo个人博客SEO优化指南</title>
-    <link href="http://mahoo12138.cn/hexo-2.html"/>
-    <id>http://mahoo12138.cn/hexo-2.html</id>
-    <published>2019-11-06T14:48:43.000Z</published>
-    <updated>2020-05-08T15:33:13.857Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;安装sitemap&quot;&gt;&lt;a href=&quot;#安装sitemap&quot; class=&quot;headerlink&quot; title=&quot;安装sitemap&quot;&gt;&lt;/a&gt;安装sitemap&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Windows环境下直接在博客根目录打开&lt;code&gt;Git
-        
-      
-    
-    </summary>
-    
-      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Hexo" scheme="http://mahoo12138.cn/tags/Hexo/"/>
-    
-      <category term="SEO" scheme="http://mahoo12138.cn/tags/SEO/"/>
     
   </entry>
   

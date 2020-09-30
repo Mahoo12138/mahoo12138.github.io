@@ -471,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-08
+                    2020-09-25
                 </div>
                 
 
@@ -493,7 +493,7 @@
             <div id="articleContent">
                 <p>注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！</p>
 <h2 id="SysTick介绍"><a href="#SysTick介绍" class="headerlink" title="SysTick介绍"></a>SysTick介绍</h2><p>SysTick 属于CM3内核的外设，它可以产生非常精确的延时，一般用于操作系统，用于产生一个单独的时钟节拍，相当于操作系统的心脏。</p>
-<p>SysTick是一个24bit的向下递减的计数器，计数器每计数一次的时间为$1 \over SYSCLK$，Stm32中一般设置系统时钟为72M。当重载数值寄存器递减到0时，系统定时器则会产生中断。</p>
+<p>SysTick是一个24bit的向下递减的计数器，计数器每计数一次的时间为$1 \over SYSCLK$，Stm32中一般设置系统时钟为72M。<strong>当重载数值寄存器递减到0时，系统定时器则会产生中断</strong>。</p>
 <p>SysTick—系统定时器有 4 个寄存器，一般配置时，大多操作前三个。</p>
 <table>
 <thead>
@@ -651,6 +651,7 @@ uint32_t SystemCoreClock <span class="token operator">=</span> SYSCLK_FREQ_72MHz
 <span class="token macro property">#<span class="token directive keyword">define</span>    __IO    volatile        </span><span class="token comment" spellcheck="true">/*!&lt; defines 'read / write' permissions   */</span>
 <span class="token keyword">static</span> __IO uint32_t TimingDelay<span class="token punctuation">;</span>
 
+
 <span class="token keyword">void</span> <span class="token function">Delay_us</span><span class="token punctuation">(</span>__IO uint32_t nTime<span class="token punctuation">)</span><span class="token punctuation">{</span> 
     TimingDelay <span class="token operator">=</span> nTime<span class="token punctuation">;</span>     
       SysTick<span class="token operator">-></span>CTRL <span class="token operator">|</span><span class="token operator">=</span>  SysTick_CTRL_ENABLE_Msk<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 使能SysTick定时器</span>
@@ -671,7 +672,7 @@ uint32_t SystemCoreClock <span class="token operator">=</span> SYSCLK_FREQ_72MHz
 <pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">//文件stm32f10x_it.c内</span>
 <span class="token keyword">void</span> <span class="token function">SysTick_Handler</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token function">TimingDelay_Decrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <blockquote>
 <p>有关<strong>volatile</strong>的细节可参考我的这篇博文：<a href="">盘点C语言中你不知道的小细节</a>，技术尚浅，仅供参考</p>
 </blockquote>

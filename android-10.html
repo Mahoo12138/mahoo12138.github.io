@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Ubuntu使用笔记, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="安卓开发学习之底部导航栏实战, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Ubuntu使用笔记 | 黄同学的博客</title>
+    <title>安卓开发学习之底部导航栏实战 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
@@ -307,12 +307,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/android.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Ubuntu使用笔记</h1>
+                    <h1 class="description center-align post-title">安卓开发学习之底部导航栏实战</h1>
                 </div>
             </div>
         </div>
@@ -439,12 +439,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Linux/">
-                                <span class="chip bg-color">Linux</span>
-                            </a>
-                        
-                            <a href="/tags/Ubuntu/">
-                                <span class="chip bg-color">Ubuntu</span>
+                            <a href="/tags/Android/">
+                                <span class="chip bg-color">Android</span>
                             </a>
                         
                     </div>
@@ -455,8 +451,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/学习笔记/" class="post-category">
-                                学习笔记
+                            <a href="/categories/技术教程/" class="post-category">
+                                技术教程
                             </a>
                         
                     </div>
@@ -468,21 +464,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-17
+                    2020-08-02
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-01
+                    2020-08-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    301
+                    328
                 </div>
                 
 
@@ -495,67 +491,69 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><ul>
-<li><code>ls</code>：列举当前目录<ul>
-<li>-a ：显示所有的文件，包括隐藏文件</li>
-<li>-b ：把文件名中不可输出的字符用反斜杠加字符编号形式输出</li>
-<li>-l ：显示文件详细信息（命令<code>ll</code>相当于<code>ls -l</code>）</li>
-</ul>
-</li>
-<li><code>cd</code>：回到当前用户工作目录<ul>
-<li><strong>.</strong>：当前目录</li>
-<li>*<em>.. *</em>：父目录</li>
-<li><strong>/</strong>：根目录</li>
-</ul>
-</li>
-<li><code>pwd</code>：查看当前目录</li>
-<li><code>clear</code>：清屏</li>
-</ul>
-<h1 id="更换软件源"><a href="#更换软件源" class="headerlink" title="更换软件源"></a>更换软件源</h1><ul>
-<li><p><strong>step 1：</strong>编辑<em>/etc/apt/sources.list</em>，将默认的<strong><a href="http://archive.ubuntu.com/ubuntu/" target="_blank" rel="noopener">http://archive.ubuntu.com/ubuntu/</a></strong>，修改为：</p>
+                <h1 id=""><a href="#" class="headerlink" title=""></a></h1><h2 id="创建主布局"><a href="#创建主布局" class="headerlink" title="创建主布局"></a>创建主布局</h2><p>在 activity 中绑定的布局中，设置如下布局：</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>RelativeLayout</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">xmlns:</span>app</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res-auto<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/mainLayout<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>com.google.android.material.bottomnavigation.BottomNavigationView</span>
+            <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/bottom_nav_view<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>match_parent<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>?attr/actionBarSize<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_alignParentBottom</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_marginStart</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0dp<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>layout_marginEnd</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0dp<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">android:</span>background</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>?android:attr/windowBackground<span class="token punctuation">"</span></span>
+            <span class="token attr-name"><span class="token namespace">app:</span>menu</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@menu/bottom_nav_menu<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>RelativeLayout</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="设置底部导航栏"><a href="#设置底部导航栏" class="headerlink" title="设置底部导航栏"></a>设置底部导航栏</h2><pre class=" language-xml"><code class="language-xml"><span class="token prolog">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>menu</span> <span class="token attr-name"><span class="token namespace">xmlns:</span>android</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://schemas.android.com/apk/res/android<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/navigation_home<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/ic_hot_24<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>热门<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/navigation_show<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/ic_latest_24<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>最新<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>item</span>
+        <span class="token attr-name"><span class="token namespace">android:</span>id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@+id/navigation_notice<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>@drawable/ic_tweet_24<span class="token punctuation">"</span></span>
+        <span class="token attr-name"><span class="token namespace">android:</span>title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>大咖说<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>menu</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="配置-Navigation-导航"><a href="#配置-Navigation-导航" class="headerlink" title="配置 Navigation 导航"></a>配置 Navigation 导航</h2><h3 id="创建对应的三个-Fragment"><a href="#创建对应的三个-Fragment" class="headerlink" title="创建对应的三个 Fragment"></a>创建对应的三个 Fragment</h3><table>
+<thead>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HotFragment.kt</td>
+<td>LatestFragment.kt</td>
+<td>TweetFragment.kt</td>
+</tr>
+</tbody></table>
+<h3 id="添加-NavHost"><a href="#添加-NavHost" class="headerlink" title="添加 NavHost"></a>添加 NavHost</h3><p>NavHost是一个空的容器，用来切换 destination。类似于用 framelayout 来切换 fragment 的东西。默认实现是<strong>NavHostFragment</strong></p>
 <ul>
-<li>阿里云源: <a href="http://mirrors.aliyun.com/ubuntu/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu/</a></li>
-<li>清华源: <a href="http://mirrors.tuna.tsinghua.edu.cn/ubuntu/" target="_blank" rel="noopener">http://mirrors.tuna.tsinghua.edu.cn/ubuntu/</a></li>
+<li><code>android:name="androidx.navigation.fragment.NavHostFragment"</code>和app:defaultNavHost=”true”指定了，在按back键时会返回到NavHostFragment<br><code>app:navGraph="@navigation/nav_graph"</code>为这个fragment组件指定了navGraph文件</li>
 </ul>
-</li>
-<li><p><strong>step 2：</strong>更新源</p>
-<pre class=" language-shell"><code class="language-shell">sudo apt-get update</code></pre>
-</li>
-<li><p><strong>step 3：</strong>更新软件</p>
-<pre class=" language-shell"><code class="language-shell">sudo apt-get dist-upgrade
-sudo apt-get upgrade</code></pre>
-</li>
-</ul>
-<h1 id="安装和使用Screen"><a href="#安装和使用Screen" class="headerlink" title="安装和使用Screen"></a>安装和使用Screen</h1><ul>
-<li><p>安装Screen</p>
-<pre class=" language-shell"><code class="language-shell">apt-get install screen</code></pre>
-</li>
-<li><p>创建一个名为<code>Test</code>的会话：</p>
-<pre class=" language-shell"><code class="language-shell">screen -S Test</code></pre>
-</li>
-<li><p>使用<code>Ctrl + A + D</code>退出回话</p>
-</li>
-<li><p>查看所有会话：</p>
-<pre class=" language-shell"><code class="language-shell">screen -ls</code></pre>
-</li>
-<li><p>重新连接会话：</p>
-<pre class=" language-shell"><code class="language-shell">screen -r Test</code></pre>
-</li>
-</ul>
-<h1 id="配置Python3环境"><a href="#配置Python3环境" class="headerlink" title="配置Python3环境"></a>配置Python3环境</h1><ul>
-<li><p>安装<code>python3</code></p>
-<pre class=" language-shell"><code class="language-shell">apt-get install python3</code></pre>
-</li>
-<li><p>安装<code>pip</code></p>
-<pre class=" language-shell"><code class="language-shell">apt-get install python3-pip</code></pre>
 <ul>
-<li><p>升级<code>pip</code></p>
-<pre class=" language-shell"><code class="language-shell">pip3 install --upgrade pip</code></pre>
-</li>
-</ul>
-</li>
 <li></li>
 </ul>
+<ol>
+<li><p>在res目录下新建一个<code>navigation</code>文件夹，然后新建<code>mobile_navigation.xml</code>：</p>
+<pre class=" language-xml"><code class="language-xml"></code></pre>
+</li>
+</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -599,7 +597,7 @@ sudo apt-get upgrade</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mahoo12138.cn/linux-1.html">http://mahoo12138.cn/linux-1.html</a>
+                    <a href="http://mahoo12138.cn/android-10.html">http://mahoo12138.cn/android-10.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -637,12 +635,8 @@ sudo apt-get upgrade</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Linux/">
-                                    <span class="chip bg-color">Linux</span>
-                                </a>
-                            
-                                <a href="/tags/Ubuntu/">
-                                    <span class="chip bg-color">Ubuntu</span>
+                                <a href="/tags/Android/">
+                                    <span class="chip bg-color">Android</span>
                                 </a>
                             
                         </div>
@@ -1075,31 +1069,34 @@ sudo apt-get upgrade</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/android-4.html">
+                <a href="/win-regedit.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/android.png" class="responsive-img" alt="Android学习之掉坑记录">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/win10.png" class="responsive-img" alt="Win10 注册表的使用教程">
                         
-                        <span class="card-title">Android学习之掉坑记录</span>
+                        <span class="card-title">Win10 注册表的使用教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Android8.0及以上版本自定义广播无法接收问题今天在学习广播过程中发现，自定义广播无效，由于使用的学习参考书是基于Android7.0的，所以，很自然的想到了可能由于版本问题，网上一查，果然。
-原因：Android8在静态广播的使用上
+                            右键新建内容无文本文档
+检查C:\WINDOWS\notepad.exe是否存在，如无可在搜索引擎中下载；
+
+新建后缀为.reg的文本文档，这里可以各自大显身手，留一个参考选择，打开 CMD命令窗口：
+copy con &lt;文件名>.t
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-07-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-08
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
+                            <a href="/categories/技术教程/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
@@ -1109,8 +1106,8 @@ sudo apt-get upgrade</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Android/">
-                        <span class="chip bg-color">Android</span>
+                    <a href="/tags/注册表/">
+                        <span class="chip bg-color">注册表</span>
                     </a>
                     
                 </div>
@@ -1124,36 +1121,34 @@ sudo apt-get upgrade</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/android-5.html">
+                <a href="/android-9.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/android.png" class="responsive-img" alt="Kotlin语言基础学习">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/android.png" class="responsive-img" alt="安卓开发学习之Webview(转载)">
                         
-                        <span class="card-title">Kotlin语言基础学习</span>
+                        <span class="card-title">安卓开发学习之Webview(转载)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简单介绍定义包包的声明应处于源文件顶部：
-package my.demo
-import java.util.*
-//...
-目录与包的结构无需匹配：源代码可以放在文件系统的任意位置。
-定义函数带有两个Int参数，返回Int函数：
-fun s
+                            简介WebView是一个基于webkit引擎、展现web页面的控件。
+Android的 Webview 在低版本和高版本采用了不同的 webkit 版本内核，4.4后直接使用了 Chrome。
+作用
+显示和渲染Web页面
+直接使用html文
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-07-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
+                            <a href="/categories/技术教程/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
@@ -1163,8 +1158,8 @@ fun s
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kotlin/">
-                        <span class="chip bg-color">Kotlin</span>
+                    <a href="/tags/Android/">
+                        <span class="chip bg-color">Android</span>
                     </a>
                     
                 </div>
