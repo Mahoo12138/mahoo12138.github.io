@@ -28,8 +28,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/jquery/jquery.min.js"></script>
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
+
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -133,6 +132,7 @@
     </a>
   </li>
 </ul>
+
 
 <div id="mobile-nav" class="side-nav sidenav">
 
@@ -239,6 +239,7 @@
         
     </ul>
 </div>
+
 
         </div>
 
@@ -381,7 +382,7 @@
     }
 
     #toc-content .toc-link:hover {
-        color: #2196f3;
+        color: #42b983;
         font-weight: 700;
         text-decoration: underline;
     }
@@ -389,36 +390,26 @@
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
-        
+
         position: absolute;
-        right: 25.5vw;
+        right: 23.5vw;
         display: block;
     }
 
-    .toc-fixed .toc-link::before{
-        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
-    }
-
     #toc-content .is-active-link {
-        color: #2196f3;
-    }
-
-    #toc-content .is-active-link::before {
-        background-color: #2196f3;
+        color: #42b983;
     }
 
     #floating-toc-btn {
-        
         position: fixed;
         right: 15px;
-        bottom: 150px;
+        bottom: 76px;
         padding-top: 15px;
         margin-bottom: 0;
         z-index: 998;
     }
 
     #floating-toc-btn .btn-floating {
-        background-color: #2139f3;
         width: 48px;
         height: 48px;
     }
@@ -486,7 +477,6 @@
 
                 
             </div>
-
         </div>
         <hr class="clearfix">
         <div class="card-content article-card-content">
@@ -721,7 +711,7 @@ Test_Print();</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mahoo12138.cn" rel="external nofollow noreferrer">Mahoo Huang</a>
+                    <a href="/about" rel="external nofollow noreferrer">Mahoo Huang</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -744,7 +734,7 @@ Test_Print();</code></pre>
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+                    <a href="/about" target="_blank">Mahoo Huang</a>
                     !
                 </span>
             </div>
@@ -778,9 +768,8 @@ Test_Print();</code></pre>
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
                     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/css/share.min.css">
-
 <div id="article-share">
-    
+
     
     <div class="social-share" data-sites="twitter,facebook,qq,qzone,wechat,weibo,douban" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/share/js/social-share.min.js"></script>
@@ -917,6 +906,7 @@ Test_Print();</code></pre>
         $('.tabs').tabs();
     });
 </script>
+
             
         </div>
     </div>
@@ -1196,6 +1186,8 @@ Test_Print();</code></pre>
 
     
 
+    
+
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
@@ -1203,19 +1195,21 @@ Test_Print();</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/stm32-2.html">
+                <a href="/stm32-1.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/stm32.jpg" class="responsive-img" alt="STM32的中断优先级及中断编程">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/stm32.jpg" class="responsive-img" alt="理解STM32的八种输入输出模式">
                         
-                        <span class="card-title">STM32的中断优先级及中断编程</span>
+                        <span class="card-title">理解STM32的八种输入输出模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！
-中断优先级在STM32中，由内核外设NVIC（嵌套向量中断控制器）
+输入模式
+上拉输入（GPIO_Mode_IPU）
+上拉即把电位提高
                         
                     </div>
                     <div class="publish-info">
@@ -1340,7 +1334,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <!-- TOC 悬浮按钮. -->
 
 <div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large">
+    <a class="btn-floating btn-large bg-color">
         <i class="fas fa-list-ul"></i>
     </a>
 </div>
@@ -1435,19 +1429,26 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </script>
 
 
+
     <footer class="page-footer bg-color">
     
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
         font-size: 12px;
         font-weight: 700;
         line-height: 16px !important;
     }
 
     .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
         font-size: 15px;
-        color: #42b983;
+        color: #cd493f;
     }
 
     
@@ -1467,10 +1468,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="503838841"
+                   id="2500934449"
                    fixed='true'
                    autoplay='true'
-                   theme='#42b983'
+                   theme='#cd493f'
                    loop='all'
                    order='random'
                    preload='auto'
@@ -1483,12 +1484,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+            <a href="/about" target="_blank">Mahoo Huang</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
@@ -1575,9 +1577,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/search.xml", 'searchInput', 'searchResult');
 });
 </script>
+
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
@@ -1651,7 +1654,7 @@ $(function () {
     
 
     
-    
+
     
     <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/instantpage/instantpage.js" type="module"></script>
     

@@ -37,6 +37,8 @@ body {
     background-color: #eaeaea;
     margin: 0;
     color: #34495e;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 h1 {
@@ -92,7 +94,7 @@ hr {
 }
 
 blockquote {
-    border-left: 5px solid #f06191;
+    border-left: 5px solid #42b983;
     padding: 1rem 0.8rem 0.2rem 0.8rem;
     color: #666;
     background-color: rgba(66, 185, 131, .1);
@@ -212,6 +214,22 @@ pre[class*="language-"] {
     white-space: pre-wrap !important;
 }
 
+/* 键盘 kbd 标签样式 */
+kbd {
+    margin: 0 3px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    border: 1px solid #b4b4b4;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 2px 1px 0 rgba(255, 255, 255, 0.6) inset;
+    font-family: 'Menlo';
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-color: #f8f8f8;
+    color: #34495e;
+    line-height: 1.8rem;
+    white-space: nowrap;
+}
+
 b,
 strong {
     font-weight: bold;
@@ -250,7 +268,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, rgba(240, 87, 113, 0.493) 0%, #098cf77c 100%);
+    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
 }
 
 .text-color {
@@ -266,7 +284,7 @@ mark {
     position: fixed;
     bottom: 0;
     z-index: 300;
-    background: linear-gradient(to right, #7d9afa 0%, #2775cf 100%);
+    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
     opacity: 0.8;
 }
 
@@ -590,8 +608,6 @@ header .go-back i {
     position: relative;
 }
 
- 
-
 .bg-cover .description {
     font-weight: 300;
     font-size: 1.25rem;
@@ -755,28 +771,6 @@ header .go-back i {
     .index-card .card .card-content {
         padding: 10px 10px;
     }
-    .bg-cover .title {
-        font-size: 2.8rem;
-        line-height: 1.85em;
-        margin-bottom: 20px;
-        position: relative;
-    }
-    header .brand-logo .logo-span {
-        font-size: 1.4rem;
-        line-height: 1;
-    }
-
-}
-@media only screen and (max-width: 320px) {
-    header .brand-logo .logo-span {
-        font-size: 1.2rem;
-    }
-    .bg-cover .title {
-        font-size: 2rem;
-        line-height: 1.4em;
-        margin-bottom: 20px;
-        position: relative;
-    }
 }
 
 /*中等屏幕下(平板类)的样式*/
@@ -909,7 +903,7 @@ article a {
 
 article a:hover {
     font-weight: bold;
-    color: #2196f3;
+    color: #42b983;
     text-decoration: underline;
 }
 
@@ -1092,7 +1086,7 @@ article .article-tags .chip {
     border-radius: 15px;
     margin-right: 5px;
     margin-bottom: 2px;
-    color: #2196f3;
+    color: #42b983;
     background: #fff;
     border: 1px solid;
     transition: all 0.6s ease-in-out;
@@ -1100,17 +1094,17 @@ article .article-tags .chip {
 
 #artDetail .tag_share .article-tag .chip:hover {
     color: #fff;
-    background: #2196f3;
+    background: #42b983;
 }
 
 #artDetail .post-cate {
     float: right;
-    color: #2196f3;
+    color: #42b983;
 }
 
 #artDetail .post-cate a {
     padding-right: 5px;
-    color: #2196f3;
+    color: #42b983;
     font-weight: 500;
 }
 
@@ -1129,7 +1123,7 @@ article .article-tags .chip {
 
 #artDetail .post-info .post-category:hover {
     font-weight: bold;
-    color: #357be2;
+    color: #42b983;
     text-decoration: underline;
 }
 
@@ -1175,12 +1169,15 @@ article .article-tags .chip {
 }
 
 #artDetail .reprint {
-    margin: 15px 0 5px 0;
-    margin-bottom: 0.4rem;
+    margin: 15px 0 0.4rem;
     padding: 0.5rem 0.8rem;
     border: 1px solid #eee;
     line-height: 2;
     transition: box-shadow 0.3s ease-in-out
+}
+
+#artDetail .reprint-info {
+    word-break: break-word;
 }
 
 #artDetail .reprint:hover {
@@ -1189,7 +1186,7 @@ article .article-tags .chip {
 
 #artDetail .reprint a {
     font-size: 1.05rem;
-    color: #2196f3;
+    color: #42b983;
     font-weight: 500;
 }
 
@@ -1205,7 +1202,7 @@ article .article-tags .chip {
 
 #articleContent a {
     padding: 0 2px;
-    color: #2196f3;
+    color: #42b983;
     font-weight: 500;
     text-decoration: underline;
     word-wrap: break-word;
@@ -1250,12 +1247,22 @@ article .article-tags .chip {
     list-style-type: circle;
 }
 
+#articleContent table {
+	width: 100%;
+    display: block;
+    border-collapse: collapse;
+    border-spacing: 0;
+    overflow: auto;
+}
+
+/**
 #articleContent table,
 th,
 td {
     padding: 12px 13px;
     border: 1px solid #dfe2e5;
 }
+**/
 
 table tr:nth-child(2n),
 thead {
@@ -1265,10 +1272,14 @@ thead {
 #articleContent table th {
     background-color: #f2f2f2;
     min-width: 80px;
+	border: 1px solid #dfe2e5;
+	padding: 6px 6px;
 }
 
 #articleContent table td {
     min-width: 80px;
+	border: 1px solid #dfe2e5;
+	padding: 6px 6px;
 }
 
 #articleContent [type="checkbox"]:not(:checked),
@@ -1334,7 +1345,7 @@ thead {
 
 .chip-container .chip:hover {
     color: #fff;
-    background: linear-gradient(to right, #2b96ee 0%, #188ff0 100%) !important;
+    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%) !important;
 }
 
 .chip .tag-length {
@@ -1625,7 +1636,7 @@ thead {
 }
 
 .post-statis .statis .count a {
-    color: #2196f3;
+    color: #42b983;
 }
 
 .post-statis .statis .name {
@@ -1890,7 +1901,7 @@ footer .copy-right {
 
 .search-result-list .search-result-title {
     font-size: 1.4rem;
-    color: #2196f3;
+    color: #42b983;
 }
 
 .search-result-list li {
@@ -1920,7 +1931,7 @@ footer .copy-right {
 }
 
 .top-scroll .btn-floating {
-    background: linear-gradient(to bottom right, rgb(246, 85, 49) 0%, rgb(255, 0, 72) 100%);
+    background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%);
     width: 48px;
     height: 48px;
 }

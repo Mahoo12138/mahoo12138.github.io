@@ -28,8 +28,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/jquery/jquery.min.js"></script>
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
+
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -133,6 +132,7 @@
     </a>
   </li>
 </ul>
+
 
 <div id="mobile-nav" class="side-nav sidenav">
 
@@ -240,6 +240,7 @@
     </ul>
 </div>
 
+
         </div>
 
         
@@ -338,7 +339,8 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/banner/' + new Date().getDay() + '.jpg)');
+    var bannerUrl = "https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
 
@@ -355,6 +357,57 @@
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/font-end-1.html">
+                        <div class="card-image">
+                            
+                            
+                            <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/4.jpg" class="responsive-img" alt="简单入门CSS预处理器Less和Sass">
+                            
+                            <span class="card-title">简单入门CSS预处理器Less和Sass</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Sass和Less都属于CSS预处理器，CSS预处理器定义了一种新的语言，其基本的思想是，用一种特殊的语言，为CSS增加一些编程的特性，如变量、语句，函数、继承等概念。将CSS作为目标生成文件，然后开发者就只要使用这种语言进行CSS的编码开
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-08
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Less/">
+                            <span class="chip bg-color">Less</span>
+                        </a>
+                        
+                        <a href="/tags/Sass/">
+                            <span class="chip bg-color">Sass</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -456,9 +509,9 @@ ILI9341 控制器内部电路连接完后
                     <a href="/font-end-2.html">
                         <div class="card-image">
                             
-                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/vuejs.png" class="responsive-img" alt="我的网页梦 —— 前端基础 & Vuejs">
+                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/vuejs.png" class="responsive-img" alt="我的网页梦 —— 前端基础 &amp; Vuejs">
                             
-                            <span class="card-title">我的网页梦 —— 前端基础 & Vuejs</span>
+                            <span class="card-title">我的网页梦 —— 前端基础 &amp; Vuejs</span>
                         </div>
                     </a>
 
@@ -900,55 +953,6 @@ Windows环境下直接在博客根目录打开Git Bash，运行命令：
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/c-cpp-5.html">
-                        <div class="card-image">
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/c.jpg" class="responsive-img" alt="小记C语言中的宏定义及条件编译">
-                            
-                            <span class="card-title">小记C语言中的宏定义及条件编译</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                普通宏定义#define PI 3.14
-#define a (1+2)                //添加括号使语义表达更清楚
-
-printf("%s:%d","PI",PI);    //引号中的宏定义不会被替换，输出：PI:3.1
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-02
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/C-C/">
-                            <span class="chip bg-color">C/C++</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -987,14 +991,20 @@ printf("%s:%d","PI",PI);    //引号中的宏定义不会被替换，输出：PI
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
         font-size: 12px;
         font-weight: 700;
         line-height: 16px !important;
     }
 
     .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
         font-size: 15px;
-        color: #42b983;
+        color: #cd493f;
     }
 
     
@@ -1014,10 +1024,10 @@ printf("%s:%d","PI",PI);    //引号中的宏定义不会被替换，输出：PI
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="503838841"
+                   id="2500934449"
                    fixed='true'
                    autoplay='true'
-                   theme='#42b983'
+                   theme='#cd493f'
                    loop='all'
                    order='random'
                    preload='auto'
@@ -1030,12 +1040,13 @@ printf("%s:%d","PI",PI);    //引号中的宏定义不会被替换，输出：PI
 
 <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+            <a href="/about" target="_blank">Mahoo Huang</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
@@ -1122,9 +1133,10 @@ printf("%s:%d","PI",PI);    //引号中的宏定义不会被替换，输出：PI
 <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/search.xml", 'searchInput', 'searchResult');
 });
 </script>
+
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
@@ -1198,7 +1210,7 @@ $(function () {
     
 
     
-    
+
     
     <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/instantpage/instantpage.js" type="module"></script>
     

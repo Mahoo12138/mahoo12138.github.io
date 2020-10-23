@@ -28,8 +28,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/jquery/jquery.min.js"></script>
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
+
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -133,6 +132,7 @@
     </a>
   </li>
 </ul>
+
 
 <div id="mobile-nav" class="side-nav sidenav">
 
@@ -240,6 +240,7 @@
     </ul>
 </div>
 
+
         </div>
 
         
@@ -337,7 +338,8 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/banner/' + new Date().getDay() + '.jpg)');
+    var bannerUrl = "https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
 
@@ -358,11 +360,11 @@
                 
                 
                 
-                <a href="/categories/学习笔记/" title="学习笔记: 29">
+                <a href="/categories/学习笔记/" title="学习笔记: 30">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             style="background-color: #F9EBEA;">学习笔记
-                        <span class="tag-length">29</span>
+                        <span class="tag-length">30</span>
                     </span>
                 </a>
                 
@@ -389,6 +391,7 @@
         </div>
     </div>
 </div>
+
 
     
 
@@ -1012,14 +1015,20 @@ Windows环境下直接在博客根目录打开Git Bash，运行命令：
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
         font-size: 12px;
         font-weight: 700;
         line-height: 16px !important;
     }
 
     .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
         font-size: 15px;
-        color: #42b983;
+        color: #cd493f;
     }
 
     
@@ -1039,10 +1048,10 @@ Windows环境下直接在博客根目录打开Git Bash，运行命令：
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="503838841"
+                   id="2500934449"
                    fixed='true'
                    autoplay='true'
-                   theme='#42b983'
+                   theme='#cd493f'
                    loop='all'
                    order='random'
                    preload='auto'
@@ -1055,12 +1064,13 @@ Windows环境下直接在博客根目录打开Git Bash，运行命令：
 
 <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+            <a href="/about" target="_blank">Mahoo Huang</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
@@ -1147,9 +1157,10 @@ Windows环境下直接在博客根目录打开Git Bash，运行命令：
 <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/search.xml", 'searchInput', 'searchResult');
 });
 </script>
+
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
@@ -1223,7 +1234,7 @@ $(function () {
     
 
     
-    
+
     
     <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/instantpage/instantpage.js" type="module"></script>
     

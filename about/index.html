@@ -28,8 +28,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/css/my.css">
 
     <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/jquery/jquery.min.js"></script>
-	<script data-ad-client="ca-pub-7748017869031823" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
+
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -133,6 +132,7 @@
     </a>
   </li>
 </ul>
+
 
 <div id="mobile-nav" class="side-nav sidenav">
 
@@ -240,6 +240,7 @@
     </ul>
 </div>
 
+
         </div>
 
         
@@ -344,7 +345,8 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/banner/' + new Date().getDay() + '.jpg)');
+    var bannerUrl = "https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
 
@@ -360,7 +362,7 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">45</a></span>
+    <span class="count"><a href="/">46</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -374,7 +376,7 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">26</a></span>
+    <span class="count"><a href="/tags">27</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -390,7 +392,7 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">45</a></span>
+    <span class="count"><a href="/">46</a></span>
     <span class="name">文章</span>
 </div>
 
@@ -404,7 +406,7 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">26</a></span>
+    <span class="count"><a href="/tags">27</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -554,7 +556,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2019-09","2019-10","2019-11","2019-12","2020-01","2020-02","2020-03","2020-04","2020-05","2020-06","2020-07","2020-08","2020-09"]
+            data: ["2019-10","2019-11","2019-12","2020-01","2020-02","2020-03","2020-04","2020-05","2020-06","2020-07","2020-08","2020-09","2020-10"]
         },
         yAxis: {
             type: 'value',
@@ -564,7 +566,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,11,5,4,0,3,2,2,1,0,3,3,1],
+                data: [11,5,4,0,3,2,2,1,0,3,3,1,1],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -606,7 +608,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"学习笔记","value":29},{"name":"技术教程","value":16},{"name":"学习笔记","value":1}],
+                data: [{"name":"学习笔记","value":30},{"name":"技术教程","value":16},{"name":"学习笔记","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -630,7 +632,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Android","STM32","51单片机","C/C++","Win10","Java","Hexo","Python","Material Design","Kotlin"]
+                data: ["Android","STM32","51单片机","C/C++","Win10","Java","Hexo","Python","Material Design","adb"]
             }
         ],
         yAxis: [
@@ -643,7 +645,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [8,7,6,6,3,2,2,2,1,1],
+                data: [8,8,6,6,3,2,2,2,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -671,6 +673,7 @@
     categoriesChart.setOption(categoriesOption);
     tagsChart.setOption(tagsOption);
 </script>
+
 
                 
 
@@ -720,19 +723,8 @@
         <div class="col s12 m6 l6" data-aos="fade-up">
             <div class="skillbar">
                 <div class="skillbar-title"
-                     style="background: linear-gradient(to right, #00BCD4 0%, #80DEEA 100%); width: 30%">
+                     style="background: linear-gradient(to right, #00BCD4 0%, #80DEEA 100%); width: 45%">
                     <span>Python</span>
-                </div>
-                <div class="skill-bar-percent">30%</div>
-            </div>
-        </div>
-        
-        
-        <div class="col s12 m6 l6" data-aos="fade-up">
-            <div class="skillbar">
-                <div class="skillbar-title"
-                     style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 45%">
-                    <span>STM32</span>
                 </div>
                 <div class="skill-bar-percent">45%</div>
             </div>
@@ -742,10 +734,21 @@
         <div class="col s12 m6 l6" data-aos="fade-up">
             <div class="skillbar">
                 <div class="skillbar-title"
-                     style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 75%">
+                     style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 55%">
+                    <span>STM32</span>
+                </div>
+                <div class="skill-bar-percent">55%</div>
+            </div>
+        </div>
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 70%">
                     <span>程序设计</span>
                 </div>
-                <div class="skill-bar-percent">75%</div>
+                <div class="skill-bar-percent">70%</div>
             </div>
         </div>
         
@@ -768,20 +771,14 @@
             
             
             
-            <a href="/tags/Java/">
-                <span class="chip center-align waves-effect waves-light chip-default">Java</span>
-            </a>
-            
-            
-            
             <a href="/tags/Material-Design/">
                 <span class="chip center-align waves-effect waves-light chip-default">Material Design</span>
             </a>
             
             
             
-            <a href="/tags/Kotlin/">
-                <span class="chip center-align waves-effect waves-light chip-default">Kotlin</span>
+            <a href="/tags/Java/">
+                <span class="chip center-align waves-effect waves-light chip-default">Java</span>
             </a>
             
             
@@ -794,14 +791,8 @@
             
             
             
-            <a href="/tags/Vuejs/">
-                <span class="chip center-align waves-effect waves-light chip-default">Vuejs</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Hexo/">
-                <span class="chip center-align waves-effect waves-light chip-default">Hexo</span>
+            <a href="/tags/Kotlin/">
+                <span class="chip center-align waves-effect waves-light chip-default">Kotlin</span>
             </a>
             
             
@@ -818,20 +809,20 @@
             
             
             
+            <a href="/tags/Vuejs/">
+                <span class="chip center-align waves-effect waves-light chip-default">Vuejs</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Hexo/">
+                <span class="chip center-align waves-effect waves-light chip-default">Hexo</span>
+            </a>
+            
+            
+            
             <a href="/tags/SEO/">
                 <span class="chip center-align waves-effect waves-light chip-default">SEO</span>
-            </a>
-            
-            
-            
-            <a href="/tags/git/">
-                <span class="chip center-align waves-effect waves-light chip-default">git</span>
-            </a>
-            
-            
-            
-            <a href="/tags/office/">
-                <span class="chip center-align waves-effect waves-light chip-default">office</span>
             </a>
             
             
@@ -860,6 +851,20 @@
             
             
             
+            <a href="/tags/git/">
+                <span class="chip center-align waves-effect waves-light chip-default">git</span>
+            </a>
+            
+            
+            
+            <a href="/tags/office/">
+                <span class="chip center-align waves-effect waves-light chip-default">office</span>
+            </a>
+            
+            
+            
+            
+            
             <a href="/tags/Ubuntu/">
                 <span class="chip center-align waves-effect waves-light chip-default">Ubuntu</span>
             </a>
@@ -874,6 +879,22 @@
             
             
             
+            <a href="/tags/舵机/">
+                <span class="chip center-align waves-effect waves-light chip-default">舵机</span>
+            </a>
+            
+            
+            
+            <a href="/tags/DS18B20/">
+                <span class="chip center-align waves-effect waves-light chip-default">DS18B20</span>
+            </a>
+            
+            
+            
+            <a href="/tags/注册表/">
+                <span class="chip center-align waves-effect waves-light chip-default">注册表</span>
+            </a>
+            
             
             
             <a href="/tags/副屏/">
@@ -882,20 +903,8 @@
             
             
             
-            <a href="/tags/舵机/">
-                <span class="chip center-align waves-effect waves-light chip-default">舵机</span>
-            </a>
-            
-            
-            
             <a href="/tags/免费图床/">
                 <span class="chip center-align waves-effect waves-light chip-default">免费图床</span>
-            </a>
-            
-            
-            
-            <a href="/tags/注册表/">
-                <span class="chip center-align waves-effect waves-light chip-default">注册表</span>
             </a>
             
             
@@ -948,6 +957,7 @@
         });
     });
 </script>
+
                 
 
             </div>
@@ -955,19 +965,26 @@
     </div>
 </main>
 
+
     <footer class="page-footer bg-color">
     
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.css">
 <style>
     .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
         font-size: 12px;
         font-weight: 700;
         line-height: 16px !important;
     }
 
     .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
         font-size: 15px;
-        color: #42b983;
+        color: #cd493f;
     }
 
     
@@ -987,10 +1004,10 @@
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="503838841"
+                   id="2500934449"
                    fixed='true'
                    autoplay='true'
-                   theme='#42b983'
+                   theme='#cd493f'
                    loop='all'
                    order='random'
                    preload='auto'
@@ -1003,12 +1020,13 @@
 
 <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/aplayer/APlayer.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="http://mahoo12138.cn" target="_blank">Mahoo Huang</a>
+            <a href="/about" target="_blank">Mahoo Huang</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
@@ -1095,9 +1113,10 @@
 <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/search.xml", 'searchInput', 'searchResult');
 });
 </script>
+
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
@@ -1171,7 +1190,7 @@ $(function () {
     
 
     
-    
+
     
     <script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/instantpage/instantpage.js" type="module"></script>
     
