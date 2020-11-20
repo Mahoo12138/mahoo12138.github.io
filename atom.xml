@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mahoo12138.cn/"/>
-  <updated>2020-10-23T09:28:07.399Z</updated>
+  <updated>2020-11-20T09:12:51.372Z</updated>
   <id>http://mahoo12138.cn/</id>
   
   <author>
@@ -15,6 +15,84 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flutter 入门学习之初始界面及底部导航栏</title>
+    <link href="http://mahoo12138.cn/flutter.html"/>
+    <id>http://mahoo12138.cn/flutter.html</id>
+    <published>2020-11-20T07:34:24.000Z</published>
+    <updated>2020-11-20T09:12:51.372Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;MaterialApp&quot;&gt;&lt;a href=&quot;#MaterialApp&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="http://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vuejs 移动端开发初始配置</title>
+    <link href="http://mahoo12138.cn/font-end-3.html"/>
+    <id>http://mahoo12138.cn/font-end-3.html</id>
+    <published>2020-11-13T08:00:21.000Z</published>
+    <updated>2020-11-13T14:48:38.061Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;添加-viewpoit&quot;&gt;&lt;a href=&quot;#添加-viewpoit&quot; class=&quot;headerlink&quot; title=&quot;添加 viewpoit&quot;&gt;&lt;/a&gt;添加
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Vuejs" scheme="http://mahoo12138.cn/tags/Vuejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dart 编程语言不详细学习指北</title>
+    <link href="http://mahoo12138.cn/dart.html"/>
+    <id>http://mahoo12138.cn/dart.html</id>
+    <published>2020-10-30T08:34:24.000Z</published>
+    <updated>2020-11-12T08:29:39.125Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本文章是博主在&lt;a href=&quot;https://www.dartcn.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;此网站&lt;/a&gt;学习 Dart 语言时所摘录的一些重要内容，用于快速掌握 Dart
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Dart" scheme="http://mahoo12138.cn/tags/Dart/"/>
+    
+  </entry>
   
   <entry>
     <title>STM32F1XX驱动温度检测模块DS18B20</title>
@@ -369,11 +447,11 @@
   </entry>
   
   <entry>
-    <title>C语言再学习之基础语法深挖</title>
-    <link href="http://mahoo12138.cn/c-cpp-6.html"/>
-    <id>http://mahoo12138.cn/c-cpp-6.html</id>
+    <title>C语言再学习之基础深挖</title>
+    <link href="http://mahoo12138.cn/c-2.html"/>
+    <id>http://mahoo12138.cn/c-2.html</id>
     <published>2020-02-26T13:48:43.000Z</published>
-    <updated>2020-05-21T13:55:59.873Z</updated>
+    <updated>2020-11-08T14:35:24.789Z</updated>
     
     <summary type="html">
     
@@ -471,87 +549,6 @@
     
     
       <category term="office" scheme="http://mahoo12138.cn/tags/office/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>码字语法三千，我只取一瓢</title>
-    <link href="http://mahoo12138.cn/markdown.html"/>
-    <id>http://mahoo12138.cn/markdown.html</id>
-    <published>2019-12-04T13:02:43.000Z</published>
-    <updated>2020-10-01T06:56:00.569Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;插入复杂表格&quot;&gt;&lt;a href=&quot;#插入复杂表格&quot; class=&quot;headerlink&quot; title=&quot;插入复杂表格&quot;&gt;&lt;/a&gt;插入复杂表格&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;利用 &lt;strong&gt;Excel&lt;/strong&gt;
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Markdown" scheme="http://mahoo12138.cn/tags/Markdown/"/>
-    
-      <category term="LaTeX" scheme="http://mahoo12138.cn/tags/LaTeX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python对文件进行批量重命名</title>
-    <link href="http://mahoo12138.cn/py-1.html"/>
-    <id>http://mahoo12138.cn/py-1.html</id>
-    <published>2019-12-03T13:48:43.000Z</published>
-    <updated>2020-05-08T15:33:13.866Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;代码及相关详解&quot;&gt;&lt;a href=&quot;#代码及相关详解&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Python" scheme="http://mahoo12138.cn/tags/Python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python学习Demo</title>
-    <link href="http://mahoo12138.cn/py-2.html"/>
-    <id>http://mahoo12138.cn/py-2.html</id>
-    <published>2019-12-02T13:45:43.000Z</published>
-    <updated>2020-05-08T15:33:13.867Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Python学习Demo&quot;&gt;&lt;a href=&quot;#Python学习Demo&quot; class=&quot;headerlink&quot; title=&quot;Python学习Demo&quot;&gt;&lt;/a&gt;Python学习Demo&lt;/h1&gt;&lt;h2 id=&quot;1-1-输入输出&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Python" scheme="http://mahoo12138.cn/tags/Python/"/>
     
   </entry>
   

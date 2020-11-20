@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="C++中的cin,getchar,get,getline详解, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="Vuejs 移动端开发初始配置, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C++中的cin,getchar,get,getline详解 | 黄同学的博客</title>
+    <title>Vuejs 移动端开发初始配置 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/cplusplus.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/vuejs.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++中的cin,getchar,get,getline详解</h1>
+                    <h1 class="description center-align post-title">Vuejs 移动端开发初始配置</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-C/">
-                                <span class="chip bg-color">C/C++</span>
+                            <a href="/tags/Vuejs/">
+                                <span class="chip bg-color">Vuejs</span>
                             </a>
                         
                     </div>
@@ -455,21 +455,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-11
+                    2020-11-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-08
+                    2020-11-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    101
+                    104
                 </div>
                 
 
@@ -481,73 +481,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="cin"><a href="#cin" class="headerlink" title="cin"></a>cin</h1><p>获取输入的一个字符或数字：</p>
-<pre class=" language-c++"><code class="language-c++">int a;
-cin >> a;</code></pre>
-<p>cin &gt;&gt; 会自动隐性字符，如空格，制表符（Tab），回车等，若不想过滤掉这些字符，可以用noskipws流进行控制，后文会对noskipws这些操作符做一个总结，先看例子：</p>
-<pre class=" language-c++"><code class="language-c++">char test[5];
-for (int i = 0;i < 5;i++){
-    cin >> noskipws >> test[i];
-}
-for (int i = 0;i < 5;i++){
-    cout << test[i];
-}</code></pre>
-<p>输出结果如下：</p>
-<pre class=" language-c++"><code class="language-c++">ma oo
-m
-a
-
-o
-o</code></pre>
-<p>还有一个要注意的是，使用cin输入时遇到空白字符后后面的字符会被过滤掉，即会停留在缓冲区，当下一个cin输入时会直接从缓冲区读取：</p>
-<pre class=" language-c++"><code class="language-c++">char test_1[10];
-char test_2[10];
-cin >> test_1;
-cin >> test_2;
-cout << test_1 << endl;
-cout << test_2 << endl;</code></pre>
-<p>执行结果如下：</p>
-<pre class=" language-c++"><code class="language-c++">Hello World     //输入字符
-Hello           //test_1，遇到空格停止输入
-World           //test_2，从输入流缓冲区读取被过滤掉的字符</code></pre>
-<h1 id="cin-get"><a href="#cin-get" class="headerlink" title="cin.get()"></a>cin.get()</h1><h2 id="含一个参数"><a href="#含一个参数" class="headerlink" title="含一个参数"></a>含一个参数</h2><p>cin.get(数组名)，一次读取一个字符：</p>
-<pre class=" language-c++"><code class="language-c++">char test[5];
-for (int i = 0;i < 5;i++){
-    cin.get(test[i]);
-}</code></pre>
-<h2 id="含两个参数"><a href="#含两个参数" class="headerlink" title="含两个参数"></a>含两个参数</h2><p>cin.get(数组名,接收的字符数量)，可以接收空格，遇到回车停止。先看例子：</p>
-<pre class=" language-c++"><code class="language-c++">char test_1[10];
-cin.get(test_1,10);
-cout << test_1;</code></pre>
-<p>执行如下：</p>
-<pre class=" language-c++"><code class="language-c++">1234567890          //输入10个数字
-123456789           //输出了前9个</code></pre>
-<p>因为数组最后一个字符是’\0’,所以字符长度为10的数组只能接收9个字符。</p>
-<h1 id="cin-getline"><a href="#cin-getline" class="headerlink" title="cin.getline()"></a>cin.getline()</h1><p>函数重载显示：</p>
-<pre class=" language-c++"><code class="language-c++">istream& getline (char* s, streamsize n );
-istream& getline (char* s, streamsize n, char delim );</code></pre>
-<p>getline内有三个参数，一个字符数组，一个读取的数量，以及定界字符（默认’\n’）,通过流对象调用使用，读取的最后一个字符为’\0’，例如：</p>
-<pre class=" language-c++"><code class="language-c++">char test[5];
-cin.getline(test,5);
-cout << test;</code></pre>
-<p>输入输出结果：</p>
-<pre class=" language-c++"><code class="language-c++">ma hoo
-ma h</code></pre>
-<h1 id="getline-string"><a href="#getline-string" class="headerlink" title="getline (string)"></a>getline (string)</h1><p>重载形式：</p>
-<pre class=" language-c++"><code class="language-c++">istream& getline (istream&  is, string& str, char delim);
-istream& getline (istream&& is, string& str, char delim);
-istream& getline (istream&  is, string& str);
-istream& getline (istream&& is, string& str);</code></pre>
-<p>首先看到string就知道这应该要包含#include&lt;<strong>string</strong>&gt;头文件，getline内有三个参数，一个流对象，字符串和定界字符，例如：</p>
-<pre class=" language-c++"><code class="language-c++">char ch = 'o';    //定界字符'o'
-string str;
-getline(cin,str,ch);
-cout << str;</code></pre>
-<pre class=" language-c++"><code class="language-c++">mahoo    //控制台输入
-mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
-<p>当然，也可以不用定界字符参数，默认为’\n’，getline可以接受空格，不能接受回车，据我测试，getline执行后会把缓冲区中的回车读走，但没有存入到指定的字符串中，贴代码：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/C++/test.png" alt=""><br>当输入”mahoo”(getline)和”a”(getchar)后，”b”读到了<code>c = getchar()</code>缓冲区的<code>'\n'</code>，而<code>c = getchar()</code>却没读到<code>getline</code>的回车。</p>
-<script>
+                <h2 id="添加-viewpoit"><a href="#添加-viewpoit" class="headerlink" title="添加 viewpoit"></a>添加 viewpoit</h2><p>&lt;meta&gt;标签内添加viewpoit,以此来动态的获取用户设备的屏幕宽度和不允许用户手动放大和缩小页面等</p>
+<h2 id="清除初始样式-amp"><a href="#清除初始样式-amp" class="headerlink" title="清除初始样式 &amp;"></a>清除初始样式 &amp;</h2><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -590,7 +525,7 @@ mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mahoo12138.cn/c-cpp-1.html">http://mahoo12138.cn/c-cpp-1.html</a>
+                    <a href="http://mahoo12138.cn/font-end-3.html">http://mahoo12138.cn/font-end-3.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -628,8 +563,8 @@ mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-C/">
-                                    <span class="chip bg-color">C/C++</span>
+                                <a href="/tags/Vuejs/">
+                                    <span class="chip bg-color">Vuejs</span>
                                 </a>
                             
                         </div>
@@ -1064,27 +999,23 @@ mah      //输出，遇到定界字符'o'停止提取字符到str</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/git.html">
+                <a href="/flutter.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn@1.1/hexo_images/cover/git.png" class="responsive-img" alt="Git 版本控制使用填坑指北">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之初始界面及底部导航栏">
                         
-                        <span class="card-title">Git 版本控制使用填坑指北</span>
+                        <span class="card-title">Flutter 入门学习之初始界面及底部导航栏</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            git pull 失败 ,提示：fatal: refusing to merge unrelated histories原因：无关的仓库无法合并
-方法：
-
-使用强制命令：
-git pull origin master --allow-unr
+                            MaterialApp在学习Flutter的过程中我们第一个看见的控件应该就是MaterialApp，毕竟创建一个新的Flutter项目的时候，项目第一个组件就是MaterialApp，这是一个Material风格的根控件，一般用于void
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-06-29
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-20
                         </span>
                         <span class="publish-author">
                             
@@ -1101,8 +1032,8 @@ git pull origin master --allow-unr
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
+                    <a href="/tags/Flutter/">
+                        <span class="chip bg-color">Flutter</span>
                     </a>
                     
                 </div>
@@ -1116,28 +1047,27 @@ git pull origin master --allow-unr
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/c-cpp-2.html">
+                <a href="/dart.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/cplusplus.jpg" class="responsive-img" alt="C++中的文件输入和输出">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/cplusplus.jpg" class="responsive-img" alt="Dart 编程语言不详细学习指北">
                         
-                        <span class="card-title">C++中的文件输入和输出</span>
+                        <span class="card-title">Dart 编程语言不详细学习指北</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C++ I/O类软件包处理文件输入和输出的方式与处理标准输入和输出的方式非常相似。
-简单的文件I/O要让程序写入文件，必须这样做:
+                            本文章是博主在此网站学习 Dart 语言时所摘录的一些重要内容，用于快速掌握 Dart 语言，详细完整内容请点击原网页。
+重要的概念
+Dart 万物皆对象，并且所有的对象都是对应一个 类 的实例。
 
-创建一个ofstream对象来管理输出流；
-将该对象与特定的文件关联起来；
-以使用cout的方式使用该对象
+尽管 Dart 是强类型的，但是 Dar
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-30
                             </span>
                         <span class="publish-author">
                             
@@ -1154,8 +1084,8 @@ git pull origin master --allow-unr
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-C/">
-                        <span class="chip bg-color">C/C++</span>
+                    <a href="/tags/Dart/">
+                        <span class="chip bg-color">Dart</span>
                     </a>
                     
                 </div>

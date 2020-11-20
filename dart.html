@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="C++再学习之基础语法, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="Dart 编程语言不详细学习指北, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C++再学习之基础语法 | 黄同学的博客</title>
+    <title>Dart 编程语言不详细学习指北 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
@@ -313,7 +313,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++再学习之基础语法</h1>
+                    <h1 class="description center-align post-title">Dart 编程语言不详细学习指北</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-C/">
-                                <span class="chip bg-color">C/C++</span>
+                            <a href="/tags/Dart/">
+                                <span class="chip bg-color">Dart</span>
                             </a>
                         
                     </div>
@@ -455,21 +455,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-24
+                    2020-10-30
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-21
+                    2020-11-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    19
+                    1.8k
                 </div>
                 
 
@@ -481,203 +481,229 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="define宏定义"><a href="#define宏定义" class="headerlink" title="#define宏定义"></a>#define宏定义</h2><pre class=" language-c++"><code class="language-c++">#include <iostream>
+                <p>本文章是博主在<a href="https://www.dartcn.com/" target="_blank" rel="noopener">此网站</a>学习 Dart 语言时所摘录的一些重要内容，用于快速掌握 Dart 语言，详细完整内容请点击原网页。</p>
+<h2 id="重要的概念"><a href="#重要的概念" class="headerlink" title="重要的概念"></a>重要的概念</h2><ul>
+<li><p>Dart 万物皆对象，并且所有的对象都是对应一个 <em>类</em> 的实例。</p>
+</li>
+<li><p>尽管 Dart 是强类型的，但是 Dart 可以<strong>推断类型</strong>，所以类型注释是可选的。</p>
+</li>
+<li><p>Dart 支持<strong>顶级函数</strong>（例如 <code>main（）</code> ）， 同样函数绑定在类或对象上（分别是 <em>静态函数</em> 和 <em>实例函数</em> ）。 以及支持函数内创建函数 （ <em>嵌套</em> 或 <em>局部函数</em> ） 。</p>
+</li>
+<li><p>类似地， Dart 支持<em>顶级变量</em> ， 同样变量绑定在类或对象上（静态变量和实例变量）。 实例变量有时称为字段或属性。</p>
+</li>
+<li><p>Dart <strong>没有关键字</strong> “public” ， “protected” 和 “private” 。 如果标识符以下划线（_）开头，则它相对于库是私有的。</p>
+</li>
+</ul>
+<h2 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h2><p>如果对象不限定为单个类型，可以指定为 <code>对象类型</code> 或 <code>动态类型</code>：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">dynamic</span> name <span class="token operator">=</span> <span class="token string">'Mahoo12138'</span><span class="token punctuation">;</span></code></pre>
+<p><strong>未初始化的变量默认值是</strong> <code>null</code>。即使变量是数字类型默认值也是 null，因为在 Dart 中一切都是对象，数字类型也不例外：</p>
+<pre class=" language-dart"><code class="language-dart">int lineCount<span class="token punctuation">;</span>
+<span class="token keyword">assert</span><span class="token punctuation">(</span>lineCount <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<p> 在生产环境代码中 <code>assert()</code> 函数会被忽略，不会被调用。 在开发过程中, <code>assert(condition)</code> 会在非 <code>true</code> 的条件下抛出异常</p>
+</blockquote>
+<p> <strong>Final 变量的值只能被设置一次； Const 变量在编译时就已经固定 (Const 变量是隐式 Final 的类型)，常量如果是类级别的，请使用 <code>static const</code></strong></p>
+<h2 id="类与函数"><a href="#类与函数" class="headerlink" title="类与函数"></a>类与函数</h2><ul>
+<li><p>Dart 使用 <code>class</code> 关键字表示一个类，对象具有由函数和数据（分别为方法和实例变量）组成的成员，未初始化实例变量的默认人值为 “<strong>null</strong>”。</p>
+</li>
+<li><p>构造函数的名称可以是类名 <code>ClassName</code> 或者类名和标识符 <code>ClassName.identifier</code> 。 其中构造函数名称是“ClassName”的函数叫<strong>类名构造函数</strong>；构造函数名称是“ClassName.identifier”的函数叫<strong>命名构造函数</strong>。</p>
+</li>
+<li><p><strong>默认构造函数</strong>——在没有声明构造函数的情况下， Dart 会提供一个默认的构造函数。 默认构造函数没有参数并会调用父类的无参构造函数。</p>
+</li>
+</ul>
+<h3 id="构造函数不被继承"><a href="#构造函数不被继承" class="headerlink" title="构造函数不被继承"></a>构造函数不被继承</h3><p>子类不会继承父类的构造函数。 子类不声明构造函数，那么它就只有默认构造函数 (匿名，没有参数) : </p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">class</span> <span class="token class-name">Point</span> <span class="token punctuation">{</span>
+  num x<span class="token punctuation">,</span> y<span class="token punctuation">;</span>
 
-void fun1(){
-#define a 10
-    ;
-}
-void fun2(){
-    int b = a;
-}
+  <span class="token function">Point</span><span class="token punctuation">(</span>num x<span class="token punctuation">,</span> num y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>x <span class="token operator">=</span> x<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>y <span class="token operator">=</span> y<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment" spellcheck="true">// 语法糖</span>
+  <span class="token function">Point</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>x<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// 命名构造函数  </span>
+  Point<span class="token punctuation">.</span><span class="token function">origin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-int main() {
-    std::cout <<"hello world";
-    return 0;
-}</code></pre>
-<p>上述代码并不会报错，C++是支持在函数内宏定义，并且全局可以使用，这是因为<code>#define</code>是在预编译阶段处理的，相当于直接的<strong>文本替换</strong>。</p>
-<p>而在fun_1函数内卸载宏定义，则会出现报错了：</p>
-<pre class=" language-c++"><code class="language-c++">void fun1(){
-#define a 10
-#undef a
-    ;
-}</code></pre>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>引用，可以看作是一个已定义变量的别名，也就是相当于两个变量指向同一个内存地址。</p>
-<pre class=" language-c++"><code class="language-c++">int a = 1;
-int &b = a;
-std::cout << a << " " << b;        //1 1
-std::cout << &a << " " << &b;    //0x61fe14 0x61fe14
+<span class="token keyword">var</span> p1 <span class="token operator">=</span> <span class="token function">Point</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> p2 <span class="token operator">=</span> Point<span class="token punctuation">.</span><span class="token function">fromJson</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">'x'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> p3 <span class="token operator">=</span> Point<span class="token punctuation">.</span><span class="token function">origin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="调用父类非默认构造函数"><a href="#调用父类非默认构造函数" class="headerlink" title="调用父类非默认构造函数"></a>调用父类非默认构造函数</h3><p>默认情况下，子类的构造函数会自动调用父类的默认构造函数（未命名，无参数），如果父类中没有匿名无参的构造函数， 则需要手工调用父类的其他构造函数。 在当前构造函数冒号 (<code>:</code>) 之后，函数体之前，声明调用父类构造函数：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+  String firstName<span class="token punctuation">;</span>
+
+  Person<span class="token punctuation">.</span><span class="token function">fromJson</span><span class="token punctuation">(</span>Map data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'in Person'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Employee</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// Person 没有默认构造函数</span>
+  <span class="token comment" spellcheck="true">// 必须使用 super.fromJson(data).调用父类的命名构造函数</span>
+  Employee<span class="token punctuation">.</span><span class="token function">fromJson</span><span class="token punctuation">(</span>Map data<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">.</span><span class="token function">fromJson</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'in Employee'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> emp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Employee<span class="token punctuation">.</span>fromJson</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// 输出</span>
+  <span class="token comment" spellcheck="true">// in Person</span>
+  <span class="token comment" spellcheck="true">// in Employee</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="构造函数的调用顺序"><a href="#构造函数的调用顺序" class="headerlink" title="构造函数的调用顺序"></a>构造函数的调用顺序</h3><ul>
+<li><p>子类的构造函数中执行的操作顺序如下：</p>
+<ol>
+<li><p><strong>初始化列表</strong></p>
+</li>
+<li><p>父类的无参构造函数</p>
+</li>
+<li><p>本类的无参构造函数</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TestChild<span class="token punctuation">.</span>area</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'面积为：${result.area}'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// Print:</span>
+<span class="token comment" spellcheck="true">// Test 空参构造</span>
+<span class="token comment" spellcheck="true">// TestChild 有参构造</span>
+<span class="token comment" spellcheck="true">// 面积为：6.0</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+num width<span class="token punctuation">;</span>
+num height<span class="token punctuation">;</span>
+num area<span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 必须加上空参构造，如果注释掉 它的子类会报错</span>
+<span class="token function">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'Test 空参构造'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+Test<span class="token punctuation">.</span><span class="token function">area</span><span class="token punctuation">(</span>width<span class="token punctuation">,</span> height<span class="token punctuation">)</span>
+   <span class="token punctuation">:</span> width <span class="token operator">=</span> width<span class="token punctuation">,</span>
+     height <span class="token operator">=</span> height<span class="token punctuation">,</span>
+     area <span class="token operator">=</span> width <span class="token operator">*</span> height <span class="token punctuation">{</span>
+ <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'Test 有参构造'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">TestChild</span> <span class="token keyword">extends</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+
+num width<span class="token punctuation">;</span>
+num height<span class="token punctuation">;</span>
+num area<span class="token punctuation">;</span>
+
+<span class="token function">TestChild</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'TestChild 空参构造'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+TestChild<span class="token punctuation">.</span><span class="token function">area</span><span class="token punctuation">(</span>num width<span class="token punctuation">,</span> num height<span class="token punctuation">)</span>
+ <span class="token punctuation">:</span> area <span class="token operator">=</span> <span class="token punctuation">(</span>width <span class="token operator">*</span> height<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span> <span class="token punctuation">{</span>
+ <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'TestChild 有参构造'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="重定向构造函数"><a href="#重定向构造函数" class="headerlink" title="重定向构造函数"></a>重定向构造函数</h3><ul>
+<li><p>有时构造函数的唯一目的是重定向到同一个类中的另一个构造函数。重定向构造函数的主体是空的，构造函数调用出现在冒号<code>:</code>之后：</p>
+<pre class=" language-dart"><code class="language-dart">  <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Test</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token string">'数字'</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> result1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Test<span class="token punctuation">.</span>test1</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> result2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Test<span class="token punctuation">.</span>test2</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">,</span><span class="token string">'mahoo'</span><span class="token punctuation">)</span>
+
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    num a<span class="token punctuation">;</span>
+    bool b<span class="token punctuation">;</span>
+    String c<span class="token punctuation">;</span>
+    num d<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 主构造函数</span>
+    <span class="token function">Test</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>b<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>c<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 委托给主构造函数</span>
+    Test<span class="token punctuation">.</span><span class="token function">test1</span><span class="token punctuation">(</span>num x<span class="token punctuation">,</span>bool y<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Test<span class="token punctuation">.</span><span class="token function">test2</span><span class="token punctuation">(</span>num a<span class="token punctuation">,</span>bool b<span class="token punctuation">,</span> String c<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Test<span class="token punctuation">.</span><span class="token function">test3</span><span class="token punctuation">(</span>num a<span class="token punctuation">,</span>bool b<span class="token punctuation">,</span> String c<span class="token punctuation">,</span>num d<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">this</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> c<span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span></code></pre>
+</li>
+<li><p>要在运行时获取对象的类型，可以使用Object类的 <code>runtimeType</code> 属性，该属性返回一个Type对象</p>
+<pre class=" language-dart"><code class="language-dart">  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'a 的类型是： ${a.runtimeType}'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// a 的类型是： int</span></code></pre>
+</li>
+<li><p>Dart和Java一样，使用 <code>extends</code> 关键字，表示一个类继承另一个类。</p>
+</li>
+<li><p>使用<code>static</code>关键字修饰的类范围的变量。静态变量（类变量）对于类范围的状态和常量很有用。<strong>静态变量在使用之前不会初始化。</strong></p>
+</li>
+<li><p>使用 <code>abstract</code> 修饰符定义抽象类（<strong>无法实例化的类</strong>）。抽象类对于<strong>定义接口非常有用</strong>，通常还有一些实现。如果希望抽象类看起来是可实例化的，请定义工厂构造函数。</p>
+</li>
+</ul>
+<h3 id="工厂构造函数"><a href="#工厂构造函数" class="headerlink" title="工厂构造函数"></a>工厂构造函数</h3><p>当执行构造函数并不总是创建这个类的一个新实例时，则使用 factory 关键字。 例如，一个工厂构造函数可能会返回一个 cache 中的实例， 或者可能返回一个子类的实例。</p>
+<p>工厂构造函数是通过代码来决定返回的实例对象；工厂构造函数类似于 <strong>static</strong> 静态成员，无法访问 <strong>this</strong> 指针；一般需要依赖其他类型构造函数：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">class</span> <span class="token class-name">People</span> <span class="token punctuation">{</span>
+  String name<span class="token punctuation">;</span>
+  int age<span class="token punctuation">,</span> sex<span class="token punctuation">;</span>
+  <span class="token keyword">static</span> People _cache<span class="token punctuation">;</span>
+
+  <span class="token function">People</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'Dart --> People()'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  People<span class="token punctuation">.</span><span class="token function">fromMap</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> map<span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> map<span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>sex <span class="token operator">=</span> map<span class="token punctuation">[</span><span class="token string">'sex'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'Dart --> People.fromMap($map) --> $name, $age, $sex'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">factory</span> People<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 当不存在缓存的实例 People 时则创建并返回</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>People<span class="token punctuation">.</span>_cache <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      People<span class="token punctuation">.</span>_cache <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People<span class="token punctuation">.</span>fromMap</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'Dart --> People.map($map) --> ${map['</span>name<span class="token string">']}, ${map['</span>age<span class="token string">']}, ${map['</span>sex<span class="token string">']} --> People._cache == null'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'Dart --> People.map($map) --> ${map['</span>name<span class="token string">']}, ${map['</span>age<span class="token string">']}, ${map['</span>sex<span class="token string">']}'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> People<span class="token punctuation">.</span>_cache<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">factory</span> People<span class="token punctuation">.</span><span class="token function">fromJson</span><span class="token punctuation">(</span>json<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token function">People</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  Map map <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'name'</span><span class="token punctuation">:</span> <span class="token string">'Mahoo12138'</span><span class="token punctuation">,</span> <span class="token string">'age'</span><span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token string">'sex'</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  People people <span class="token operator">=</span> People<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'People.name=${people.name}, age=${people.age}, sex=${people.sex}, hashCode=${people.hashCode}'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// 输出中，people 和 people2 的 hashcode 是相同的</span>
+  People people2 <span class="token operator">=</span> People<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'People2.name=${people2.name}, age=${people2.age}, sex=${people2.sex}, hashCode=${people2.hashCode}'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  People people3 <span class="token operator">=</span> People<span class="token punctuation">.</span><span class="token function">fromMap</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'People3.name=${people3.name}, age=${people3.age}, sex=${people3.sex}, hashCode=${people3.hashCode}'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  People people4 <span class="token operator">=</span> People<span class="token punctuation">.</span><span class="token function">fromJson</span><span class="token punctuation">(</span>map<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">'People4.name=${people4.name}, age=${people4.age}, sex=${people4.sex}, hashCode=${people4.hashCode}'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>当给任意一个变量赋值时，另一个也会随之改变。</p>
-<pre class=" language-c++"><code class="language-c++">b = 0;
-std::cout << "a=" << a;        //a=0
-a = 1;
-std::cout << "b=" << b;        //b=1</code></pre>
-<p>还有一个需要注意的是，普通引用必须要初始化。</p>
-<pre class=" language-c++"><code class="language-c++">int a = 0;
-int &b;        //error</code></pre>
-<p>关于引用的作用，我们可以看一个c++老师必说的例子：</p>
-<pre class=" language-c++"><code class="language-c++">//function swap two numbers
-void NumSwap(int a,int b){
-    int c = 0;
-    c = a;
-    a = b;
-    b = c;
-}</code></pre>
-<p>当然，这个函数并不能完成所期望的功能，通常的做法是将参数换为指针：</p>
-<pre class=" language-c++"><code class="language-c++">//function swap two numbers by using pointer
-void NumSwap(int *a,int *b){
-    int c = 0;
-    c = *a;
-    *a = *b;
-    *b = c;
-}
+<p>工厂构造函数还可以实现单例：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> <span class="token keyword">final</span> Singleton _singleton <span class="token operator">=</span> Singleton<span class="token punctuation">.</span><span class="token function">internal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// 工厂构造函数</span>
+  <span class="token keyword">factory</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> _singleton<span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// 命名构造函数</span>
+  Singleton<span class="token punctuation">.</span><span class="token function">internal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="Typedef"><a href="#Typedef" class="headerlink" title="Typedef"></a>Typedef</h2><p>目前，typedef 只能使用在函数类型上，对函数类型的对象做一个别名，例如：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">typedef</span> Compare <span class="token operator">=</span> int <span class="token function">Function</span><span class="token punctuation">(</span>Object a<span class="token punctuation">,</span> Object b<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-//calling the function
-int a = 1,b = 2;
-NumSwap(&a,&b);</code></pre>
-<p>而用引用的话也是相当的便捷的：</p>
-<pre class=" language-c++"><code class="language-c++">//function swap two numbers by using reference
-void NumSwap(int &a,int &b){
-    int c = 0;
-    c = a;
-    a = b;
-    b = c;
-}
-
-//calling the function
-int x = 1,y = 2;
-NumSwap(x,y);</code></pre>
-<p>因为<strong>引用作函数参数时不需要初始化</strong>，这里其实是相当于进行了<code>int &amp;a =x; int &amp;b = y;</code>的操作，函数里的a，b则是x， y的引用。</p>
-<ul>
-<li><p>引用的本质</p>
-<p>在C++中的内部实现是一个常指针，即<code>Type &amp;name</code>等价于<code>Type *const name</code>，</p>
-<p>C++编译器在编译过程中使用常指针作为引用的内部实现，因此引用所占内存大小与指针相同。</p>
-<p>当引用作为参数时，实际上编译器帮助我们为实参取了地址。</p>
-</li>
-<li><p>引用作为返回值</p>
-</li>
-</ul>
-<h2 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h2><p>static定义的类成员，会被这个类创建的所有对象共享。且静态变量在类内声明后需要在外部进行定义初始化。</p>
-<p>静态成员函数同样会被这个类创建的所有对象共享，注意<strong>在静态成员函数内不能调用非静态的变量和函数</strong>，且没有<code>this操作</code>。</p>
-<pre class=" language-c++"><code class="language-c++">class A{
-    static int num;        //定义静态成员
-public:
-    void Add(){
-        num++;
-    };
-    void ShowNum(){
-      std::cout<<num<<std::endl;
-    };
-    static void GetNum(){        //声明静态成员函数
-       std::cout<<num<<std::endl;
-    }
-};
-int A::num = 0;        //初始化静态成员
-
-int main() {
-    A a,b;
-    a.ShowNum();
-    a.Add();
-    b.ShowNum();
-    std::cout << a.GetNum() << std::endl;    //对象调用静态成员函数
-    std::cout << A::GetNum();                //类调用静态成员函数
-    return 0;
-}
-//0  1     1     1</code></pre>
-<h3 id="继承中的static"><a href="#继承中的static" class="headerlink" title="继承中的static"></a>继承中的static</h3><ul>
-<li>基类中的静态成员变量，将被所有派生类共享</li>
-<li>static定义的变量仍然遵循派生类的访问控制</li>
-</ul>
-<h2 id="C-类的模型"><a href="#C-类的模型" class="headerlink" title="C++类的模型"></a>C++类的模型</h2><pre class=" language-c++"><code class="language-c++">#include "iostream"
-
-class C1{
-public:
-    int i;  //4
-    int j;  //4
-    int k;  //4
-}; 
-
-class C2{
-public:
-    int i;
-    int j;
-    int k;
-
-    static int m; 
-public:
-    int getK() const { return k; } 
-    void setK(int val) { k = val; }  
-}; 
-
-struct S1{
-    int i;
-    int j;
-    int k;
-}; 
-
-struct S2{
-    int i;
-    int j;
-    int k;
-    static int m;
-}; 
-
-int main(){
-    std::cout<<sizeof(C1);
-    std::cout<<sizeof(C2);
-    std::cout<<sizeof(S1);
-    std::cout<<sizeof(S2);
-    return 0;
-}
-</code></pre>
-<p>首先上面三个输出都是12，我们可以得出：</p>
-<ul>
-<li><p>C++类中的成员函数和成员变量是分开存储的</p>
-<ul>
-<li>普通的成员变量存储在对象中，与 struct 结构体有相同的内存布局和字节对齐方式</li>
-<li>静态成员变量存储在全局数据区</li>
-<li>成员函数则存储在代码段中</li>
-</ul>
-</li>
-<li><p>C++编译器对普通成员函数的内部处理</p>
-<pre class=" language-c++"><code class="language-c++">class Test{
-private:
-    int m;
-public:
-    Test(int i){
-        m = i;
-    }
-    int getM(){
-        return m;
-    }
-    static void Print(){
-        std::cout<<"Test";
-    }
-}
-
-Test a(10);
-a.getM();
-Test::Print();</code></pre>
-<pre class=" language-c++"><code class="language-c++">struct Test{
-    int m;
-}
-void Test_initialize(Test *pThis,int i){
-    pThis -> m = i;
-}
-int Test_getM(Test *pThis){
-    return pThis -> m;
-}
-void Test_Print(){
-    std::cout<<"Test";
-}
-Test a;
-Test_initialize(&a,10);
-Test_getM(&a);
-Test_Print();</code></pre>
-</li>
-</ul>
-<p>对比上述两段代码我们可以发现C++类的模型是基于结构体的，  面向对象本质还是面向过程的，成员变量与成员函数之间通过<code>this指针</code>连接起来，而静态函数没有该指针。</p>
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  int <span class="token function">fun</span><span class="token punctuation">(</span>Object a<span class="token punctuation">,</span> Object b<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">assert</span><span class="token punctuation">(</span>fun <span class="token operator">is</span> Compare<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><code>int Function(Object a, Object b);</code>为一个函数类型的对象的类型信息。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -721,7 +747,7 @@ Test_Print();</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mahoo12138.cn/c-cpp-4.html">http://mahoo12138.cn/c-cpp-4.html</a>
+                    <a href="http://mahoo12138.cn/dart.html">http://mahoo12138.cn/dart.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -759,8 +785,8 @@ Test_Print();</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-C/">
-                                    <span class="chip bg-color">C/C++</span>
+                                <a href="/tags/Dart/">
+                                    <span class="chip bg-color">Dart</span>
                                 </a>
                             
                         </div>
@@ -1195,27 +1221,76 @@ Test_Print();</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/stm32-1.html">
+                <a href="/font-end-3.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/stm32.jpg" class="responsive-img" alt="理解STM32的八种输入输出模式">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/vuejs.png" class="responsive-img" alt="Vuejs 移动端开发初始配置">
                         
-                        <span class="card-title">理解STM32的八种输入输出模式</span>
+                        <span class="card-title">Vuejs 移动端开发初始配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！
-输入模式
-上拉输入（GPIO_Mode_IPU）
-上拉即把电位提高
+                            添加 viewpoit&lt;meta&gt;标签内添加viewpoit,以此来动态的获取用户设备的屏幕宽度和不允许用户手动放大和缩小页面等
+清除初始样式 &amp;
+        document.querySelectorAll('.
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-31
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-13
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vuejs/">
+                        <span class="chip bg-color">Vuejs</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/stm32-8.html">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/stm32.jpg" class="responsive-img" alt="STM32F1XX驱动温度检测模块DS18B20">
+                        
+                        <span class="card-title">STM32F1XX驱动温度检测模块DS18B20</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            DS18B20 单线总线的工作方式1. DS18B20 简介DS18B20单线数字温度传感器，即“一线器件”，其具有如下独特的优点。
+
+采用单线总线的接口方式。与微处理器连接时，仅需要1条口线即可实现微处理器与 DS18B20 的双向通信。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1235,54 +1310,8 @@ Test_Print();</code></pre>
                         <span class="chip bg-color">STM32</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/tutorial-2.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/17.jpg" class="responsive-img" alt="利用Cloud Studio为博客搭建免费图床">
-                        
-                        <span class="card-title">利用Cloud Studio为博客搭建免费图床</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Cloud Studio 已更新，教程失效
-搭建的静态博客利用Markdown码字，必然少不了图片，所以需要另外的图床作为辅助，网上有很多优秀的图床程序，不过大多都功能复杂，而且图片放在别人那，让我总感觉不是很放心（万一哪天就跑路了呢？），
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/技术教程/" class="post-category">
-                                    技术教程
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/免费图床/">
-                        <span class="chip bg-color">免费图床</span>
+                    <a href="/tags/DS18B20/">
+                        <span class="chip bg-color">DS18B20</span>
                     </a>
                     
                 </div>
@@ -1420,13 +1449,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 

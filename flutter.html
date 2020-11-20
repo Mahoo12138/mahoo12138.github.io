@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="C++中的文件输入和输出, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="Flutter 入门学习之初始界面及底部导航栏, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>C++中的文件输入和输出 | 黄同学的博客</title>
+    <title>Flutter 入门学习之初始界面及底部导航栏 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/cplusplus.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++中的文件输入和输出</h1>
+                    <h1 class="description center-align post-title">Flutter 入门学习之初始界面及底部导航栏</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-C/">
-                                <span class="chip bg-color">C/C++</span>
+                            <a href="/tags/Flutter/">
+                                <span class="chip bg-color">Flutter</span>
                             </a>
                         
                     </div>
@@ -455,21 +455,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-09
+                    2020-11-20
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-08
+                    2020-11-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    449
+                    711
                 </div>
                 
 
@@ -481,97 +481,108 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>C++ I/O类软件包处理文件输入和输出的方式与处理标准输入和输出的方式非常相似。<br><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/C++/file.png" alt=""></p>
-<h2 id="简单的文件I-O"><a href="#简单的文件I-O" class="headerlink" title="简单的文件I/O"></a>简单的文件I/O</h2><p>要让程序写入文件，必须这样做:</p>
-<ul>
-<li>创建一个ofstream对象来管理输出流；</li>
-<li>将该对象与特定的文件关联起来；</li>
-<li>以使用cout的方式使用该对象，唯一的区别是输出将进入文件，而不是屏幕。</li>
-</ul>
-<h3 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h3><p>前提是要包含头文件<strong>fstream</strong>，对于大部分操作（不是全部），包含该头文件，等于自动包含了iostream文件，因为该头文件中的类都是派生自头文件iostream中的类。因此不必再包含iosteam文件。<br>先声明一个ofsteam对象：</p>
-<pre class=" language-C++"><code class="language-C++"> ofstream fout;        </code></pre>
-<p>之后，必须将这个对象与特定的文件关联起来，可以使用成员函数open()来实现，例如要打开<code>mahoo.txt</code>进行操作：</p>
-<pre class=" language-c++"><code class="language-c++">fout.open("mahoo.txt");</code></pre>
-<p>也可以使用一个构造函数，将两行代码（创建对象和关联文件）合并：</p>
-<pre class=" language-c++"><code class="language-c++">ofstream fout (mahoo.txt);</code></pre>
-<p>然后以<strong>cout</strong>的方式操作fout对象。例如要把文本”I am Mahoo”放入到文件中，可以这样做：</p>
-<pre class=" language-c++"><code class="language-c++">fout << "I am Mahoo";</code></pre>
-<p>由于ostream是ofstream类的基类，因此可以使用所有的ostream方法，包括各种运算符定义，格式化方法和控制符。ofstream类使用被缓存的输出，因此程序再创建像fout这样的ofstream对象时，将为输出缓冲区分配空间。如果创建了两个ofstream对象，程序将创建两个缓冲区，各一个。像fout这样的ofstream对象从程序那里逐字节地收集输出，当缓冲区填满后，它便将缓冲区内容一同传输给目标文件。<br>注意，以这样的方式打开文件操作时，如果没有该文件，会创建一个新的文件；如果有将清空文件。</p>
-<h3 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h3><p>读取文件操作与写入文件类似：</p>
-<ul>
-<li>创建一个ifstream对象管理输入流;</li>
-<li>将该对象与特定的文件关联起来；</li>
-<li>以cin的方式使用该对象。</li>
-</ul>
-<p>当然，包含头文件fstream必不可少。</p>
-<pre class=" language-c++"><code class="language-c++">ifstream fin;            
-fin.open("Mahoo.txt");
+                <h2 id="MaterialApp"><a href="#MaterialApp" class="headerlink" title="MaterialApp"></a>MaterialApp</h2><p>在学习Flutter的过程中我们第一个看见的控件应该就是<code>MaterialApp</code>，毕竟创建一个新的Flutter项目的时候，项目第一个组件就是<code>MaterialApp</code>，这是一个Material风格的根控件，一般用于<strong>void main() {runApp(MyApp());}</strong> 中 <code>runApp()</code> 类的<code>build()</code>方法返回的控件，基本用法如下：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token function">MaterialApp</span><span class="token punctuation">(</span>
+    debugShowCheckedModeBanner<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//隐藏右上角的DEBUG标签</span>
+    title<span class="token punctuation">:</span> <span class="token string">'Flutter Demo'</span><span class="token punctuation">,</span>    <span class="token comment" spellcheck="true">//在任务管理窗口中所显示的应用名字</span>
+    theme<span class="token punctuation">:</span> <span class="token function">ThemeData</span><span class="token punctuation">(</span>        <span class="token comment" spellcheck="true">//设置整个App的主题</span>
+        primarySwatch<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>blue<span class="token punctuation">,</span>
+        visualDensity<span class="token punctuation">:</span> VisualDensity<span class="token punctuation">.</span>adaptivePlatformDensity<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    darkTheme<span class="token punctuation">:</span> <span class="token function">ThemeData</span><span class="token punctuation">(</span>
+      primaryColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>red
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    home<span class="token punctuation">:</span> home<span class="token punctuation">:</span> <span class="token function">IndexPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>在上述代码的 <strong>home: IndexPage()</strong>  处，笔者对组件做了一个分离，IndexPage() 组件内为<code>Scaffold</code> 。</p>
+<h2 id="Scaffold"><a href="#Scaffold" class="headerlink" title="Scaffold"></a>Scaffold</h2><p><code>Scaffold</code> 实现了 Material 风格的基本布局结构，它提供了展示<code>drawers</code>(抽屉栏)、<code>snackbars</code>（通知条）和<code>bottomsheets</code>（上滑栏）的功能，基本用法如下：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token function">Scaffold</span><span class="token punctuation">(</span>
+    <span class="token comment" spellcheck="true">//设置AppBar栏 </span>
+    appBar<span class="token punctuation">:</span> <span class="token function">AppBar</span><span class="token punctuation">(</span>        
+        title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">"Flutter Demo"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">//设置从左和右出现的抽屉栏</span>
+    drawer<span class="token punctuation">:</span> <span class="token function">Drawer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      endDrawer<span class="token punctuation">:</span> <span class="token function">Drawer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">//设置悬浮按钮，默认显示在右下角</span>
+    floatingActionButton<span class="token punctuation">:</span> <span class="token function">FloatingActionButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    backgroundColor<span class="token punctuation">:</span> Color<span class="token punctuation">.</span><span class="token function">fromRGBO</span><span class="token punctuation">(</span><span class="token number">244</span><span class="token punctuation">,</span> <span class="token number">245</span><span class="token punctuation">,</span> <span class="token number">245</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="BottomNavigationBar"><a href="#BottomNavigationBar" class="headerlink" title="BottomNavigationBar"></a>BottomNavigationBar</h2><p><code>BottomNavigationBar</code> 和 <code>BottomNavigationBarItem</code>配合<code>Scaffold</code>控件使用可以实现底部导航效果，类似于微信底部的导航效果，以下是一个简单的底部导航栏实例：</p>
+<ol>
+<li><p>在项目 <strong>Lib</strong> 目录中，新建 <strong>Pages</strong> 包，在其中新建三个界面，分别是<code>home_page.dart</code> ，<code>other_page.dart</code>， <code>profile_page.dart</code> ，当然上文中出现 <code>index_pages.dart</code> 也放在这里，在 <code>index_pages.dart</code> 中引入：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">import</span> <span class="token string">'home_page.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'other_page.dart'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token string">'profile_page.dart'</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>在<code>index_pages.dart</code>内的<code>IndexPage</code>（StatefulWidget）类中 <strong>BottomNavigationBarItem</strong> 列表，定义界面列表以及当前显示界面的<strong>索引</strong>：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">final</span> List<span class="token operator">&lt;</span>BottomNavigationBarItem<span class="token operator">></span> bottomTabs <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token function">BottomNavigationBarItem</span><span class="token punctuation">(</span>
+        <span class="token comment" spellcheck="true">//未选中图标</span>
+        icon<span class="token punctuation">:</span> <span class="token function">Icon</span><span class="token punctuation">(</span>CupertinoIcons<span class="token punctuation">.</span>home<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">//选中时控件</span>
+        activeIcon<span class="token punctuation">:</span> <span class="token function">Icon</span><span class="token punctuation">(</span>CupertinoIcons<span class="token punctuation">.</span>scope<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">//选中时导航栏背景颜色</span>
+        backgroundColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>redAccent<span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">//显示的文字</span>
+        label<span class="token punctuation">:</span> <span class="token string">"主页"</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">BottomNavigationBarItem</span><span class="token punctuation">(</span>
+        icon<span class="token punctuation">:</span> <span class="token function">Icon</span><span class="token punctuation">(</span>CupertinoIcons<span class="token punctuation">.</span>cart<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        backgroundColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>deepPurpleAccent<span class="token punctuation">,</span>
+        label<span class="token punctuation">:</span> <span class="token string">"其他"</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">BottomNavigationBarItem</span><span class="token punctuation">(</span>
+        icon<span class="token punctuation">:</span> <span class="token function">Icon</span><span class="token punctuation">(</span>CupertinoIcons<span class="token punctuation">.</span>profile_circled<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        backgroundColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>amber<span class="token punctuation">,</span>
+        label<span class="token punctuation">:</span> <span class="token string">"我的"</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
 
-ifstream fin("Mahoo.txt");</code></pre>
-<p>现在，可以像使用cin那样使用fin：</p>
-<pre class=" language-c++"><code class="language-c++">char ch;               
-fin >> ch;              //从mahoo.txt中读取一个字符
-char test[100];
-fin >> test;            //一直读取，知道读取到enter，tab，space等
-fin.getline(test,100);  //读取一行存入test[100]
-string line;
-getline(fin,line);      //读取到string对象line中</code></pre>
-<p>在上述代码<code>getline(fin,line)</code>对于文件内容只读取一行，补充一下string对象的长度大小，其限制基于当前编译器，可以使用：</p>
-<pre class=" language-c++"><code class="language-c++">cout << line.max_size();     //line为创建的string对象</code></pre>
-<p>查看当前编译器理论上支持的最大长度。</p>
-<h3 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h3><p>当输入和输出流对象过期（如程序终止时），文件的连接将自动关闭。作为一名合格的程序员，绝不会这么做，可以使用close()方法显式地关闭到文件的连接：</p>
-<pre class=" language-C++"><code class="language-C++">fout.close();
-fin.close();</code></pre>
-<p>OK，今天的学习就到这里了，累了，睡觉！</p>
-<hr>
-<p><em>2019年5月14日更新</em></p>
-<h3 id="打开文件的模式"><a href="#打开文件的模式" class="headerlink" title="打开文件的模式"></a>打开文件的模式</h3><p>下面是 open() 函数的标准语法，open() 函数是 fstream、ifstream 和 ofstream 对象的一个成员。</p>
-<pre class=" language-c++"><code class="language-c++">void open(const char *filename, ios::openmode mode);</code></pre>
-<p>open() 成员函数其实有两个参数，第一个参数指定要打开的文件的名称和位置，第二个参数定义文件被打开的模式。</p>
-<table>
-<thead>
-<tr>
-<th align="center">模式标志</th>
-<th align="center">简单描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">ios::in</td>
-<td align="center">打开文件用于读取</td>
-</tr>
-<tr>
-<td align="center">ios::out</td>
-<td align="center">打开文件用于写入</td>
-</tr>
-<tr>
-<td align="center">ios::app</td>
-<td align="center">追加模式：即把所有的写入放到末尾</td>
-</tr>
-<tr>
-<td align="center">ios::ate</td>
-<td align="center">文件打开后，定位到末尾</td>
-</tr>
-<tr>
-<td align="center">ios::trunc</td>
-<td align="center">预打开文件已经存在，其内容将在打开文件之前被截断，即把文件长度设为 0</td>
-</tr>
-<tr>
-<td align="center">ios::binary</td>
-<td align="center">以二进制方式打开</td>
-</tr>
-</tbody></table>
-<p>而且这些当时可以任意组合，通过 ** “|” **（运算符“或”）进行连接即可例如：</p>
-<pre class=" language-c++"><code class="language-c++">ofstream fout;
-fout.open("Mahoo.txt", ios::in|ios::out|ios::binary);    //根据实际需要进行组合</code></pre>
-<h3 id="检查文件是否被成功打开"><a href="#检查文件是否被成功打开" class="headerlink" title="检查文件是否被成功打开"></a>检查文件是否被成功打开</h3><p>在操作文件时，我们都应该检查文件是否被成功打开，否则进行读取的时候就会报错。具体方法可以使用<strong>is_open()</strong>，例如：</p>
-<pre class=" language-c++"><code class="language-c++">fin.open("Mahoo.txt");
-if (!fin.is_open()){
-       exit(EXIT_FAILURE);
-}</code></pre>
-<p>如果文件成功被打开，方法is_open()将返回true；exit()函数作用是关闭所有打开的文件并终止程序，并将参数value返回给主调进程。</p>
-<pre class=" language-c++"><code class="language-c++">void exit(int value);    
-//一般0表示程序寿终正寝，1表示死于非命。</code></pre>
-<p><strong>EXIT_FAILURE</strong>是定义在cstdlib.h中的一个常量，通常EXIT_SUCCESS = 0，EXIT_FAILURE = 1。</p>
+<span class="token keyword">final</span> List tabBodies <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token function">HomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">OtherPage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function">ProfilePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+int currentIndex <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> currentPage<span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>在 <code>IndexPage</code>类的状态类 <code>_IndexPageState</code> (extends State&lt;IndexPage&gt;) 中重写<code>build</code>方法：</p>
+<pre class=" language-dart"><code class="language-dart">  <span class="token metadata symbol">@override</span>
+  Widget <span class="token function">build</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">Scaffold</span><span class="token punctuation">(</span>
+      appBar<span class="token punctuation">:</span> <span class="token function">AppBar</span><span class="token punctuation">(</span>
+        title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">"Flutter Demo"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      backgroundColor<span class="token punctuation">:</span> Color<span class="token punctuation">.</span><span class="token function">fromRGBO</span><span class="token punctuation">(</span><span class="token number">244</span><span class="token punctuation">,</span> <span class="token number">245</span><span class="token punctuation">,</span> <span class="token number">245</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      bottomNavigationBar<span class="token punctuation">:</span> <span class="token function">BottomNavigationBar</span><span class="token punctuation">(</span>
+        <span class="token comment" spellcheck="true">//底栏切换的样式</span>
+        type<span class="token punctuation">:</span> BottomNavigationBarType<span class="token punctuation">.</span>fixed<span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">//当前的序列</span>
+        currentIndex<span class="token punctuation">:</span> currentIndex<span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">//颜色设置</span>
+        selectedItemColor<span class="token punctuation">:</span> Theme<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>context<span class="token punctuation">)</span><span class="token punctuation">.</span>primaryColor<span class="token punctuation">,</span>
+        unselectedItemColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>grey<span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">//底栏子项的列表</span>
+        items<span class="token punctuation">:</span> bottomTabs<span class="token punctuation">,</span>
+        <span class="token comment" spellcheck="true">//每个子项点击触发的方法</span>
+        onTap<span class="token punctuation">:</span> <span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">{</span>
+          <span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//方法触发后，必须调用setState()方法重新绘制UI</span>
+            currentIndex <span class="token operator">=</span> index<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//将点击的子项的索引作为当前显示的索引，并切换索引对应的视图界面</span>
+            currentPage <span class="token operator">=</span> tabBodies<span class="token punctuation">[</span>currentIndex<span class="token punctuation">]</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token comment" spellcheck="true">//显示的界面</span>
+      body<span class="token punctuation">:</span> currentPage<span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span></code></pre>
+<p>关于 BottomNavigationBarItem 切换的显示模式，默认 3-5 个时采用<code>fixed</code>模式，4 个时默认采用<code>shifting</code>模式，当然，是可以指定的。</p>
+</li>
+</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -615,7 +626,7 @@ if (!fin.is_open()){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://mahoo12138.cn/c-cpp-2.html">http://mahoo12138.cn/c-cpp-2.html</a>
+                    <a href="http://mahoo12138.cn/flutter.html">http://mahoo12138.cn/flutter.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -653,8 +664,8 @@ if (!fin.is_open()){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-C/">
-                                    <span class="chip bg-color">C/C++</span>
+                                <a href="/tags/Flutter/">
+                                    <span class="chip bg-color">Flutter</span>
                                 </a>
                             
                         </div>
@@ -1085,31 +1096,80 @@ if (!fin.is_open()){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/c-cpp-1.html">
+                <a href="/flutter.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/cplusplus.jpg" class="responsive-img" alt="C++中的cin,getchar,get,getline详解">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之初始界面及底部导航栏">
                         
-                        <span class="card-title">C++中的cin,getchar,get,getline详解</span>
+                        <span class="card-title">Flutter 入门学习之初始界面及底部导航栏</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            cin获取输入的一个字符或数字：
-int a;
-cin >> a;
-cin &gt;&gt; 会自动隐性字符，如空格，制表符（Tab），回车等，若不想过滤掉这些字符，可以用noskipws流进行控制，后文会对noskipws这些操作符做一个
+                            MaterialApp在学习Flutter的过程中我们第一个看见的控件应该就是MaterialApp，毕竟创建一个新的Flutter项目的时候，项目第一个组件就是MaterialApp，这是一个Material风格的根控件，一般用于void
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-11
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Flutter/">
+                        <span class="chip bg-color">Flutter</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/font-end-3.html">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/vuejs.png" class="responsive-img" alt="Vuejs 移动端开发初始配置">
+                        
+                        <span class="card-title">Vuejs 移动端开发初始配置</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            添加 viewpoit&lt;meta&gt;标签内添加viewpoit,以此来动态的获取用户设备的屏幕宽度和不允许用户手动放大和缩小页面等
+清除初始样式 &amp;
+        document.querySelectorAll('.
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1125,66 +1185,8 @@ cin &gt;&gt; 会自动隐性字符，如空格，制表符（Tab），回车等�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C-C/">
-                        <span class="chip bg-color">C/C++</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/other-2.html">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/win10.png" class="responsive-img" alt="Win10系统内的Java环境变量配置">
-                        
-                        <span class="card-title">Win10系统内的Java环境变量配置</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            安装Java的JDK首先去官网链接把JDK下载安装好，我安装的是最新版本的jdk-8u211-windows-x64，由于我总是忘记环境变量的配置，所以决定写篇博文记录，OK，开始配置！
-环境变量配置在桌面右键单击此电脑进入属性，
-点击左栏
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-04
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/技术教程/" class="post-category">
-                                    技术教程
-                                </a>
-                            
-                            <a href="/categories/技术教程/学习笔记/" class="post-category">
-                                    学习笔记
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/Win10/">
-                        <span class="chip bg-color">Win10</span>
+                    <a href="/tags/Vuejs/">
+                        <span class="chip bg-color">Vuejs</span>
                     </a>
                     
                 </div>
