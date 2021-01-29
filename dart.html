@@ -308,7 +308,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/cplusplus.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -462,14 +462,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-12
+                    2020-11-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    2.4k
                 </div>
                 
 
@@ -504,7 +504,30 @@
 </blockquote>
 <p> <strong>Final 变量的值只能被设置一次； Const 变量在编译时就已经固定 (Const 变量是隐式 Final 的类型)，常量如果是类级别的，请使用 <code>static const</code></strong></p>
 <h2 id="类与函数"><a href="#类与函数" class="headerlink" title="类与函数"></a>类与函数</h2><ul>
-<li><p>Dart 使用 <code>class</code> 关键字表示一个类，对象具有由函数和数据（分别为方法和实例变量）组成的成员，未初始化实例变量的默认人值为 “<strong>null</strong>”。</p>
+<li><p>Dart 使用 <code>class</code> 关键字表示一个类，对象具有由函数和数据（分别为方法和实例变量）组成的成员，未初始化实例变量的默认值为 “<strong>null</strong>”。</p>
+</li>
+<li><p>抽象类不能被实例化，可以通过实例化继承自该抽象类的子类使用，当然也能使用<code>implement</code>直接当作接口（implement 并不局限于抽象类，普通类同样可以），使用接口时，需要将接口内的方法和属性需要全部定义或重写，接口的作用个人理解成是一种具体代码之间的规范化。</p>
+</li>
+<li><p>类中的 <code>final</code> 关键字修饰的变量<strong>不能被修改</strong>，而且<strong>必须被构造函数初始化</strong>。</p>
+</li>
+<li><p>类中的<code>static</code>关键字修饰的变量为静态变量，<strong>其固属于这个类，并不属于类的实例</strong>，不能用 <code>this</code> 访问到；<code>static</code>关键字修饰的函数即为静态函数，类似于静态变量：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+  <span class="token keyword">static</span> String name <span class="token operator">=</span> <span class="token string">'mahoo12138'</span><span class="token punctuation">;</span>
+  <span class="token keyword">static</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>Person<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Person<span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// print(p.name);    ！报错</span>
+    <span class="token comment" spellcheck="true">// p.show();        ！报错</span>
+<span class="token punctuation">}</span>
+
+<span class="token operator">>></span> 输出
+mahoo12138
+mahoo12138</code></pre>
 </li>
 <li><p>构造函数的名称可以是类名 <code>ClassName</code> 或者类名和标识符 <code>ClassName.identifier</code> 。 其中构造函数名称是“ClassName”的函数叫<strong>类名构造函数</strong>；构造函数名称是“ClassName.identifier”的函数叫<strong>命名构造函数</strong>。</p>
 </li>
@@ -704,6 +727,46 @@ TestChild<span class="token punctuation">.</span><span class="token function">ar
   <span class="token keyword">assert</span><span class="token punctuation">(</span>fun <span class="token operator">is</span> Compare<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p><code>int Function(Object a, Object b);</code>为一个函数类型的对象的类型信息。</p>
+<h2 id="Runes"><a href="#Runes" class="headerlink" title="Runes"></a>Runes</h2><p>Runes 对象是一个 32位 字符对象，用来表示一个字。这样设计也是考虑兼容 UTF-16 四个字节的情况。</p>
+<p>我们来看一个示例，打开网页<a href="https://copychar.cc/emoji/" target="_blank" rel="noopener">CopyChar – Copy special characters to your clipboard</a>，选择一个 Emoji 小丑，编辑代码：</p>
+<pre class=" language-dart"><code class="language-dart">String a <span class="token operator">=</span> <span class="token string">'🤡'</span><span class="token punctuation">;</span>
+String b <span class="token operator">=</span> <span class="token string">'你是🤡'</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>runes<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>runes<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">>></span> 输出
+<span class="token number">2</span> <span class="token comment" spellcheck="true">// 标识占 2 个 16 位字符</span>
+<span class="token number">1</span> <span class="token comment" spellcheck="true">// 表示占 1 个 32 位字符</span>
+<span class="token number">4</span>
+<span class="token number">3</span></code></pre>
+<p>由此可知，runes 是一个 32 位字符对象，联系到实际的开发，例如在一款实时聊天的软件中，用户输入 emoji 表情时，如果使用字符串的 length 方法就会造成统计字符数量出现错误，这时 runes 的作用就体现出来了。</p>
+<p>常用的 API：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token comment" spellcheck="true">/// 操作 32-bit Unicode 字符</span>
+Runes b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Runes</span><span class="token punctuation">(</span><span class="token string">'\u{1f596} \u9EC4'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> c <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCodes</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// or String c = '\u{1f596} \u9EC4'    如果非4个数值，需要用 {}包裹</span>
+<span class="token function">print</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">>></span> 输出
+🖖 黄
+
+<span class="token comment" spellcheck="true">/// 返回 16-bit code units 的 codeUnitAt codeUnits</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'🤡'</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span><span class="token function">codeUnitAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>codeUnits<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">>></span> 输出
+<span class="token number">55358</span>            <span class="token comment" spellcheck="true">// 第 1 位的 10 进制数值</span>
+<span class="token punctuation">[</span><span class="token number">55358</span><span class="token punctuation">,</span> <span class="token number">56609</span><span class="token punctuation">]</span>    <span class="token comment" spellcheck="true">// 显示 2 位的 10 进制数值</span>
+
+<span class="token comment" spellcheck="true">/// 返回 32-bit Unicode 的 runes</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'🤡'</span><span class="token punctuation">;</span>
+<span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>runes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token operator">>></span> 输出
+<span class="token punctuation">(</span><span class="token number">129313</span><span class="token punctuation">)</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {

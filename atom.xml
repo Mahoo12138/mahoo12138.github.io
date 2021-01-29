@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mahoo12138.cn/"/>
-  <updated>2020-11-20T09:12:51.372Z</updated>
+  <updated>2021-01-18T03:00:34.163Z</updated>
   <id>http://mahoo12138.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Flutter 入门学习之初始界面及底部导航栏</title>
-    <link href="http://mahoo12138.cn/flutter.html"/>
-    <id>http://mahoo12138.cn/flutter.html</id>
-    <published>2020-11-20T07:34:24.000Z</published>
-    <updated>2020-11-20T09:12:51.372Z</updated>
+    <title>Flutter 入门学习之本地存储</title>
+    <link href="http://mahoo12138.cn/flutter-8.html"/>
+    <id>http://mahoo12138.cn/flutter-8.html</id>
+    <published>2021-01-15T02:43:24.000Z</published>
+    <updated>2021-01-18T03:00:34.163Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,191 @@
       
         
         
-          &lt;h2 id=&quot;MaterialApp&quot;&gt;&lt;a href=&quot;#MaterialApp&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;什么是-shared-preferences&quot;&gt;&lt;a href=&quot;#什么是-shared-preferences&quot; class=&quot;headerlink&quot; title=&quot;什么是 shared_preferences&quot;&gt;&lt;/a&gt;什么是
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="http://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 进阶学习之画板</title>
+    <link href="http://mahoo12138.cn/flutter-5.html"/>
+    <id>http://mahoo12138.cn/flutter-5.html</id>
+    <published>2021-01-07T02:13:24.000Z</published>
+    <updated>2021-01-29T05:00:07.612Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;简单介绍&quot;&gt;&lt;a href=&quot;#简单介绍&quot; class=&quot;headerlink&quot; title=&quot;简单介绍&quot;&gt;&lt;/a&gt;简单介绍&lt;/h2&gt;&lt;p&gt;&lt;code&gt;CustomPaint&lt;/code&gt;可以称之为动画鼻祖，它可以实现任何酷炫的动画和效果。CustomPaint
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="http://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 入门学习之按钮</title>
+    <link href="http://mahoo12138.cn/flutter-6.html"/>
+    <id>http://mahoo12138.cn/flutter-6.html</id>
+    <published>2021-01-07T02:13:24.000Z</published>
+    <updated>2021-01-07T07:33:49.963Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;按钮的使用大致相同，无非样式和各种交互的回调，这里以 TextButton 为例：&lt;/p&gt;
+&lt;pre class=&quot; language-dart&quot;&gt;&lt;code class=&quot;language-dart&quot;&gt;&lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="http://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 入门学习之布局组件</title>
+    <link href="http://mahoo12138.cn/flutter-7.html"/>
+    <id>http://mahoo12138.cn/flutter-7.html</id>
+    <published>2021-01-05T07:43:24.000Z</published>
+    <updated>2021-01-08T04:02:44.465Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;基本布局&quot;&gt;&lt;a href=&quot;#基本布局&quot; class=&quot;headerlink&quot; title=&quot;基本布局&quot;&gt;&lt;/a&gt;基本布局&lt;/h2&gt;&lt;h3 id=&quot;Container&quot;&gt;&lt;a href=&quot;#Container&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="http://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 入门学习之Text文本相关组件</title>
+    <link href="http://mahoo12138.cn/flutter-4.html"/>
+    <id>http://mahoo12138.cn/flutter-4.html</id>
+    <published>2021-01-04T07:13:24.000Z</published>
+    <updated>2021-01-05T05:56:31.290Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;上代码即可：&lt;/p&gt;
+&lt;pre class=&quot; language-dart&quot;&gt;&lt;code class=&quot;language-dart&quot;&gt;body&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="http://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 入门学习之Tab导航栏</title>
+    <link href="http://mahoo12138.cn/flutter-3.html"/>
+    <id>http://mahoo12138.cn/flutter-3.html</id>
+    <published>2020-12-31T13:34:24.000Z</published>
+    <updated>2021-01-03T09:25:35.835Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Scaffold&quot;&gt;&lt;a href=&quot;#Scaffold&quot; class=&quot;headerlink&quot; title=&quot;Scaffold&quot;&gt;&lt;/a&gt;Scaffold&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Scaffold&lt;/code&gt; 实现了 Material
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="http://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 入门学习之底部导航栏</title>
+    <link href="http://mahoo12138.cn/flutter-1.html"/>
+    <id>http://mahoo12138.cn/flutter-1.html</id>
+    <published>2020-11-20T07:34:24.000Z</published>
+    <updated>2021-01-03T09:04:29.220Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;MaterialApp&quot;&gt;&lt;a href=&quot;#MaterialApp&quot; class=&quot;headerlink&quot; title=&quot;MaterialApp&quot;&gt;&lt;/a&gt;MaterialApp&lt;/h2&gt;&lt;p&gt;在学习 Flutter
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="http://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 入门学习之配置路由</title>
+    <link href="http://mahoo12138.cn/flutter-2.html"/>
+    <id>http://mahoo12138.cn/flutter-2.html</id>
+    <published>2020-11-20T07:34:24.000Z</published>
+    <updated>2021-01-03T04:52:15.616Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;配置路由&quot;&gt;&lt;a href=&quot;#配置路由&quot; class=&quot;headerlink&quot; title=&quot;配置路由&quot;&gt;&lt;/a&gt;配置路由&lt;/h2&gt;&lt;h3 id=&quot;404路由的配置&quot;&gt;&lt;a href=&quot;#404路由的配置&quot; class=&quot;headerlink&quot;
         
       
     
@@ -73,7 +257,7 @@
     <link href="http://mahoo12138.cn/dart.html"/>
     <id>http://mahoo12138.cn/dart.html</id>
     <published>2020-10-30T08:34:24.000Z</published>
-    <updated>2020-11-12T08:29:39.125Z</updated>
+    <updated>2020-11-22T12:30:54.512Z</updated>
     
     <summary type="html">
     
@@ -359,196 +543,6 @@
     
     
       <category term="Android" scheme="http://mahoo12138.cn/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用ADB将安卓投屏到电脑进行调试开发</title>
-    <link href="http://mahoo12138.cn/android-6.html"/>
-    <id>http://mahoo12138.cn/android-6.html</id>
-    <published>2020-04-27T02:01:25.000Z</published>
-    <updated>2020-05-08T15:33:13.835Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;保证手机与电脑在同一个局域网下，然后查看手机的IP地址：&lt;/p&gt;
-&lt;h2 id=&quot;投屏准备&quot;&gt;&lt;a href=&quot;#投屏准备&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Android" scheme="http://mahoo12138.cn/tags/Android/"/>
-    
-      <category term="adb" scheme="http://mahoo12138.cn/tags/adb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>超乎你想象的Stm32中的TIM定时器（基础篇）</title>
-    <link href="http://mahoo12138.cn/stm32-6.html"/>
-    <id>http://mahoo12138.cn/stm32-6.html</id>
-    <published>2020-03-13T13:12:43.000Z</published>
-    <updated>2020-09-30T07:57:46.144Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
-&lt;h2 id=&quot;定时器分类&quot;&gt;&lt;a href=&quot;#定时器分类&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>简单入门CSS预处理器Less和Sass</title>
-    <link href="http://mahoo12138.cn/font-end-1.html"/>
-    <id>http://mahoo12138.cn/font-end-1.html</id>
-    <published>2020-03-08T08:00:21.000Z</published>
-    <updated>2020-05-08T15:33:13.852Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Sass和Less都属于CSS预处理器，CSS预处理器定义了一种新的语言，其基本的思想是，用一种特殊的语言，为CSS增加一些编程的特性，如变量、语句，函数、继承等概念。将CSS作为目标生成文件，然后开发者就只要使用这种语言进行CSS的编码开发工作。目前比较流行的有&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Less" scheme="http://mahoo12138.cn/tags/Less/"/>
-    
-      <category term="Sass" scheme="http://mahoo12138.cn/tags/Sass/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言再学习之基础深挖</title>
-    <link href="http://mahoo12138.cn/c-2.html"/>
-    <id>http://mahoo12138.cn/c-2.html</id>
-    <published>2020-02-26T13:48:43.000Z</published>
-    <updated>2020-11-08T14:35:24.789Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;内联函数-——-C-中关键字-inline&quot;&gt;&lt;a href=&quot;#内联函数-——-C-中关键字-inline&quot; class=&quot;headerlink&quot; title=&quot;内联函数 —— C 中关键字 inline&quot;&gt;&lt;/a&gt;内联函数 —— C 中关键字
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="C/C++" scheme="http://mahoo12138.cn/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用FSMC模拟8080时序控制LCD</title>
-    <link href="http://mahoo12138.cn/stm32-5.html"/>
-    <id>http://mahoo12138.cn/stm32-5.html</id>
-    <published>2020-02-25T02:12:43.000Z</published>
-    <updated>2020-05-08T15:33:13.875Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
-&lt;h2 id=&quot;ILI9341-液晶控制器&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="STM32" scheme="http://mahoo12138.cn/tags/STM32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>我的网页梦 —— 前端基础 &amp; Vuejs</title>
-    <link href="http://mahoo12138.cn/font-end-2.html"/>
-    <id>http://mahoo12138.cn/font-end-2.html</id>
-    <published>2020-02-18T08:00:21.000Z</published>
-    <updated>2020-08-02T13:53:11.429Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Vuejs" scheme="http://mahoo12138.cn/tags/Vuejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于office的一点点使用经验</title>
-    <link href="http://mahoo12138.cn/office.html"/>
-    <id>http://mahoo12138.cn/office.html</id>
-    <published>2019-12-05T14:12:00.000Z</published>
-    <updated>2020-05-08T15:33:13.862Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;最近在期末复习，会经常性做一些电子笔记。难免会用到微软的office全家桶，对于一个没有系统性学过这些软件的我来说，遇到很多问题全靠百度过活，百度最有用的功能就是百度经验了，其次就是百度文库，PPT白嫖就是爽！&lt;/p&gt;
-&lt;p&gt;然后嘛，我特开此贴记录一下我遇到的问题，很弱智&lt;
-        
-      
-    
-    </summary>
-    
-      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="office" scheme="http://mahoo12138.cn/tags/office/"/>
     
   </entry>
   
