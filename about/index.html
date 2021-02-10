@@ -32,6 +32,8 @@
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
+
+
 <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -328,7 +330,13 @@
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['一切的恐惧都来源于无知','Fear always springs from ignorance'],
+                        strings: [ 
+                            
+                                "一切的恐惧都来源于无知",
+                            
+                                "Fear always springs from ignorance",
+                            
+                        ],
                         startDelay: 300,
                         typeSpeed: 100,
                         loop: true,
@@ -362,14 +370,14 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">53</a></span>
+    <span class="count"><a href="/">57</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">3</a></span>
+    <span class="count"><a href="/categories">2</a></span>
     <span class="name">分类</span>
 </div>
 
@@ -392,14 +400,14 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">53</a></span>
+    <span class="count"><a href="/">57</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">3</a></span>
+    <span class="count"><a href="/categories">2</a></span>
     <span class="name">分类</span>
 </div>
 
@@ -556,7 +564,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2020-01","2020-02","2020-03","2020-04","2020-05","2020-06","2020-07","2020-08","2020-09","2020-10","2020-11","2020-12","2021-01"]
+            data: ["2020-02","2020-03","2020-04","2020-05","2020-06","2020-07","2020-08","2020-09","2020-10","2020-11","2020-12","2021-01","2021-02"]
         },
         yAxis: {
             type: 'value',
@@ -566,7 +574,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,3,2,2,1,0,3,3,1,2,3,1,5],
+                data: [3,2,2,1,0,3,3,1,2,3,1,5,4],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -608,7 +616,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"学习笔记","value":37},{"name":"技术教程","value":16},{"name":"学习笔记","value":1}],
+                data: [{"name":"学习笔记","value":41},{"name":"技术教程","value":16}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -632,7 +640,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Android","Flutter","STM32","51单片机","Win10","Java","C","Vuejs","Hexo","Python"]
+                data: ["Flutter","Android","STM32","51单片机","Win10","Java","C","Vuejs","Hexo","Python"]
             }
         ],
         yAxis: [
@@ -645,7 +653,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [8,8,8,6,3,2,2,2,2,2],
+                data: [12,8,8,6,3,2,2,2,2,2],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -723,8 +731,19 @@
         <div class="col s12 m6 l6" data-aos="fade-up">
             <div class="skillbar">
                 <div class="skillbar-title"
-                     style="background: linear-gradient(to right, #00BCD4 0%, #80DEEA 100%); width: 45%">
+                     style="background: linear-gradient(to right, #00BCD4 0%, #80DEEA 100%); width: 30%">
                     <span>Python</span>
+                </div>
+                <div class="skill-bar-percent">30%</div>
+            </div>
+        </div>
+        
+        
+        <div class="col s12 m6 l6" data-aos="fade-up">
+            <div class="skillbar">
+                <div class="skillbar-title"
+                     style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 45%">
+                    <span>STM32</span>
                 </div>
                 <div class="skill-bar-percent">45%</div>
             </div>
@@ -734,21 +753,10 @@
         <div class="col s12 m6 l6" data-aos="fade-up">
             <div class="skillbar">
                 <div class="skillbar-title"
-                     style="background: linear-gradient(to right, #4CAF50 0%, #81C784 100%); width: 55%">
-                    <span>STM32</span>
-                </div>
-                <div class="skill-bar-percent">55%</div>
-            </div>
-        </div>
-        
-        
-        <div class="col s12 m6 l6" data-aos="fade-up">
-            <div class="skillbar">
-                <div class="skillbar-title"
-                     style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 70%">
+                     style="background: linear-gradient(to right, #FFEB3B 0%, #FFF176 100%); width: 75%">
                     <span>程序设计</span>
                 </div>
-                <div class="skill-bar-percent">70%</div>
+                <div class="skill-bar-percent">75%</div>
             </div>
         </div>
         
@@ -769,16 +777,22 @@
             
             
             
-            <a href="/tags/Java/">
-                <span class="chip center-align waves-effect waves-light chip-default">Java</span>
-            </a>
-            
-            
-            
             
             
             <a href="/tags/Material-Design/">
                 <span class="chip center-align waves-effect waves-light chip-default">Material Design</span>
+            </a>
+            
+            
+            
+            <a href="/tags/adb/">
+                <span class="chip center-align waves-effect waves-light chip-default">adb</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Java/">
+                <span class="chip center-align waves-effect waves-light chip-default">Java</span>
             </a>
             
             
@@ -797,12 +811,6 @@
             
             
             
-            <a href="/tags/adb/">
-                <span class="chip center-align waves-effect waves-light chip-default">adb</span>
-            </a>
-            
-            
-            
             <a href="/tags/Flutter/">
                 <span class="chip center-align waves-effect waves-light chip-default">Flutter</span>
             </a>
@@ -811,6 +819,12 @@
             
             <a href="/tags/Dart/">
                 <span class="chip center-align waves-effect waves-light chip-default">Dart</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Vuejs/">
+                <span class="chip center-align waves-effect waves-light chip-default">Vuejs</span>
             </a>
             
             
@@ -827,38 +841,8 @@
             
             
             
-            <a href="/tags/Vuejs/">
-                <span class="chip center-align waves-effect waves-light chip-default">Vuejs</span>
-            </a>
-            
-            
-            
             <a href="/tags/git/">
                 <span class="chip center-align waves-effect waves-light chip-default">git</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Jupyter-Notebook/">
-                <span class="chip center-align waves-effect waves-light chip-default">Jupyter Notebook</span>
-            </a>
-            
-            
-            
-            <a href="/tags/内网穿透/">
-                <span class="chip center-align waves-effect waves-light chip-default">内网穿透</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Markdown/">
-                <span class="chip center-align waves-effect waves-light chip-default">Markdown</span>
-            </a>
-            
-            
-            
-            <a href="/tags/LaTeX/">
-                <span class="chip center-align waves-effect waves-light chip-default">LaTeX</span>
             </a>
             
             
@@ -875,14 +859,26 @@
             
             
             
-            <a href="/tags/office/">
-                <span class="chip center-align waves-effect waves-light chip-default">office</span>
+            <a href="/tags/Markdown/">
+                <span class="chip center-align waves-effect waves-light chip-default">Markdown</span>
             </a>
             
             
             
-            <a href="/tags/Ubuntu/">
-                <span class="chip center-align waves-effect waves-light chip-default">Ubuntu</span>
+            <a href="/tags/LaTeX/">
+                <span class="chip center-align waves-effect waves-light chip-default">LaTeX</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Jupyter-Notebook/">
+                <span class="chip center-align waves-effect waves-light chip-default">Jupyter Notebook</span>
+            </a>
+            
+            
+            
+            <a href="/tags/内网穿透/">
+                <span class="chip center-align waves-effect waves-light chip-default">内网穿透</span>
             </a>
             
             
@@ -893,12 +889,36 @@
             
             
             
+            <a href="/tags/office/">
+                <span class="chip center-align waves-effect waves-light chip-default">office</span>
+            </a>
             
+            
+            
+            
+            
+            
+            
+            <a href="/tags/Ubuntu/">
+                <span class="chip center-align waves-effect waves-light chip-default">Ubuntu</span>
+            </a>
             
             
             
             <a href="/tags/舵机/">
                 <span class="chip center-align waves-effect waves-light chip-default">舵机</span>
+            </a>
+            
+            
+            
+            <a href="/tags/DS18B20/">
+                <span class="chip center-align waves-effect waves-light chip-default">DS18B20</span>
+            </a>
+            
+            
+            
+            <a href="/tags/免费图床/">
+                <span class="chip center-align waves-effect waves-light chip-default">免费图床</span>
             </a>
             
             
@@ -911,18 +931,6 @@
             
             <a href="/tags/注册表/">
                 <span class="chip center-align waves-effect waves-light chip-default">注册表</span>
-            </a>
-            
-            
-            
-            <a href="/tags/免费图床/">
-                <span class="chip center-align waves-effect waves-light chip-default">免费图床</span>
-            </a>
-            
-            
-            
-            <a href="/tags/DS18B20/">
-                <span class="chip center-align waves-effect waves-light chip-default">DS18B20</span>
             </a>
             
             
@@ -977,7 +985,9 @@
 </script>
 
                 
-
+                
+                
+                
             </div>
         </div>
     </div>
@@ -1002,7 +1012,7 @@
         display: none;
         
         font-size: 15px;
-        color: #cd493f;
+        color: #42b983;
     }
 
     
@@ -1022,10 +1032,10 @@
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="2500934449"
+                   id="503838841"
                    fixed='true'
                    autoplay='true'
-                   theme='#cd493f'
+                   theme='#42b983'
                    loop='all'
                    order='random'
                    preload='auto'
@@ -1043,6 +1053,9 @@
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
             <span id="year">2019</span>
             <a href="/about" target="_blank">Mahoo Huang</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1128,10 +1141,95 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
 });
 </script>
 
@@ -1178,26 +1276,9 @@ $(function () {
     
 
     
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i["DaoVoiceObject"] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            a.charset = "utf-8";
-            m.parentNode.insertBefore(a, m)
-        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
-            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
-        daovoice('init', {
-            app_id: "a7fc98ad"
-        });
-        daovoice('update');
-    </script>
-    
 
+    <!--腾讯兔小巢-->
+    
     
     <script type="text/javascript" color="0,0,255"
         pointColor="0,0,255" opacity='0.7'

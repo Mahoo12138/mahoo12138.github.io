@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://mahoo12138.cn/"/>
-  <updated>2021-01-18T03:00:34.163Z</updated>
+  <updated>2021-02-09T15:49:20.967Z</updated>
   <id>http://mahoo12138.cn/</id>
   
   <author>
@@ -15,6 +15,110 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flutter 入门学习之矩阵变换</title>
+    <link href="http://mahoo12138.cn/flutter-11.html"/>
+    <id>http://mahoo12138.cn/flutter-11.html</id>
+    <published>2021-02-08T04:13:24.000Z</published>
+    <updated>2021-02-09T15:49:20.967Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Transform&quot;&gt;&lt;a href=&quot;#Transform&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="http://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 入门学习之动画</title>
+    <link href="http://mahoo12138.cn/flutter-12.html"/>
+    <id>http://mahoo12138.cn/flutter-12.html</id>
+    <published>2021-02-08T04:13:24.000Z</published>
+    <updated>2021-02-09T03:44:12.626Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;AnimatedWidget&quot;&gt;&lt;a href=&quot;#AnimatedWidget&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="http://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 入门学习之进度条</title>
+    <link href="http://mahoo12138.cn/flutter-10.html"/>
+    <id>http://mahoo12138.cn/flutter-10.html</id>
+    <published>2021-02-04T14:43:24.000Z</published>
+    <updated>2021-02-08T11:16:06.609Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;LinearProgressIndicator&quot;&gt;&lt;a href=&quot;#LinearProgressIndicator&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="http://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 入门学习之Banner轮播图</title>
+    <link href="http://mahoo12138.cn/flutter-9.html"/>
+    <id>http://mahoo12138.cn/flutter-9.html</id>
+    <published>2021-02-02T03:43:24.000Z</published>
+    <updated>2021-02-03T12:06:00.685Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;PageView&quot;&gt;&lt;a href=&quot;#PageView&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="http://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
   
   <entry>
     <title>Flutter 入门学习之本地存储</title>
@@ -100,7 +204,7 @@
     <link href="http://mahoo12138.cn/flutter-7.html"/>
     <id>http://mahoo12138.cn/flutter-7.html</id>
     <published>2021-01-05T07:43:24.000Z</published>
-    <updated>2021-01-08T04:02:44.465Z</updated>
+    <updated>2021-02-09T14:33:47.521Z</updated>
     
     <summary type="html">
     
@@ -257,7 +361,7 @@
     <link href="http://mahoo12138.cn/dart.html"/>
     <id>http://mahoo12138.cn/dart.html</id>
     <published>2020-10-30T08:34:24.000Z</published>
-    <updated>2020-11-22T12:30:54.512Z</updated>
+    <updated>2021-02-08T11:36:37.129Z</updated>
     
     <summary type="html">
     
@@ -283,7 +387,7 @@
     <link href="http://mahoo12138.cn/stm32-8.html"/>
     <id>http://mahoo12138.cn/stm32-8.html</id>
     <published>2020-10-13T14:12:43.000Z</published>
-    <updated>2020-10-23T09:28:07.399Z</updated>
+    <updated>2021-02-02T13:02:08.091Z</updated>
     
     <summary type="html">
     
@@ -426,114 +530,6 @@
         
         
           &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Android" scheme="http://mahoo12138.cn/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Win10子系统Ubuntu下配置Jupyter Notebook并实现内网穿透</title>
-    <link href="http://mahoo12138.cn/jupyter.html"/>
-    <id>http://mahoo12138.cn/jupyter.html</id>
-    <published>2020-07-09T15:17:43.965Z</published>
-    <updated>2020-05-08T15:33:13.858Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;之前看到有朋友在服务器上，搭建了&lt;a href=&quot;https://jupyter.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Jupyter
-        
-      
-    
-    </summary>
-    
-      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Jupyter Notebook" scheme="http://mahoo12138.cn/tags/Jupyter-Notebook/"/>
-    
-      <category term="内网穿透" scheme="http://mahoo12138.cn/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Win10子系统Ubuntu使用经验</title>
-    <link href="http://mahoo12138.cn/other-1.html"/>
-    <id>http://mahoo12138.cn/other-1.html</id>
-    <published>2020-07-09T15:17:43.965Z</published>
-    <updated>2020-08-02T13:50:33.157Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Win10-子系统-Ubuntu-安装-Apache2-错误&quot;&gt;&lt;a href=&quot;#Win10-子系统-Ubuntu-安装-Apache2-错误&quot; class=&quot;headerlink&quot; title=&quot;Win10 子系统 Ubuntu 安装 Apache2
-        
-      
-    
-    </summary>
-    
-      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Ubuntu" scheme="http://mahoo12138.cn/tags/Ubuntu/"/>
-    
-      <category term="Win10" scheme="http://mahoo12138.cn/tags/Win10/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安卓开发学习之ResyclerView</title>
-    <link href="http://mahoo12138.cn/android-8.html"/>
-    <id>http://mahoo12138.cn/android-8.html</id>
-    <published>2020-05-01T05:09:45.000Z</published>
-    <updated>2020-05-08T15:33:13.838Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;添加依赖&quot;&gt;&lt;a href=&quot;#添加依赖&quot; class=&quot;headerlink&quot; title=&quot;添加依赖&quot;&gt;&lt;/a&gt;添加依赖&lt;/h2&gt;&lt;p&gt;除了引入&lt;code&gt;recyclerview&lt;/code&gt;，还引入&lt;code&gt;cardview&lt;/code&gt;，它将作为
-        
-      
-    
-    </summary>
-    
-      <category term="技术教程" scheme="http://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Android" scheme="http://mahoo12138.cn/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安卓开发学习之DrawerLayout</title>
-    <link href="http://mahoo12138.cn/android-7.html"/>
-    <id>http://mahoo12138.cn/android-7.html</id>
-    <published>2020-04-29T02:09:45.000Z</published>
-    <updated>2020-05-08T15:33:13.836Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;为什么要使用导航抽屉？&quot;&gt;&lt;a href=&quot;#为什么要使用导航抽屉？&quot; class=&quot;headerlink&quot; title=&quot;为什么要使用导航抽屉？&quot;&gt;&lt;/a&gt;为什么要使用导航抽屉？&lt;/h2&gt;&lt;p&gt;Android
         
       
     

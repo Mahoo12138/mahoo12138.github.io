@@ -32,6 +32,8 @@
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
+
+
 <body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
@@ -356,8 +358,7 @@
     }
 
     .toc-widget .toc-title {
-        margin: 35px 0 15px 0;
-        padding-left: 17px;
+        padding: 35px 0 15px 17px;
         font-size: 1.5rem;
         font-weight: bold;
         line-height: 1.5rem;
@@ -369,7 +370,7 @@
     }
 
     #toc-content {
-        height: calc(100vh - 250px);
+        padding-bottom: 30px;
         overflow: auto;
     }
 
@@ -462,14 +463,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-08
+                    2021-02-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.5k
                 </div>
                 
 
@@ -479,6 +480,11 @@
             </div>
         </div>
         <hr class="clearfix">
+
+        
+
+        
+
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="基本布局"><a href="#基本布局" class="headerlink" title="基本布局"></a>基本布局</h2><h3 id="Container"><a href="#Container" class="headerlink" title="Container"></a>Container</h3><p>Container 可以设置固定的宽高属性，没有其他参数设置时，Container将会根据子控件自行调整大小：</p>
@@ -665,8 +671,56 @@
         <span class="token punctuation">)</span>
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
 <span class="token punctuation">)</span></code></pre>
-<h3 id="IndexedStack"><a href="#IndexedStack" class="headerlink" title="IndexedStack"></a>IndexedStack</h3><p>IndexedStack是Stack的子类，Stack是将所有的子组件叠加显示，而 IndexedStack 只显示 index 指定的子组件，即第第 index 个子组件</p>
-<script>
+<h3 id="IndexedStack"><a href="#IndexedStack" class="headerlink" title="IndexedStack"></a>IndexedStack</h3><p>IndexedStack是Stack的子类，Stack是将所有的子组件叠加显示，而 IndexedStack 只显示 index 指定的子组件，即第第 index 个子组件。</p>
+<h2 id="定位和对齐"><a href="#定位和对齐" class="headerlink" title="定位和对齐"></a>定位和对齐</h2><h3 id="Align-＆-Center"><a href="#Align-＆-Center" class="headerlink" title="Align ＆ Center"></a>Align ＆ Center</h3><blockquote>
+<p>创建一个位置对齐的组件，默认对齐方式居中[<code>Alignment.center</code>]。</p>
+</blockquote>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">const</span> <span class="token function">Align</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    Key key<span class="token punctuation">,</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>alignment <span class="token operator">=</span> Alignment<span class="token punctuation">.</span>center<span class="token punctuation">,</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>widthFactor<span class="token punctuation">,</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>heightFactor<span class="token punctuation">,</span>
+    Widget child<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre>
+<ul>
+<li><code>alignment</code>：传入一个 <strong>AlignmentGeometry</strong> 对象，其为抽象类，子类有 <strong>Alignment</strong> 和 <strong>AlignmentDirectional</strong>，以及<strong>Alignment</strong>的子类 <strong>FractionalOffset</strong>；</li>
+<li><code>widthFactor</code>＆<code>heightFactor</code>：非空则将 <strong>Align</strong> 的宽度 / 高度设置为该因子的倍乘。</li>
+</ul>
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><pre class=" language-dart"><code class="language-dart"><span class="token function">Scaffold</span><span class="token punctuation">(</span>
+      appBar<span class="token punctuation">:</span> <span class="token function">AppBar</span><span class="token punctuation">(</span>title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">'Align Demo'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      body<span class="token punctuation">:</span><span class="token function">Column</span><span class="token punctuation">(</span>
+        children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token function">Container</span><span class="token punctuation">(</span>
+            color<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>deepPurpleAccent<span class="token punctuation">,</span>
+            height<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token function">Align</span><span class="token punctuation">(</span>
+            widthFactor<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+            heightFactor<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+            alignment<span class="token punctuation">:</span> Alignment<span class="token punctuation">.</span>center<span class="token punctuation">,</span>
+            child<span class="token punctuation">:</span> <span class="token function">Container</span><span class="token punctuation">(</span>
+              height<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+              width<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+              color<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>amber<span class="token punctuation">,</span>
+              child<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">"Align Center"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token function">Container</span><span class="token punctuation">(</span>
+            color<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>deepPurpleAccent<span class="token punctuation">,</span>
+            height<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/20210209215051.png" style="zoom:70%;">
+
+<p><strong>Center</strong> 控件继承自 <strong>Align</strong>，默认子组件居中：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">class</span> <span class="token class-name">Center</span> <span class="token keyword">extends</span> <span class="token class-name">Align</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/// Creates a widget that centers its child.</span>
+    <span class="token keyword">const</span> <span class="token function">Center</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Key key<span class="token punctuation">,</span> double widthFactor<span class="token punctuation">,</span> double heightFactor<span class="token punctuation">,</span> Widget child <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">:</span> <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">,</span> widthFactor<span class="token punctuation">:</span> widthFactor<span class="token punctuation">,</span> heightFactor<span class="token punctuation">:</span> heightFactor<span class="token punctuation">,</span> child<span class="token punctuation">:</span> child<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="Alignment"><a href="#Alignment" class="headerlink" title="Alignment"></a>Alignment</h3><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -685,6 +739,7 @@
             document.body.appendChild(img);
           });
       </script>
+                
             </div>
             <hr/>
 
@@ -1170,6 +1225,13 @@
     });
 </script>
 
+<!--酷Q推送-->
+
+
+    
+
+    
+
     
 
     
@@ -1194,10 +1256,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            按钮的使用大致相同，无非样式和各种交互的回调，这里以 TextButton 为例：
-TextButton(
-  child: Text('TextButton'),
-  // onPressed 为点击回调，onLongPress 为长按回
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1245,13 +1304,7 @@ TextButton(
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            上代码即可：
-body: Center(
-    child: SizedBox(
-        height: 60,
-        width: 200,
-        child: Container(
-            
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1307,16 +1360,9 @@ body: Center(
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/codeBlock/codeShrink.js"></script>
 
 
-<!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
-
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget">
+        <div class="toc-widget card" style="background-color: white;">
             <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
             <div id="toc-content"></div>
         </div>
@@ -1433,7 +1479,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         display: none;
         
         font-size: 15px;
-        color: #cd493f;
+        color: #42b983;
     }
 
     
@@ -1453,10 +1499,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="2500934449"
+                   id="503838841"
                    fixed='true'
                    autoplay='true'
-                   theme='#cd493f'
+                   theme='#42b983'
                    loop='all'
                    order='random'
                    preload='auto'
@@ -1474,6 +1520,9 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2021</span>
+            
             <span id="year">2019</span>
             <a href="/about" target="_blank">Mahoo Huang</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1559,10 +1608,95 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
 });
 </script>
 
@@ -1609,26 +1743,9 @@ $(function () {
     
 
     
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i["DaoVoiceObject"] = r;
-            i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-            }, i[r].l = 1 * new Date();
-            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            a.charset = "utf-8";
-            m.parentNode.insertBefore(a, m)
-        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
-            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
-        daovoice('init', {
-            app_id: "a7fc98ad"
-        });
-        daovoice('update');
-    </script>
-    
 
+    <!--腾讯兔小巢-->
+    
     
     <script type="text/javascript" color="0,0,255"
         pointColor="0,0,255" opacity='0.7'
