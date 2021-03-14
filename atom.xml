@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mahoo12138.cn/"/>
-  <updated>2021-02-09T15:49:20.967Z</updated>
+  <updated>2021-03-10T15:29:35.779Z</updated>
   <id>https://mahoo12138.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Flutter 入门学习之矩阵变换</title>
-    <link href="https://mahoo12138.cn/flutter-11.html"/>
-    <id>https://mahoo12138.cn/flutter-11.html</id>
-    <published>2021-02-08T04:13:24.000Z</published>
-    <updated>2021-02-09T15:49:20.967Z</updated>
+    <title>利用旧手机做远程监控摄像头和书库</title>
+    <link href="https://mahoo12138.cn/tutorial-4.html"/>
+    <id>https://mahoo12138.cn/tutorial-4.html</id>
+    <published>2021-03-10T15:00:43.000Z</published>
+    <updated>2021-03-10T15:29:35.779Z</updated>
     
     <summary type="html">
     
@@ -29,16 +29,16 @@
       
         
         
-          &lt;h2 id=&quot;Transform&quot;&gt;&lt;a href=&quot;#Transform&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;最近在家里拿了个闲置的旧手机来宿舍，用于随意折腾打发时间，毕竟处理器骁龙 625 和开源的
         
       
     
     </summary>
     
-      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="技术教程" scheme="https://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
     
     
-      <category term="Flutter" scheme="https://mahoo12138.cn/tags/Flutter/"/>
+      <category term="折腾旧手机" scheme="https://mahoo12138.cn/tags/%E6%8A%98%E8%85%BE%E6%97%A7%E6%89%8B%E6%9C%BA/"/>
     
   </entry>
   
@@ -56,6 +56,32 @@
         
         
           &lt;h2 id=&quot;AnimatedWidget&quot;&gt;&lt;a href=&quot;#AnimatedWidget&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="https://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 入门学习之矩阵变换</title>
+    <link href="https://mahoo12138.cn/flutter-11.html"/>
+    <id>https://mahoo12138.cn/flutter-11.html</id>
+    <published>2021-02-08T04:13:24.000Z</published>
+    <updated>2021-02-11T03:45:18.219Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Transform&quot;&gt;&lt;a href=&quot;#Transform&quot; class=&quot;headerlink&quot;
         
       
     
@@ -95,11 +121,11 @@
   </entry>
   
   <entry>
-    <title>Flutter 入门学习之Banner轮播图</title>
+    <title>Flutter 学习实践之Banner轮播图</title>
     <link href="https://mahoo12138.cn/flutter-9.html"/>
     <id>https://mahoo12138.cn/flutter-9.html</id>
     <published>2021-02-02T03:43:24.000Z</published>
-    <updated>2021-02-03T12:06:00.685Z</updated>
+    <updated>2021-02-17T11:30:02.340Z</updated>
     
     <summary type="html">
     
@@ -147,6 +173,32 @@
   </entry>
   
   <entry>
+    <title>Flutter 进阶学习之画板</title>
+    <link href="https://mahoo12138.cn/flutter-5.html"/>
+    <id>https://mahoo12138.cn/flutter-5.html</id>
+    <published>2021-01-07T02:13:24.000Z</published>
+    <updated>2021-01-29T05:00:07.612Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;简单介绍&quot;&gt;&lt;a href=&quot;#简单介绍&quot; class=&quot;headerlink&quot; title=&quot;简单介绍&quot;&gt;&lt;/a&gt;简单介绍&lt;/h2&gt;&lt;p&gt;&lt;code&gt;CustomPaint&lt;/code&gt;可以称之为动画鼻祖，它可以实现任何酷炫的动画和效果。CustomPaint
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="https://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Flutter 入门学习之按钮</title>
     <link href="https://mahoo12138.cn/flutter-6.html"/>
     <id>https://mahoo12138.cn/flutter-6.html</id>
@@ -161,32 +213,6 @@
         
           &lt;p&gt;按钮的使用大致相同，无非样式和各种交互的回调，这里以 TextButton 为例：&lt;/p&gt;
 &lt;pre class=&quot; language-dart&quot;&gt;&lt;code class=&quot;language-dart&quot;&gt;&lt;span class=&quot;token
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Flutter" scheme="https://mahoo12138.cn/tags/Flutter/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Flutter 进阶学习之画板</title>
-    <link href="https://mahoo12138.cn/flutter-5.html"/>
-    <id>https://mahoo12138.cn/flutter-5.html</id>
-    <published>2021-01-07T02:13:24.000Z</published>
-    <updated>2021-01-29T05:00:07.612Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;简单介绍&quot;&gt;&lt;a href=&quot;#简单介绍&quot; class=&quot;headerlink&quot; title=&quot;简单介绍&quot;&gt;&lt;/a&gt;简单介绍&lt;/h2&gt;&lt;p&gt;&lt;code&gt;CustomPaint&lt;/code&gt;可以称之为动画鼻祖，它可以实现任何酷炫的动画和效果。CustomPaint
         
       
     
@@ -361,7 +387,7 @@
     <link href="https://mahoo12138.cn/dart.html"/>
     <id>https://mahoo12138.cn/dart.html</id>
     <published>2020-10-30T08:34:24.000Z</published>
-    <updated>2021-02-08T11:36:37.129Z</updated>
+    <updated>2021-02-17T11:06:30.377Z</updated>
     
     <summary type="html">
     
@@ -504,32 +530,6 @@
         
         
           &lt;h1 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&quot;创建主布局&quot;&gt;&lt;a href=&quot;#创建主布局&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="技术教程" scheme="https://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Android" scheme="https://mahoo12138.cn/tags/Android/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安卓开发学习之Webview(转载)</title>
-    <link href="https://mahoo12138.cn/android-9.html"/>
-    <id>https://mahoo12138.cn/android-9.html</id>
-    <published>2020-07-18T05:09:45.000Z</published>
-    <updated>2020-07-18T13:57:28.626Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;
         
       
     

@@ -15,6 +15,17 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162023690-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-162023690-1');
+</script>
+
 
     <title>Dart 编程语言不详细学习指北 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
@@ -463,14 +474,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-08
+                    2021-02-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.4k
+                    2.5k
                 </div>
                 
 
@@ -488,17 +499,20 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>本文章是博主在<a href="https://www.dartcn.com/" target="_blank" rel="noopener">此网站</a>学习 Dart 语言时所摘录的一些重要内容，用于快速掌握 Dart 语言，详细完整内容请点击原网页。</p>
-<h2 id="重要的概念"><a href="#重要的概念" class="headerlink" title="重要的概念"></a>重要的概念</h2><ul>
-<li><p>Dart 万物皆对象，并且所有的对象都是对应一个 <em>类</em> 的实例。</p>
-</li>
-<li><p>尽管 Dart 是强类型的，但是 Dart 可以<strong>推断类型</strong>，所以类型注释是可选的。</p>
-</li>
-<li><p>Dart 支持<strong>顶级函数</strong>（例如 <code>main（）</code> ）， 同样函数绑定在类或对象上（分别是 <em>静态函数</em> 和 <em>实例函数</em> ）。 以及支持函数内创建函数 （ <em>嵌套</em> 或 <em>局部函数</em> ） 。</p>
-</li>
-<li><p>类似地， Dart 支持<em>顶级变量</em> ， 同样变量绑定在类或对象上（静态变量和实例变量）。 实例变量有时称为字段或属性。</p>
-</li>
-<li><p>Dart <strong>没有关键字</strong> “public” ， “protected” 和 “private” 。 如果标识符以下划线（_）开头，则它相对于库是私有的。</p>
-</li>
+<h2 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h2><ul>
+<li>Dart 万物皆对象，并且所有的对象都是对应一个 <em>类</em> 的实例。</li>
+<li>尽管 Dart 是强类型的，但是 Dart 可以<strong>推断类型</strong>，所以类型注释是可选的。</li>
+<li>Dart 支持<strong>顶级函数</strong>（例如 <code>main（）</code> ）， 同样函数绑定在类或对象上（分别是 <em>静态函数</em> 和 <em>实例函数</em> ）。 以及支持函数内创建函数 （ <em>嵌套</em> 或 <em>局部函数</em> ） 。</li>
+<li>类似地， Dart 支持<em>顶级变量</em> ， 同样变量绑定在类或对象上（静态变量和实例变量）。 实例变量有时称为字段或属性。</li>
+<li>Dart <strong>没有关键字</strong> “public” ， “protected” 和 “private” 。 如果标识符以下划线（_）开头，则它相对于库是私有的。</li>
+</ul>
+<h2 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h2><ul>
+<li><code>~/</code>：返回除法运算的整数值；</li>
+<li><code>is</code>  ：当对象是相应类型时返回 <strong>true</strong>；</li>
+<li><code>is!</code> ：当对象不是相应类型时返回 <strong>true</strong>；</li>
+<li><code>a ?? b</code>：如果 <strong>a</strong> 为非空，则返回其值；否则，计算并返回 <strong>b</strong> 的值；</li>
+<li><code>a ??= b</code>：在变量 <strong>a</strong> 为 <strong>null</strong> 时赋值；</li>
+<li><code>...</code>：可把 <strong>list</strong>、<strong>set</strong>、<strong>map</strong> 字面量里的元素插入到一个集合中，对象可为空，则使用<code>...?</code>；</li>
 </ul>
 <h2 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h2><p>如果对象不限定为单个类型，可以指定为 <code>对象类型</code> 或 <code>动态类型</code>：</p>
 <pre class=" language-dart"><code class="language-dart"><span class="token keyword">dynamic</span> name <span class="token operator">=</span> <span class="token string">'Mahoo12138'</span><span class="token punctuation">;</span></code></pre>
@@ -733,7 +747,7 @@ TestChild<span class="token punctuation">.</span><span class="token function">ar
   <span class="token keyword">assert</span><span class="token punctuation">(</span>fun <span class="token operator">is</span> Compare<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p><code>int Function(Object a, Object b);</code>为一个函数类型的对象的类型信息。</p>
-<h2 id="Runes"><a href="#Runes" class="headerlink" title="Runes"></a>Runes</h2><p>Runes 对象是一个 32位 字符对象，用来表示一个字。这样设计也是考虑兼容 UTF-16 四个字节的情况。</p>
+<h2 id="Runes"><a href="#Runes" class="headerlink" title="Runes"></a>Runes</h2><p>Runes 对象是一个 32位 字符对象，用来表示一个字。这样设计也是考虑兼容 <strong>UTF-16</strong> 四个字节的情况。</p>
 <p>我们来看一个示例，打开网页<a href="https://copychar.cc/emoji/" target="_blank" rel="noopener">CopyChar – Copy special characters to your clipboard</a>，选择一个 Emoji 小丑，编辑代码：</p>
 <pre class=" language-dart"><code class="language-dart">String a <span class="token operator">=</span> <span class="token string">'🤡'</span><span class="token punctuation">;</span>
 String b <span class="token operator">=</span> <span class="token string">'你是🤡'</span><span class="token punctuation">;</span>
@@ -747,7 +761,7 @@ String b <span class="token operator">=</span> <span class="token string">'你�
 <span class="token number">1</span> <span class="token comment" spellcheck="true">// 表示占 1 个 32 位字符</span>
 <span class="token number">4</span>
 <span class="token number">3</span></code></pre>
-<p>由此可知，runes 是一个 32 位字符对象，联系到实际的开发，例如在一款实时聊天的软件中，用户输入 emoji 表情时，如果使用字符串的 length 方法就会造成统计字符数量出现错误，这时 runes 的作用就体现出来了。</p>
+<p>由此可知，<strong>runes</strong> 是一个 32 位字符对象，联系到实际的开发，例如在一款实时聊天的软件中，用户输入 <strong>emoji</strong> 表情时，如果使用字符串的 <strong>length</strong> 方法就会造成统计字符数量出现错误，这时 <strong>runes</strong> 的作用就体现出来了。</p>
 <p>常用的 API：</p>
 <pre class=" language-dart"><code class="language-dart"><span class="token comment" spellcheck="true">/// 操作 32-bit Unicode 字符</span>
 Runes b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Runes</span><span class="token punctuation">(</span><span class="token string">'\u{1f596} \u9EC4'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>

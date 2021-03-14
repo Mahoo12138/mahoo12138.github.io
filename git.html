@@ -15,6 +15,17 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162023690-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-162023690-1');
+</script>
+
 
     <title>Git 版本控制使用填坑指北 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
@@ -463,14 +474,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-28
+                    2021-03-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    277
+                    356
                 </div>
                 
 
@@ -512,6 +523,20 @@
 <pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -C “你的邮箱”</code></pre>
 </li>
 <li><p>在 <em>Github → Settings → SHH and GPG keys</em>中，添加刚刚生成的 <code>SHH keys</code>即可</p>
+</li>
+</ul>
+<h3 id="git-push-失败，提示：fatal-unable-to-access-仓库地址"><a href="#git-push-失败，提示：fatal-unable-to-access-仓库地址" class="headerlink" title="git push 失败，提示：fatal: unable to access $(仓库地址)"></a>git push 失败，提示：<code>fatal: unable to access $(仓库地址)</code></h3><p><strong>原因</strong>：远程仓库已改名，本地绑定未修改。</p>
+<p>解决方法：</p>
+<ul>
+<li><p>看所有远程仓库：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> remote
+<span class="token comment" spellcheck="true"># git remote xxx 查看指定远程仓库地址</span></code></pre>
+</li>
+<li><p>删除原绑定仓库：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">rm</span> <span class="token variable"><span class="token variable">$(</span>origin<span class="token variable">)</span></span></code></pre>
+</li>
+<li><p>添加仓库：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> remote add origin <span class="token variable"><span class="token variable">$(</span>仓库地址<span class="token variable">)</span></span></code></pre>
 </li>
 </ul>
 <script>

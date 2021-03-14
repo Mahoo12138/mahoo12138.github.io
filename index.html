@@ -15,6 +15,17 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162023690-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-162023690-1');
+</script>
+
 
     <title>黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
@@ -569,22 +580,69 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/flutter-11.html">
+                    <a href="/tutorial-4.html">
                         <div class="card-image">
                             
-                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之矩阵变换">
                             
-                            <span class="card-title">Flutter 入门学习之矩阵变换</span>
+                            <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/8.jpg" class="responsive-img" alt="利用旧手机做远程监控摄像头和书库">
+                            
+                            <span class="card-title">利用旧手机做远程监控摄像头和书库</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Transform
-在绘制子控件之前，为其添加矩阵变换的小部件。
+                                前言最近在家里拿了个闲置的旧手机来宿舍，用于随意折腾打发时间，毕竟处理器骁龙 625 和开源的 “Linux系统”，肯定还是能发挥一下余热的，于是我想到可以利用摄像头做一个远程的摄像头，利用 32G 的存储空间做一个书库，网盘就不至于了，书
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-10
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/技术教程/" class="post-category">
+                                    技术教程
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
 
-但需要注意的是，矩阵变换不像 RotatedBox（在布局前进行变换），而是在绘制前进行变换，也就是说子控件虽然进行了变换，但是其布局无变化，意味着子控件的位置和大小都没有
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/折腾旧手机/">
+                            <span class="chip bg-color">折腾旧手机</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/flutter-12.html">
+                        <div class="card-image">
+                            
+                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之动画">
+                            
+                            <span class="card-title">Flutter 入门学习之动画</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                AnimatedWidget
+当给定的Listenable的值改变时重新构建的部件。
+
+但需要为某一个Widget实现动画时，更多的情况是无状态的Widget，此时使用 AnimatedWidget 即可实现动画，只需继承并实现build(
                             
                         </div>
                         <div class="publish-info">
@@ -618,22 +676,22 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/flutter-12.html">
+                    <a href="/flutter-11.html">
                         <div class="card-image">
                             
-                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之动画">
+                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之矩阵变换">
                             
-                            <span class="card-title">Flutter 入门学习之动画</span>
+                            <span class="card-title">Flutter 入门学习之矩阵变换</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                AnimatedWidget
-当给定的Listenable的值改变时重新构建的部件。
+                                Transform
+在绘制子控件之前，为其添加矩阵变换的小部件。
 
-但需要为某一个Widget实现动画时，更多的情况是无状态的Widget，此时使用 AnimatedWidget 即可实现动画，只需继承并实现build(
+但需要注意的是，矩阵变换不像 RotatedBox（在布局前进行变换），而是在绘制前进行变换，也就是说子控件虽然进行了变换，但是其布局无变化，意味着子控件的位置和大小都没有
                             
                         </div>
                         <div class="publish-info">
@@ -720,9 +778,9 @@
                     <a href="/flutter-9.html">
                         <div class="card-image">
                             
-                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之Banner轮播图">
+                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 学习实践之Banner轮播图">
                             
-                            <span class="card-title">Flutter 入门学习之Banner轮播图</span>
+                            <span class="card-title">Flutter 学习实践之Banner轮播图</span>
                         </div>
                     </a>
 
@@ -815,22 +873,19 @@ PageView({
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/flutter-6.html">
+                    <a href="/flutter-5.html">
                         <div class="card-image">
                             
-                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之按钮">
+                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 进阶学习之画板">
                             
-                            <span class="card-title">Flutter 入门学习之按钮</span>
+                            <span class="card-title">Flutter 进阶学习之画板</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                按钮的使用大致相同，无非样式和各种交互的回调，这里以 TextButton 为例：
-TextButton(
-  child: Text('TextButton'),
-  // onPressed 为点击回调，onLongPress 为长按回
+                                简单介绍CustomPaint可以称之为动画鼻祖，它可以实现任何酷炫的动画和效果。CustomPaint 本身没有动画属性，仅仅是绘制属性，一般情况下，CustomPaint 会和动画控制配合使用，达到理想的效果；CustomPaint 继
                             
                         </div>
                         <div class="publish-info">
@@ -864,19 +919,22 @@ TextButton(
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/flutter-5.html">
+                    <a href="/flutter-6.html">
                         <div class="card-image">
                             
-                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 进阶学习之画板">
+                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之按钮">
                             
-                            <span class="card-title">Flutter 进阶学习之画板</span>
+                            <span class="card-title">Flutter 入门学习之按钮</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                简单介绍CustomPaint可以称之为动画鼻祖，它可以实现任何酷炫的动画和效果。CustomPaint 本身没有动画属性，仅仅是绘制属性，一般情况下，CustomPaint 会和动画控制配合使用，达到理想的效果；CustomPaint 继
+                                按钮的使用大致相同，无非样式和各种交互的回调，这里以 TextButton 为例：
+TextButton(
+  child: Text('TextButton'),
+  // onPressed 为点击回调，onLongPress 为长按回
                             
                         </div>
                         <div class="publish-info">
@@ -1072,56 +1130,6 @@ Scaffold(
                         <div class="summary block-with-text">
                             
                                 MaterialApp在学习 Flutter 的过程中我们第一个看见的控件应该就是MaterialApp，毕竟创建一个新的Flutter项目的时候，项目第一个组件就是MaterialApp，这是一个Material风格的根控件，一般用于vo
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Flutter/">
-                            <span class="chip bg-color">Flutter</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/flutter-2.html">
-                        <div class="card-image">
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之配置路由">
-                            
-                            <span class="card-title">Flutter 入门学习之配置路由</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                配置路由404路由的配置话不多说，直接贴代码：
-// App 主界面
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context
                             
                         </div>
                         <div class="publish-info">

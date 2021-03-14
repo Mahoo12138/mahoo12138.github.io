@@ -15,6 +15,17 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162023690-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-162023690-1');
+</script>
+
 
     <title>Flutter 入门学习之矩阵变换 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
@@ -463,14 +474,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-02-09
+                    2021-02-11
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    534
+                    770
                 </div>
                 
 
@@ -528,7 +539,6 @@
 <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/20210209230846.jpg" alt=""></p>
 <p><strong>Transform</strong> 有多个不同的命名构造函数，分别对应这不同的变换效果：</p>
-<h3 id="Transform-rotate"><a href="#Transform-rotate" class="headerlink" title="Transform.rotate"></a>Transform.rotate</h3><pre class=" language-dart"><code class="language-dart"></code></pre>
 <h3 id="Transform-scale-缩放"><a href="#Transform-scale-缩放" class="headerlink" title="Transform.scale 缩放"></a>Transform.scale 缩放</h3><pre class=" language-dart"><code class="language-dart">Transform<span class="token punctuation">.</span><span class="token function">scale</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     Key key<span class="token punctuation">,</span>
     <span class="token metadata symbol">@required</span> double scale<span class="token punctuation">,</span>     <span class="token comment" spellcheck="true">// 缩放比例</span>
@@ -584,7 +594,63 @@
         <span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token punctuation">)</span><span class="token punctuation">,</span>
 <span class="token punctuation">)</span></code></pre>
-<p><img src="/flutter-11/C:%5CUsers%5CMahoo12138%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210209234852779.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/20210211110346.png" alt=""></p>
+<h3 id="Transform-rotate-旋转"><a href="#Transform-rotate-旋转" class="headerlink" title="Transform.rotate 旋转"></a>Transform.rotate 旋转</h3><pre class=" language-dart"><code class="language-dart">Transform<span class="token punctuation">.</span><span class="token function">rotate</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    Key key<span class="token punctuation">,</span>
+    <span class="token metadata symbol">@required</span> double angle<span class="token punctuation">,</span>     <span class="token comment" spellcheck="true">// 旋转角度</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>origin<span class="token punctuation">,</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>alignment <span class="token operator">=</span> Alignment<span class="token punctuation">.</span>center<span class="token punctuation">,</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>transformHitTests <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    Widget child<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> transform <span class="token operator">=</span> Matrix4<span class="token punctuation">.</span><span class="token function">rotationZ</span><span class="token punctuation">(</span>angle<span class="token punctuation">)</span><span class="token punctuation">,</span>
+       <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">,</span> child<span class="token punctuation">:</span> child<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="Transform-translate-平移"><a href="#Transform-translate-平移" class="headerlink" title="Transform.translate 平移"></a>Transform.translate 平移</h3><pre class=" language-dart"><code class="language-dart">Transform<span class="token punctuation">.</span><span class="token function">translate</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    Key key<span class="token punctuation">,</span>
+    <span class="token metadata symbol">@required</span> Offset offset<span class="token punctuation">,</span>        <span class="token comment" spellcheck="true">// 平移坐标量</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>transformHitTests <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    Widget child<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> transform <span class="token operator">=</span> Matrix4<span class="token punctuation">.</span><span class="token function">translationValues</span><span class="token punctuation">(</span>offset<span class="token punctuation">.</span>dx<span class="token punctuation">,</span> offset<span class="token punctuation">.</span>dy<span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+       origin <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+       alignment <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+       <span class="token keyword">super</span><span class="token punctuation">(</span>key<span class="token punctuation">:</span> key<span class="token punctuation">,</span> child<span class="token punctuation">:</span> child<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h3 id="skew-斜切"><a href="#skew-斜切" class="headerlink" title="skew 斜切"></a>skew 斜切</h3><p>斜切是个例外，<strong>Transform</strong> 类中没有给出封装的构造函数，只能用 <strong>Matrix4</strong> 传入 <strong>transform</strong>实现，以下是是个大小相同的 <strong>Container</strong> 的各式斜切：</p>
+<h4 id="示例代码-1"><a href="#示例代码-1" class="headerlink" title="示例代码"></a>示例代码</h4><pre class=" language-dart"><code class="language-dart"><span class="token function">Scaffold</span><span class="token punctuation">(</span>
+    appBar<span class="token punctuation">:</span> <span class="token function">AppBar</span><span class="token punctuation">(</span>
+        backgroundColor<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>pink<span class="token punctuation">.</span>shade400<span class="token punctuation">,</span>
+        title<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">"Transform Demo Page"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    body<span class="token punctuation">:</span> <span class="token function">Center</span><span class="token punctuation">(</span>
+        child<span class="token punctuation">:</span> <span class="token function">Column</span><span class="token punctuation">(</span>
+            mainAxisAlignment<span class="token punctuation">:</span> MainAxisAlignment<span class="token punctuation">.</span>spaceBetween<span class="token punctuation">,</span>
+            children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                <span class="token function">Center</span><span class="token punctuation">(</span>
+                    child<span class="token punctuation">:</span> <span class="token function">Transform</span><span class="token punctuation">(</span>
+                        transform<span class="token punctuation">:</span> Matrix4<span class="token punctuation">.</span><span class="token function">skewY</span><span class="token punctuation">(</span>pi <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        alignment<span class="token punctuation">:</span> Alignment<span class="token punctuation">.</span>topLeft<span class="token punctuation">,</span>
+                        child<span class="token punctuation">:</span> <span class="token function">Container</span><span class="token punctuation">(</span>
+                            width<span class="token punctuation">:</span> <span class="token number">120.0</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">80.0</span><span class="token punctuation">,</span> color<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>brown<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token function">Center</span><span class="token punctuation">(</span>
+                    child<span class="token punctuation">:</span> <span class="token function">Transform</span><span class="token punctuation">(</span>
+                        transform<span class="token punctuation">:</span> Matrix4<span class="token punctuation">.</span><span class="token function">skewX</span><span class="token punctuation">(</span>pi <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        alignment<span class="token punctuation">:</span> Alignment<span class="token punctuation">.</span>topLeft<span class="token punctuation">,</span>
+                        child<span class="token punctuation">:</span> <span class="token function">Container</span><span class="token punctuation">(</span>
+                            width<span class="token punctuation">:</span> <span class="token number">120.0</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">80.0</span><span class="token punctuation">,</span> color<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>redAccent<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token function">Center</span><span class="token punctuation">(</span>
+                    child<span class="token punctuation">:</span> <span class="token function">Transform</span><span class="token punctuation">(</span>
+                        transform<span class="token punctuation">:</span> Matrix4<span class="token punctuation">.</span><span class="token function">skew</span><span class="token punctuation">(</span>pi <span class="token operator">/</span> <span class="token number">6</span><span class="token punctuation">,</span> pi <span class="token operator">/</span> <span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        alignment<span class="token punctuation">:</span> Alignment<span class="token punctuation">.</span>topLeft<span class="token punctuation">,</span>
+                        child<span class="token punctuation">:</span> <span class="token function">Container</span><span class="token punctuation">(</span>
+                            width<span class="token punctuation">:</span> <span class="token number">120.0</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">80.0</span><span class="token punctuation">,</span> color<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>amber<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token function">Center</span><span class="token punctuation">(</span>
+                    child<span class="token punctuation">:</span> <span class="token function">Transform</span><span class="token punctuation">(</span>
+                        transform<span class="token punctuation">:</span> Matrix4<span class="token punctuation">.</span><span class="token function">skew</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        alignment<span class="token punctuation">:</span> Alignment<span class="token punctuation">.</span>topLeft<span class="token punctuation">,</span>
+                        child<span class="token punctuation">:</span> <span class="token function">Container</span><span class="token punctuation">(</span>
+                            width<span class="token punctuation">:</span> <span class="token number">120.0</span><span class="token punctuation">,</span> height<span class="token punctuation">:</span> <span class="token number">80.0</span><span class="token punctuation">,</span> color<span class="token punctuation">:</span> Colors<span class="token punctuation">.</span>blue<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1106,17 +1172,16 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/flutter-11.html">
+                <a href="/flutter-12.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之矩阵变换">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之动画">
                         
-                        <span class="card-title">Flutter 入门学习之矩阵变换</span>
+                        <span class="card-title">Flutter 入门学习之动画</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1126,9 +1191,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-08
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-08
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1141,7 +1206,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1160,12 +1224,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/flutter-12.html">
+                <a href="/flutter-10.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之动画">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之进度条">
                         
-                        <span class="card-title">Flutter 入门学习之动画</span>
+                        <span class="card-title">Flutter 入门学习之进度条</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1176,7 +1240,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-04
                             </span>
                         <span class="publish-author">
                             
