@@ -555,7 +555,7 @@
     <span class="token punctuation">]</span><span class="token punctuation">;</span>
     canvas<span class="token punctuation">.</span><span class="token function">drawPoints</span><span class="token punctuation">(</span>PointMode<span class="token punctuation">.</span>points<span class="token punctuation">,</span> points<span class="token punctuation">,</span> _paint<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p><img src="/flutter-5/D:%5CMahoo12138%5CWorkbench%5C%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%5Cimage-20210123171107807.png" alt=""></p>
+<p><img src="/flutter-5/D:%5CMahoo12138%5CWorkbench%5C%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%5Cimage-20210123171107807.png" alt></p>
 <p><code>PointMode</code>定义了一组坐标怎样解释，有 3 种模式：</p>
 <ul>
 <li>points：点，单独将这些点绘制</li>
@@ -563,7 +563,7 @@
 <li>polygon：将整个点绘制为一条线</li>
 </ul>
 <h3 id="绘制线"><a href="#绘制线" class="headerlink" title="绘制线"></a>绘制线</h3><pre class=" language-dart"><code class="language-dart">canvas<span class="token punctuation">.</span><span class="token function">drawLine</span><span class="token punctuation">(</span><span class="token function">Offset</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">,</span> <span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Offset</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">,</span> _paint<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p><img src="/flutter-5/D:%5CMahoo12138%5CWorkbench%5C%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%5Cimage-20210123172700178.png" alt=""></p>
+<p><img src="/flutter-5/D:%5CMahoo12138%5CWorkbench%5C%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%5Cimage-20210123172700178.png" alt></p>
 <h3 id="绘制路径"><a href="#绘制路径" class="headerlink" title="绘制路径"></a>绘制路径</h3><pre class=" language-dart"><code class="language-dart"><span class="token keyword">void</span> <span class="token function">paint</span><span class="token punctuation">(</span>Canvas canvas<span class="token punctuation">,</span> Size size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> _path <span class="token operator">=</span> <span class="token function">Path</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
         <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token function">moveTo</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
@@ -572,7 +572,7 @@
         <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     canvas<span class="token punctuation">.</span><span class="token function">drawPath</span><span class="token punctuation">(</span>_path<span class="token punctuation">,</span> _paint<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p><img src="/flutter-5/D:%5CMahoo12138%5CWorkbench%5C%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%5Cimage-20210123180942770.png" alt=""></p>
+<p><img src="/flutter-5/D:%5CMahoo12138%5CWorkbench%5C%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%5Cimage-20210123180942770.png" alt></p>
 <blockquote>
 <p>这里注意<code>Paint.style</code>，还可以设置为<code>PaintingStyle.fill</code>，可将路径包围的范围填充。</p>
 </blockquote>
