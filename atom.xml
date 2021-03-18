@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mahoo12138.cn/"/>
-  <updated>2021-03-10T15:29:35.779Z</updated>
+  <updated>2021-03-18T03:26:32.523Z</updated>
   <id>https://mahoo12138.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flutter 开发之动态更新Dialog中的状态</title>
+    <link href="https://mahoo12138.cn/flutter-13.html"/>
+    <id>https://mahoo12138.cn/flutter-13.html</id>
+    <published>2021-03-18T02:13:24.000Z</published>
+    <updated>2021-03-18T03:26:32.523Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;需求分析&quot;&gt;&lt;a href=&quot;#需求分析&quot; class=&quot;headerlink&quot; title=&quot;需求分析&quot;&gt;&lt;/a&gt;需求分析&lt;/h2&gt;&lt;p&gt;之前在写一个登录页面的 demo 时，点击登录按钮，发送网络请求，并且弹出包含进度条的
+        
+      
+    
+    </summary>
+    
+      <category term="技术教程" scheme="https://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="Flutter" scheme="https://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
   
   <entry>
     <title>利用旧手机做远程监控摄像头和书库</title>
@@ -43,32 +69,6 @@
   </entry>
   
   <entry>
-    <title>Flutter 入门学习之动画</title>
-    <link href="https://mahoo12138.cn/flutter-12.html"/>
-    <id>https://mahoo12138.cn/flutter-12.html</id>
-    <published>2021-02-08T04:13:24.000Z</published>
-    <updated>2021-02-09T03:44:12.626Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;AnimatedWidget&quot;&gt;&lt;a href=&quot;#AnimatedWidget&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Flutter" scheme="https://mahoo12138.cn/tags/Flutter/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Flutter 入门学习之矩阵变换</title>
     <link href="https://mahoo12138.cn/flutter-11.html"/>
     <id>https://mahoo12138.cn/flutter-11.html</id>
@@ -82,6 +82,32 @@
         
         
           &lt;h2 id=&quot;Transform&quot;&gt;&lt;a href=&quot;#Transform&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="https://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 入门学习之动画</title>
+    <link href="https://mahoo12138.cn/flutter-12.html"/>
+    <id>https://mahoo12138.cn/flutter-12.html</id>
+    <published>2021-02-08T04:13:24.000Z</published>
+    <updated>2021-02-09T03:44:12.626Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;AnimatedWidget&quot;&gt;&lt;a href=&quot;#AnimatedWidget&quot; class=&quot;headerlink&quot;
         
       
     
@@ -513,32 +539,6 @@
     
     
       <category term="注册表" scheme="https://mahoo12138.cn/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安卓开发学习之底部导航栏实战</title>
-    <link href="https://mahoo12138.cn/android-10.html"/>
-    <id>https://mahoo12138.cn/android-10.html</id>
-    <published>2020-08-02T12:09:45.000Z</published>
-    <updated>2020-08-04T13:15:28.629Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;h2 id=&quot;创建主布局&quot;&gt;&lt;a href=&quot;#创建主布局&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="技术教程" scheme="https://mahoo12138.cn/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/"/>
-    
-    
-      <category term="Android" scheme="https://mahoo12138.cn/tags/Android/"/>
     
   </entry>
   

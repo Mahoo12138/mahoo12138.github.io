@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="51单片机学习之独立键盘输入, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="Flutter 开发之动态更新Dialog中的状态, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>51单片机学习之独立键盘输入 | 黄同学的博客</title>
+    <title>Flutter 开发之动态更新Dialog中的状态 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">51单片机学习之独立键盘输入</h1>
+                    <h1 class="description center-align post-title">Flutter 开发之动态更新Dialog中的状态</h1>
                 </div>
             </div>
         </div>
@@ -442,8 +442,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/51单片机/">
-                                <span class="chip bg-color">51单片机</span>
+                            <a href="/tags/Flutter/">
+                                <span class="chip bg-color">Flutter</span>
                             </a>
                         
                     </div>
@@ -454,8 +454,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/学习笔记/" class="post-category">
-                                学习笔记
+                            <a href="/categories/技术教程/" class="post-category">
+                                技术教程
                             </a>
                         
                     </div>
@@ -467,21 +467,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-12
+                    2021-03-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-08
+                    2021-03-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    394
+                    735
                 </div>
                 
 
@@ -498,38 +498,120 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="概念基础"><a href="#概念基础" class="headerlink" title="概念基础"></a>概念基础</h2><h3 id="上拉电阻"><a href="#上拉电阻" class="headerlink" title="上拉电阻"></a>上拉电阻</h3><p>上拉电阻就是将一个不确定信号（高或低电平），通过一个电阻与电源VCC相连，固定在高电平，电阻同时起限流作用。下拉同理，也是将一个不确定信号（高或低电平），通过一个电阻与地GND相连，固定在低电平。上拉电阻和下拉电阻二者共同的作用是：</p>
-<ul>
-<li>避免电压的“悬浮”，否则会容易产生积累电荷，静电荷造成电路的不稳定；</li>
-<li>在引脚电平不定的时候，让后面有一个稳定的电平；</li>
-<li>提高输出引脚的驱动能力。</li>
-</ul>
-<h3 id="键盘防抖"><a href="#键盘防抖" class="headerlink" title="键盘防抖"></a>键盘防抖</h3><p>当按一次按键时，由于按键有反应时间，以及抖动，造成机器感应到多次按键操作，而<strong>防抖</strong>就是让按键在抖动的过程中（一般是5-10ms）仅让机器感应到按键的一次操作。</p>
-<p><strong>软件防抖程序思路：</strong></p>
-<p><img src="/51mcu-4/D:%5CMahoo%5CPictures%5CBlog%5Chexo_images%5CStudy%5C51mcu%5C%E8%BD%AF%E4%BB%B6%E9%98%B2%E6%8A%96.png" alt="软件防抖程序思路"></p>
-<h2 id="程序代码"><a href="#程序代码" class="headerlink" title="程序代码"></a>程序代码</h2><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;reg52.h></span></span>
+                <h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>之前在写一个登录页面的 demo 时，点击登录按钮，发送网络请求，并且弹出包含进度条的 Dialog，异步进行的网络请求得到结果后，根据请求结果动态更新 Dialog 的状态</p>
+<p>一般的想法就是，使用 <strong>setState</strong> 状态，但实际情况下，Dialog 的状态并不会得到更新，于是开始查看<strong>Dialog</strong> 和 <strong>showDialog</strong> 的源码，在<strong>showDialog</strong>的源码中发现了一些端倪：</p>
+<pre class=" language-dart"><code class="language-dart">Future<span class="token operator">&lt;</span>T<span class="token operator">?</span><span class="token operator">></span> showDialog<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  required BuildContext context<span class="token punctuation">,</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// ...</span>
+  <span class="token keyword">return</span> Navigator<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span>context<span class="token punctuation">,</span> rootNavigator<span class="token punctuation">:</span> useRootNavigator<span class="token punctuation">)</span><span class="token punctuation">.</span>push<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>DialogRoute<span class="token operator">&lt;</span>T<span class="token operator">></span><span class="token punctuation">(</span>
+    context<span class="token punctuation">:</span> context<span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">// ...</span>
+  <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>在调用了 <code>showDialog</code> 方法后，实际上是进行了<strong>路由跳转</strong>的，这是对比安卓原生的一个很大区别，所以用 <code>Navigator.pop</code>关闭 Dialog；所以当收到请求结果后，进行的 setState 其实更新的是上一个路由界面的状态，也就不会对 Dialog 的状态进行更新。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>同样的，在<code>dialog.dart</code>源码 *<em>showDialog *</em>方法的注释部分也获悉到了正统的解决方法：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token comment" spellcheck="true">/// This function takes a `builder` which typically builds a [Dialog] widget.</span>
+<span class="token comment" spellcheck="true">/// Content below the dialog is dimmed with a [ModalBarrier]. The widget</span>
+<span class="token comment" spellcheck="true">/// returned by the `builder` does not share a context with the location that</span>
+<span class="token comment" spellcheck="true">/// `showDialog` is originally called from. Use a [StatefulBuilder] or a</span>
+<span class="token comment" spellcheck="true">/// custom [StatefulWidget] if the dialog needs to update dynamically.</span></code></pre>
+<p>核心部分的简单翻译就是，*<em>showDialog *</em>的 builder 返回的 widget 没有共享 *<em>showDialog *</em>原来被调用的位置的 context，可以用 <code>StatefulBuilder</code> 或自定义 一个<code>StatefulWidget</code>来自动更新 Dialog。</p>
+<p><strong>StatefulBuilder</strong> 的 builder 参数是一个<code>StatefulWidgetBuilder</code> 类型的函数，第一个参数是 context，第二个参数是 setState 函数，也就可以通过这个函数来刷新 Dialog。</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token keyword">typedef</span> StatefulWidgetBuilder <span class="token operator">=</span> Widget <span class="token function">Function</span><span class="token punctuation">(</span>BuildContext context<span class="token punctuation">,</span> StateSetter setState<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="测试代码"><a href="#测试代码" class="headerlink" title="测试代码"></a>测试代码</h2><p>我们可以简单模拟一个网络请求操作，来验证该方法是否可行。</p>
+<p>构建一个基本的主页面，一个按钮，点击后发起网络操作，显示 Dialog，其<code>_buildLoginDialog()</code> 函数根据标志 <strong>flag</strong>  返回对应的内容：</p>
+<pre class=" language-dart"><code class="language-dart">int flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-sbit led0 <span class="token operator">=</span> P1<span class="token operator">^</span><span class="token number">0</span><span class="token punctuation">;</span>
-sbit k1 <span class="token operator">=</span> P3<span class="token operator">^</span><span class="token number">4</span><span class="token punctuation">;</span>
+<span class="token function">Scaffold</span><span class="token punctuation">(</span>
+      body<span class="token punctuation">:</span> <span class="token function">Center</span><span class="token punctuation">(</span>
+        child<span class="token punctuation">:</span> <span class="token function">Column</span><span class="token punctuation">(</span>
+          mainAxisAlignment<span class="token punctuation">:</span> MainAxisAlignment<span class="token punctuation">.</span>center<span class="token punctuation">,</span>
+          children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token function">TextButton</span><span class="token punctuation">(</span>
+              onPressed<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token function">showDialog</span><span class="token punctuation">(</span>
+                    context<span class="token punctuation">:</span> context<span class="token punctuation">,</span>
+                    builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                      <span class="token keyword">return</span> <span class="token function">StatefulBuilder</span><span class="token punctuation">(</span>builder<span class="token punctuation">:</span> <span class="token punctuation">(</span>context<span class="token punctuation">,</span> state<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span>mounted <span class="token operator">&amp;&amp;</span> flag <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+                          <span class="token function">_login</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">}</span>
+                        <span class="token keyword">return</span> <span class="token function">Dialog</span><span class="token punctuation">(</span>
+                          child<span class="token punctuation">:</span> <span class="token function">_buildLoginDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token keyword">void</span> <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">int</span> ms<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> i <span class="token punctuation">,</span>j<span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> ms<span class="token punctuation">;</span> i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">112</span><span class="token punctuation">;</span> j<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token punctuation">}</span><span class="token punctuation">,</span>
+              child<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">"测试"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span></code></pre>
+<p>以下是<code>_buildLoginDialog()</code>代码实现：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token function">_buildLoginDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>flag <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>flag <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">Container</span><span class="token punctuation">(</span>
+        height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        child<span class="token punctuation">:</span> <span class="token function">Column</span><span class="token punctuation">(</span>
+          mainAxisAlignment<span class="token punctuation">:</span> MainAxisAlignment<span class="token punctuation">.</span>center<span class="token punctuation">,</span>
+          children<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">"用户名或密码错误"</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token function">Container</span><span class="token punctuation">(</span>
+        height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+        child<span class="token punctuation">:</span> <span class="token function">Column</span><span class="token punctuation">(</span>
+          mainAxisAlignment<span class="token punctuation">:</span> MainAxisAlignment<span class="token punctuation">.</span>center<span class="token punctuation">,</span>
+          children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token function">Container</span><span class="token punctuation">(</span>
+              width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+              height<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+              child<span class="token punctuation">:</span> <span class="token function">CircularProgressIndicator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token function">Padding</span><span class="token punctuation">(</span>
+              padding<span class="token punctuation">:</span> EdgeInsets<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+              child<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">"登录成功！"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token punctuation">)</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    P1 <span class="token operator">=</span> <span class="token number">0xff</span><span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>k1 <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token comment" spellcheck="true">//判断是否有按下按键的信号</span>
-            <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//延时5ms，防抖</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>k1 <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token comment" spellcheck="true">//再次判断是否按键按下</span>
-                <span class="token keyword">while</span><span class="token punctuation">(</span>k1 <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//直到按键松开，之后后续代码</span>
-                led0 <span class="token operator">=</span> <span class="token operator">~</span>led0<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">Container</span><span class="token punctuation">(</span>
+      height<span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
+      child<span class="token punctuation">:</span> <span class="token function">Column</span><span class="token punctuation">(</span>
+        mainAxisAlignment<span class="token punctuation">:</span> MainAxisAlignment<span class="token punctuation">.</span>center<span class="token punctuation">,</span>
+        children<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token function">Container</span><span class="token punctuation">(</span>
+            width<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+            height<span class="token punctuation">:</span> <span class="token number">50</span><span class="token punctuation">,</span>
+            child<span class="token punctuation">:</span> <span class="token function">CircularProgressIndicator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token function">Padding</span><span class="token punctuation">(</span>
+            padding<span class="token punctuation">:</span> EdgeInsets<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            child<span class="token punctuation">:</span> <span class="token function">Text</span><span class="token punctuation">(</span><span class="token string">"登陆中"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+          <span class="token punctuation">)</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>需要将 <strong>state</strong> 函数传入网络请求函数，进行页面状态更新：</p>
+<pre class=" language-dart"><code class="language-dart"><span class="token function">_login</span><span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token keyword">async</span> <span class="token punctuation">{</span>
+  <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"请求数据前："</span> <span class="token operator">+</span> flag<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">await</span> Future<span class="token punctuation">.</span><span class="token function">delayed</span><span class="token punctuation">(</span><span class="token function">Duration</span><span class="token punctuation">(</span>seconds<span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"延时三秒后请求数据"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">state</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    flag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"请求数据后："</span> <span class="token operator">+</span> flag<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -575,7 +657,7 @@ sbit k1 <span class="token operator">=</span> P3<span class="token operator">^</
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mahoo12138.cn/51mcu-4.html">https://mahoo12138.cn/51mcu-4.html</a>
+                    <a href="https://mahoo12138.cn/flutter-13.html">https://mahoo12138.cn/flutter-13.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -613,8 +695,8 @@ sbit k1 <span class="token operator">=</span> P3<span class="token operator">^</
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/51单片机/">
-                                    <span class="chip bg-color">51单片机</span>
+                                <a href="/tags/Flutter/">
+                                    <span class="chip bg-color">Flutter</span>
                                 </a>
                             
                         </div>
@@ -1052,16 +1134,17 @@ sbit k1 <span class="token operator">=</span> P3<span class="token operator">^</
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/51mcu-5.html">
+                <a href="/flutter-13.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg" class="responsive-img" alt="51单片机学习之中断系统">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 开发之动态更新Dialog中的状态">
                         
-                        <span class="card-title">51单片机学习之中断系统</span>
+                        <span class="card-title">Flutter 开发之动态更新Dialog中的状态</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1071,26 +1154,27 @@ sbit k1 <span class="token operator">=</span> P3<span class="token operator">^</
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
+                            <a href="/categories/技术教程/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/51单片机/">
-                        <span class="chip bg-color">51单片机</span>
+                    <a href="/tags/Flutter/">
+                        <span class="chip bg-color">Flutter</span>
                     </a>
                     
                 </div>
@@ -1104,12 +1188,13 @@ sbit k1 <span class="token operator">=</span> P3<span class="token operator">^</
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/51mcu-3.html">
+                <a href="/tutorial-4.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg" class="responsive-img" alt="51单片机学习之数码管">
                         
-                        <span class="card-title">51单片机学习之数码管</span>
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/8.jpg" class="responsive-img" alt="利用旧手机做远程监控摄像头和书库">
+                        
+                        <span class="card-title">利用旧手机做远程监控摄像头和书库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1120,14 +1205,14 @@ sbit k1 <span class="token operator">=</span> P3<span class="token operator">^</
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
+                            <a href="/categories/技术教程/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
@@ -1137,8 +1222,8 @@ sbit k1 <span class="token operator">=</span> P3<span class="token operator">^</
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/51单片机/">
-                        <span class="chip bg-color">51单片机</span>
+                    <a href="/tags/折腾旧手机/">
+                        <span class="chip bg-color">折腾旧手机</span>
                     </a>
                     
                 </div>
@@ -1269,13 +1354,6 @@ sbit k1 <span class="token operator">=</span> P3<span class="token operator">^</
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
