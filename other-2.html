@@ -503,16 +503,16 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="安装Java的JDK"><a href="#安装Java的JDK" class="headerlink" title="安装Java的JDK"></a>安装Java的JDK</h2><p>首先去<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">官网链接</a>把JDK下载安装好，我安装的是最新版本的<em>jdk-8u211-windows-x64</em>，由于我总是忘记环境变量的配置，所以决定写篇博文记录，OK，开始配置！</p>
-<h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><p>在桌面右键单击<strong>此电脑</strong>进入<strong>属性</strong>，<br><img src="http://yun.airlife.club/view.php/4544a12f50a60e864cdd060b6128a9d7.png" alt></p>
-<p>点击左栏的<strong>高级系统设置</strong>再然后是<strong>环境变量</strong>，<br><img src="http://yun.airlife.club/view.php/e379426a4bc0447112736d7cf9429822.png" alt><br>接下来就是核心要点了，咳咳，圈重点了哦</p>
+<h2 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h2><p>在桌面右键单击<strong>此电脑</strong>进入<strong>属性</strong>，<br><img src="http://yun.airlife.club/view.php/4544a12f50a60e864cdd060b6128a9d7.png" alt=""></p>
+<p>点击左栏的<strong>高级系统设置</strong>再然后是<strong>环境变量</strong>，<br><img src="http://yun.airlife.club/view.php/e379426a4bc0447112736d7cf9429822.png" alt=""><br>接下来就是核心要点了，咳咳，圈重点了哦</p>
 <ol>
-<li>点击【系统变量】下面的【新建】选项，在【变量名】处填上【Java_Home】，【变量值】就是你刚才JDK安装的路径，我的是<em>”C:\Program Files\Java\jdk1.8.0_211“</em>，点击【确定】；<br><img src="http://yun.airlife.club/view.php/7ba200957f85d66fcf828a3c203cc8bb.png" alt></li>
-<li>在【系统变量】中找到【Path】，选中并点击【编辑】，再点击右侧的【编辑文本】，将引号里面的全部复制<strong>“%Java_Home%\bin;%Java_Home%\jre\bin;”</strong>，到“变量值”栏的最前面，【确定】；<br><img src="http://yun.airlife.club/view.php/5731314d7a32fa1be535c13d27844cd1.png" alt></li>
-<li>在【系统变量】中，【新建】一个【变量名】为“CLASSPATH”，【变量值】为<em>“.;%Java_Home%\bin;%Java_Home%\lib\dt.jar;%Java_Home%\lib\tools.jar”</em><br><img src="http://yun.airlife.club/view.php/b72aa91ef838c21039e2197337e8f6ff.png" alt></li>
+<li>点击【系统变量】下面的【新建】选项，在【变量名】处填上【Java_Home】，【变量值】就是你刚才JDK安装的路径，我的是<em>”C:\Program Files\Java\jdk1.8.0_211“</em>，点击【确定】；<br><img src="http://yun.airlife.club/view.php/7ba200957f85d66fcf828a3c203cc8bb.png" alt=""></li>
+<li>在【系统变量】中找到【Path】，选中并点击【编辑】，再点击右侧的【编辑文本】，将引号里面的全部复制<strong>“%Java_Home%\bin;%Java_Home%\jre\bin;”</strong>，到“变量值”栏的最前面，【确定】；<br><img src="http://yun.airlife.club/view.php/5731314d7a32fa1be535c13d27844cd1.png" alt=""></li>
+<li>在【系统变量】中，【新建】一个【变量名】为“CLASSPATH”，【变量值】为<em>“.;%Java_Home%\bin;%Java_Home%\lib\dt.jar;%Java_Home%\lib\tools.jar”</em><br><img src="http://yun.airlife.club/view.php/b72aa91ef838c21039e2197337e8f6ff.png" alt=""></li>
 <li>一路【确定】回退到桌面，打开Cmd控制台，方法挺多，一般就是”Win+R”,输入“cmd”，回车，开始检测Java环境是否配置成功：<ul>
 <li>输入”Java”，回车；</li>
 <li>输入”Javac”，回车；</li>
-<li>输入”Java -version”，回车；<br><img src="http://yun.airlife.club/view.php/afc11ff2097f9f5b1a38b8b27a44938f.png" alt><br><img src="http://yun.airlife.club/view.php/a8a27058556630beefc44e9c2de59b68.png" alt><br><img src="http://yun.airlife.club/view.php/3ba7991598360c47b82617a07daac8c6.png" alt></li>
+<li>输入”Java -version”，回车；<br><img src="http://yun.airlife.club/view.php/afc11ff2097f9f5b1a38b8b27a44938f.png" alt=""><br><img src="http://yun.airlife.club/view.php/a8a27058556630beefc44e9c2de59b68.png" alt=""><br><img src="http://yun.airlife.club/view.php/3ba7991598360c47b82617a07daac8c6.png" alt=""></li>
 </ul>
 </li>
 <li>三次都出现如图类似的信息，说明<strong>配置成功</strong>！</li>
