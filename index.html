@@ -580,6 +580,57 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/py-3.html">
+                        <div class="card-image">
+                            
+                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/python.png" class="responsive-img" alt="Python 爬虫的 XPath 学习">
+                            
+                            <span class="card-title">Python 爬虫的 XPath 学习</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                最近要在做一个校园助手的App，需要爬取学校教务处的通知，之前写的许多小东西都是直接用正则提取数据的，现在需要的数据多了，还是使用 Xpath 定位元素比较可靠。现记录一下从爬虫的角度学习 python xml 相关的库的一些东西。
+Pyt
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Python/">
+                            <span class="chip bg-color">Python</span>
+                        </a>
+                        
+                        <a href="/tags/Xpath/">
+                            <span class="chip bg-color">Xpath</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/linux-1.html">
                         <div class="card-image">
                             
@@ -777,22 +828,22 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/flutter-11.html">
+                    <a href="/flutter-12.html">
                         <div class="card-image">
                             
-                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之矩阵变换">
+                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之动画">
                             
-                            <span class="card-title">Flutter 入门学习之矩阵变换</span>
+                            <span class="card-title">Flutter 入门学习之动画</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                Transform
-在绘制子控件之前，为其添加矩阵变换的小部件。
+                                AnimatedWidget
+当给定的Listenable的值改变时重新构建的部件。
 
-但需要注意的是，矩阵变换不像 RotatedBox（在布局前进行变换），而是在绘制前进行变换，也就是说子控件虽然进行了变换，但是其布局无变化，意味着子控件的位置和大小都没有
+但需要为某一个Widget实现动画时，更多的情况是无状态的Widget，此时使用 AnimatedWidget 即可实现动画，只需继承并实现build(
                             
                         </div>
                         <div class="publish-info">
@@ -826,22 +877,22 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/flutter-12.html">
+                    <a href="/flutter-11.html">
                         <div class="card-image">
                             
-                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之动画">
+                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之矩阵变换">
                             
-                            <span class="card-title">Flutter 入门学习之动画</span>
+                            <span class="card-title">Flutter 入门学习之矩阵变换</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                AnimatedWidget
-当给定的Listenable的值改变时重新构建的部件。
+                                Transform
+在绘制子控件之前，为其添加矩阵变换的小部件。
 
-但需要为某一个Widget实现动画时，更多的情况是无状态的Widget，此时使用 AnimatedWidget 即可实现动画，只需继承并实现build(
+但需要注意的是，矩阵变换不像 RotatedBox（在布局前进行变换），而是在绘制前进行变换，也就是说子控件虽然进行了变换，但是其布局无变化，意味着子控件的位置和大小都没有
                             
                         </div>
                         <div class="publish-info">
@@ -1090,55 +1141,6 @@ TextButton(
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2021-01-07
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Flutter/">
-                            <span class="chip bg-color">Flutter</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/flutter-7.html">
-                        <div class="card-image">
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之布局组件">
-                            
-                            <span class="card-title">Flutter 入门学习之布局组件</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                基本布局ContainerContainer 可以设置固定的宽高属性，没有其他参数设置时，Container将会根据子控件自行调整大小：
-Container(
-    color: Colors.blue,
-    height: 200,
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-05
                             </span>
                             <span class="publish-author">
                                 

@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="利用旧手机做远程监控摄像头和书库, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="Python 爬虫的 XPath 学习, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>利用旧手机做远程监控摄像头和书库 | 黄同学的博客</title>
+    <title>Python 爬虫的 XPath 学习 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/python.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">利用旧手机做远程监控摄像头和书库</h1>
+                    <h1 class="description center-align post-title">Python 爬虫的 XPath 学习</h1>
                 </div>
             </div>
         </div>
@@ -442,8 +442,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/折腾旧手机/">
-                                <span class="chip bg-color">折腾旧手机</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/Xpath/">
+                                <span class="chip bg-color">Xpath</span>
                             </a>
                         
                     </div>
@@ -454,8 +458,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/技术教程/" class="post-category">
-                                技术教程
+                            <a href="/categories/学习笔记/" class="post-category">
+                                学习笔记
                             </a>
                         
                     </div>
@@ -467,21 +471,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-10
+                    2021-04-12
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-10
+                    2021-04-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    241
+                    1.1k
                 </div>
                 
 
@@ -498,12 +502,161 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近在家里拿了个闲置的旧手机来宿舍，用于随意折腾打发时间，毕竟处理器骁龙 625 和开源的 “Linux系统”，肯定还是能发挥一下余热的，于是我想到可以利用摄像头做一个远程的摄像头，利用 32G 的存储空间做一个书库，网盘就不至于了，书库就很合适。</p>
-<h2 id="准备软件"><a href="#准备软件" class="headerlink" title="准备软件"></a>准备软件</h2><ul>
-<li>Termux：用于安装 Linux 子系统，进行内网穿透</li>
-<li>IP 摄像头：将摄像头视频流传输到 HTTP 服务器上</li>
+                <p>最近要在做一个校园助手的App，需要爬取学校教务处的通知，之前写的许多小东西都是直接用正则提取数据的，现在需要的数据多了，还是使用 Xpath 定位元素比较可靠。现记录一下从爬虫的角度学习 python xml 相关的库的一些东西。</p>
+<p>Python 标准库中自带了 xml 模块，但一般使用的都是第三方库 lxml ，性能更强，使用起来更人性化，使用需要导入：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> lxml <span class="token keyword">import</span> etree</code></pre>
+<h2 id="XPath-基本概念"><a href="#XPath-基本概念" class="headerlink" title="XPath 基本概念"></a>XPath 基本概念</h2><p>学习任何东西前，清楚地了解相关的概念都是高效学习的前提。</p>
+<blockquote>
+<p><strong>XPath</strong>，全称 XML Path Language，即路径语言，它是一门XML文档中查找信息的语言</p>
+</blockquote>
+<p>在 Xpath 中，有七种类型的节点：<strong>元素</strong>、<strong>属性</strong>、<strong>文本</strong>、<strong>命名空间</strong>、<strong>处理指令</strong>、<strong>注释</strong>以及<strong>文档节点</strong>（或称为根节点）。</p>
+<ul>
+<li>元素：</li>
 </ul>
-<h2 id="安装-Linux-系统"><a href="#安装-Linux-系统" class="headerlink" title="安装 Linux 系统"></a>安装 Linux 系统</h2><p>可以参考这篇文章 <a href="https://www.sqlsec.com/2020/04/termuxlinux.html" target="_blank" rel="noopener">Android Termux 安装 Linux 就是这么简单</a>，这里我选择的是 <strong>Ubuntu</strong> 系统，对新手友好，已经非常熟悉操作了。</p>
+<h2 id="XPath-常用规则"><a href="#XPath-常用规则" class="headerlink" title="XPath 常用规则"></a>XPath 常用规则</h2><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nodename</td>
+<td>选取此节点的所有子节点<code>&lt;&gt;</code>里的字符，例如：&lt;body&gt;，在 html 中常称为标签</td>
+</tr>
+<tr>
+<td>/</td>
+<td>从当前节点选取直接子节点，<strong>不包含更小的后代</strong>，如孙节点</td>
+</tr>
+<tr>
+<td>//</td>
+<td>从当前节点选取子孙节点</td>
+</tr>
+<tr>
+<td>.</td>
+<td>选取当前节点</td>
+</tr>
+<tr>
+<td>..</td>
+<td>选取当前节点的父节点</td>
+</tr>
+<tr>
+<td>@</td>
+<td>选取属性</td>
+</tr>
+<tr>
+<td>*</td>
+<td>通配符，选择所有元素节点与元素名</td>
+</tr>
+<tr>
+<td>@*</td>
+<td>选取所有属性</td>
+</tr>
+<tr>
+<td>[@attrib]</td>
+<td>选取具有给定属性的所有元素</td>
+</tr>
+<tr>
+<td>[@attrib=’value’]</td>
+<td>选取给定属性具有给定值的所有元素</td>
+</tr>
+<tr>
+<td>[tag]</td>
+<td>选取所有具有指定元素的直接子节点</td>
+</tr>
+<tr>
+<td>[tag=’text’]</td>
+<td>选取所有具有指定元素并且文本内容是text节点</td>
+</tr>
+</tbody></table>
+<h2 id="XPath-基本使用"><a href="#XPath-基本使用" class="headerlink" title="XPath 基本使用"></a>XPath 基本使用</h2><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 从字符串导入</span>
+page1 <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>html<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 从文件导入</span>
+page2 <span class="token operator">=</span> etree<span class="token punctuation">.</span>parse<span class="token punctuation">(</span>test<span class="token punctuation">.</span>html<span class="token punctuation">)</span></code></pre>
+<h3 id="使用实例"><a href="#使用实例" class="headerlink" title="使用实例"></a>使用实例</h3><pre class=" language-python"><code class="language-python">html <span class="token operator">=</span> <span class="token triple-quoted-string string">"""
+&lt;html>
+
+&lt;head>
+    &lt;meta charset="UTF-8">
+&lt;/head>
+
+&lt;body>
+    &lt;div class='main-content'>
+        &lt;h1 id="title">Test Page&lt;/h1>
+        &lt;p id=“first” class="text-first">This is paragraph1&lt;/p>
+        &lt;div>
+            &lt;p>测试语句1&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;div>
+        &lt;p class="text-second">This is paragraph2&lt;/p>
+        &lt;p class="text-third">This is paragraph3&lt;/p>
+        &lt;div>
+            &lt;p>测试语句2&lt;/p>
+        &lt;/div>
+    &lt;/div>
+&lt;/body>
+
+&lt;/html>
+"""</span>
+
+page <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>html<span class="token punctuation">)</span></code></pre>
+<p>通过节点和 ‘/‘ 结合，我们可以简单地查找某一个节点：</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 在 div 节点下寻找所有 p 子节点</span>
+test1 <span class="token operator">=</span> page<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'/html/body/div/p'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>text<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># This is paragraph1</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>text<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># This is paragraph2</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test1<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span>text<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># This is paragraph3</span>
+
+<span class="token comment" spellcheck="true"># 在 div 节点下寻找所有 p 节点</span>
+test2 <span class="token operator">=</span> page<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'/html/body/div//p'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> test2<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># This is paragraph1</span>
+<span class="token comment" spellcheck="true"># 测试语句1</span>
+<span class="token comment" spellcheck="true"># This is paragraph2</span>
+<span class="token comment" spellcheck="true"># This is paragraph3</span>
+<span class="token comment" spellcheck="true"># 测试语句2</span></code></pre>
+<p>若想查询具体位置的节点，可以为节点添加下标，不过<strong>下标应从 1 开始</strong>，如：</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 查询第一个 div 内的 p 子节点</span>
+test3 <span class="token operator">=</span> page<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'/html/body/div[1]/p'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 查询第一个 div 内所有节点</span>
+test4 <span class="token operator">=</span> page<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'/html/body/div[1]//*'</span><span class="token punctuation">)</span></code></pre>
+<p>通过 <code>@</code> 符号选择属性更具体的选择节点：</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 在根节点中选择所有 id="title” 的节点</span>
+test5 <span class="token operator">=</span> page<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//*[@id="title"]'</span><span class="token punctuation">)</span>                <span class="token comment" spellcheck="true"># Test Page</span>
+<span class="token comment" spellcheck="true"># 在根节点中选择所有 class="text-second" 的 p 节点</span>
+test6 <span class="token operator">=</span> page<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//p[@class="text-second"]'</span><span class="token punctuation">)</span>        <span class="token comment" spellcheck="true"># This is paragraph2</span>
+<span class="token comment" spellcheck="true"># 多属性筛选</span>
+test7 <span class="token operator">=</span> page<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'//p[@class="text-first" and @id="first"]'</span><span class="token punctuation">)</span>    </code></pre>
+<p>进行属性筛选的同时，我们还可能会需要获取属性的某个值：</p>
+<pre class=" language-python"><code class="language-python">test8 <span class="token operator">=</span> page<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'/html/body/div[1]/p[1]'</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 所有属性</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test9<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>attrib<span class="token punctuation">)</span>        <span class="token comment" spellcheck="true"># {'id': 'first', 'class': 'text-first'}</span>
+<span class="token comment" spellcheck="true"># 单个属性</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test9<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># first</span></code></pre>
+<p>除了属性筛选，还可以进行文本筛选：</p>
+<pre class=" language-python"><code class="language-python">test9 <span class="token operator">=</span> page<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'/html/body/div/p[text()="This is paragraph2"]'</span><span class="token punctuation">)</span></code></pre>
+<h2 id="Xpath-学习实战"><a href="#Xpath-学习实战" class="headerlink" title="Xpath 学习实战"></a>Xpath 学习实战</h2><p>主要是获取该网站下一个通知公告的所有内容：</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 获取指定页面的 html 代码</span>
+response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'http://xxxx.cn/xxx.htm'</span><span class="token punctuation">)</span>
+response<span class="token punctuation">.</span>encoding <span class="token operator">=</span> <span class="token string">"utf-8"</span>
+html <span class="token operator">=</span> response<span class="token punctuation">.</span>text
+
+<span class="token comment" spellcheck="true"># 通过浏览器的路径选择功能确认大致路径</span>
+<span class="token comment" spellcheck="true"># 并根据业务逻辑进行细化筛选</span>
+dom <span class="token operator">=</span> etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>html<span class="token punctuation">)</span>
+tr <span class="token operator">=</span> dom<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span>
+    <span class="token string">'/html/body/table[5]/tbody/tr/td[3]/table[2]/tbody/tr/td/table/tr[@height="25"]'</span>
+<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 对数据进行处理</span>
+<span class="token keyword">for</span> item <span class="token keyword">in</span> tr<span class="token punctuation">:</span>
+    title <span class="token operator">=</span> item<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'td/a/text()'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    url <span class="token operator">=</span> item<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'td/a'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">'href'</span><span class="token punctuation">)</span>
+    date <span class="token operator">=</span> item<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'td[3]/span/text()'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+    date <span class="token operator">=</span> date<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'\xa0'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 存储代码</span>
+</code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -548,7 +701,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mahoo12138.cn/tutorial-4.html">https://mahoo12138.cn/tutorial-4.html</a>
+                    <a href="https://mahoo12138.cn/py-3.html">https://mahoo12138.cn/py-3.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -586,8 +739,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/折腾旧手机/">
-                                    <span class="chip bg-color">折腾旧手机</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/Xpath/">
+                                    <span class="chip bg-color">Xpath</span>
                                 </a>
                             
                         </div>
@@ -1025,16 +1182,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/flutter-13.html">
+                <a href="/py-3.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 开发之动态更新Dialog中的状态">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/python.png" class="responsive-img" alt="Python 爬虫的 XPath 学习">
                         
-                        <span class="card-title">Flutter 开发之动态更新Dialog中的状态</span>
+                        <span class="card-title">Python 爬虫的 XPath 学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1044,9 +1202,63 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-18
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/Xpath/">
+                        <span class="chip bg-color">Xpath</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/linux-1.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/9.jpg" class="responsive-img" alt="Linux &amp; Shell 学习之 Linux 基础">
+                        
+                        <span class="card-title">Linux &amp; Shell 学习之 Linux 基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1062,56 +1274,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Flutter/">
-                        <span class="chip bg-color">Flutter</span>
+                    <a href="/tags/Linux/">
+                        <span class="chip bg-color">Linux</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/flutter-12.html">
-                    <div class="card-image">
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Flutter 入门学习之动画">
-                        
-                        <span class="card-title">Flutter 入门学习之动画</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-08
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Flutter/">
-                        <span class="chip bg-color">Flutter</span>
+                    <a href="/tags/Shell/">
+                        <span class="chip bg-color">Shell</span>
                     </a>
                     
                 </div>

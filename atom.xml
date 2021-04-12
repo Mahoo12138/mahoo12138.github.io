@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mahoo12138.cn/"/>
-  <updated>2021-03-24T02:59:00.507Z</updated>
+  <updated>2021-04-12T16:25:51.746Z</updated>
   <id>https://mahoo12138.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python 爬虫的 XPath 学习</title>
+    <link href="https://mahoo12138.cn/py-3.html"/>
+    <id>https://mahoo12138.cn/py-3.html</id>
+    <published>2021-04-12T07:45:43.000Z</published>
+    <updated>2021-04-12T16:25:51.746Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近要在做一个校园助手的App，需要爬取学校教务处的通知，之前写的许多小东西都是直接用正则提取数据的，现在需要的数据多了，还是使用 Xpath 定位元素比较可靠。现记录一下从爬虫的角度学习 python xml 相关的库的一些东西。&lt;/p&gt;
+&lt;p&gt;Python
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Python" scheme="https://mahoo12138.cn/tags/Python/"/>
+    
+      <category term="Xpath" scheme="https://mahoo12138.cn/tags/Xpath/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux &amp; Shell 学习之 Linux 基础</title>
@@ -131,32 +160,6 @@
   </entry>
   
   <entry>
-    <title>Flutter 入门学习之矩阵变换</title>
-    <link href="https://mahoo12138.cn/flutter-11.html"/>
-    <id>https://mahoo12138.cn/flutter-11.html</id>
-    <published>2021-02-08T04:13:24.000Z</published>
-    <updated>2021-02-11T03:45:18.219Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;Transform&quot;&gt;&lt;a href=&quot;#Transform&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Flutter" scheme="https://mahoo12138.cn/tags/Flutter/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Flutter 入门学习之动画</title>
     <link href="https://mahoo12138.cn/flutter-12.html"/>
     <id>https://mahoo12138.cn/flutter-12.html</id>
@@ -170,6 +173,32 @@
         
         
           &lt;h2 id=&quot;AnimatedWidget&quot;&gt;&lt;a href=&quot;#AnimatedWidget&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="https://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 入门学习之矩阵变换</title>
+    <link href="https://mahoo12138.cn/flutter-11.html"/>
+    <id>https://mahoo12138.cn/flutter-11.html</id>
+    <published>2021-02-08T04:13:24.000Z</published>
+    <updated>2021-02-11T03:45:18.219Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Transform&quot;&gt;&lt;a href=&quot;#Transform&quot; class=&quot;headerlink&quot;
         
       
     
@@ -521,35 +550,6 @@
       <category term="STM32" scheme="https://mahoo12138.cn/tags/STM32/"/>
     
       <category term="DS18B20" scheme="https://mahoo12138.cn/tags/DS18B20/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>超乎你想象的Stm32中的 TIM 定时器（提高篇）</title>
-    <link href="https://mahoo12138.cn/stm32-7.html"/>
-    <id>https://mahoo12138.cn/stm32-7.html</id>
-    <published>2020-09-23T06:12:43.000Z</published>
-    <updated>2020-09-25T14:36:25.317Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;注：本文属博主学习时所作笔记，内容源大参考于野火的《零死角玩转STM32F103》以及部分网络资料，笔记内容仅作为自己参考，免去频繁查询参考手册的麻烦，如有错误，还请指出！&lt;/p&gt;
-&lt;p&gt;高级定时器(STM32F1 系列中为 TIM1 和
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="STM32" scheme="https://mahoo12138.cn/tags/STM32/"/>
-    
-      <category term="舵机" scheme="https://mahoo12138.cn/tags/%E8%88%B5%E6%9C%BA/"/>
     
   </entry>
   
