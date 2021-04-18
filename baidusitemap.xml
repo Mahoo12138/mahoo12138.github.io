@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mahoo12138.cn/py-3.html</loc>
+    <loc>https://mahoo12138.cn/data-structure-and-algorithm-2.html</loc>
+    <lastmod>2021-04-18</lastmod>
+  </url>  <url>
+    <loc>https://mahoo12138.cn/data-structure-and-algorithm-1.html</loc>
+    <lastmod>2021-04-18</lastmod>
+  </url>  <url>
+    <loc>https://mahoo12138.cn/python-3.html</loc>
     <lastmod>2021-04-12</lastmod>
   </url>  <url>
     <loc>https://mahoo12138.cn/linux-1.html</loc>
@@ -127,10 +133,10 @@
     <loc>https://mahoo12138.cn/stm32-1.html</loc>
     <lastmod>2020-05-08</lastmod>
   </url>  <url>
-    <loc>https://mahoo12138.cn/py-2.html</loc>
+    <loc>https://mahoo12138.cn/python-2.html</loc>
     <lastmod>2020-05-08</lastmod>
   </url>  <url>
-    <loc>https://mahoo12138.cn/py-1.html</loc>
+    <loc>https://mahoo12138.cn/python-1.html</loc>
     <lastmod>2020-05-08</lastmod>
   </url>  <url>
     <loc>https://mahoo12138.cn/office.html</loc>

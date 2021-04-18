@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mahoo12138.cn/"/>
-  <updated>2021-04-12T16:25:51.746Z</updated>
+  <updated>2021-04-18T09:41:45.929Z</updated>
   <id>https://mahoo12138.cn/</id>
   
   <author>
@@ -17,9 +17,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数据结构与算法学习之动态数组</title>
+    <link href="https://mahoo12138.cn/data-structure-and-algorithm-2.html"/>
+    <id>https://mahoo12138.cn/data-structure-and-algorithm-2.html</id>
+    <published>2021-04-16T13:27:24.000Z</published>
+    <updated>2021-04-18T09:41:45.929Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;什么是数据结构&quot;&gt;&lt;a href=&quot;#什么是数据结构&quot; class=&quot;headerlink&quot; title=&quot;什么是数据结构&quot;&gt;&lt;/a&gt;什么是数据结构&lt;/h2&gt;&lt;p&gt;数据结构是计算机存储、组织数据的方式，主要有以下几种：&lt;/p&gt;
+&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据结构与算法" scheme="https://mahoo12138.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构与算法学习之复杂度</title>
+    <link href="https://mahoo12138.cn/data-structure-and-algorithm-1.html"/>
+    <id>https://mahoo12138.cn/data-structure-and-algorithm-1.html</id>
+    <published>2021-04-15T13:34:24.000Z</published>
+    <updated>2021-04-18T08:04:59.872Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;什么是算法&quot;&gt;&lt;a href=&quot;#什么是算法&quot; class=&quot;headerlink&quot; title=&quot;什么是算法&quot;&gt;&lt;/a&gt;什么是算法&lt;/h2&gt;&lt;p&gt;算法就是用于解决特定问题的一系列的执行步骤，例如：&lt;/p&gt;
+&lt;pre class=&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据结构与算法" scheme="https://mahoo12138.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python 爬虫的 XPath 学习</title>
-    <link href="https://mahoo12138.cn/py-3.html"/>
-    <id>https://mahoo12138.cn/py-3.html</id>
+    <link href="https://mahoo12138.cn/python-3.html"/>
+    <id>https://mahoo12138.cn/python-3.html</id>
     <published>2021-04-12T07:45:43.000Z</published>
     <updated>2021-04-12T16:25:51.746Z</updated>
     
@@ -496,60 +550,6 @@
     
     
       <category term="Vuejs" scheme="https://mahoo12138.cn/tags/Vuejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Dart 编程语言不详细学习指北</title>
-    <link href="https://mahoo12138.cn/dart.html"/>
-    <id>https://mahoo12138.cn/dart.html</id>
-    <published>2020-10-30T08:34:24.000Z</published>
-    <updated>2021-02-17T11:06:30.377Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本文章是博主在&lt;a href=&quot;https://www.dartcn.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;此网站&lt;/a&gt;学习 Dart 语言时所摘录的一些重要内容，用于快速掌握 Dart
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Dart" scheme="https://mahoo12138.cn/tags/Dart/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32F1XX驱动温度检测模块DS18B20</title>
-    <link href="https://mahoo12138.cn/stm32-8.html"/>
-    <id>https://mahoo12138.cn/stm32-8.html</id>
-    <published>2020-10-13T14:12:43.000Z</published>
-    <updated>2021-02-02T13:02:08.091Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;DS18B20-单线总线的工作方式&quot;&gt;&lt;a href=&quot;#DS18B20-单线总线的工作方式&quot; class=&quot;headerlink&quot; title=&quot;DS18B20 单线总线的工作方式&quot;&gt;&lt;/a&gt;DS18B20 单线总线的工作方式&lt;/h2&gt;&lt;h3
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="STM32" scheme="https://mahoo12138.cn/tags/STM32/"/>
-    
-      <category term="DS18B20" scheme="https://mahoo12138.cn/tags/DS18B20/"/>
     
   </entry>
   

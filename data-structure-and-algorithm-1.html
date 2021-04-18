@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Python对文件进行批量重命名, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="数据结构与算法学习之复杂度, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>Python对文件进行批量重命名 | 黄同学的博客</title>
+    <title>数据结构与算法学习之复杂度 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/python.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160102.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Python对文件进行批量重命名</h1>
+                    <h1 class="description center-align post-title">数据结构与算法学习之复杂度</h1>
                 </div>
             </div>
         </div>
@@ -442,8 +442,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Python/">
-                                <span class="chip bg-color">Python</span>
+                            <a href="/tags/数据结构与算法/">
+                                <span class="chip bg-color">数据结构与算法</span>
                             </a>
                         
                     </div>
@@ -454,8 +454,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/技术教程/" class="post-category">
-                                技术教程
+                            <a href="/categories/学习笔记/" class="post-category">
+                                学习笔记
                             </a>
                         
                     </div>
@@ -467,21 +467,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-12-03
+                    2021-04-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-08
+                    2021-04-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    379
+                    1.6k
                 </div>
                 
 
@@ -498,42 +498,182 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="代码及相关详解"><a href="#代码及相关详解" class="headerlink" title="代码及相关详解"></a>代码及相关详解</h2><p>最近没有在整STM32了，因为期末将近，必须花时间去预习了:joy:，但是还是忙里有偷闲，看到了以前看过的一些经典的影视作品动漫番剧，突然就想把这些作品的海报剧照等收藏起来，于是就淘遍整个网络下载下来好几百张图片，但是重命名就成了问题，Win10重命名的骚操作不会用，但是Python我会啊，谨以此文记录相关操作:wink:。</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
-<span class="token keyword">import</span> time
+                <h2 id="什么是算法"><a href="#什么是算法" class="headerlink" title="什么是算法"></a>什么是算法</h2><p>算法就是用于解决特定问题的一系列的执行步骤，例如：</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 计算 a + b 的值</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">plus</span><span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> b<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 计算 1 ~ n 和的值</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> result <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        result <span class="token operator">+=</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>使用不同的算法，解决同一个问题，效率可能相差非常大，比如求解第 n 个斐波那契数（Fibonacci number），这里先埋一个伏笔，具体我们后面再说。</p>
+<h2 id="如何评判一个算法的好坏"><a href="#如何评判一个算法的好坏" class="headerlink" title="如何评判一个算法的好坏"></a>如何评判一个算法的好坏</h2><p>如果单从执行的效率上进行评估，可能会想到这么一种方案，比较不同算法对同一组输入的处理执行时间，当然这样的方案也叫做：<strong>事后统计法</strong>。</p>
+<p>这样的方案有比较明显的缺点，执行的时间严重依赖运行时各种不确定的环境因素，必须编写相应的测算代码，而且测试的数据的选择也比较难以保证公平性。</p>
+<p>一般从以下几个维度来评估算法的优劣：</p>
+<ul>
+<li><p>正确性，可读性，健壮性（对不合理输入的反应能力和处理能力）；</p>
+</li>
+<li><p><strong>时间复杂度</strong>（time complexity）：估算赋值语句的执行次数（执行时间）；</p>
+<blockquote>
+<p>一条赋值语句同时包含了（表达式）计算和（变量） 存储两个基本资源。</p>
+</blockquote>
+</li>
+<li><p><strong>空间复杂度</strong>（space complexity）：估算所需占用的存储空间；</p>
+</li>
+</ul>
+<h2 id="大O表示法"><a href="#大O表示法" class="headerlink" title="大O表示法"></a>大O表示法</h2><p>一般用大O表示法来描述复杂度，它表示的是数据规模 n 所对应的复杂度，在描述时会忽略常数，和n 的系数，以及 n 的低阶，例如：</p>
+<ul>
+<li>9     &gt;&gt;    O(1)</li>
+<li>2n + 3      &gt;&gt;      O(n)</li>
+<li>n^2^ + 2n + 6     &gt;&gt;     O(n^2^)</li>
+<li>4n^3^ + 3n^2^ + 22n + 100    &gt;&gt;    O(n^3^)</li>
+</ul>
+<p>需要注意，大O表示法仅仅只是一种粗略的分析模型，是一种估算，能帮助我们短时间内了解一个算法的执行效率。</p>
+<h3 id="对数阶的细节"><a href="#对数阶的细节" class="headerlink" title="对数阶的细节"></a>对数阶的细节</h3><p>对于对数阶，一般会忽略底数，因为<br>$$<br>log_{2}{n} = log_{2}{9} \times log_{9}{n}<br>$$<br>所以 $log_{2}{n}$，$log_{2}{9}$ 统称 $log{n}$ 。</p>
+<h3 id="小练习"><a href="#小练习" class="headerlink" title="小练习"></a>小练习</h3><p>无论传入的 n 的值为多大，下列代码都只执行 1 + 1 + 4 + 4 + 4 = 14 个运算步骤（暂且忽略判断语句），所以时间复杂度为 O(1)，其余的以此类推。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test1</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 1</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">></span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"n > 10"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">></span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"n > 5"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"n &lt;= 5"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>
 
-filepath <span class="token operator">=</span> <span class="token string">'D:\Mahoo\Pictures\Saved Pictures\收藏'</span>
+    <span class="token comment" spellcheck="true">// 1 + 4 + 4 + 4</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">// O(1)</span>
+<span class="token punctuation">}</span>
 
-n <span class="token operator">=</span> <span class="token number">0</span>
-<span class="token comment" spellcheck="true"># 开始计时</span>
-time_start <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test2</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 1 + 3n  >>  O(n)</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-<span class="token keyword">for</span> file <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token comment" spellcheck="true"># 拼接文件目录</span>
-    filedir <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> file<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isfile<span class="token punctuation">(</span>filedir<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true"># 新文件名格式</span>
-        newname <span class="token operator">=</span> <span class="token string">'pic_'</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'.jpg'</span>
-        n <span class="token operator">=</span> n <span class="token operator">+</span> <span class="token number">1</span>
-        <span class="token comment" spellcheck="true"># 重命名</span>
-        os<span class="token punctuation">.</span>rename<span class="token punctuation">(</span>filedir<span class="token punctuation">,</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> newname<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test3</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 1 + 2n + n * (1 + 3n)</span>
+    <span class="token comment" spellcheck="true">// 3n^2 + 3n + 1  >>  O(n^2)</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>以下代码，while 循环在 (n = n / 2) &gt; 0 不满足时停止循环，也就是看 n 能被 2 整除几次，联系到数学的运算就是 log，这样说不能很好的理解，举个例子，当传入 n = 8 时，8/2 = 4，4/2 = 2，2/2 = 1，1/2 = 0，到第四次就不满足停止循环，也就是循环 3 次，即 8 = 2^3^  &gt;&gt;  3 = log2(8)；同理，test6 中 n/5 和 test7 中 i = i * 2，也是类似的处理。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test5</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 执行次数 = log2(n)  >>  O(logn)</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">=</span> n <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-<span class="token comment" spellcheck="true"># 结束计时</span>
-time_end <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test6</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// log5(n)  >>  O(logn)</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">=</span> n <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'一共重命名{}次，耗时{:.3}秒 '</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>n<span class="token punctuation">,</span> <span class="token punctuation">(</span>time_end <span class="token operator">-</span> time_start<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-<h3 id="os-path-isdir"><a href="#os-path-isdir" class="headerlink" title="os.path.isdir()"></a>os.path.isdir()</h3><p>该函数判断某一路径是否为目录，返回一个<code>Bool</code>值：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> os
-<span class="token comment" spellcheck="true"># 判断D:\Mahoo\pic是否为文件</span>
-os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isfile<span class="token punctuation">(</span><span class="token string">'D:\\Mahoo\\pic'</span><span class="token punctuation">)</span></code></pre>
-<p>类似的即是<code>os.path.isfile()</code>，功能都可以顾名思义<strong>判断是否为文件</strong>。</p>
-<h3 id="os-path-join"><a href="#os-path-join" class="headerlink" title="os.path.join()"></a>os.path.join()</h3><p>该函数将多个路径组合后返回，例如：</p>
-<pre class=" language-python"><code class="language-python">path1 <span class="token operator">=</span> <span class="token string">'D:\Mahoo'</span>
-path2 <span class="token operator">=</span> <span class="token string">'Pictures'</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">test7</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 1 + 2*log2(n) + log2(n) * (1 + 3n)</span>
+    <span class="token comment" spellcheck="true">// 1 + 3*log2(n) + 2 * nlog2(n)  >>  O(nlogn)</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i <span class="token operator">=</span> i <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 1 + 3n</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="常见的复杂度"><a href="#常见的复杂度" class="headerlink" title="常见的复杂度"></a>常见的复杂度</h2><table>
+<thead>
+<tr>
+<th>执行次数</th>
+<th>复杂度</th>
+<th>非正式用语</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>12</td>
+<td>O(1)</td>
+<td>常数阶</td>
+</tr>
+<tr>
+<td>2n + 3</td>
+<td>O(n)</td>
+<td>线性阶</td>
+</tr>
+<tr>
+<td>4n^2^ + 2n + 6</td>
+<td>O(n^2^)</td>
+<td>平方阶</td>
+</tr>
+<tr>
+<td>4log<sub>2</sub>n +25</td>
+<td>O(logn)</td>
+<td>对数阶</td>
+</tr>
+<tr>
+<td>3n + 2nlog<sub>3</sub>n + 15</td>
+<td>O(nlogn)</td>
+<td>nlogn 阶</td>
+</tr>
+<tr>
+<td>4n^3^ + 3n^2^ +22n + 100</td>
+<td>O(n^3^)</td>
+<td>立方阶</td>
+</tr>
+<tr>
+<td>2^n^</td>
+<td>O(2^n^)</td>
+<td>指数阶</td>
+</tr>
+</tbody></table>
+<p>复杂度大小：O(1)  &lt;  O(logn)  &lt;   O(n)  &lt;  O(nlogn)   &lt;   O(n^2^)   &lt;   O(n^3^)   &lt;   O(2^n^)   &lt;   O(n!)   &lt;   O(n^n^)</p>
+<p>可以把复杂度当作函数，利用工具形象对比复杂度的大小：</p>
+<ul>
+<li><a href="https://zh.numberempire.com/graphingcalculator.php" target="_blank" rel="noopener">https://zh.numberempire.com/graphingcalculator.php</a></li>
+</ul>
+<h3 id="数据规模较小时"><a href="#数据规模较小时" class="headerlink" title="数据规模较小时"></a>数据规模较小时</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160156.png" alt=""></p>
+<h3 id="数据规模较大时"><a href="#数据规模较大时" class="headerlink" title="数据规模较大时"></a>数据规模较大时</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160204.png" alt=""></p>
+<h2 id="斐波那契函数算法分析"><a href="#斐波那契函数算法分析" class="headerlink" title="斐波那契函数算法分析"></a>斐波那契函数算法分析</h2><p>对于斐波那契函数，即返回斐波那契数列的第 n 位这样的一个函数的写法一般有两种：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">fib1</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">fib1</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fib1</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-path3  <span class="token operator">=</span>  os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>path1<span class="token punctuation">,</span>path2<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>path3<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># D:\Mahoo\Pictures</span></code></pre>
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">fib2</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> n<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> first <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> second <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        second <span class="token operator">+=</span> first<span class="token punctuation">;</span>
+        first <span class="token operator">=</span> second <span class="token operator">-</span> first<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> second<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>仅从代码量来看，是 fib1 完胜，但我们抛开表面深挖底层可以发现事情远不止这么简单，我们可以先用代码分别测算它们的执行时间来看个大概：</p>
+<blockquote>
+<p>【fib1(10)】耗时：0.0秒               【fib2(10)】耗时：0.0秒</p>
+<p>【fib1(45)】耗时：10.374秒        【fib2(45)】耗时：0.0秒</p>
+</blockquote>
+<p>当数据规模较小时，时间差并不是很大，数据规模大到一定程度，两者之间的区别就出来了，我们可用大O表示法来粗略确定他们的时间复杂度，就明白这么回事了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160209.png" alt=""></p>
+<p>因为 fib1() 函数内的 <code>return</code>语句可看作函数的核心，即时间复杂度可由<strong>调用该函数的次数</strong>来确定。</p>
+<p>由图可知，1 + 2 + 4 + 8 = 2^0^ + 2^1^ + 2^2^ + 2^3^ = 2^4^− 1 = 2^n−1^− 1 = 0.5 ∗ 2^n^− 1，所以时间复杂度是 O(2^n^)。</p>
+<p>而 fib2() 的时间复杂度很容易确定为 O(n)，它们的区别有多大呢？</p>
+<p>如果有一台1GHz的普通计算机，运算速度10^9^次/秒（n为64），O(n)大约耗时6.4 ∗ 10^−8^秒，O(2^n^)大约耗时584.94年。有时候算法之间的差距，往往比硬件方面的差距还要大。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -568,7 +708,7 @@ path3  <span class="token operator">=</span>  os<span class="token punctuation">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Mahoo12138</a>
+                    <a href="/about" rel="external nofollow noreferrer">Mahoo Huang</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -578,7 +718,7 @@ path3  <span class="token operator">=</span>  os<span class="token punctuation">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mahoo12138.cn/py-1.html">https://mahoo12138.cn/py-1.html</a>
+                    <a href="https://mahoo12138.cn/data-structure-and-algorithm-1.html">https://mahoo12138.cn/data-structure-and-algorithm-1.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -591,7 +731,7 @@ path3  <span class="token operator">=</span>  os<span class="token punctuation">
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Mahoo12138</a>
+                    <a href="/about" target="_blank">Mahoo Huang</a>
                     !
                 </span>
             </div>
@@ -616,8 +756,8 @@ path3  <span class="token operator">=</span>  os<span class="token punctuation">
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Python/">
-                                    <span class="chip bg-color">Python</span>
+                                <a href="/tags/数据结构与算法/">
+                                    <span class="chip bg-color">数据结构与算法</span>
                                 </a>
                             
                         </div>
@@ -1059,12 +1199,12 @@ path3  <span class="token operator">=</span>  os<span class="token punctuation">
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/markdown.html">
+                <a href="/data-structure-and-algorithm-2.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/markdown.png" class="responsive-img" alt="码字语法三千，我只取一瓢">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160102.png" class="responsive-img" alt="数据结构与算法学习之动态数组">
                         
-                        <span class="card-title">码字语法三千，我只取一瓢</span>
+                        <span class="card-title">数据结构与算法学习之动态数组</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1075,7 +1215,7 @@ path3  <span class="token operator">=</span>  os<span class="token punctuation">
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
                         </span>
                         <span class="publish-author">
                             
@@ -1092,12 +1232,8 @@ path3  <span class="token operator">=</span>  os<span class="token punctuation">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
-                    </a>
-                    
-                    <a href="/tags/LaTeX/">
-                        <span class="chip bg-color">LaTeX</span>
+                    <a href="/tags/数据结构与算法/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>
@@ -1111,12 +1247,12 @@ path3  <span class="token operator">=</span>  os<span class="token punctuation">
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/py-2.html">
+                <a href="/python-3.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/python.png" class="responsive-img" alt="Python学习Demo">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/python.png" class="responsive-img" alt="Python 爬虫的 XPath 学习">
                         
-                        <span class="card-title">Python学习Demo</span>
+                        <span class="card-title">Python 爬虫的 XPath 学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1127,7 +1263,7 @@ path3  <span class="token operator">=</span>  os<span class="token punctuation">
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-12
                             </span>
                         <span class="publish-author">
                             
@@ -1146,6 +1282,10 @@ path3  <span class="token operator">=</span>  os<span class="token punctuation">
                     
                     <a href="/tags/Python/">
                         <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/Xpath/">
+                        <span class="chip bg-color">Xpath</span>
                     </a>
                     
                 </div>
@@ -1276,6 +1416,13 @@ path3  <span class="token operator">=</span>  os<span class="token punctuation">
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 

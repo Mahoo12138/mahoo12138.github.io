@@ -1,4 +1,6 @@
-https://mahoo12138.cn/py-3.html
+https://mahoo12138.cn/data-structure-and-algorithm-2.html
+https://mahoo12138.cn/data-structure-and-algorithm-1.html
+https://mahoo12138.cn/python-3.html
 https://mahoo12138.cn/linux-1.html
 https://mahoo12138.cn/flutter-14.html
 https://mahoo12138.cn/flutter-13.html
@@ -35,6 +37,4 @@ https://mahoo12138.cn/stm32-5.html
 https://mahoo12138.cn/font-end-2.html
 https://mahoo12138.cn/office.html
 https://mahoo12138.cn/markdown.html
-https://mahoo12138.cn/py-1.html
-https://mahoo12138.cn/py-2.html
-https://mahoo12138.cn/stm32-4.html
+https://mahoo12138.cn/python-1.html
