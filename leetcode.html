@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="51单片机学习之流水灯蜂鸣器, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="Leetcode 刷题记录之链表, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>51单片机学习之流水灯蜂鸣器 | 黄同学的博客</title>
+    <title>Leetcode 刷题记录之链表 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/cover20210424174807.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">51单片机学习之流水灯蜂鸣器</h1>
+                    <h1 class="description center-align post-title">Leetcode 刷题记录之链表</h1>
                 </div>
             </div>
         </div>
@@ -442,8 +442,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/51单片机/">
-                                <span class="chip bg-color">51单片机</span>
+                            <a href="/tags/数据结构与算法/">
+                                <span class="chip bg-color">数据结构与算法</span>
+                            </a>
+                        
+                            <a href="/tags/链表/">
+                                <span class="chip bg-color">链表</span>
                             </a>
                         
                     </div>
@@ -467,21 +471,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-10
+                    2021-04-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-05-08
+                    2021-04-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    383
+                    1.9k
                 </div>
                 
 
@@ -498,84 +502,123 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="流水灯"><a href="#流水灯" class="headerlink" title="流水灯"></a>流水灯</h2><p>在代码中的延时均使用软件延时，即函数嵌套循环体进行延时；</p>
-<h3 id="位输出实现"><a href="#位输出实现" class="headerlink" title="位输出实现"></a>位输出实现</h3><pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;reg52.h></span></span>
-<span class="token macro property">#<span class="token directive keyword">define</span> uint unsigned int</span>
-
-<span class="token macro property">#<span class="token directive keyword">define</span> on 1</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> off 0</span>
-
-sbit led_0 <span class="token operator">=</span> P1 <span class="token operator">^</span> <span class="token number">0</span><span class="token punctuation">;</span>
-sbit led_1 <span class="token operator">=</span> P1 <span class="token operator">^</span> <span class="token number">1</span><span class="token punctuation">;</span>
-sbit led_2 <span class="token operator">=</span> P1 <span class="token operator">^</span> <span class="token number">2</span><span class="token punctuation">;</span>
-sbit led_3 <span class="token operator">=</span> P1 <span class="token operator">^</span> <span class="token number">3</span><span class="token punctuation">;</span>
-sbit led_4 <span class="token operator">=</span> P1 <span class="token operator">^</span> <span class="token number">4</span><span class="token punctuation">;</span>
-sbit led_5 <span class="token operator">=</span> P1 <span class="token operator">^</span> <span class="token number">5</span><span class="token punctuation">;</span>
-sbit led_6 <span class="token operator">=</span> P1 <span class="token operator">^</span> <span class="token number">6</span><span class="token punctuation">;</span>
-sbit led_7 <span class="token operator">=</span> P1 <span class="token operator">^</span> <span class="token number">7</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">//延时函数</span>
-<span class="token keyword">void</span> <span class="token function">Delay</span><span class="token punctuation">(</span>uint ms<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    uint i <span class="token punctuation">,</span>j<span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> ms<span class="token punctuation">;</span> i <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> <span class="token number">112</span><span class="token punctuation">;</span> j<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    
-        led_0 <span class="token operator">=</span> on<span class="token punctuation">;</span>
-        <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        led_0 <span class="token operator">=</span> off<span class="token punctuation">;</span>
-
-        led_1 <span class="token operator">=</span> on<span class="token punctuation">;</span>
-        <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        led_1 <span class="token operator">=</span> off<span class="token punctuation">;</span>
-
-        led_2 <span class="token operator">=</span> on<span class="token punctuation">;</span>
-        <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        led_2 <span class="token operator">=</span> off<span class="token punctuation">;</span>
-
-        led_3 <span class="token operator">=</span> on<span class="token punctuation">;</span>
-        <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        led_3 <span class="token operator">=</span> off<span class="token punctuation">;</span>
-
-        led_4 <span class="token operator">=</span> on<span class="token punctuation">;</span>
-        <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        led_4 <span class="token operator">=</span> off<span class="token punctuation">;</span>
-
-        led_5 <span class="token operator">=</span> on<span class="token punctuation">;</span>
-        <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        led_5 <span class="token operator">=</span> off<span class="token punctuation">;</span>
-
-        led_6 <span class="token operator">=</span> on<span class="token punctuation">;</span>
-        <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        led_6 <span class="token operator">=</span> off<span class="token punctuation">;</span>
-
-        led_7 <span class="token operator">=</span> on<span class="token punctuation">;</span>
-        <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        led_7 <span class="token operator">=</span> off<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+                <h2 id="237-删除链表中的节点"><a href="#237-删除链表中的节点" class="headerlink" title="237. 删除链表中的节点"></a><a href="https://leetcode-cn.com/problems/delete-node-in-a-linked-list/" target="_blank" rel="noopener">237. 删除链表中的节点</a></h2><p>请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点。传入函数的唯一参数为 <strong>要被删除的节点</strong> 。</p>
+<p>示例 ：</p>
+<blockquote>
+<p>输入：head = [4,5,1,9], node = 5<br>输出：[4,1,9]<br>解释：给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -&gt; 1 -&gt; 9.</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>链表至少包含两个节点。</li>
+<li>链表中所有节点的值都是唯一的。</li>
+<li>给定的节点为非末尾节点并且一定是链表中的一个有效节点。</li>
+<li>不要从你的函数中返回任何结果。</li>
+</ul>
+<p><strong>思路</strong>：</p>
+<p>这个题目比较反常，相对于我们常规的删除链表中的节点，因为一般在链表中删除一个节点，操作基本是：</p>
+<ol>
+<li>修改要删除节点的上一个节点的指针</li>
+<li>将该指针指向要删除节点的下一个节点</li>
+</ol>
+<p>这道题只知道需要删除的节点，正因如此，题解才会如此巧妙。</p>
+<p>我们可以将待删除节点的下一个节点覆盖掉待删除节点，以下是代码：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">deleteNode</span><span class="token punctuation">(</span>ListNode node<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    node<span class="token punctuation">.</span>val <span class="token operator">=</span> node<span class="token punctuation">.</span>next<span class="token punctuation">.</span>val<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// 将下一个节点的值覆盖带删除节点</span>
+    node<span class="token punctuation">.</span>next <span class="token operator">=</span> node<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// 将待删除节点指向下下一个节点</span>
 <span class="token punctuation">}</span></code></pre>
-<h3 id="循环位移实现"><a href="#循环位移实现" class="headerlink" title="循环位移实现"></a>循环位移实现</h3><pre class=" language-c"><code class="language-c">P1 <span class="token operator">=</span> <span class="token number">0xfe</span>    <span class="token comment" spellcheck="true">//1111 1110</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    P1 <span class="token operator">=</span> <span class="token function">_crol_</span><span class="token punctuation">(</span>P1<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//将P1左移一位</span>
+<p>评论区很有意思：</p>
+<blockquote>
+<p><a href="https://leetcode-cn.com/u/wcfairytale/" target="_blank" rel="noopener">SorXDL1</a>：</p>
+<p>这道题细思极恐：如何让自己在世界上消失，但又不死？ —— 将自己完全变成另一个人，再杀了那个人就行了。</p>
+</blockquote>
+<h2 id="206-反转链表"><a href="#206-反转链表" class="headerlink" title="206. 反转链表"></a><a href="https://leetcode-cn.com/problems/reverse-linked-list/" target="_blank" rel="noopener">206. 反转链表</a></h2><p>反转一个单链表。</p>
+<p>示例:</p>
+<blockquote>
+<p>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL<br>输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL</p>
+</blockquote>
+<p><strong>进阶</strong>:<br>你可以迭代或递归地反转链表。你能否用两种方法解决这道题？</p>
+<h3 id="递归方法"><a href="#递归方法" class="headerlink" title="递归方法"></a>递归方法</h3><p><strong>思路</strong>：</p>
+<p>递归的思维诀窍：<strong>在用递归思想解题时，明确递推公式的含义后，不要试图想明白每一步是如何递归的，这很容易把自己绕晕。</strong></p>
+<p>例如，这道题，给出的解法方法也就是递推公式，是<code>reverseList()</code>，我们需要明白这个方法的作用是什么：<strong>根据头结点把拿到的链表进行反转，然后返回新的头结点</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210424111352.png" alt></p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> ListNode <span class="token function">reverseList</span><span class="token punctuation">(</span>ListNode head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 调用递推公式反转当前结点之后的所有节点</span>
+    <span class="token comment" spellcheck="true">// 返回的结果是反转后的链表的头结点</span>
+    ListNode newHead <span class="token operator">=</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p>_crol_()函数的使用，必须要加上<code>#include "intrins.h"</code>，引入头文件，该函数的原型为：</p>
-<pre class=" language-c"><code class="language-c"><span class="token keyword">unsigned</span> <span class="token keyword">char</span> <span class="token function">_crol_</span><span class="token punctuation">(</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span> val<span class="token punctuation">,</span><span class="token keyword">unsigned</span> <span class="token keyword">char</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p><strong>函数功能</strong>：以位形式将 <code>val</code> 左移 n 位，该函数与8051“RLA”指令相关。如果二进制数为 01010101 那么 _crol_(1) 左移1位后将高位补低位，结果10101010。</p>
-<h3 id="移位操作实现"><a href="#移位操作实现" class="headerlink" title="移位操作实现"></a>移位操作实现</h3><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    P1 <span class="token operator">=</span> <span class="token number">0xfe</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">8</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token function">Delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        P1 <span class="token operator">&lt;&lt;=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        P1 <span class="token operator">=</span> P1 <span class="token operator">|</span> <span class="token number">0X01</span><span class="token punctuation">;</span>
+<p>接着要做的就是反转结点 1 ，也就是将head指向的结点作为其下一个结点的下一个结点，此时节点1 和反转之后的节点 2 仍然是相连的，即<code>head.next.next=head</code>。</p>
+<p>最后，将 head 指向的结点的下一个结点置为 null，就完成了整个链表的反转。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210424112113.png" alt></p>
+<p>递推公式完成之后，还有重要的一步就是递归终止条件：在 head 指向的结点为 null 或 head 指向的结点的下一个结点为 null 时停止，反转后也就是 head 本身。完整代码如下：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> ListNode <span class="token function">reverseList</span><span class="token punctuation">(</span>ListNode head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> null <span class="token operator">||</span> head<span class="token punctuation">.</span>next <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> head<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
+    ListNode newHead <span class="token operator">=</span> <span class="token function">reverseList</span><span class="token punctuation">(</span>head<span class="token punctuation">.</span>next<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    head<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    head<span class="token punctuation">.</span>next <span class="token operator">=</span> null<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> newHead<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<p>通过每次位移一位，再与<code>0x01</code>进行或操作，这样每次都有一位是低电位，从而实现流水灯。</p>
-<h2 id="蜂鸣器"><a href="#蜂鸣器" class="headerlink" title="蜂鸣器"></a>蜂鸣器</h2><script>
+<p><strong>感想</strong>：</p>
+<p>之前在学习C语言的时候，也是接触到递归的，当时是老想着把整个递归过程自己去用笔纸去推导一遍，验证；如今再次接触到递归，看了他人的分析与总结，我才感觉真正学会了一点递归的思想，受益匪浅，递归需要的是明确递推公式的含义，可以这么说吧，把整个解决步骤当作最后一步处理，并处理好递归结束条件即可。</p>
+<h3 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h3><p><strong>思路</strong>：</p>
+<p>迭代的方法也就是一个一个来，以下的方法像是把一个链表一节一节扒开，再组合，重新组合的链表便是反转后的了，具体步骤：</p>
+<ul>
+<li>创建一个 <code>newHead</code>节点；</li>
+<li>进入循环，创建一个临时节点<code>temp</code>指向<code>head</code>节点的 <code>next</code>节点；</li>
+<li>之后将<code>head</code>节点的 <strong>next</strong> 指向 <strong>null</strong>；</li>
+<li>接着将<code>newHead</code>节点指向当前的<code>head</code>节点；</li>
+<li>最后将<code>head</code>节点指向临时节点<code>temp</code>，这样完成第一轮循环；</li>
+</ul>
+<p>同样的，我们要做好这个循环结束的判断，当<code>head</code>节点的 <strong>next</strong> 为 <strong>null</strong> 时说明已经循环整个链表，代码如下：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> ListNode <span class="token function">reverseList</span><span class="token punctuation">(</span>ListNode head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    ListNode newHead <span class="token operator">=</span> null<span class="token punctuation">;</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>head <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ListNode temp <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        head<span class="token punctuation">.</span>next <span class="token operator">=</span> newHead<span class="token punctuation">;</span>
+        newHead <span class="token operator">=</span> head<span class="token punctuation">;</span>
+        head <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> newHead<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="141-环形链表"><a href="#141-环形链表" class="headerlink" title="141. 环形链表"></a><a href="https://leetcode-cn.com/problems/linked-list-cycle/" target="_blank" rel="noopener">141. 环形链表</a></h2><p>给定一个链表，判断链表中是否有环。</p>
+<p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，我们使用整数 <strong>pos</strong> 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 <strong>pos</strong> 是 -1，则在该链表中没有环。注意：<strong>pos</strong> 不作为参数进行传递，仅仅是为了标识链表的实际情况。</p>
+<p>如果链表中存在环，则返回 true 。 否则，返回 false 。</p>
+<p><strong>示例</strong>：</p>
+<blockquote>
+<p>输入：head = [3,2,0,-4], pos = 1<br>输出：true<br>解释：链表中有一个环，其尾部连接到第二个节点。</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li>链表中节点的数目范围是 <code>[0, 104]</code></li>
+<li><code>-105 &lt;= Node.val &lt;= 105</code></li>
+<li><code>pos</code> 为 <code>-1</code> 或者链表中的一个 <strong>有效索引</strong> 。</li>
+</ul>
+<p><strong>进阶</strong>：</p>
+<p>你能用 O(1)（即，常量）内存解决此问题吗？</p>
+<p><strong>思路</strong>：</p>
+<p>当一个链表存在环的时候，经典的作法是使用快慢指针，别问我怎么就知道快慢指针，这是一种数据结构与算法的知识储备；快慢指针，通俗一点可以描述为九年义务教育中的<strong>追及问题</strong>，如一个环形操场上跑步，有甲乙二人，一慢一快，无论在哪起跑，总会相遇的。</p>
+<p>而转到链表，我们设定慢指针每次只移动一步，而快指针每次移动两步，当两个指针都进入环后，初始时，慢指针在位置 <code>head</code>，而快指针在位置 <code>head.next</code>。如果链表存在环，那么快指针总会追上慢指针。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">hasCycle</span><span class="token punctuation">(</span>ListNode head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> null <span class="token operator">||</span> head<span class="token punctuation">.</span>next <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    ListNode slow <span class="token operator">=</span> head<span class="token punctuation">;</span>
+    ListNode quick <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>quick <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> quick<span class="token punctuation">.</span>next <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>slow <span class="token operator">==</span> quick<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        slow <span class="token operator">=</span> slow<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+        quick <span class="token operator">=</span> quick<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>感想：</p>
+<p>算法题也是像应试题目的，需要知识理论基础，并加之以不断的练习，这个练习就是普通人的大脑发挥作用的地方了，不断的总结归纳吧。就拿这个题目来讲，我最初想到的解法是把每一个节点都存到数组中，然后循环检查，快慢指针这个概念脑袋中是没有的，所以以后遇到这类题的变种，至少脑子里会有快慢指针这个概念了。</p>
+<p>在评论区也看到了一个举一反三的想法，要是存在环，<strong>如何判断环的长度呢</strong>？方法是，快慢指针相遇后继续移动，直到第二次相遇。两次相遇间的<strong>移动次数即为环的长度</strong>。</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -619,7 +662,7 @@ sbit led_7 <span class="token operator">=</span> P1 <span class="token operator"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://mahoo12138.cn/51mcu-1.html">https://mahoo12138.cn/51mcu-1.html</a>
+                    <a href="https://mahoo12138.cn/leetcode.html">https://mahoo12138.cn/leetcode.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -657,8 +700,12 @@ sbit led_7 <span class="token operator">=</span> P1 <span class="token operator"
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/51单片机/">
-                                    <span class="chip bg-color">51单片机</span>
+                                <a href="/tags/数据结构与算法/">
+                                    <span class="chip bg-color">数据结构与算法</span>
+                                </a>
+                            
+                                <a href="/tags/链表/">
+                                    <span class="chip bg-color">链表</span>
                                 </a>
                             
                         </div>
@@ -1100,12 +1147,12 @@ sbit led_7 <span class="token operator">=</span> P1 <span class="token operator"
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/51mcu-3.html">
+                <a href="/data-structure-and-algorithm-3.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg" class="responsive-img" alt="51单片机学习之数码管">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160102.png" class="responsive-img" alt="数据结构与算法学习之链表">
                         
-                        <span class="card-title">51单片机学习之数码管</span>
+                        <span class="card-title">数据结构与算法学习之链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1116,7 +1163,7 @@ sbit led_7 <span class="token operator">=</span> P1 <span class="token operator"
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
                         </span>
                         <span class="publish-author">
                             
@@ -1133,8 +1180,8 @@ sbit led_7 <span class="token operator">=</span> P1 <span class="token operator"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/51单片机/">
-                        <span class="chip bg-color">51单片机</span>
+                    <a href="/tags/数据结构与算法/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>
@@ -1148,12 +1195,12 @@ sbit led_7 <span class="token operator">=</span> P1 <span class="token operator"
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/hexo-1.html">
+                <a href="/data-structure-and-algorithm-1.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/hexo.png" class="responsive-img" alt="hexo使用的不完全填坑指南">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160102.png" class="responsive-img" alt="数据结构与算法学习之复杂度">
                         
-                        <span class="card-title">hexo使用的不完全填坑指南</span>
+                        <span class="card-title">数据结构与算法学习之复杂度</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1164,14 +1211,14 @@ sbit led_7 <span class="token operator">=</span> P1 <span class="token operator"
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/技术教程/" class="post-category">
-                                    技术教程
+                            <a href="/categories/学习笔记/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
@@ -1181,8 +1228,8 @@ sbit led_7 <span class="token operator">=</span> P1 <span class="token operator"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/数据结构与算法/">
+                        <span class="chip bg-color">数据结构与算法</span>
                     </a>
                     
                 </div>

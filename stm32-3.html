@@ -681,7 +681,7 @@ uint32_t SystemCoreClock <span class="token operator">=</span> SYSCLK_FREQ_72MHz
     <span class="token function">TimingDelay_Decrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
 <span class="token punctuation">}</span></code></pre>
 <blockquote>
-<p>有关<strong>volatile</strong>的细节可参考我的这篇博文：<a href="">盘点C语言中你不知道的小细节</a>，技术尚浅，仅供参考</p>
+<p>有关<strong>volatile</strong>的细节可参考我的这篇博文：<a href>盘点C语言中你不知道的小细节</a>，技术尚浅，仅供参考</p>
 </blockquote>
 <p>  需要延时的时候，我们可以调用函数<code>Delay_us()</code>并传入具体的参数， 当然之前还需要对SysTick进行初始化，将参数传给全局变量<code>TimingDelay</code>，当一个计数递减周期完成，产生异常（中断），自动调用中断服务函数<code>SysTick_Handler(void)</code>，这个函数我们可以在文件==stm32f10x_it.c==中编程，再声明一个函数用于控制多少个计时周期，每完成一个计时周期减一，直至延时完成。</p>
 <p>  延时实例：</p>
@@ -1435,9 +1435,22 @@ uint32_t SystemCoreClock <span class="token operator">=</span> SYSCLK_FREQ_72MHz
 
 <script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
+MathJax.Hub.Config({
+    showProcessingMessages: false,//关闭js加载过程信息
+    messageStyle: "none",//不显示信息
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+        inlineMath:  [ ["$", "$"] ],//行内公式选择符
+        displayMath: [ ["$$","$$"] ],//段内公式选择符
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],//避开某些标签
+        ignoreClass:"comment-content" //避开含该Class的标签
+    },
+    "HTML-CSS": {
+        availableFonts: ["STIX","TeX"],//可选字体
+        showMathMenu: false //关闭右击菜单显示
+    }
+});
 </script>
 
 

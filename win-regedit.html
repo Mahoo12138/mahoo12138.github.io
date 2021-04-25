@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Win10 注册表的使用教程, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
+    <meta name="keywords" content="Win10 注册表的必备使用教程, 黄同学的博客,Mahoo&#39;s Blog,Stm32,Mahoo,Mahoo12138">
     <meta name="description" content="一切的恐惧都来源于无知！">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>Win10 注册表的使用教程 | 黄同学的博客</title>
+    <title>Win10 注册表的必备使用教程 | 黄同学的博客</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/favicon.ico">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/libs/awesome/css/all.css">
@@ -326,7 +326,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Win10 注册表的使用教程</h1>
+                    <h1 class="description center-align post-title">Win10 注册表的必备使用教程</h1>
                 </div>
             </div>
         </div>
@@ -474,7 +474,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-02
+                    2021-04-25
                 </div>
                 
 
@@ -498,57 +498,48 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="右键新建内容无文本文档"><a href="#右键新建内容无文本文档" class="headerlink" title="右键新建内容无文本文档"></a>右键新建内容无<code>文本文档</code></h2><ul>
+                <h2 id="右键新建内容无文本文档"><a href="#右键新建内容无文本文档" class="headerlink" title="右键新建内容无文本文档"></a>右键新建内容无文本文档</h2><ul>
 <li><p>检查<code>C:\WINDOWS\notepad.exe</code>是否存在，如无可在搜索引擎中下载；</p>
 </li>
 <li><p>新建后缀为<code>.reg</code>的文本文档，这里可以各自大显身手，留一个参考选择，打开 <strong>CMD</strong>命令窗口：</p>
 <pre class=" language-powershell"><code class="language-powershell"><span class="token function">copy</span> con &lt;文件名><span class="token punctuation">.</span>txt  &lt;内容></code></pre>
 </li>
 <li><p>将以下注册表信息写入<code>.reg</code>文件：</p>
-<pre><code>Windows Registry Editor Version 5.00
-
+<pre class=" language-shell"><code class="language-shell">Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\.txt]
-
 @="txtfile"
-
 "Content Type"="text/plain"
-
 [HKEY_CLASSES_ROOT\.txt\ShellNew]
-
 "NullFile"=""
-
 [HKEY_CLASSES_ROOT\txtfile]
-
 @="文本文档"
-
 [HKEY_CLASSES_ROOT\txtfile\shell]
-
 [HKEY_CLASSES_ROOT\txtfile\shell\open]
-
 [HKEY_CLASSES_ROOT\txtfile\shell\open\command]
-
-@="NOTEPAD.EXE %1"</code></pre></li>
+@="NOTEPAD.EXE %1"</code></pre>
+</li>
 <li><p>双击打开，合并到注册表中</p>
 </li>
 </ul>
-<h2 id="添加右键新建-md文件"><a href="#添加右键新建-md文件" class="headerlink" title="添加右键新建.md文件"></a>添加右键新建<code>.md</code>文件</h2><ul>
+<h2 id="添加右键新建-md文件"><a href="#添加右键新建-md文件" class="headerlink" title="添加右键新建 .md文件"></a>添加右键新建 .md文件</h2><ul>
 <li><p>打开注册表编辑器，在<code>计算机&gt;HKEY_CLASSES_ROOT</code>中，搜索<code>Typora</code>，搜索选项只勾选 <strong>项</strong>；</p>
 </li>
 <li><p>搜索到<code>计算机\HKEY_CLASSES_ROOT\Applications\Typora.exe</code></p>
 </li>
 <li><p>在任意位置，新建文本文件，后缀为<code>.reg</code>，写入以下内容：</p>
-<pre><code>Windows Registry Editor Version 5.00
+<pre class=" language-shell"><code class="language-shell">Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\.md]
 @="Typora.exe"
 [HKEY_CLASSES_ROOT\.md\ShellNew]
 "NullFile"=""
 [HKEY_CLASSES_ROOT\Typora.exe]
-@="Markdown"</code></pre></li>
+@="Markdown"</code></pre>
+</li>
 <li><p>编码选择<code>Unicode</code>，保存后双击打开，合并注册到注册表即可</p>
 </li>
 </ul>
 <h2 id="桌面右键菜单添加控制面板快捷方式"><a href="#桌面右键菜单添加控制面板快捷方式" class="headerlink" title="桌面右键菜单添加控制面板快捷方式"></a>桌面右键菜单添加控制面板快捷方式</h2><p>这个就没什么好说的了，直接创建<code>.reg</code>，双击打开合并注册表即可：</p>
-<pre><code>Windows Registry Editor Version 5.00
+<pre class=" language-sh"><code class="language-sh">Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\DesktopBackground\Shell\ControlPanel]
 "MUIVerb"="控制面板"
@@ -613,7 +604,8 @@
   00,6c,00,2c,00,2d,00,38,00,31,00,00,00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\CommandStore\shell\WindowsVersion\command]
-@="winver.exe"</code></pre><h2 id=""><a href="#" class="headerlink" title=""></a></h2><script>
+@="winver.exe"</code></pre>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }

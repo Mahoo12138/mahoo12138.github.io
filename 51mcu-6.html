@@ -1274,12 +1274,12 @@ sbit led <span class="token operator">=</span> P1 <span class="token operator">^
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/51mcu-5.html">
+                <a href="/51mcu-2.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg" class="responsive-img" alt="51单片机学习之中断系统">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg" class="responsive-img" alt="51单片机学习之串口通信">
                         
-                        <span class="card-title">51单片机学习之中断系统</span>
+                        <span class="card-title">51单片机学习之串口通信</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1290,7 +1290,7 @@ sbit led <span class="token operator">=</span> P1 <span class="token operator">^
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-12
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-15
                         </span>
                         <span class="publish-author">
                             
@@ -1322,12 +1322,12 @@ sbit led <span class="token operator">=</span> P1 <span class="token operator">^
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/51mcu-4.html">
+                <a href="/51mcu-5.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg" class="responsive-img" alt="51单片机学习之独立键盘输入">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/51.jpg" class="responsive-img" alt="51单片机学习之中断系统">
                         
-                        <span class="card-title">51单片机学习之独立键盘输入</span>
+                        <span class="card-title">51单片机学习之中断系统</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1490,9 +1490,22 @@ sbit led <span class="token operator">=</span> P1 <span class="token operator">^
 
 <script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
+MathJax.Hub.Config({
+    showProcessingMessages: false,//关闭js加载过程信息
+    messageStyle: "none",//不显示信息
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+        inlineMath:  [ ["$", "$"] ],//行内公式选择符
+        displayMath: [ ["$$","$$"] ],//段内公式选择符
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],//避开某些标签
+        ignoreClass:"comment-content" //避开含该Class的标签
+    },
+    "HTML-CSS": {
+        availableFonts: ["STIX","TeX"],//可选字体
+        showMathMenu: false //关闭右击菜单显示
+    }
+});
 </script>
 
 

@@ -514,7 +514,7 @@
 <p>配置成这个模式后，用电压变量引脚电压为1点几伏，<strong>这是个不确定值</strong>，完全由外部的输入决定，一般接按键的时候用的是这个模式。由于其输入阻抗比较大，一般也可以把这种模式用于标准的通讯协议，比如IIC、USART等。  如果在该引脚悬空（在无信号输入）的情况下，读取该端口的电平是不确定的。</p>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/STM32/GPIO.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/STM32/GPIO.png" alt></p>
 <h2 id="输出模式"><a href="#输出模式" class="headerlink" title="输出模式"></a>输出模式</h2><ul>
 <li><p><strong>普通推挽输出（GPIO_Mode_Out_PP）</strong></p>
 <p>推挽输出模式下，通过配置<code>位设置/清除寄存器</code>或者输出数据寄存器的值，途经P-MOS管和N-MOS管，最终输出到I/O端口。这里要注意P-MOS管和N-MOS管，</p>
@@ -544,7 +544,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/STM32/Push-Pull.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/STM32/Push-Pull.png" alt></p>
 <p> 该图中左边的便是推挽输出模式，其中比较器输出高电平时下面的PNP三极管截止，而上面NPN三极管导通，输出电平VS+；当比较器输出低电平时则恰恰相反，PNP三极管导通，输出和地相连，为低电平。右边的则可以理解为开漏输出形式，需要接上拉。</p>
 <ul>
 <li>STM32中选用怎样选择I/O模式<ul>

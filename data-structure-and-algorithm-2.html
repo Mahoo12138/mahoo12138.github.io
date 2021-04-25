@@ -474,14 +474,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-18
+                    2021-04-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    2.8k
                 </div>
                 
 
@@ -502,21 +502,21 @@
 <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160037.png" style="zoom:80%;">
 
 <p>线性结构：主要有数组链表，栈，队列和哈希表</p>
-<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160059.png" alt="graph (1)" style="zoom:80%;">
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160059.png" alt style="zoom:80%;">
 
 <p>树形结构：主要有二叉树，红黑树，B树，堆，Trie，哈夫曼树，并查集等</p>
-<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160102.png" alt="graph (2)" style="zoom: 80%;">
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160102.png" alt style="zoom: 80%;">
 
 <p>图形结构：邻接矩阵，邻接表</p>
 <p>在实际开发应用中，需要根据使用场景来选择最合适的数据结构。</p>
-<h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160106.png" alt=""></p>
+<h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160106.png" alt></p>
 <p>对于线性表，我们需要清楚一些概念：</p>
 <ul>
 <li>a<sub>1</sub> 是<strong>首节点</strong>（首元素）， a<sub>n</sub> 是<strong>尾结点</strong>（尾元素）</li>
 <li>a<sub>1</sub> 是 a<sub>2</sub> 的<strong>前驱</strong>， a<sub>2</sub> 是 a<sub>1</sub> 的<strong>后继</strong></li>
 </ul>
 <p>常见的线性表有：数组、链表、栈、队列、哈希表（散列表）</p>
-<h2 id="数组（Array）"><a href="#数组（Array）" class="headerlink" title="数组（Array）"></a>数组（Array）</h2><p>数组是一种顺序存储的线性表，所有元素的<strong>内存地址是连续的</strong>。</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组是一种顺序存储的线性表，所有元素的<strong>内存地址是连续的</strong>。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">33</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160110.png" style="zoom:67%;">
 
@@ -524,7 +524,7 @@
 <li>在很多编程语言中，数组都有个致命的缺点——<strong>无法动态修改容量</strong>；</li>
 <li>实际开发中，我们更希望数组的容量是可以动态改变的；</li>
 </ul>
-<h2 id="动态数组（Dynamic-Array）设计"><a href="#动态数组（Dynamic-Array）设计" class="headerlink" title="动态数组（Dynamic Array）设计"></a>动态数组（Dynamic Array）设计</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                     <span class="token comment" spellcheck="true">// 元素的数量</span>
+<h2 id="动态数组设计"><a href="#动态数组设计" class="headerlink" title="动态数组设计"></a>动态数组设计</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> <span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                     <span class="token comment" spellcheck="true">// 元素的数量</span>
 <span class="token keyword">boolean</span> <span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                 <span class="token comment" spellcheck="true">// 是否为空</span>
 <span class="token keyword">boolean</span> <span class="token function">contains</span><span class="token punctuation">(</span>E element<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment" spellcheck="true">// 是否包含某个元素</span>
 <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span>E element<span class="token punctuation">)</span><span class="token punctuation">;</span>             <span class="token comment" spellcheck="true">// 添加元素到最后面</span>
@@ -536,7 +536,7 @@ E <span class="token function">remove</span><span class="token punctuation">(</s
 <span class="token keyword">void</span> <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                     <span class="token comment" spellcheck="true">// 清除所有元素</span></code></pre>
 <p>熟悉这类编程语言的都了解，上述接口代码中的 <code>E</code>是为了支持泛型，当然代码的编写是循序渐进的，我们先让动态数组支持整型。</p>
 <p>在设计的动态数组时，有两个成员变量，一是数组的容量 <code>size</code>，而是存储数据的数组 <code>elements</code>：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160116.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160116.png" alt></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArrayList</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> size<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> elements<span class="token punctuation">;</span>
@@ -599,7 +599,7 @@ E <span class="token function">remove</span><span class="token punctuation">(</s
 <span class="token punctuation">}</span>                                                                       </code></pre>
 <p>代码中的 -1 常见的作法也是像默认容量一样的处理：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">static</span> <span class="token keyword">int</span> ELEMENT_NOT_FOUND <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span></code></pre>
-<h2 id="添加元素-add-int-element"><a href="#添加元素-add-int-element" class="headerlink" title="添加元素  - add(int element)"></a>添加元素  - add(int element)</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160120.png" alt=""></p>
+<h2 id="末尾添加元素"><a href="#末尾添加元素" class="headerlink" title="末尾添加元素"></a>末尾添加元素</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160120.png" alt></p>
 <p>当添加元素的时候，通过上图，我们很容易从发现每添加一个元素，都是在 <code>size</code>的位置，于是代码：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 若容量不够，需要扩容</span>
@@ -621,7 +621,7 @@ E <span class="token function">remove</span><span class="token punctuation">(</s
     sBuilder<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">']'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> sBuilder<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<h2 id="删除元素-remove-int-index"><a href="#删除元素-remove-int-index" class="headerlink" title="删除元素- remove(int index)"></a>删除元素- remove(int index)</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160125.png" alt=""></p>
+<h2 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160125.png" alt></p>
 <p>在删除元素的时候，由于是动态数组，删除其中某一个元素，那必然后面的会紧随其后跟过来，因为数组是连续的，所以我们需要对后面的元素进行挪动：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">remove</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">rangeCheck</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -638,7 +638,7 @@ E <span class="token function">remove</span><span class="token punctuation">(</s
         <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span><span class="token string">"index: "</span> <span class="token operator">+</span> index <span class="token operator">+</span> <span class="token string">",and size: "</span> <span class="token operator">+</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h2 id="添加元素-add-int-index-int-element"><a href="#添加元素-add-int-index-int-element" class="headerlink" title="添加元素 - add(int index, int element)"></a>添加元素 - add(int index, int element)</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160133.png" alt=""></p>
+<h2 id="指定序列添加元素"><a href="#指定序列添加元素" class="headerlink" title="指定序列添加元素"></a>指定序列添加元素</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160133.png" alt></p>
 <p>在某一个索引添加元素和删除某一个索引的元素类似，都需要挪动元素，但需要注意的是，挪动的顺序，要从后面开始挪动，不然会造成<strong>元素被覆盖</strong>的问题。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token keyword">int</span> element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">rangeCheckForAdd</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -726,7 +726,7 @@ elements <span class="token operator">=</span> <span class="token keyword">new</
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p>因为在 Java 语言中，所有的对象的最终父类都是 <code>Object</code>，我们只需要创建一个 <code>Object</code>类型的数组，然后进行签证类型转换即可。</p>
-<h3 id="对象数组-amp-内存管理细节"><a href="#对象数组-amp-内存管理细节" class="headerlink" title="对象数组 &amp; 内存管理细节"></a>对象数组 &amp; 内存管理细节</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418174135.png" alt=""></p>
+<h3 id="对象数组-amp-内存管理细节"><a href="#对象数组-amp-内存管理细节" class="headerlink" title="对象数组 &amp; 内存管理细节"></a>对象数组 &amp; 内存管理细节</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418174135.png" alt></p>
 <p>在 Java 语言中对象数组实际存储的是<strong>对象的引用</strong>，也就是对象的地址。</p>
 <p>所以当我们调用 <code>clear()</code> 方法来清空对象数组，这样仅仅只是将 <strong>size</strong> 赋值为 0 ，对象数组内的对象还在内存中，这样就比较浪费内存了，因为存储的对象的大小我们是无法预知的，所以我们应该在<code>clear()</code>中消除对对象的引用，以便垃圾回收：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -804,6 +804,21 @@ System<span class="token punctuation">.</span><span class="token function">gc</s
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> ELEMENT_NOT_FOUND<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
+<h2 id="动态缩容"><a href="#动态缩容" class="headerlink" title="动态缩容"></a>动态缩容</h2><p>如果内存使用比较紧张，动态数组有比较多的剩余空间，可以考虑进行缩容操作；比如剩余空间占总容量的一半时，就进行缩容。如果扩容倍数、缩容时机设计不得当，有可能会导致<strong>复杂度震荡</strong>。</p>
+<p>我们就简单写下缩容的代码，缩容只在删除元素时调用，我们设为私有方法，获取当前的数组的长度的一半作为缩容后的容量，仅当当前动态数组的大小小于新容量且大于默认容量时才缩容：</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">trimCapacity</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> newCapacity <span class="token operator">=</span> elements<span class="token punctuation">.</span>length <span class="token operator">>></span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>size <span class="token operator">&lt;=</span> newCapacity <span class="token operator">&amp;&amp;</span> size <span class="token operator">></span> DEFAULT_CAPACITY<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token annotation punctuation">@SuppressWarnings</span><span class="token punctuation">(</span><span class="token string">"unchecked"</span><span class="token punctuation">)</span>
+        E<span class="token punctuation">[</span><span class="token punctuation">]</span> newElements <span class="token operator">=</span> <span class="token punctuation">(</span>E<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span>newCapacity<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>elements<span class="token punctuation">.</span>length <span class="token operator">+</span> <span class="token string">",缩容为： "</span> <span class="token operator">+</span> newElements<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> size<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            newElements<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> elements<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        elements <span class="token operator">=</span> newElements<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>说到刚才的<strong>复杂度震荡</strong>，其实就是当缩容和扩容刚好互为倒数时，比如缩容为 1/2 以及扩容为 2 倍时， 此时容量若为 4，增加元素扩容后容量增加到 8 后，此时再把刚添加的元素删除，又会缩容，如果每次都是加了又删，每次缩容扩容的时间复杂度都是O(n)，这样的话，对于动态数组的操作本来都是很低的时间复杂度，这样频繁的操作造成时间复杂度突然到一个很高的水平，这样的情形可以简单描述为复杂度震荡。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1379,12 +1394,12 @@ System<span class="token punctuation">.</span><span class="token function">gc</s
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/data-structure-and-algorithm-1.html">
+                <a href="/data-structure-and-algorithm-3.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160102.png" class="responsive-img" alt="数据结构与算法学习之复杂度">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160102.png" class="responsive-img" alt="数据结构与算法学习之链表">
                         
-                        <span class="card-title">数据结构与算法学习之复杂度</span>
+                        <span class="card-title">数据结构与算法学习之链表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1395,7 +1410,7 @@ System<span class="token punctuation">.</span><span class="token function">gc</s
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
                             </span>
                         <span class="publish-author">
                             
@@ -1547,9 +1562,22 @@ System<span class="token punctuation">.</span><span class="token function">gc</s
 
 <script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
+MathJax.Hub.Config({
+    showProcessingMessages: false,//关闭js加载过程信息
+    messageStyle: "none",//不显示信息
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+        inlineMath:  [ ["$", "$"] ],//行内公式选择符
+        displayMath: [ ["$$","$$"] ],//段内公式选择符
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],//避开某些标签
+        ignoreClass:"comment-content" //避开含该Class的标签
+    },
+    "HTML-CSS": {
+        availableFonts: ["STIX","TeX"],//可选字体
+        showMathMenu: false //关闭右击菜单显示
+    }
+});
 </script>
 
 
