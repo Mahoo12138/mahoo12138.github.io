@@ -467,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-16
+                    2019-10-16
                 </div>
                 
 
@@ -500,8 +500,8 @@
             <div id="articleContent">
                 <h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><p>动态数组有个明显的缺点，可能会造成<strong>内存空间的大量浪费</strong>；能否用到多少就申请多少内存？链表可以办到这一点。</p>
 <p>链表是一种<strong>链式存储</strong>的线性表，所有元素的内存地址不一定是连续的：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210421233802.png" alt></p>
-<h2 id="链表的设计"><a href="#链表的设计" class="headerlink" title="链表的设计"></a>链表的设计</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425144825.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210421233802.png" alt=""></p>
+<h2 id="链表的设计"><a href="#链表的设计" class="headerlink" title="链表的设计"></a>链表的设计</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425144825.png" alt=""></p>
 <p>在 LinkedList 类中，有成员变量 size 和指向头节点的 first ，内部类 Node 中存储了变量值 element，和指向下一个节点的 next。</p>
 <h3 id="接口设计"><a href="#接口设计" class="headerlink" title="接口设计"></a>接口设计</h3><p>链表的大部分接口和动态数组是一致的，所以我们可以用 java 的一个语法——<strong>接口</strong>来实现：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>mahoo<span class="token punctuation">;</span>
@@ -741,7 +741,7 @@
     <span class="token keyword">return</span> old<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <p>继续回到正题，当添加元素时，拿到前一个节点后，首先将传入的值和此节点的 next 节点作为初值创建一个新节点，之后再将此节点的 next 指向新创建的待添加节点；不过还要考虑一种特殊情况，也就是 <strong>index = 0</strong> 的情况，这会在<code>rangeCheck()</code>报错，所以 <strong>index = 0</strong> 需要特殊处理；<strong>index = 0</strong> 时也就是往头结点位置添加节点，其实很简单，将 <strong>firstNode</strong>（图中为 first ） 作为参数创建新节点，再让 <strong>firstNode</strong> 指向新创建的节点即可，最后不要忘记 <code>size++</code>：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210422230909.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210422230909.png" alt=""></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> E element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         firstNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Node</span><span class="token operator">&lt;</span>E<span class="token operator">></span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> firstNode<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -755,7 +755,7 @@
 <p>处理了 <strong>index = 0</strong> 这个特殊情况，<strong>index = size</strong> 这种情况上述代码也是完全能够处理的，就不多言了。</p>
 <h2 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h2><p>删除元素同样需要拿到前一个位置的节点，只需要将此节点指向下一个的下一个节点即可；还是类似，需要考虑<strong>index = 0</strong> 这个特殊情况，当删除第一个节点时，只需要将 <strong>firstNode</strong> 指向它的 next ，之后就是 <code>size--</code>。</p>
 <p>需要注意的是，这里删除以后需要返回被删除元素的值，首先可以定义一个节点用来存储被删的节点，可直接赋为 <strong>firstNode</strong>，如果不是删除头节点，可以再次赋值：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210422232243.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210422232243.png" alt=""></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> E <span class="token function">remove</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">rangeCheck</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
     Node<span class="token operator">&lt;</span>E<span class="token operator">></span> node <span class="token operator">=</span> firstNode<span class="token punctuation">;</span>
@@ -806,7 +806,7 @@
     <span class="token keyword">return</span> sBuilder<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <h2 id="虚拟头结点"><a href="#虚拟头结点" class="headerlink" title="虚拟头结点"></a>虚拟头结点</h2><p>因为在处理增删逻辑的时候，免不了对头结点进行一些特殊处理，有时候为了让代码更加精简，统一所有节点的处理逻辑，可以在最前面增加一个虚拟的不存储数据的头结点。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425144755.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425144755.png" alt=""></p>
 <p>首先要增加一个构造函数，因为初始化的时候，虽没有元素，但也有一个虚拟的头结点：</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 这里复制了一份文件</span>
 <span class="token keyword">public</span> <span class="token function">LinkedList_With_Fake_FirstNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -833,7 +833,7 @@
     <span class="token keyword">return</span> node<span class="token punctuation">.</span>element<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <h2 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h2><p>上述学习的链表，也叫做单向链表，只能单向的寻找邻近的元素，双向链表顾名思义，使用双向链表可以提升链表的综合性能：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425144902.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425144902.png" alt=""></p>
 <h3 id="获取节点"><a href="#获取节点" class="headerlink" title="获取节点"></a>获取节点</h3><p>当节点可以前后双向访问以后，首先要修改的应该是 <code>node()</code>方法，可以根据查找节点序列与动态数组长度的关系选择从前/后开始：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> Node<span class="token operator">&lt;</span>E<span class="token operator">></span> <span class="token function">node</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">rangeCheck</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -858,7 +858,7 @@
     size <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <h3 id="添加元素-1"><a href="#添加元素-1" class="headerlink" title="添加元素"></a>添加元素</h3><p>需要注意的就是下图的特殊情况：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425144856.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425144856.png" alt=""></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> E element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">rangeCheckForAdd</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">==</span> size<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token comment" spellcheck="true">// 往尾部添加节点</span>
@@ -901,9 +901,9 @@
     <span class="token keyword">return</span> deleteNode<span class="token punctuation">.</span>element<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <h2 id="双向循环列表"><a href="#双向循环列表" class="headerlink" title="双向循环列表"></a>双向循环列表</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425144852.png" alt="image-20210425105646063"></p>
-<h3 id="添加元素-2"><a href="#添加元素-2" class="headerlink" title="添加元素"></a>添加元素</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425144846.png" alt></p>
+<h3 id="添加元素-2"><a href="#添加元素-2" class="headerlink" title="添加元素"></a>添加元素</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425144846.png" alt=""></p>
 <p>需要考虑的也是这种特殊情况：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425144837.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425144837.png" alt=""></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> E element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">rangeCheckForAdd</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>index <span class="token operator">==</span> size<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -954,7 +954,7 @@
 <p>人们站在一个等待被处决的圈子里。 计数从圆圈中的指定点开始，并沿指定方向围绕圆圈进行。 在跳过指定数量的人之后，处刑下一个人。 对剩下的人重复该过程，从下一个人开始，朝同一方向跳过相同数量的人，直到只剩下一个人，并被释放。</p>
 <p>问题即，给定人数、起点、方向和要跳过的数字，选择初始圆圈中的位置以避免被处决。</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425164224.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425164224.png" alt=""></p>
 <p>这个问题比较简单的做法是用循环单链表模拟整个过程，正好我们刚把链表梳理了一遍，为了更好地解决此问题，我们可以考虑增加 1 个成员变量，3 个方法：</p>
 <ul>
 <li><code>current</code>：用于指向某个节点；</li>
@@ -1022,7 +1022,7 @@
     <span class="token function">josephusTest</span><span class="token punctuation">(</span>josephus<span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 <h2 id="静态链表"><a href="#静态链表" class="headerlink" title="静态链表"></a>静态链表</h2><p>前面所学习的链表，是依赖于指针（引用）实现的， 有些编程语言是没有指针的，比如早期的 BASIC、FORTRAN 语言，没有指针的情况下，如何实现链表？<br>可以通过数组来模拟链表，称为<strong>静态链表</strong>。数组的每个元素存放 2 个数据：值、下个元素的索引，数组 0 位置存放的是头结点信息。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425174114.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/study/algorithm/20210425174114.png" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1564,7 +1564,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-16
                         </span>
                         <span class="publish-author">
                             
@@ -1612,7 +1612,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-16
                             </span>
                         <span class="publish-author">
                             

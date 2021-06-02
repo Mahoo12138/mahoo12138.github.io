@@ -442,8 +442,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C-C/">
-                                <span class="chip bg-color">C/C++</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C</span>
                             </a>
                         
                     </div>
@@ -467,21 +467,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-26
+                    2019-12-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-08
+                    2021-05-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.7k
                 </div>
                 
 
@@ -498,7 +498,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="内联函数-——-C-中关键字-inline"><a href="#内联函数-——-C-中关键字-inline" class="headerlink" title="内联函数 —— C 中关键字 inline"></a>内联函数 —— C 中关键字 inline</h2><p>调用函数时，一般会由于建立调用、传递参数、跳转到函数代码并返回等花费掉一些时间，而且一些函数被频繁调用，不断地有函数入栈，即<strong>函数栈</strong>，会造成栈空间或<strong>栈内存</strong>的大量消耗。</p>
+                <h2 id="内联函数-C-中关键字-inline"><a href="#内联函数-C-中关键字-inline" class="headerlink" title="内联函数 C 中关键字 inline"></a>内联函数 C 中关键字 inline</h2><p>调用函数时，一般会由于建立调用、传递参数、跳转到函数代码并返回等花费掉一些时间，而且一些函数被频繁调用，不断地有函数入栈，即<strong>函数栈</strong>，会造成栈空间或<strong>栈内存</strong>的大量消耗。</p>
 <p>为了解决这个问题，在C99中特别地引入了<strong>inline修饰符</strong>，即内联函数。</p>
 <p>关键字 inline 告诉编译器，任何地方只要调用内联函数，就直接把该函数的机器码插入到调用它的地方，类似于带参宏。</p>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">inline</span> <span class="token keyword">int</span> <span class="token function">max</span> <span class="token punctuation">(</span><span class="token keyword">int</span> a<span class="token punctuation">,</span> <span class="token keyword">int</span> b<span class="token punctuation">)</span>
@@ -510,7 +510,7 @@
 <span class="token punctuation">}</span>
 
 a <span class="token operator">=</span> <span class="token function">max</span> <span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 等价于 "a = (x > y ? x : y);"</span></code></pre>
-<h2 id="结构体-struct-——构造数据类型"><a href="#结构体-struct-——构造数据类型" class="headerlink" title="结构体 struct ——构造数据类型"></a>结构体 struct ——构造数据类型</h2><p>结构体（struct）就是一种把一些数据项组合在一起的数据结构类型，定义一个个人信息的结构体如下：</p>
+<h2 id="结构体-struct-——-构造数据类型"><a href="#结构体-struct-——-构造数据类型" class="headerlink" title="结构体 struct —— 构造数据类型"></a>结构体 struct —— 构造数据类型</h2><p>结构体（struct）就是一种把一些数据项组合在一起的数据结构类型，定义一个个人信息的结构体如下：</p>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> Info<span class="token punctuation">{</span>
     <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token keyword">double</span> height<span class="token punctuation">;</span>
@@ -528,31 +528,31 @@ sInfo Mahoo<span class="token punctuation">;</span></code></pre>
     <span class="token keyword">int</span> age<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>sInfo<span class="token punctuation">;</span>
 sInfo Mahoo<span class="token punctuation">;</span></code></pre>
-<h3 id="结构体的对齐问题"><a href="#结构体的对齐问题" class="headerlink" title="结构体的对齐问题"></a>结构体的对齐问题</h3><pre class=" language-C"><code class="language-C">struct Info1{
-    char name[3];
-    double id;
-    int age;
-};
-struct Info2{
-    double id;
-    char name[3];
-    int age;
-};
+<h3 id="结构体的对齐问题"><a href="#结构体的对齐问题" class="headerlink" title="结构体的对齐问题"></a>结构体的对齐问题</h3><pre class=" language-c"><code class="language-c"><span class="token keyword">struct</span> Info1<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">struct</span> Info2<span class="token punctuation">{</span>
+    <span class="token keyword">double</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-//定义一个 Info 类型的结构体变量
-struct Info1 Mahoo1;
-struct Info2 Mahoo2;
+<span class="token comment" spellcheck="true">//定义一个 Info 类型的结构体变量</span>
+<span class="token keyword">struct</span> Info1 Mahoo1<span class="token punctuation">;</span>
+<span class="token keyword">struct</span> Info2 Mahoo2<span class="token punctuation">;</span>
 
-int main(){
-    printf("Mahoo1:%d,Mahoo2:%d",sizeof(Mahoo1),sizeof(Mahoo2));
-    return 0;
-}</code></pre>
-<p>代码输出为：<code>Mahoo1:24,Mahoo2:16</code>，可见同样的结构体内容，所占的字节大小是不一样的，而且在64位的编译器中，char ：1个字节，int： 4个字节，double:  8个字节，按理来说都应该是15个字节才对，因为涉及到<strong>字节对齐</strong>的缘故，在特定类型变量存储的时候，各种类型数据是按照一定的规则在空间上排列，而不是顺序的一个接一个的存放。</p>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Mahoo1:%d,Mahoo2:%d"</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Mahoo1<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>Mahoo2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>代码输出为：<code>Mahoo1:24,Mahoo2:16</code>，可见同样的结构体内容，所占的字节大小是不一样的，而且在64位的编译器中，char ：1 个字节，int： 4 个字节，double:  8 个字节，按理来说都应该是 15 个字节才对，因为涉及到<strong>字节对齐</strong>的缘故，在特定类型变量存储的时候，各种类型数据是按照一定的规则在空间上排列，而不是顺序的一个接一个的存放。</p>
 <p>首先要明确编译器的对齐原则和一些基本概念：</p>
 <ul>
 <li><p>对齐：假定从零地址开始，每成员的起始地址编号，必须是它本身字节数的整数倍。其次，结构体本身也要根据自身的有效对齐值圆整（就是结构体成员变量占用总长度需要是对结构体有效对齐值的整数倍）；</p>
 </li>
-<li><p>数据类型自身的对齐值：char型为1，short为2，int，float为4，double类型为8，单位字节。在Linux系统下计算时超过4字节按4字节计算；</p>
+<li><p>数据类型自身的对齐值：char 型为 1，short 为 2，int，float 为 4，double类型为 8，单位字节。在Linux系统下计算时超过4字节按4字节计算；</p>
 </li>
 <li><p>结构体的自身的对齐值：取决于其成员中自身对齐值最大的那个值；</p>
 </li>
@@ -561,10 +561,22 @@ int main(){
 <li><p>数据成员和结构体的有效对齐值：自身对齐值和指定对齐值中较小的那个值，且结构体数据起始地址%有效对齐值 = 0 ；</p>
 </li>
 </ul>
-<p>好的，现在就拿上面的两个结构体例子来说，首先<strong>假定地址是从零开始的</strong>，在 Info1 中，第一个成员<code>char name[3]</code>，其对齐值为 1，占三个字节；所以第二个成员<code>double id</code>是从</p>
-<p>3 开始，由于对齐的原则，该成员的有效对齐值为 8（无指定对齐值默认因为 8），即<code>double id</code>真正的地址应该满足%8 = 0，也就是对齐到 8 这个地址；第三个成员变量<code>int age</code>起始地址为 16，有效对齐值为自身对齐值 2，所以存储在 16<sub>19 地址。到这里结构体 Info1 变量的<code>sizeof()</code>应该为地址0</sub>19共20个字节，但还要考虑到结构体的有效对齐值（自身对齐值为 <code>double id</code>的自身对齐值 8 ，指定对齐值未定）为 8 ，保证圆整，所以向上取整到 24%8 = 0。</p>
-<p>Info2 也是按一样规则的对齐， <code>double id</code>地址为0<sub>7，<code>char name[3]</code>为8</sub>11，<code>int age</code>为12~16，所以 Info2 变量的<code>sizeof()</code>为16。</p>
-<h4 id="对齐问题的启发"><a href="#对齐问题的启发" class="headerlink" title="对齐问题的启发"></a>对齐问题的启发</h4><p>由上面的例子可以看出，不同的成员变量声明顺序有时决定了结构体不同的大小，如果想要节约空间的话，则可以把结构体中的变量按照类型大小<strong>从小到大声明</strong>（很容易得出），尽量减少中间的填补空间。</p>
+<p>好的，现在就拿上面的两个结构体例子说，首先<strong>假定地址是从零开始的</strong>，在 Info1 中，第一个成员<code>char name[3]</code>，其对齐值为 1，占三个字节；所以第二个成员<code>double id</code>是从 3 开始，由于对齐的原则，该成员的有效对齐值为 8（无指定对齐值默认为 8），即<code>double id</code>真正的地址应该满足 %8 = 0，也就是对齐到 8 这个地址；第三个成员变量<code>int age</code>起始地址为 16，有效对齐值为自身对齐值 4，所以存储在 16~19 地址。</p>
+<p>到这里结构体 Info1 变量的<code>sizeof()</code>应该为地址 0~19 共 20 个字节，但还要考虑到结构体的有效对齐值（自身对齐值为 <code>double id</code>的自身对齐值 8 ，指定对齐值未定）为 8 ，保证圆整，所以向上取整到 24 % 8 = 0。</p>
+<p>Info2 也是按一样规则的对齐， <code>double id</code>地址为 0&lt;sub&gt;7，<code>char name[3]</code>为 8&lt;/sub&gt;11，<code>int age</code>为 12~16，所以 Info2 变量的<code>sizeof()</code>为 16。</p>
+<h3 id="pragma-pack-n"><a href="#pragma-pack-n" class="headerlink" title="#pragma pack(n)"></a>#pragma pack(n)</h3><p>可以通过<code>#pragma pack(n)</code>设定结构体以 n 字节方式对齐，不仅仅是结构体，还可以是联合体，还有C++中类成员变量的对齐。n 可以取（<code>1</code>， <code>2</code>， <code>4</code>， <code>8</code>， <code>16</code>） 中任意一值。例如：</p>
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">pragma</span> pack(push)  </span><span class="token comment" spellcheck="true">// 保存对齐状态</span>
+<span class="token macro property">#<span class="token directive keyword">pragma</span> pack(4)     </span><span class="token comment" spellcheck="true">// 设定为 4 字节对齐</span>
+
+<span class="token keyword">struct</span> Info1<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> name<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">double</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token macro property">#<span class="token directive keyword">pragma</span> pack(pop)  </span></code></pre>
+<p>这样一编译，结构体 Info1 的大小也是 16 字节了。</p>
+<h4 id="对齐问题的启发"><a href="#对齐问题的启发" class="headerlink" title="对齐问题的启发"></a>对齐问题的启发</h4><p>由上面的例子可以看出，不同的成员变量声明顺序有时决定了结构体不同的大小，如果想要节约空间的话，则可以把结构体中的变量按照类型大小<strong>从小到大声明</strong>（很容易得出），尽量减少中间的填补空间，当然可以采取强制措施解决。</p>
 <h2 id="常量-const-——-一个不能被改变的普通变量"><a href="#常量-const-——-一个不能被改变的普通变量" class="headerlink" title="常量 const —— 一个不能被改变的普通变量"></a>常量 const —— 一个不能被改变的普通变量</h2><p>const 一般用于定义常量或常量指针，所谓常量也就是不可更改的意思，但部分情况可以通过指针修改；当 const 修饰指针时，有两种情况：</p>
 <ul>
 <li>修饰一个指向常量的指针，则指针是可变的，常量不可变，const 在  *  的左侧；</li>
@@ -582,6 +594,34 @@ int main(){
 <span class="token keyword">const</span> <span class="token keyword">int</span> <span class="token operator">*</span> <span class="token keyword">const</span> p<span class="token punctuation">;</span></code></pre>
 <p>另一种情况是修饰函数的形参，说明形参在函数内部不会被改变。例如修饰传递的指针形参时，不会修改实参指针所指向的数据：</p>
 <pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span> <span class="token keyword">const</span> p<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h2 id="char-数组与指针的恩恩怨怨"><a href="#char-数组与指针的恩恩怨怨" class="headerlink" title="char ** 数组与指针的恩恩怨怨"></a>char ** 数组与指针的恩恩怨怨</h2><p>在探讨<code>char **</code>这个东西前，我们首先要明白：</p>
+<ul>
+<li><p>字符串常量的本质是一个地址：</p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">char</span> <span class="token operator">*</span>s<span class="token punctuation">;</span>
+s <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span></code></pre>
+</li>
+<li><p>数组名在表达式中表示指向首元素的<strong>指针常量</strong>：</p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">char</span> a<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
+a <span class="token operator">=</span> s<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// error</span></code></pre>
+</li>
+</ul>
+<p><code>char **</code>为二级指针，此类型定义的变量是指向一级指针<code>char *</code>的指针，常用于在函数传值时使用，如传递一级指针：</p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">char</span><span class="token operator">*</span> s<span class="token punctuation">;</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token keyword">int</span> <span class="token operator">*</span><span class="token operator">*</span>tmp_s<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token operator">*</span>tmp_s <span class="token operator">=</span> <span class="token function">malloc</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>需要注意的时一个<strong>野指针</strong>的问题：</p>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> s<span class="token punctuation">;</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d"</span><span class="token punctuation">,</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// 0</span>
+<span class="token operator">*</span>s <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">// Variable 's' is uninitialized when used here</span>
+<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s"</span><span class="token punctuation">,</span><span class="token operator">*</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// error and crash</span></code></pre>
+<p>定义 <code>s</code> 变量并为初始化，变量中默认存储的是 <strong>NULL</strong> 空指针 0，不指向任何内容；</p>
+<p>所以在<code>printf("%s",*s);</code>时，程序会崩溃，无法继续执行；</p>
+<p>因此使用<code>char** s;</code>时，需要对此进行初始化操作：</p>
+<pre class=" language-c"><code class="language-c">s <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -664,8 +704,8 @@ int main(){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C-C/">
-                                    <span class="chip bg-color">C/C++</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C</span>
                                 </a>
                             
                         </div>
@@ -1107,13 +1147,12 @@ int main(){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/font-end-1.html">
+                <a href="/font-end-2.html">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/vuejs.png" class="responsive-img" alt="我的网页梦 —— 前端基础 &amp; Vuejs">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/4.jpg" class="responsive-img" alt="简单入门CSS预处理器Less和Sass">
-                        
-                        <span class="card-title">简单入门CSS预处理器Less和Sass</span>
+                        <span class="card-title">我的网页梦 —— 前端基础 &amp; Vuejs</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1124,7 +1163,7 @@ int main(){
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-08
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-18
                         </span>
                         <span class="publish-author">
                             
@@ -1141,12 +1180,8 @@ int main(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Less/">
-                        <span class="chip bg-color">Less</span>
-                    </a>
-                    
-                    <a href="/tags/Sass/">
-                        <span class="chip bg-color">Sass</span>
+                    <a href="/tags/Vuejs/">
+                        <span class="chip bg-color">Vuejs</span>
                     </a>
                     
                 </div>
@@ -1160,12 +1195,12 @@ int main(){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/stm32-5.html">
+                <a href="/office.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/stm32.jpg" class="responsive-img" alt="利用FSMC模拟8080时序控制LCD">
+                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/office.png" class="responsive-img" alt="关于office的一点点使用经验">
                         
-                        <span class="card-title">利用FSMC模拟8080时序控制LCD</span>
+                        <span class="card-title">关于office的一点点使用经验</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1176,14 +1211,14 @@ int main(){
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
+                            <a href="/categories/技术教程/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
@@ -1193,8 +1228,8 @@ int main(){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/STM32/">
-                        <span class="chip bg-color">STM32</span>
+                    <a href="/tags/office/">
+                        <span class="chip bg-color">office</span>
                     </a>
                     
                 </div>

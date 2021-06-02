@@ -474,14 +474,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-10
+                    2021-04-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    2k
                 </div>
                 
 
@@ -582,6 +582,28 @@ n<span class="token punctuation">:</span> 61fe14 p<span class="token punctuation
 <span class="token punctuation">}</span></code></pre>
 <p>刚开始，笔者也觉得惊奇，细看也不过如此，<code>https</code>在代码中是一个标签，用于与<code>goto</code>语句跳转到指定代码行，即<code>goto https;</code>，常用于跳出多重循环，国内教材都引导初学者尽量避免使用，因为可能会导致语句上下文不明确，从而使得跳转标签这种语法比较陌生，但有汇编基础，其实感觉<code>goto</code> 和那些 J 指令几乎一样。</p>
 <p><code>//</code>之后的代码就无需多言了，单行注释，编译器会直接跳过后面的内容，直到换行符。</p>
+<h2 id="bit-field-位域"><a href="#bit-field-位域" class="headerlink" title="bit field 位域"></a>bit field 位域</h2><p>bit field 是一种节省内存的方式，有些信息在存储时，并不需要占用一个完整的字节， 而只需占几个或一个二进制位。例如时间日期数据和开关量。位域的类型只能是整型或枚举类型，位域不能是静态数据成员。</p>
+<p>时间日期例子，来自<a href="https://docs.microsoft.com/en-us/cpp/cpp/cpp-bit-fields?view=msvc-160" target="_blank" rel="noopener">C++ Bit Fields | Microsoft Docs</a>：</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> Date <span class="token punctuation">{</span>
+   <span class="token keyword">unsigned</span> <span class="token keyword">short</span> nWeekDay  <span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 0..7   (分配 3 位)</span>
+   <span class="token keyword">unsigned</span> <span class="token keyword">short</span> nMonthDay <span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 0..31  (分配 6 位)</span>
+   <span class="token keyword">unsigned</span> <span class="token keyword">short</span> nMonth    <span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 0..12  (分配 5 位)</span>
+   <span class="token keyword">unsigned</span> <span class="token keyword">short</span> nYear     <span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 0..100 (分配 8 位)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p>由于各个字段的大小都基本固定，所以只需要分配足够的 bits 即可，不过有个小细节，就是<code>unsigned short</code>是 2 个字节 16 位，最后的 <strong>nYear</strong> 分配的 8 位会溢出，会产生一个新的 16 位的<code>unsigned short</code>，数据由低位开始存储，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cpp/20210426230554.png" alt="Date 内存结构"></p>
+<p>如果结构体中含有一个匿名且长度为 0 的成员，如下：</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">struct</span> Date <span class="token punctuation">{</span>
+   <span class="token keyword">unsigned</span> nWeekDay  <span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 0..7   (分配 3 位)</span>
+   <span class="token keyword">unsigned</span> nMonthDay <span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 0..31  (分配 6 位)</span>
+   <span class="token keyword">unsigned</span>           <span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 强制对齐下一个边界</span>
+   <span class="token keyword">unsigned</span> nMonth    <span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 0..12  (分配 5 位)</span>
+   <span class="token keyword">unsigned</span> nYear     <span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// 0..100 (分配 8 位)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cpp/20210426232317.png" alt="带有 0 长度成员的 Date 的内存结构"></p>
+<p>因为位域不必然始于一个字节的开始，故不能取位域的地址。指向位域的指针和非 const 引用是不可行的。从位域<strong>初始化 const 引用</strong>时，将创建一个临时量（其类型是位域的类型），并以该位域的值复制初始化，而引用绑定到该临时量。</p>
+<p>如果相邻位域字段的类型不同，<strong>长度相同</strong>，后面的字段也能紧邻前一个字段存储。</p>
+<p>整个结构体仍然满足编译器的对齐原则：整个结构体的总大小为最宽基本类型成员大小（有效对齐值）的整数倍。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {

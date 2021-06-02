@@ -536,15 +536,15 @@
 </tbody></table>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/DS18B20%E5%BC%95%E8%84%9A%E8%AF%B4%E6%98%8E.png" alt="DS18B20 原理图"></p>
 <p>博主使用的开发模块原理图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20201004003026980.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20201004003026980.png" alt=""></p>
 <h3 id="2-DS18B20-内部结构"><a href="#2-DS18B20-内部结构" class="headerlink" title="2. DS18B20 内部结构"></a>2. DS18B20 内部结构</h3><p>DS18B20 的<strong>一线</strong>工作协议流程：<strong>初始化 → ROM 操作指令 → 存储器操作指令 → 数据传输</strong>。</p>
 <p>DS18B20 内部结构包括 64 位光刻 ROM，温度传感器，高速暂存器，温度报警触发器 TH 和 TL 及配置寄存器。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20201004151856395.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20201004151856395.png" alt=""></p>
 <p>光刻 ROM 的 64 位序列号是出厂时光刻好的，可看作 DS18B20 的地址序列码。前 8 位是产品类型标号（地址 28H）；其后的 48 位是 DS18B20 的自身的序列号，每一块产品都不同；最后 8 位是前 56 位的循环冗余校验码（CRC=X^8^ + X^5^+ X^4^ + 1）。正因如此，控制器才能通过单线总线对多个 DS18B20 进行寻址，实现单线总线上挂载多个 DS18B20。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20201004151629134.png" alt="高速暂存器"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20201004151117271.png" alt="配置寄存器及与分辨率的关系"></p>
 <p>DS18B20 经转换所得的温度值，以2字节补码形式存放在高速暂存存储器的第 0 和第 1 个字节。所以当只想简单的读取温度值的时候，只用读取暂存器中的第 0 和第 1 个字节就可以了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20201004153822298.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20201004153822298.png" alt=""></p>
 <blockquote>
 <p>符号位 S 表示温度是正的还是负的：对于正数，S = 0，对于负数，S = 1。</p>
 </blockquote>
@@ -568,7 +568,7 @@
 <li>控制器首先发出 480μs ~ 960μs 的低电平脉冲，然后释放总线变为高电平，并在随后的 480μs 内对总线做检测，若有低电平出现，说明器件已作应答；否则无应答；</li>
 <li>DS18B20 从接电开始就在等待 480μs <sub> 960μs 的低电平脉冲，若有会在总线电平变高后，等待 15μs </sub> 60μs 后，将总线电平拉低 60μs ~ 240μs 作为应答响应脉冲若没有检测到，则一直等待。</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20201003225149023.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/image-20201003225149023.png" alt=""></p>
 <h4 id="3-3-写时序"><a href="#3-3-写时序" class="headerlink" title="3.3 写时序"></a>3.3 写时序</h4><p>写周期的时间为 60μs <sub> 120μs，控制器首先把总线电平拉低 1μs </sub>15μs，表示写时序开始：</p>
 <ol>
 <li>写 “0”，在写周期开始后，控制器写 “0”，即将总线置为低电平，直接拉低总线电平 60μs ~ 120μs 即可；</li>
@@ -576,9 +576,9 @@
 <li>写 “1”，在写周期开始后，控制器写 “1”，即释放总线电平为高电平；</li>
 <li>DS18B20 在总线电平拉低后的 15μs ~ 60μs 内，进行数据采样。</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/Snipaste_2020-10-03_23-16-13.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/Snipaste_2020-10-03_23-16-13.png" alt=""></p>
 <h4 id="3-4-读时序"><a href="#3-4-读时序" class="headerlink" title="3.4 读时序"></a>3.4 读时序</h4><p>读周期的时间至少需要 60 μs，控制器首先把总线电平拉低 1μs ~15μs，表示读时序开始。在总线电平被拉低后的 15μs 内，控制器需要对总线进行采样，数据有效。采样为低电平，则为“0”；高电平为“1”。读周期的读写恢复时间至少需要 1μs。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/Snipaste_2020-10-04_00-22-42.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/Snipaste_2020-10-04_00-22-42.png" alt=""></p>
 <h4 id="3-5-指令合集"><a href="#3-5-指令合集" class="headerlink" title="3.5 指令合集"></a>3.5 指令合集</h4><table>
 <thead>
 <tr>
@@ -1173,12 +1173,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/dart.html">
+                <a href="/jupyter.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn/hexo-images/cover/flutter.png" class="responsive-img" alt="Dart 编程语言不详细学习指北">
                         
-                        <span class="card-title">Dart 编程语言不详细学习指北</span>
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/2.jpg" class="responsive-img" alt="Win10子系统Ubuntu下配置Jupyter Notebook并实现内网穿透">
+                        
+                        <span class="card-title">Win10子系统Ubuntu下配置Jupyter Notebook并实现内网穿透</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1189,14 +1190,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-30
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-10-16
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
+                            <a href="/categories/技术教程/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
@@ -1206,8 +1207,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Dart/">
-                        <span class="chip bg-color">Dart</span>
+                    <a href="/tags/Jupyter-Notebook/">
+                        <span class="chip bg-color">Jupyter Notebook</span>
+                    </a>
+                    
+                    <a href="/tags/内网穿透/">
+                        <span class="chip bg-color">内网穿透</span>
                     </a>
                     
                 </div>

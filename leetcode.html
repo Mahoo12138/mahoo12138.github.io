@@ -471,14 +471,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-16
+                    2019-10-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-24
+                    2021-04-25
                 </div>
                 
 
@@ -540,7 +540,7 @@
 <h3 id="递归方法"><a href="#递归方法" class="headerlink" title="递归方法"></a>递归方法</h3><p><strong>思路</strong>：</p>
 <p>递归的思维诀窍：<strong>在用递归思想解题时，明确递推公式的含义后，不要试图想明白每一步是如何递归的，这很容易把自己绕晕。</strong></p>
 <p>例如，这道题，给出的解法方法也就是递推公式，是<code>reverseList()</code>，我们需要明白这个方法的作用是什么：<strong>根据头结点把拿到的链表进行反转，然后返回新的头结点</strong>。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210424111352.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210424111352.png" alt=""></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> ListNode <span class="token function">reverseList</span><span class="token punctuation">(</span>ListNode head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 调用递推公式反转当前结点之后的所有节点</span>
     <span class="token comment" spellcheck="true">// 返回的结果是反转后的链表的头结点</span>
@@ -548,7 +548,7 @@
 <span class="token punctuation">}</span></code></pre>
 <p>接着要做的就是反转结点 1 ，也就是将head指向的结点作为其下一个结点的下一个结点，此时节点1 和反转之后的节点 2 仍然是相连的，即<code>head.next.next=head</code>。</p>
 <p>最后，将 head 指向的结点的下一个结点置为 null，就完成了整个链表的反转。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210424112113.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210424112113.png" alt=""></p>
 <p>递推公式完成之后，还有重要的一步就是递归终止条件：在 head 指向的结点为 null 或 head 指向的结点的下一个结点为 null 时停止，反转后也就是 head 本身。完整代码如下：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> ListNode <span class="token function">reverseList</span><span class="token punctuation">(</span>ListNode head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>head <span class="token operator">==</span> null <span class="token operator">||</span> head<span class="token punctuation">.</span>next <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1163,7 +1163,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-16
                         </span>
                         <span class="publish-author">
                             
@@ -1211,7 +1211,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-15
                             </span>
                         <span class="publish-author">
                             

@@ -467,14 +467,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-16
+                    2019-10-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-24
+                    2021-04-25
                 </div>
                 
 
@@ -502,14 +502,14 @@
 <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160037.png" style="zoom:80%;">
 
 <p>线性结构：主要有数组链表，栈，队列和哈希表</p>
-<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160059.png" alt style="zoom:80%;">
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160059.png" alt="" style="zoom:80%;">
 
 <p>树形结构：主要有二叉树，红黑树，B树，堆，Trie，哈夫曼树，并查集等</p>
-<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160102.png" alt style="zoom: 80%;">
+<img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160102.png" alt="" style="zoom: 80%;">
 
 <p>图形结构：邻接矩阵，邻接表</p>
 <p>在实际开发应用中，需要根据使用场景来选择最合适的数据结构。</p>
-<h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160106.png" alt></p>
+<h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160106.png" alt=""></p>
 <p>对于线性表，我们需要清楚一些概念：</p>
 <ul>
 <li>a<sub>1</sub> 是<strong>首节点</strong>（首元素）， a<sub>n</sub> 是<strong>尾结点</strong>（尾元素）</li>
@@ -536,7 +536,7 @@ E <span class="token function">remove</span><span class="token punctuation">(</s
 <span class="token keyword">void</span> <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                     <span class="token comment" spellcheck="true">// 清除所有元素</span></code></pre>
 <p>熟悉这类编程语言的都了解，上述接口代码中的 <code>E</code>是为了支持泛型，当然代码的编写是循序渐进的，我们先让动态数组支持整型。</p>
 <p>在设计的动态数组时，有两个成员变量，一是数组的容量 <code>size</code>，而是存储数据的数组 <code>elements</code>：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160116.png" alt></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160116.png" alt=""></p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArrayList</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span> size<span class="token punctuation">;</span>
     <span class="token keyword">private</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> elements<span class="token punctuation">;</span>
@@ -599,7 +599,7 @@ E <span class="token function">remove</span><span class="token punctuation">(</s
 <span class="token punctuation">}</span>                                                                       </code></pre>
 <p>代码中的 -1 常见的作法也是像默认容量一样的处理：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token keyword">final</span> <span class="token keyword">static</span> <span class="token keyword">int</span> ELEMENT_NOT_FOUND <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span></code></pre>
-<h2 id="末尾添加元素"><a href="#末尾添加元素" class="headerlink" title="末尾添加元素"></a>末尾添加元素</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160120.png" alt></p>
+<h2 id="末尾添加元素"><a href="#末尾添加元素" class="headerlink" title="末尾添加元素"></a>末尾添加元素</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160120.png" alt=""></p>
 <p>当添加元素的时候，通过上图，我们很容易从发现每添加一个元素，都是在 <code>size</code>的位置，于是代码：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 若容量不够，需要扩容</span>
@@ -621,7 +621,7 @@ E <span class="token function">remove</span><span class="token punctuation">(</s
     sBuilder<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">']'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> sBuilder<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-<h2 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160125.png" alt></p>
+<h2 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160125.png" alt=""></p>
 <p>在删除元素的时候，由于是动态数组，删除其中某一个元素，那必然后面的会紧随其后跟过来，因为数组是连续的，所以我们需要对后面的元素进行挪动：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">remove</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">rangeCheck</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -638,7 +638,7 @@ E <span class="token function">remove</span><span class="token punctuation">(</s
         <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span><span class="token string">"index: "</span> <span class="token operator">+</span> index <span class="token operator">+</span> <span class="token string">",and size: "</span> <span class="token operator">+</span> size<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
-<h2 id="指定序列添加元素"><a href="#指定序列添加元素" class="headerlink" title="指定序列添加元素"></a>指定序列添加元素</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160133.png" alt></p>
+<h2 id="指定序列添加元素"><a href="#指定序列添加元素" class="headerlink" title="指定序列添加元素"></a>指定序列添加元素</h2><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160133.png" alt=""></p>
 <p>在某一个索引添加元素和删除某一个索引的元素类似，都需要挪动元素，但需要注意的是，挪动的顺序，要从后面开始挪动，不然会造成<strong>元素被覆盖</strong>的问题。</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">int</span> index<span class="token punctuation">,</span> <span class="token keyword">int</span> element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token function">rangeCheckForAdd</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -726,7 +726,7 @@ elements <span class="token operator">=</span> <span class="token keyword">new</
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <p>因为在 Java 语言中，所有的对象的最终父类都是 <code>Object</code>，我们只需要创建一个 <code>Object</code>类型的数组，然后进行签证类型转换即可。</p>
-<h3 id="对象数组-amp-内存管理细节"><a href="#对象数组-amp-内存管理细节" class="headerlink" title="对象数组 &amp; 内存管理细节"></a>对象数组 &amp; 内存管理细节</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418174135.png" alt></p>
+<h3 id="对象数组-amp-内存管理细节"><a href="#对象数组-amp-内存管理细节" class="headerlink" title="对象数组 &amp; 内存管理细节"></a>对象数组 &amp; 内存管理细节</h3><p><img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418174135.png" alt=""></p>
 <p>在 Java 语言中对象数组实际存储的是<strong>对象的引用</strong>，也就是对象的地址。</p>
 <p>所以当我们调用 <code>clear()</code> 方法来清空对象数组，这样仅仅只是将 <strong>size</strong> 赋值为 0 ，对象数组内的对象还在内存中，这样就比较浪费内存了，因为存储的对象的大小我们是无法预知的，所以我们应该在<code>clear()</code>中消除对对象的引用，以便垃圾回收：</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1340,17 +1340,17 @@ System<span class="token punctuation">.</span><span class="token function">gc</s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/data-structure-and-algorithm-2.html">
+                <a href="/tutorial-2.html">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/mahoo12138/js-css-cdn//hexo-images/study/algorithm/20210418160102.png" class="responsive-img" alt="数据结构与算法学习之动态数组">
                         
-                        <span class="card-title">数据结构与算法学习之动态数组</span>
+                        <img src="https://cdn.jsdelivr.net/gh/Mahoo12138/blog-with-hexo/medias/featureimages/17.jpg" class="responsive-img" alt="利用Cloud Studio为博客搭建免费图床">
+                        
+                        <span class="card-title">利用Cloud Studio为博客搭建免费图床</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1360,27 +1360,26 @@ System<span class="token punctuation">.</span><span class="token function">gc</s
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/学习笔记/" class="post-category">
-                                    学习笔记
+                            <a href="/categories/技术教程/" class="post-category">
+                                    技术教程
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数据结构与算法/">
-                        <span class="chip bg-color">数据结构与算法</span>
+                    <a href="/tags/免费图床/">
+                        <span class="chip bg-color">免费图床</span>
                     </a>
                     
                 </div>
@@ -1410,7 +1409,7 @@ System<span class="token punctuation">.</span><span class="token function">gc</s
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-16
                             </span>
                         <span class="publish-author">
                             

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://mahoo12138.cn/"/>
-  <updated>2021-04-24T14:06:55.785Z</updated>
+  <updated>2021-05-19T15:39:42.255Z</updated>
   <id>https://mahoo12138.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>数据结构与算法学习之动态数组</title>
-    <link href="https://mahoo12138.cn/data-structure-and-algorithm-2.html"/>
-    <id>https://mahoo12138.cn/data-structure-and-algorithm-2.html</id>
-    <published>2021-04-16T13:27:24.000Z</published>
-    <updated>2021-04-24T14:06:55.785Z</updated>
+    <title>QT入门学习之信号与槽机制</title>
+    <link href="https://mahoo12138.cn/qt-1.html"/>
+    <id>https://mahoo12138.cn/qt-1.html</id>
+    <published>2021-05-16T12:45:43.000Z</published>
+    <updated>2021-05-19T15:39:42.255Z</updated>
     
     <summary type="html">
     
@@ -29,8 +29,7 @@
       
         
         
-          &lt;h2 id=&quot;什么是数据结构&quot;&gt;&lt;a href=&quot;#什么是数据结构&quot; class=&quot;headerlink&quot; title=&quot;什么是数据结构&quot;&gt;&lt;/a&gt;什么是数据结构&lt;/h2&gt;&lt;p&gt;数据结构是计算机存储、组织数据的方式，主要有以下几种：&lt;/p&gt;
-&lt;img
+          &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;信号和槽是 Qt 的核心机制，这是用于对象之间的通信的，是 Qt
         
       
     
@@ -39,88 +38,7 @@
       <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="数据结构与算法" scheme="https://mahoo12138.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构与算法学习之链表</title>
-    <link href="https://mahoo12138.cn/data-structure-and-algorithm-3.html"/>
-    <id>https://mahoo12138.cn/data-structure-and-algorithm-3.html</id>
-    <published>2021-04-16T13:27:24.000Z</published>
-    <updated>2021-04-25T09:46:11.654Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;链表&quot;&gt;&lt;a href=&quot;#链表&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="数据结构与算法" scheme="https://mahoo12138.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Leetcode 刷题记录之链表</title>
-    <link href="https://mahoo12138.cn/leetcode.html"/>
-    <id>https://mahoo12138.cn/leetcode.html</id>
-    <published>2021-04-16T13:27:24.000Z</published>
-    <updated>2021-04-24T09:50:41.854Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;237-删除链表中的节点&quot;&gt;&lt;a href=&quot;#237-删除链表中的节点&quot; class=&quot;headerlink&quot; title=&quot;237. 删除链表中的节点&quot;&gt;&lt;/a&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="数据结构与算法" scheme="https://mahoo12138.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="链表" scheme="https://mahoo12138.cn/tags/%E9%93%BE%E8%A1%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据结构与算法学习之复杂度</title>
-    <link href="https://mahoo12138.cn/data-structure-and-algorithm-1.html"/>
-    <id>https://mahoo12138.cn/data-structure-and-algorithm-1.html</id>
-    <published>2021-04-15T13:34:24.000Z</published>
-    <updated>2021-04-24T09:37:26.069Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;什么是算法&quot;&gt;&lt;a href=&quot;#什么是算法&quot; class=&quot;headerlink&quot; title=&quot;什么是算法&quot;&gt;&lt;/a&gt;什么是算法&lt;/h2&gt;&lt;p&gt;算法就是用于解决特定问题的一系列的执行步骤，例如：&lt;/p&gt;
-&lt;pre class=&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="数据结构与算法" scheme="https://mahoo12138.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <category term="QT" scheme="https://mahoo12138.cn/tags/QT/"/>
     
   </entry>
   
@@ -129,7 +47,7 @@
     <link href="https://mahoo12138.cn/python-3.html"/>
     <id>https://mahoo12138.cn/python-3.html</id>
     <published>2021-04-12T07:45:43.000Z</published>
-    <updated>2021-04-12T16:25:51.746Z</updated>
+    <updated>2021-05-19T12:48:07.719Z</updated>
     
     <summary type="html">
     
@@ -552,6 +470,84 @@
     
     
       <category term="Flutter" scheme="https://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Flutter 入门学习之配置路由</title>
+    <link href="https://mahoo12138.cn/flutter-2.html"/>
+    <id>https://mahoo12138.cn/flutter-2.html</id>
+    <published>2020-11-20T07:34:24.000Z</published>
+    <updated>2021-01-03T04:52:15.616Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;配置路由&quot;&gt;&lt;a href=&quot;#配置路由&quot; class=&quot;headerlink&quot; title=&quot;配置路由&quot;&gt;&lt;/a&gt;配置路由&lt;/h2&gt;&lt;h3 id=&quot;404路由的配置&quot;&gt;&lt;a href=&quot;#404路由的配置&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Flutter" scheme="https://mahoo12138.cn/tags/Flutter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vuejs 移动端开发初始配置</title>
+    <link href="https://mahoo12138.cn/font-end-3.html"/>
+    <id>https://mahoo12138.cn/font-end-3.html</id>
+    <published>2020-11-13T08:00:21.000Z</published>
+    <updated>2020-11-13T14:48:38.061Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;添加-viewpoit&quot;&gt;&lt;a href=&quot;#添加-viewpoit&quot; class=&quot;headerlink&quot; title=&quot;添加 viewpoit&quot;&gt;&lt;/a&gt;添加
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Vuejs" scheme="https://mahoo12138.cn/tags/Vuejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Dart 编程语言不详细学习指北</title>
+    <link href="https://mahoo12138.cn/dart.html"/>
+    <id>https://mahoo12138.cn/dart.html</id>
+    <published>2020-10-30T08:34:24.000Z</published>
+    <updated>2021-02-17T11:06:30.377Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本文章是博主在&lt;a href=&quot;https://www.dartcn.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;此网站&lt;/a&gt;学习 Dart 语言时所摘录的一些重要内容，用于快速掌握 Dart
+        
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://mahoo12138.cn/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Dart" scheme="https://mahoo12138.cn/tags/Dart/"/>
     
   </entry>
   
